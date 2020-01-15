@@ -2,10 +2,11 @@ import React, {useState} from 'react';
 import Link from 'next/link';
 
 function Header(){
-	const [isOpen, setIsOpen] = useState(false);
+
+	const [activeClass, setActiveClass] = useState('');
+
 	const change = () => {
-		const teste = !isOpen;
-		setIsOpen(teste);
+		setActiveClass(activeClass === '' ? 'active' : '');
 	};
 
 	return(
@@ -15,14 +16,14 @@ function Header(){
 					<h2>Reactmon</h2>
 				</div>
 
-				<div className={`hamburguer ${isOpen ? 'active' : ''}`} onClick={change}>
+				<div className={`hamburguer ${activeClass}`} onClick={change}>
 					<div className="risco risco1"></div>
 					<div className="risco risco2"></div>
 					<div className="risco risco3"></div>
 				</div>
 
-				<div className={`menu ${isOpen ? 'active' : ''}`}>
-					<div className={`fechar ${isOpen ? 'active' : ''}`}  onClick={change}>
+				<div className={`menu ${activeClass}`}>
+					<div className={`fechar ${activeClass}`}  onClick={change}>
 						<div className="risco risco1"></div>
 						<div className="risco risco2"></div>
 					</div>
@@ -44,7 +45,8 @@ function Header(){
 
 			</div>
 		</div>
-	)
+	);
+
 }
 
 export default Header;
