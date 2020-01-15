@@ -17,3 +17,18 @@ li{font-size:18px;}
 #wrapper_components{flex-grow:1;}
 
 .indent{width:90%; max-width:1600px; margin:0 auto;}
+
+#wrap_header{width:100%; position:relative; background:#000;}
+#wrap_header .indent{padding:30px 0; display:flex; justify-content:space-between; align-items:center;}
+#wrap_header .indent .logo{}
+#wrap_header .indent .logo h2{}
+#wrap_header .indent .hamburguer{width:30px; height:20px; display:flex; flex-direction:column; justify-content:space-between;}
+#wrap_header .indent .hamburguer .risco{width:100%; height:3px; background:#fff;}
+#wrap_header .indent .menu{position:absolute; background:red; padding: 20px; width:400px; height:100vh; z-index:9;}
+#wrap_header .indent .menu.active{right:0; top:0;}
+#wrap_header .indent .menu ul{display:flex; flex-direction:column; padding-top:40px}
+#wrap_header .indent .menu ul li{margin:15px 0;}
+#wrap_header .indent .menu .fechar{width:30px; height:20px; position:absolute; right: 70px; top: 40px;}
+#wrap_header .indent .menu .fechar .risco{width:100%; height:3px; background:#fff; position:absolute;}
+#wrap_header .indent .menu .fechar .risco.risco1{transform:rotate(45deg);}
+#wrap_header .indent .menu .fechar .risco.risco2{transform:rotate(135deg);}
