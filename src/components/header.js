@@ -26,7 +26,7 @@ class Header extends Component{
 					</div>
 
 					<div className={`menu ${this.state.isOpen ? 'active' : ''}`}>
-						<div className="fechar"  onClick={this.changeSkin}>
+						<div className={`fechar ${this.state.isOpen ? 'active' : ''}`}  onClick={this.changeSkin}>
 							<div className="risco risco1"></div>
 							<div className="risco risco2"></div>
 						</div>
