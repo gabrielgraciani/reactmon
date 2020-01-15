@@ -1,6 +1,16 @@
 import React, {Component} from 'react';
 
 class Header extends Component{
+	constructor(props) {
+		super(props);
+		this.state = {isOpen: false};
+		this.changeSkin = this.changeSkin.bind(this);
+	}
+
+	changeSkin() {
+		this.setState({isOpen: !this.state.isOpen});
+	}
+
 	render(){
 		return(
 			<div id="wrap_header">
@@ -9,14 +19,14 @@ class Header extends Component{
 						<h2>Reactmon</h2>
 					</div>
 
-					<div className="hamburguer">
-						<div className="risco"></div>
-						<div className="risco"></div>
-						<div className="risco"></div>
+					<div className={`hamburguer ${this.state.isOpen ? 'active' : ''}`} onClick={this.changeSkin}>
+						<div className="risco risco1"></div>
+						<div className="risco risco2"></div>
+						<div className="risco risco3"></div>
 					</div>
 
-					<div className="menu active">
-						<div className="fechar">
+					<div className={`menu ${this.state.isOpen ? 'active' : ''}`}>
+						<div className="fechar"  onClick={this.changeSkin}>
 							<div className="risco risco1"></div>
 							<div className="risco risco2"></div>
 						</div>
