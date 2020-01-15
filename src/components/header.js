@@ -16,11 +16,13 @@ function Header(){
 					<h2>Reactmon</h2>
 				</div>
 
-				<div className={`hamburguer ${activeClass}`} onClick={change}>
+				<div className={`pokeball ${activeClass}`} onClick={change}></div>
+
+				{/*<div className={`hamburguer ${activeClass}`} onClick={change}>
 					<div className="risco risco1"></div>
 					<div className="risco risco2"></div>
 					<div className="risco risco3"></div>
-				</div>
+				</div>*/}
 
 				<div className={`menu ${activeClass}`}>
 					<div className={`fechar ${activeClass}`}  onClick={change}>

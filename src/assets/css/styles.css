@@ -18,11 +18,11 @@ li{font-size:18px;}
 
 .indent{width:90%; max-width:1600px; margin:0 auto;}
 
-#wrap_header{width:100%; position:relative; background:#000; overflow:hidden;}
+#wrap_header{width:100%; position:relative; background:#c0c0c0; overflow:hidden;}
 #wrap_header .indent{padding:30px 0; display:flex; justify-content:space-between; align-items:center;}
 #wrap_header .indent .logo{}
 #wrap_header .indent .logo h2{}
-#wrap_header .indent .hamburguer{cursor:pointer; width:30px; height:20px; display:flex; flex-direction:column; justify-content:space-between;}
+/*#wrap_header .indent .hamburguer{cursor:pointer; width:30px; height:20px; display:flex; flex-direction:column; justify-content:space-between;}
 #wrap_header .indent .hamburguer .risco{width:100%; height:3px; background:#fff; transition:all .5s ease;}
 #wrap_header .indent .hamburguer.active .risco{transform:translateX(200px);}
 #wrap_header .indent .hamburguer .risco.risco1{transition-delay:0.9s;}
@@ -30,9 +30,13 @@ li{font-size:18px;}
 #wrap_header .indent .hamburguer .risco.risco3{transition-delay:0.7s;}
 #wrap_header .indent .hamburguer.active .risco.risco1{transition-delay:0s;}
 #wrap_header .indent .hamburguer.active .risco.risco2{transition-delay:0.1s;}
-#wrap_header .indent .hamburguer.active .risco.risco3{transition-delay:0.2s;}
+#wrap_header .indent .hamburguer.active .risco.risco3{transition-delay:0.2s;}*/
+#wrap_header .indent .pokeball {width: 50px; height: 50px; background: #b71c1c; border-radius: 50%; box-shadow: inset 0 -36px 0 -18px #fff, inset 0 -38px 0 -17px #000, 0 0 0 3px #000; position:absolute; top:20px; right:5%; transition:all 1s ease .7s; cursor:pointer;}
+#wrap_header .indent .pokeball.active{right:-5%; transform:rotate(360deg); transition:all 1s ease}
+#wrap_header .indent .pokeball:before{content: ""; position: absolute; height: 5px; width: 5px; border-radius: 50%; background: #fff; top: 27px; left: 22.5px; border: 1px solid rgba(0,0,0,.4); box-shadow: 2px 0 0 0 rgba(0,0,0,0.2), 0 0 0 5px #fff, 0 0 0 8px #000;}
+#wrap_header .indent .pokeball:after{display: block; content: ""; position: absolute; width: 100%; height:100%; border-radius: 50%; box-shadow:  inset -7px 0 5px 0 rgba(0,0,0,.4);}
 #wrap_header .indent .menu{transition:all 1s ease .5s; box-shadow: -2px 0px 16px -1px red; right: -100%; top:0; position:fixed; background:red; padding: 20px; width:400px; height:100vh; z-index:9;}
-#wrap_header .indent .menu.active{right:0; top:0; transition:all 1s ease;}
+#wrap_header .indent .menu.active{right:0; top:0; transition:all 1s ease .1s;}
 #wrap_header .indent .menu ul{display:flex; flex-direction:column; padding-top:40px}
 #wrap_header .indent .menu ul li{margin:15px 0; cursor:pointer;}
 #wrap_header .indent .menu .fechar{cursor:pointer; width:30px; height:30px; position:absolute; right: -200px; top: 30px; transition: all 1.5s ease; display:flex; align-items:center;}
@@ -40,3 +44,5 @@ li{font-size:18px;}
 #wrap_header .indent .menu .fechar .risco{width:100%; height:3px; background:#fff; position:absolute;}
 #wrap_header .indent .menu .fechar .risco.risco1{transform:rotate(45deg);}
 #wrap_header .indent .menu .fechar .risco.risco2{transform:rotate(135deg);}
+
+
