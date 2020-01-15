@@ -22,7 +22,7 @@ li{font-size:18px;}
 #wrap_header .indent{padding:30px 0; display:flex; justify-content:space-between; align-items:center;}
 #wrap_header .indent .logo{}
 #wrap_header .indent .logo h2{}
-#wrap_header .indent .hamburguer{width:30px; height:20px; display:flex; flex-direction:column; justify-content:space-between;}
+#wrap_header .indent .hamburguer{cursor:pointer; width:30px; height:20px; display:flex; flex-direction:column; justify-content:space-between;}
 #wrap_header .indent .hamburguer .risco{width:100%; height:3px; background:#fff; transition:all .5s ease;}
 #wrap_header .indent .hamburguer.active .risco{transform:translateX(200px);}
 #wrap_header .indent .hamburguer .risco.risco1{transition-delay:0.9s;}
@@ -34,8 +34,8 @@ li{font-size:18px;}
 #wrap_header .indent .menu{transition:all 1s ease .5s; box-shadow: -2px 0px 16px -1px red; right: -100%; top:0; position:fixed; background:red; padding: 20px; width:400px; height:100vh; z-index:9;}
 #wrap_header .indent .menu.active{right:0; top:0; transition:all 1s ease;}
 #wrap_header .indent .menu ul{display:flex; flex-direction:column; padding-top:40px}
-#wrap_header .indent .menu ul li{margin:15px 0;}
-#wrap_header .indent .menu .fechar{width:30px; height:30px; position:absolute; right: -200px; top: 30px; transition: all 1.5s ease; display:flex; align-items:center;}
+#wrap_header .indent .menu ul li{margin:15px 0; cursor:pointer;}
+#wrap_header .indent .menu .fechar{cursor:pointer; width:30px; height:30px; position:absolute; right: -200px; top: 30px; transition: all 1.5s ease; display:flex; align-items:center;}
 #wrap_header .indent .menu .fechar.active{right: 80px; transform:rotate(-1080deg); transition:all 1.5s ease .5s;}
 #wrap_header .indent .menu .fechar .risco{width:100%; height:3px; background:#fff; position:absolute;}
 #wrap_header .indent .menu .fechar .risco.risco1{transform:rotate(45deg);}

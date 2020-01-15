@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import Link from 'next/link';
 
 class Header extends Component{
 	constructor(props) {
@@ -31,10 +32,18 @@ class Header extends Component{
 							<div className="risco risco2"></div>
 						</div>
 						<ul>
-							<li>Home</li>
-							<li>Pokedéx</li>
-							<li>Itens</li>
-							<li>Cidades</li>
+							<Link href="/">
+								<li onClick={this.changeSkin}>Home</li>
+							</Link>
+							<Link href="/pokedex">
+								<li onClick={this.changeSkin}>Pokedéx</li>
+							</Link>
+							<Link href="/itens">
+								<li onClick={this.changeSkin}>Itens</li>
+							</Link>
+							<Link href="/cidades">
+								<li onClick={this.changeSkin}>Cidades</li>
+							</Link>
 						</ul>
 					</div>
 
