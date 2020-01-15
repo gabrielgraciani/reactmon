@@ -31,7 +31,7 @@ li{font-size:18px;}
 #wrap_header .indent .hamburguer.active .risco.risco1{transition-delay:0s;}
 #wrap_header .indent .hamburguer.active .risco.risco2{transition-delay:0.1s;}
 #wrap_header .indent .hamburguer.active .risco.risco3{transition-delay:0.2s;}
-#wrap_header .indent .menu{transition:all 1s ease .5s; right: -100%; top:0; position:fixed; background:red; padding: 20px; width:400px; height:100vh; z-index:9;}
+#wrap_header .indent .menu{transition:all 1s ease .5s; box-shadow: -2px 0px 16px -1px red; right: -100%; top:0; position:fixed; background:red; padding: 20px; width:400px; height:100vh; z-index:9;}
 #wrap_header .indent .menu.active{right:0; top:0; transition:all 1s ease;}
 #wrap_header .indent .menu ul{display:flex; flex-direction:column; padding-top:40px}
 #wrap_header .indent .menu ul li{margin:15px 0;}
