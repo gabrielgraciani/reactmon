@@ -1,6 +1,6 @@
 *{margin:0; padding:0;}
 *, *:before, *:after {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-body, input, textarea {font-family: Arial, Helvetica, sans-serif;}
+body, input, textarea {font-family: Arial, Helvetica, sans-serif; overflow-X:hidden;}
 a {color:inherit; text-decoration:none;}
 a:hover {text-decoration:none;}
 ul, li {list-style:none; margin:0;} fieldset {border:0;} textarea {resize:none;}
@@ -18,7 +18,7 @@ li{font-size:18px;}
 
 .indent{width:90%; max-width:1600px; margin:0 auto;}
 
-#wrap_header{width:100%; position:relative; background:#000; overflow:hidden;}
+#wrap_header{width:100%; position:relative; background:#000;}
 #wrap_header .indent{padding:30px 0; display:flex; justify-content:space-between; align-items:center;}
 #wrap_header .indent .logo{}
 #wrap_header .indent .logo h2{}
@@ -46,3 +46,17 @@ li{font-size:18px;}
 #wrap_header .indent .menu .fechar .risco.risco2{transform:rotate(135deg);}
 #wrap_header .indent .pokeball:hover:before{background: #000; box-shadow: 2px 0 0 0 rgba(0,0,0,0.2), 0 0 0 5px #b71c1c, 0 0 0 8px #000;}
 
+#wrap_pokemons{width:100%; position:relative; margin-top:50px;}
+#wrap_pokemons .indent{display:grid; grid-template-columns: repeat(auto-fit, minmax(30%, 30%)); grid-gap: 3%;}
+#wrap_pokemons .indent .item{position:relative; width:100%; height:500px; box-shadow: 0 0 10px #c0c0c0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+#wrap_pokemons .indent .item img.fundo{width:95%; animation: rotate 6s infinite; opacity:0.5}
+@keyframes rotate{
+	0%{transform:rotate(0);}
+	100%{transform:rotate(360deg);}
+}
+#wrap_pokemons .indent .item img.pokemon{position:absolute; top:20px; left:50%; transform:translate(-50%, 0%); width:100%;}
+#wrap_pokemons .indent .item .nome{position:absolute; bottom:20%}
+#wrap_pokemons .indent .item .nome h2{color:#000;}
+#wrap_pokemons .indent .item .tipo{position:absolute; bottom: 10%; display:flex;}
+#wrap_pokemons .indent .item .tipo .tip{padding:10px; margin:0 5px; background:#000; border-radius:10px;}
+#wrap_pokemons .indent .item .tipo .tip h4{}
