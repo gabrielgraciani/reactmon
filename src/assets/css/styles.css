@@ -18,7 +18,7 @@ li{font-size:18px;}
 
 .indent{width:90%; max-width:1600px; margin:0 auto;}
 
-#wrap_header{width:100%; position:relative; background:#000;}
+#wrap_header{width:100%; position:relative; background:#000; z-index:99;}
 #wrap_header .indent{padding:30px 0; display:flex; justify-content:space-between; align-items:center;}
 #wrap_header .indent .logo{}
 #wrap_header .indent .logo h2{}
