@@ -49,15 +49,15 @@ li{font-size:18px;}
 #wrap_pokemons{width:100%; position:relative; margin-top:50px;}
 #wrap_pokemons .indent{display:grid; grid-template-columns: repeat(auto-fit, minmax(30%, 30%)); grid-gap: 3%;}
 #wrap_pokemons .indent .item{position:relative; overflow:hidden; width:100%; height:500px; box-shadow: 0 0 10px #c0c0c0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
-#wrap_pokemons .indent .item img.fundo{width:95%; animation: rotate 6s infinite; opacity:0.5}
+#wrap_pokemons .indent .item img.fundo{position:absolute; top:50%; margin-top:-203px; left:50%; margin-left: -203px; width:95%; animation: rotate 6s linear infinite; opacity:0.5}
 @keyframes rotate{
 	0%{transform:rotate(0);}
-	100%{transform:rotate(360deg);}
+	100%{transform:rotate(360deg)}
 }
-#wrap_pokemons .indent .item img.pokemon{position:absolute; top:20px; left:50%; transform:translate(-50%, 0%); width:100%;}
-#wrap_pokemons .indent .item .nome{position:absolute; bottom:20%}
+#wrap_pokemons .indent .item img.pokemon{width:100%;}
+#wrap_pokemons .indent .item .nome{}
 #wrap_pokemons .indent .item .nome h2{color:#000;}
-#wrap_pokemons .indent .item .tipo{position:absolute; bottom: 10%; display:flex;}
+#wrap_pokemons .indent .item .tipo{display:flex;}
 #wrap_pokemons .indent .item .tipo .tip{padding:10px; margin:0 5px; background:#000; border-radius:10px;}
 #wrap_pokemons .indent .item .tipo .tip h4{}
 
