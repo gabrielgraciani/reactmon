@@ -7,7 +7,7 @@ import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 const Home = () => (
   <div id="wrap_pokemons">
 
-	  <Carousel showThumbs={false} infiniteLoop={true}>
+	  <Carousel showThumbs={false} infiniteLoop={true} showStatus={false} autoplay={true} interval={3000}>
 		  <div style={{ height: "200px", color: "#fff" }}>this is slide 1</div>
 		  <div style={{ height: "200px", color: "#fff" }}>this is slide 2</div>
 		  <div style={{ height: "200px", color: "#fff" }}>this is slide 3</div>
