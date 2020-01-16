@@ -1,6 +1,7 @@
 import App from 'next/app';
 import Head from 'next/head';
 import Header from '../components/header';
+import Footer from '../components/footer';
 
 import "../assets/css/styles.css";
 
@@ -28,6 +29,7 @@ class MovieApp extends App{
 					<Component {...pageProps} />
 				</div>
 
+				<Footer />
 			</div>
 		)
 	}
