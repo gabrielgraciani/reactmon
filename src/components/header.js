@@ -1,7 +1,30 @@
-import React, {useState} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import Link from 'next/link';
 
+function useVerificarClick(ref) {
+	function handleClick(event) {
+		if (ref.current && !ref.current.contains(event.target)) {
+			const element = document.getElementById("pokebola");
+			const element2 = document.getElementById("fechar");
+			const element3 = document.getElementById("menu");
+			element.classList.remove("active");
+			element2.classList.remove("active");
+			element3.classList.remove("active");
+		}
+	}
+
+	useEffect(() => {
+		document.addEventListener("mousedown", handleClick);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClick);
+		};
+	});
+}
+
 function Header(){
+	const wrapperRef = useRef(null);
+	useVerificarClick(wrapperRef);
 
 	const [activeClass, setActiveClass] = useState('');
 
@@ -16,7 +39,7 @@ function Header(){
 					<h2>Reactmon</h2>
 				</div>
 
-				<div className={`pokeball ${activeClass}`} onClick={change}></div>
+				<div className={`pokeball ${activeClass}`} onClick={change} id="pokebola"></div>
 
 				{/*<div className={`hamburguer ${activeClass}`} onClick={change}>
 					<div className="risco risco1"></div>
@@ -24,8 +47,8 @@ function Header(){
 					<div className="risco risco3"></div>
 				</div>*/}
 
-				<div className={`menu ${activeClass}`}>
-					<div className={`fechar ${activeClass}`}  onClick={change}>
+				<div className={`menu ${activeClass}`} ref={wrapperRef} id="menu">
+					<div className={`fechar ${activeClass}`} id="fechar"  onClick={change}>
 						<div className="risco risco1"></div>
 						<div className="risco risco2"></div>
 					</div>
