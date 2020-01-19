@@ -52,9 +52,9 @@ li{font-size:18px;}
 
 #wrap_pokemons{width:100%; position:relative; margin-top:50px;}
 #wrap_pokemons .indent{display:grid; grid-template-columns: repeat(auto-fit, minmax(30%, 30%)); grid-gap: 40px 3%;}
-#wrap_pokemons .indent .item{transition:all .4s ease; background:#f2f2f2; position:relative; overflow:hidden; width:100%; padding:20px 10px; box-shadow: 0 0 10px #c0c0c0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
+#wrap_pokemons .indent .item{transition:all .4s ease; background:#f2f2f2; position:relative; overflow:hidden; width:100%; padding:20px; box-shadow: 0 0 10px #c0c0c0; display:flex; flex-direction:column; align-items:center; justify-content:center;}
 #wrap_pokemons .indent .item:hover{transform:translateY(-3%); box-shadow:0 0 10px #666; }
-#wrap_pokemons .indent .item img.fundo{position:absolute; z-index:1; top:50%; margin-top:-203px; left:50%; margin-left: -203px; width:95%; animation: rotate 6s linear infinite; opacity:0.5}
+#wrap_pokemons .indent .item img.fundo{position:absolute; z-index:1; top:50%; margin-top:-45%; left:50%; margin-left: -45%; width:90%; animation: rotate 6s linear infinite; opacity:0.5}
 @keyframes rotate{
 	0%{transform:rotate(0);}
 	100%{transform:rotate(360deg)}
@@ -77,9 +77,9 @@ li{font-size:18px;}
 #wrap_pokemons .indent .item .tipo .tip.ground{background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);}
 #wrap_pokemons .indent .item .tipo .tip.fairy{background:#fdb9e9;}
 #wrap_pokemons .indent .item:after{top:0; left:0; content:''; position:absolute; width:0; height:0; box-sizing: inherit; border:2px solid transparent;}
-#wrap_pokemons .indent .item:hover:after{width:100%; height:100%; border-top-color: #000; border-right-color: #000; transition: width .25s ease-out, height .25s ease-out .25s;}
+#wrap_pokemons .indent .item:hover:after{width:100%; height:100%; border-top-color: #999; border-right-color: #999; transition: width .25s ease-out, height .25s ease-out .25s;}
 #wrap_pokemons .indent .item:before{bottom:0; right:0; content:''; position:absolute; width:0; height:0; box-sizing: inherit; border:2px solid transparent;}
-#wrap_pokemons .indent .item:hover:before{width:100%; height:100%; border-bottom-color: #000; border-left-color: #000; transition: width .25s ease-out, height .25s ease-out .25s;}
+#wrap_pokemons .indent .item:hover:before{width:100%; height:100%; border-bottom-color: #999; border-left-color: #999; transition: width .25s ease-out, height .25s ease-out .25s;}
 
 
 #wrap_footer{width:100%; position:relative; background:#000; margin-top:50px; box-shadow:0 0 5px #000;}
