@@ -69,13 +69,19 @@ li{font-size:18px;}
 #wrap_pokemons .indent .item .tipo .tip.grass{background:#9bcc50;}
 #wrap_pokemons .indent .item .tipo .tip.water{background:#4592c4;}
 #wrap_pokemons .indent .item .tipo .tip.fire{background:#fd7d24;}
-#wrap_pokemons .indent .item .tipo .tip.eletric{background:#eed535;}
+#wrap_pokemons .indent .item .tipo .tip.electric{background:#eed535;}
 #wrap_pokemons .indent .item .tipo .tip.poison{background:#b97fc9;}
 #wrap_pokemons .indent .item .tipo .tip.bug{background:#729f3f;}
 #wrap_pokemons .indent .item .tipo .tip.flying{background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);}
 #wrap_pokemons .indent .item .tipo .tip.normal{background:#a4acaf;}
 #wrap_pokemons .indent .item .tipo .tip.ground{background: linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);}
 #wrap_pokemons .indent .item .tipo .tip.fairy{background:#fdb9e9;}
+#wrap_pokemons .indent .item .tipo .tip.fighting{background:#d56723;}
+#wrap_pokemons .indent .item .tipo .tip.psychic{background:#f366b9;}
+#wrap_pokemons .indent .item .tipo .tip.rock{background:#a38c21;}
+#wrap_pokemons .indent .item .tipo .tip.ice{background:#51c4e7;}
+#wrap_pokemons .indent .item .tipo .tip.ghost{background:#7b62a3;}
+#wrap_pokemons .indent .item .tipo .tip.dragon{background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);}
 #wrap_pokemons .indent .item:after{top:0; left:0; content:''; position:absolute; width:0; height:0; box-sizing: inherit; border:2px solid transparent;}
 #wrap_pokemons .indent .item:hover:after{width:100%; height:100%; border-top-color: #999; border-right-color: #999; transition: width .25s ease-out, height .25s ease-out .25s;}
 #wrap_pokemons .indent .item:before{bottom:0; right:0; content:''; position:absolute; width:0; height:0; box-sizing: inherit; border:2px solid transparent;}
