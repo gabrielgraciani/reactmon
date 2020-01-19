@@ -1,36 +1,34 @@
 import React, {useState, useRef, useEffect} from 'react';
 import Link from 'next/link';
 
-function useVerificarClick(ref) {
-	function handleClick(event) {
-		if (ref.current && !ref.current.contains(event.target)) {
-			const element = document.getElementById("pokebola");
-			const element2 = document.getElementById("fechar");
-			const element3 = document.getElementById("menu");
-			element.classList.remove("active");
-			element2.classList.remove("active");
-			element3.classList.remove("active");
-		}
-	}
-
-	useEffect(() => {
-		document.addEventListener("mousedown", handleClick);
-
-		return () => {
-			document.removeEventListener("mousedown", handleClick);
-		};
-	});
-}
-
-function Header(){
+const Header = () =>{
 	const wrapperRef = useRef(null);
-	useVerificarClick(wrapperRef);
-
 	const [activeClass, setActiveClass] = useState('');
 
 	const change = () => {
 		setActiveClass(activeClass === '' ? 'active' : '');
 	};
+
+	const useVerificarClick = (ref) => {
+		const handleClick = (event) =>{
+			if (ref.current && !ref.current.contains(event.target)) {
+				setActiveClass('');
+			}
+		};
+
+		const escFunction = (event) =>{
+			if(event.keyCode === 27){
+				setActiveClass('');
+			}
+		};
+
+		useEffect(() => {
+			document.addEventListener("mousedown", handleClick);
+			document.addEventListener("keydown", escFunction, false);
+		});
+	};
+
+	useVerificarClick(wrapperRef);
 
 	return(
 		<div id="wrap_header">
