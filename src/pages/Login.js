@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {useState, useEffect} from 'react';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -15,56 +15,55 @@ const config = {
 // Initialize Firebase
 firebase.initializeApp(config);
 
-class Login extends Component {
-	state = {
+const login = () => {
+	const provider = new firebase.auth.GithubAuthProvider();
+	firebase.auth().signInWithRedirect(provider)
+};
+
+function Login () {
+	const [userInfo, setUserInfo] = useState({
 		isUserLoggedIn: false,
 		user: null
-	}
+	});
 
-	componentDidMount () {
+	const { isUserLoggedIn, user } = userInfo;
+
+	useEffect(() => {
 		firebase.auth().onAuthStateChanged((user) => {
-			console.log('dados do usuário:', user)
-			this.setState({
+			console.log('dados do usuário:', user);
+			setUserInfo({
 				isUserLoggedIn: !!user,
 				user
 			})
 		})
-	}
+	}, []);
 
-	login () {
-		const provider = new firebase.auth.GithubAuthProvider()
-		firebase.auth().signInWithRedirect(provider)
-	}
-
-	logout = () => {
+	const logout = () => {
 		firebase.auth().signOut().then(() => {
-			console.log('deslogou!')
-			this.setState({
+			console.log('deslogou!');
+			setUserInfo({
 				isUserLoggedIn: false,
 				user: null
 			})
 		})
-	}
+	};
 
-	render(){
-		const {isUserLoggedIn, user} = this.state;
-		return(
-			<div>
-				{isUserLoggedIn && (
-					<div>
-						{user.displayName}
-						<button onClick={this.logout}>Sair</button>
-					</div>
-				)}
 
-				{!isUserLoggedIn && (
-					<button onClick={this.login}>Login</button>
-				)}
+	return(
+		<div>
+			{isUserLoggedIn && (
+				<div>
+					{user.displayName}
+					<button onClick={logout}>Sair</button>
+				</div>
+			)}
 
-			</div>
-		)
-	}
+			{!isUserLoggedIn && (
+				<button onClick={login}>Login</button>
+			)}
 
+		</div>
+	)
 }
 
 export default Login;
