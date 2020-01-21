@@ -12,7 +12,6 @@ function Home(){
 			const result = await axios(
 				'http://localhost:3000/api/v1/pokemon',
 			);
-			console.log(result);
 			setData(result.data);
 		};
 		fetchData();
@@ -43,9 +42,9 @@ function Home(){
 							<h2>{item.name}</h2>
 						</div>
 						<div className="tipo">
-							{item.type.map(teste => (
-								<div className={`tip ${teste.toLowerCase()}`}>
-									<h4>{teste}</h4>
+							{item.type.map((tipo, index) => (
+								<div className={`tip ${tipo.toLowerCase()}`} key={index}>
+									<h4>{tipo}</h4>
 								</div>
 							))}
 						</div>

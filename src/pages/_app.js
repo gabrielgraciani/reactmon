@@ -2,8 +2,12 @@ import App from 'next/app';
 import Head from 'next/head';
 import Header from '../components/header';
 import Footer from '../components/footer';
-
 import "../assets/css/styles.css";
+import {Provider} from 'react-redux';
+import configureStore from '../redux/configure-store';
+
+const store = configureStore();
+
 
 class MovieApp extends App{
 
@@ -18,19 +22,21 @@ class MovieApp extends App{
 		const {Component, pageProps} = this.props;
 
 		return(
-			<div id="wrapper_body">
-				<Head>
-					<title>Reactmon</title>
-				</Head>
+			<Provider store={store}>
+				<div id="wrapper_body">
+					<Head>
+						<title>Reactmon</title>
+					</Head>
 
-				<Header />
+					<Header />
 
-				<div id="wrapper_components">
-					<Component {...pageProps} />
+					<div id="wrapper_components">
+						<Component {...pageProps} />
+					</div>
+
+					<Footer />
 				</div>
-
-				<Footer />
-			</div>
+			</Provider>
 		)
 	}
 }
