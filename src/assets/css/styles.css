@@ -59,6 +59,11 @@ li{font-size:18px;}
 	0%{transform:rotate(0);}
 	100%{transform:rotate(360deg)}
 }
+#wrap_pokemons .indent .item:nth-child(even) img.fundo{animation: anti-rotate 6s linear infinite;}
+@keyframes anti-rotate{
+	0%{transform:rotate(0);}
+	100%{transform:rotate(-360deg)}
+}
 #wrap_pokemons .indent .item .imagem{width:100%; position:relative; z-index:9;}
 #wrap_pokemons .indent .item img.pokemon{width:100%;}
 #wrap_pokemons .indent .item .nome{margin:10px 0 20px 0; position:relative; z-index:9;}
