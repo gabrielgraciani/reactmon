@@ -65,6 +65,33 @@ function Login () {
 	/*send();*/
 
 
+	//teste formulario
+	const [values, setValues] = useState({
+		nome: '',
+		imagem: '',
+		tipo:{
+			nome_tipo: ""
+		},
+		altura: '',
+		peso: '',
+		fraquezas: {
+			nome_fraqueza: ""
+		},
+		evolucoes: {
+			prox_evol: ''
+		}
+	});
+	const handleChange = (e) => setValues({
+		...values,
+		[e.target.name]: [e.target.value],
+	});
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(values);
+	};
+
+
 
 	return(
 		<div>
@@ -94,26 +121,28 @@ function Login () {
 				<div className="indent">
 					<form>
 						<div className="item">
-							<input type="text" name="" value="" placeholder="Nome" />
+							<input type="text" name="nome" value={values.nome} onChange={handleChange} placeholder="Nome" />
 						</div>
 						<div className="item">
-							<input type="text" name="" value="" placeholder="Imagem" />
+							<input type="text" name="imagem" value={values.imagem} onChange={handleChange} placeholder="Imagem" />
 						</div>
 						<div className="item">
-							<input type="text" name="" value="" placeholder="Tipo" />
+							<input type="text" name="tipo" value={values.tipo} onChange={handleChange} placeholder="Tipo" />
 						</div>
 						<div className="item">
-							<input type="text" name="" value="" placeholder="Altura" />
+							<input type="text" name="altura" value={values.altura} onChange={handleChange} placeholder="Altura" />
 						</div>
 						<div className="item">
-							<input type="text" name="" value="" placeholder="Peso" />
+							<input type="text" name="peso" value={values.peso} onChange={handleChange} placeholder="Peso" />
 						</div>
 						<div className="item">
-							<input type="text" name="" value="" placeholder="Fraquezas" />
+							<input type="text" name="fraquezas" value={values.fraquezas} onChange={handleChange} placeholder="Fraquezas" />
 						</div>
 						<div className="item">
-							<input type="text" name="" value="" placeholder="Próximas evoluções" />
+							<input type="text" name="evolucoes" value={values.evolucoes} onChange={handleChange} placeholder="Próximas evoluções" />
 						</div>
+
+						<button onClick={handleSubmit}>Salvar</button>
 					</form>
 				</div>
 			</div>
