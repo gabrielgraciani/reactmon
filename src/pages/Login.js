@@ -77,9 +77,7 @@ function Login () {
 	const [values, setValues] = useState({
 		nome: '',
 		imagem: '',
-		tipo:{
-			nome_tipo: ""
-		},
+		tipo:[],
 		altura: '',
 		peso: '',
 		fraquezas: {
@@ -89,13 +87,15 @@ function Login () {
 			prox_evol: ''
 		}
 	});
+
 	const handleChange = (e) => setValues({
 		...values,
-		[e.target.name]: e.target.value,
+		[e.target.name]: e.target.value
 	});
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		values.tipo = checkedItems;
 		console.log(values);
 	};
 
@@ -115,12 +115,14 @@ function Login () {
 		{
 			name: "check-box-1",
 			key: "checkBox1",
-			label: "Check Box 1"
+			label: "Check Box 1",
+			value: 'teste1'
 		},
 		{
 			name: "check-box-2",
 			key: "checkBox2",
-			label: "Check Box 2"
+			label: "Check Box 2",
+			value: 'teste2'
 		}
 	];
 
