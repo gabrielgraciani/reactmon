@@ -51,6 +51,20 @@ function Login () {
 		});
 	}, []);
 
+	async function send(){
+		try{
+			await db.collection('pokemon').add({
+				id: Math.random(),
+				name: 'gabriel',
+				createdAt: firebase.firestore.FieldValue.serverTimestamp()
+			})
+		} catch(e){
+			console.log('erro ao salvar pokemon: ', e);
+		}
+	}
+	/*send();*/
+
+
 
 	return(
 		<div>
