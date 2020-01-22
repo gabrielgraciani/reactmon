@@ -89,6 +89,34 @@ function Login () {
 					</div>
 				))}
 			</div>
+
+			<div id="wrap_formulario">
+				<div className="indent">
+					<form>
+						<div className="item">
+							<input type="text" name="" value="" placeholder="Nome" />
+						</div>
+						<div className="item">
+							<input type="text" name="" value="" placeholder="Imagem" />
+						</div>
+						<div className="item">
+							<input type="text" name="" value="" placeholder="Tipo" />
+						</div>
+						<div className="item">
+							<input type="text" name="" value="" placeholder="Altura" />
+						</div>
+						<div className="item">
+							<input type="text" name="" value="" placeholder="Peso" />
+						</div>
+						<div className="item">
+							<input type="text" name="" value="" placeholder="Fraquezas" />
+						</div>
+						<div className="item">
+							<input type="text" name="" value="" placeholder="Próximas evoluções" />
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	)
 }

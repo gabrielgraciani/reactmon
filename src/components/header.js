@@ -63,6 +63,9 @@ const Header = () =>{
 						<Link href="/cidades">
 							<li onClick={change}>Cidades</li>
 						</Link>
+						<Link href="/login">
+							<li onClick={change}>Login</li>
+						</Link>
 					</ul>
 				</div>
 
