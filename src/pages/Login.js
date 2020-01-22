@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import firebase from '../services/firebase';
+import firebase, {db} from '../services/firebase';
 
 
 const login = () => {
@@ -36,6 +36,22 @@ function Login () {
 	};
 
 
+	const [pokemonDB, setPokemonDB] = useState([]);
+	//pegar os dados de uma tabela no firestore
+	useEffect(() => {
+		let pokemon = [];
+		db.collection('pokemon').get().then(querySnapshot => {
+			querySnapshot.forEach(doc => {
+				pokemon.push({
+					id: doc.id,
+					...doc.data()
+				})
+			});
+			setPokemonDB(pokemon);
+		});
+	}, []);
+
+
 	return(
 		<div>
 			{isUserLoggedIn && (
@@ -49,6 +65,16 @@ function Login () {
 				<button onClick={login}>Login</button>
 			)}
 
+
+			<div>
+				pokemon teste
+
+				{pokemonDB.map((item) => (
+					<div key={item.id}>
+						{item.name}
+					</div>
+				))}
+			</div>
 		</div>
 	)
 }
