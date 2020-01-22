@@ -50,16 +50,16 @@ function Formulario() {
 
 	const checkboxes = [
 		{
-			name: "check-box-1",
-			key: "checkBox1",
-			label: "Check Box 1",
-			value: 'teste1'
+			name: "fogo",
+			key: "1",
+			label: "Fogo",
+			value: 'Fogo'
 		},
 		{
-			name: "check-box-2",
-			key: "checkBox2",
-			label: "Check Box 2",
-			value: 'teste2'
+			name: "agua",
+			key: "2",
+			label: "Água",
+			value: 'Água'
 		}
 	];
 	return(
