@@ -94,30 +94,35 @@ function Formulario({change, activeClass}) {
 				</div>
 
 				<div className="item">
-					<input type="text" name="nome" value={values.nome} onChange={handleChange} placeholder="Nome"/>
+					<label htmlFor="nome">Nome</label>
+					<input type="text" name="nome" value={values.nome} onChange={handleChange} />
 				</div>
 				<div className="item">
+					<label htmlFor="imagem">Imagem</label>
 					<input type="text" name="imagem" value={values.imagem} onChange={handleChange}
 						   placeholder="Imagem"/>
 				</div>
 				<div className="item">
-					tipo pokemon:
-					{checkboxes.map(item => (
-						<label key={item.key}>
-							{item.name}
-							<Checkbox
-								name={item.name}
-								checked={checkedItems[item.name]}
-								onChange={handleChangeBox}
-							/>
-						</label>
-					))}
+					<label htmlFor="tipo">Tipo</label>
+					<div className="checkboxes">
+						{checkboxes.map(item => (
+							<label className="container" key={item.key}>{item.name}
+								<Checkbox name={item.name}
+										  checked={checkedItems[item.name]}
+										  onChange={handleChangeBox} />
+								<span className="checkmark"> </span>
+							</label>
+						))}
+					</div>
+
 				</div>
 				<div className="item">
+					<label htmlFor="altura">Altura</label>
 					<input type="text" name="altura" value={values.altura} onChange={handleChange}
 						   placeholder="Altura"/>
 				</div>
 				<div className="item">
+					<label htmlFor="peso">Peso</label>
 					<input type="text" name="peso" value={values.peso} onChange={handleChange} placeholder="Peso"/>
 				</div>
 				<div className="item">
