@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import firebase, {db} from '../../services/firebase';
 
 const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	console.log("Checkbox: ", name, checked);
@@ -30,12 +31,29 @@ function Formulario() {
 		[e.target.name]: e.target.value
 	});
 
-	const handleSubmit = (e) => {
+	const  handleSubmit = async (e) => {
 		e.preventDefault();
 		values.tipo = checkedItems;
 		console.log(values);
+		savePokemon();
 	};
 
+	async function savePokemon(){
+		try{
+			await db.collection('pokemon').add({
+				id: Math.random(),
+				nome: values.nome,
+				imagem: values.imagem,
+				altura: values.altura,
+				evolucoes: values.evolucoes,
+				fraquezas: values.fraquezas,
+				peso: values.peso,
+				tipo: values.tipo
+			})
+		} catch(e){
+			console.log('erro ao salvar pokemon: ', e);
+		}
+	}
 
 
 	const [checkedItems, setCheckedItems] = useState({});
