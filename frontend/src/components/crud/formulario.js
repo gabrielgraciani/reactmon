@@ -19,12 +19,8 @@ function Formulario({change, activeClass}) {
 		tipo:[],
 		altura: '',
 		peso: '',
-		fraquezas: {
-			nome_fraqueza: ""
-		},
-		evolucoes: {
-			prox_evol: ''
-		}
+		fraquezas: [],
+		evolucoes: []
 	});
 
 	const handleChange = (e) => setValues({
@@ -35,6 +31,7 @@ function Formulario({change, activeClass}) {
 	const  handleSubmit = async (e) => {
 		e.preventDefault();
 		values.tipo = checkedItems;
+		values.fraquezas = checkedItemsFraq;
 		console.log(values);
 		savePokemon();
 	};
@@ -58,6 +55,7 @@ function Formulario({change, activeClass}) {
 
 
 	const [checkedItems, setCheckedItems] = useState({});
+	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
 
 	const handleChangeBox = event => {
 		setCheckedItems({
@@ -66,8 +64,15 @@ function Formulario({change, activeClass}) {
 		});
 		console.log("checkedItems: ", checkedItems);
 	};
+	const handleChangeBoxFraq = event => {
+		setCheckedItemsFraq({
+			...checkedItemsFraq,
+			[event.target.name]: event.target.checked
+		});
+		console.log("checkedItemsFraq: ", checkedItemsFraq);
+	};
 
-	const checkboxes = [
+	const tipos = [
 		{
 			name: "fogo",
 			key: "1",
@@ -81,6 +86,22 @@ function Formulario({change, activeClass}) {
 			value: 'Água'
 		}
 	];
+
+	const fraquezas = [
+		{
+			name: "fogo",
+			key: "1",
+			label: "Fogo",
+			value: 'Fogo'
+		},
+		{
+			name: "agua",
+			key: "2",
+			label: "Água",
+			value: 'Água'
+		}
+	];
+
 	return(
 		<form id="wrap_formulario" className={`${activeClass}`}>
 			<div className="indent">
@@ -105,8 +126,8 @@ function Formulario({change, activeClass}) {
 				<div className="item">
 					<label htmlFor="tipo">Tipo</label>
 					<div className="checkboxes">
-						{checkboxes.map(item => (
-							<label className="container" key={item.key}>{item.name}
+						{tipos.map(item => (
+							<label className="container" key={item.key}>{item.label}
 								<Checkbox name={item.name}
 										  checked={checkedItems[item.name]}
 										  onChange={handleChangeBox} />
@@ -114,7 +135,6 @@ function Formulario({change, activeClass}) {
 							</label>
 						))}
 					</div>
-
 				</div>
 				<div className="item">
 					<label htmlFor="altura">Altura</label>
@@ -126,8 +146,18 @@ function Formulario({change, activeClass}) {
 					<input type="text" name="peso" value={values.peso} onChange={handleChange} placeholder="Peso"/>
 				</div>
 				<div className="item">
-					<input type="text" name="fraquezas" value={values.fraquezas} onChange={handleChange}
-						   placeholder="Fraquezas"/>
+					<label htmlFor="fraquezas">Fraquezas</label>
+					<div className="checkboxes">
+						{fraquezas.map(item => (
+							<label className="container" key={item.key}>{item.label}
+								<Checkbox name={item.name}
+										  checked={checkedItemsFraq[item.name]}
+										  onChange={handleChangeBoxFraq} />
+								<span className="checkmark"> </span>
+							</label>
+						))}
+					</div>
+
 				</div>
 				<div className="item">
 					<input type="text" name="evolucoes" value={values.evolucoes} onChange={handleChange}
