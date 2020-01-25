@@ -86,52 +86,110 @@ function Crud() {
 		}
 	];
 	return(
+		<>
 		<div id="wrap_formulario">
 			<div className="indent">
 				<div className="titulo">
-					<h2>Olá {nomeUser}</h2>
+					<h1>Olá {nomeUser}</h1>
 				</div>
-				<form>
-					<div className="item">
-						<input type="text" name="nome" value={values.nome} onChange={handleChange} placeholder="Nome"/>
-					</div>
-					<div className="item">
-						<input type="text" name="imagem" value={values.imagem} onChange={handleChange}
-							   placeholder="Imagem"/>
-					</div>
-					<div className="item">
-						tipo pokemon:
-						{checkboxes.map(item => (
-							<label key={item.key}>
-								{item.name}
-								<Checkbox
-									name={item.name}
-									checked={checkedItems[item.name]}
-									onChange={handleChangeBox}
-								/>
-							</label>
-						))}
-					</div>
-					<div className="item">
-						<input type="text" name="altura" value={values.altura} onChange={handleChange}
-							   placeholder="Altura"/>
-					</div>
-					<div className="item">
-						<input type="text" name="peso" value={values.peso} onChange={handleChange} placeholder="Peso"/>
-					</div>
-					<div className="item">
-						<input type="text" name="fraquezas" value={values.fraquezas} onChange={handleChange}
-							   placeholder="Fraquezas"/>
-					</div>
-					<div className="item">
-						<input type="text" name="evolucoes" value={values.evolucoes} onChange={handleChange}
-							   placeholder="Próximas evoluções"/>
+
+				<div id="wrap_tabela">
+					<div className="head">
+						<div className="titulo">
+							<h3>Pokemons</h3>
+						</div>
+
+						<div className="botoes">
+							<button>Criar Pokemon</button>
+						</div>
 					</div>
 
-					<button onClick={handleSubmit}>Salvar</button>
-				</form>
+					<div className="conteudo">
+						<div className="row thead">
+							<div className="item">ID</div>
+							<div className="item">Nome</div>
+							<div className="item">Imagem</div>
+							<div className="item">Tipo</div>
+							<div className="item">Altura</div>
+							<div className="item">Peso</div>
+							<div className="item">Fraquezas</div>
+							<div className="item">Evoluções</div>
+							<div className="item">Ações</div>
+						</div>
+
+						<div className="row">
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TTE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">
+								<div>edit</div>
+								<div>exc</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+
+
+		<form>
+			<div className="head">
+				<div className="titulo">
+					<h3>Pokemons</h3>
+				</div>
+
+				<div className="acoes">
+					<button>Criar Pokemon</button>
+				</div>
+			</div>
+
+			<div className="conteudo">
+				<div className="item">
+					<input type="text" name="nome" value={values.nome} onChange={handleChange} placeholder="Nome"/>
+				</div>
+				<div className="item">
+					<input type="text" name="imagem" value={values.imagem} onChange={handleChange}
+						   placeholder="Imagem"/>
+				</div>
+				<div className="item">
+					tipo pokemon:
+					{checkboxes.map(item => (
+						<label key={item.key}>
+							{item.name}
+							<Checkbox
+								name={item.name}
+								checked={checkedItems[item.name]}
+								onChange={handleChangeBox}
+							/>
+						</label>
+					))}
+				</div>
+				<div className="item">
+					<input type="text" name="altura" value={values.altura} onChange={handleChange}
+						   placeholder="Altura"/>
+				</div>
+				<div className="item">
+					<input type="text" name="peso" value={values.peso} onChange={handleChange} placeholder="Peso"/>
+				</div>
+				<div className="item">
+					<input type="text" name="fraquezas" value={values.fraquezas} onChange={handleChange}
+						   placeholder="Fraquezas"/>
+				</div>
+				<div className="item">
+					<input type="text" name="evolucoes" value={values.evolucoes} onChange={handleChange}
+						   placeholder="Próximas evoluções"/>
+				</div>
+
+				<button onClick={handleSubmit}>Salvar</button>
+			</div>
+
+		</form>
+		</>
 	)
 }
 
