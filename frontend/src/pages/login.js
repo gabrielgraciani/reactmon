@@ -6,8 +6,6 @@ import {AuthContext} from '../contexts/auth';
 function Login () {
 	const {login} = useContext(AuthContext);
 
-
-
 	return(
 		<div>
 			<button onClick={login}>Login</button>

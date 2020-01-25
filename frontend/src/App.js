@@ -16,7 +16,7 @@ const Pokedex = lazy(() => import('./pages/pokedex'));
 
 
 function App({location}) {
-	const {userInfo, setUserInfo} = useContext(AuthContext);
+	const {userInfo, setUserInfo, logout} = useContext(AuthContext);
 
 	const {isUserLoggedIn} = userInfo;
 
@@ -28,39 +28,39 @@ function App({location}) {
 				user,
 			})
 		})
+		window.logout = logout;
 	}, [setUserInfo]);
 
 	if(isUserLoggedIn){
-		console.log('usuario lgoado');
-		if(location.pathname === '/login'){
-			return <Redirect to="/crud" />
+		if(location.pathname === LOGIN){
+			return <Redirect to={CRUD} />
 		}
 	}
 	else{
-		console.log('usuario nao logado');
+		if(location.pathname === CRUD){
+			return <Redirect to={LOGIN} />
+		}
 	}
 
   return (
-		  <div id="wrapper_body">
-			  <Header />
+	  <div id="wrapper_body">
+		  <Header />
 
-			  <div id="wrapper_components">
-				  <Suspense fallback={'Carregando...'}>
-					  <Switch>
-						  <Route path={CIDADES} component={Cidades} />
-						  <Route path={CRUD} component={Crud} />
-						  <Route path={ITENS} component={Itens} />
-						  <Route path={LOGIN} component={Login} />
-						  <Route path={POKEDEX} component={Pokedex} />
-						  <Route component={Home} />
-					  </Switch>
-				  </Suspense>
-			  </div>
-
-
-
-			  <Footer />
+		  <div id="wrapper_components">
+			  <Suspense fallback={'Carregando...'}>
+				  <Switch>
+					  <Route path={CIDADES} component={Cidades} />
+					  <Route path={CRUD} component={Crud} />
+					  <Route path={ITENS} component={Itens} />
+					  <Route path={LOGIN} component={Login} />
+					  <Route path={POKEDEX} component={Pokedex} />
+					  <Route component={Home} />
+				  </Switch>
+			  </Suspense>
 		  </div>
+
+		  <Footer />
+	  </div>
   );
 }
 
