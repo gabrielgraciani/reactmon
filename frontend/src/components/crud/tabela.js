@@ -2,7 +2,8 @@ import React from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 
-function Tabela() {
+function Tabela({change}) {
+
 	return(
 		<div id="wrap_tabela">
 			<div className="head">
@@ -11,7 +12,7 @@ function Tabela() {
 				</div>
 
 				<div className="botoes">
-					<button>Criar Pokemon</button>
+					<button onClick={change}>Criar Pokemon</button>
 				</div>
 			</div>
 

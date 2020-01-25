@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {db} from 'services/firebase';
+import CloseIcon from '@material-ui/icons/Close';
 
 const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	console.log("Checkbox: ", name, checked);
@@ -9,7 +10,7 @@ const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	);
 };
 
-function Formulario() {
+function Formulario({change, activeClass}) {
 	//teste formulario
 	//USAR O USECALLBACK
 	const [values, setValues] = useState({
@@ -81,8 +82,17 @@ function Formulario() {
 		}
 	];
 	return(
-		<form>
-			<div className="conteudo">
+		<form id="wrap_formulario" className={`${activeClass}`}>
+			<div className="indent">
+				<div className="head">
+					<div className="titulo">
+						<h3>Criar Pokemon</h3>
+					</div>
+					<div className="fechar">
+						<CloseIcon onClick={change} />
+					</div>
+				</div>
+
 				<div className="item">
 					<input type="text" name="nome" value={values.nome} onChange={handleChange} placeholder="Nome"/>
 				</div>
