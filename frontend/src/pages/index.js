@@ -1,17 +1,15 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Background from '../assets/images/bg-item.png';
-import Pokemon from '../assets/images/venusaur.png';
-import { Carousel } from "react-responsive-carousel";
-import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Home(){
 	const [data, setData] = useState({ pokemon: [] });
+
+
 	useEffect(() => {
 		const fetchData = async () => {
 			const result = await axios(
-				'http://localhost:3000/api/v1/pokemon',
-			);
+				'http://localhost:8080/api/v1/pokemon/');
 			setData(result.data);
 		};
 		fetchData();
@@ -19,11 +17,9 @@ function Home(){
 	return(
 		<>
 		<div id="wrap_banner">
-			<Carousel showThumbs={false} infiniteLoop={true} showStatus={false} autoplay={true} interval={3000}>
-				<div className="item">this is slide 1</div>
-				<div className="item">this is slide 2</div>
-				<div className="item">this is slide 3</div>
-			</Carousel>
+			<div style={{width:'100%', height:'500px', background: 'red'}}>
+				carousel
+			</div>
 		</div>
 
 		<ul>
@@ -34,9 +30,9 @@ function Home(){
 			<div className="indent">
 				{data.pokemon.map(item => (
 					<div className="item" key={item.id}>
-						<img src={`${Background}`} className="fundo" />
+						<img src={`${Background}`} className="fundo" alt="pokebola" />
 						<div className="imagem">
-							<img src={item.img} className="pokemon" />
+							<img src={item.img} className="pokemon" alt={item.name} />
 						</div>
 						<div className="nome">
 							<h2>{item.name}</h2>

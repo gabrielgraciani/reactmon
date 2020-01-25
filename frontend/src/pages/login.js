@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import firebase, {db} from '../services/firebase';
+import firebase from '../services/firebase';
 import Formulario from '../components/login/formulario';
 import PokemonList from '../components/login/pokemonList';
 

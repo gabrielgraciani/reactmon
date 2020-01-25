@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import firebase, {db} from '../../services/firebase';
+import {db} from '../../services/firebase';
 
 function PokemonList(){
 
@@ -17,19 +17,6 @@ function PokemonList(){
 			setPokemonDB(pokemon);
 		});
 	}, []);
-
-	async function send(){
-		try{
-			await db.collection('pokemon').add({
-				id: Math.random(),
-				name: 'gabriel',
-				createdAt: firebase.firestore.FieldValue.serverTimestamp()
-			})
-		} catch(e){
-			console.log('erro ao salvar pokemon: ', e);
-		}
-	}
-	/*send();*/
 
 	return(
 		<div>

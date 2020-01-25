@@ -1,5 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
-import Link from 'next/link';
+import {Link} from 'react-router-dom';
+import {CIDADES, HOME, ITENS, LOGIN, POKEDEX} from '../routes';
 
 const Header = () =>{
 	const wrapperRef = useRef(null);
@@ -34,7 +35,9 @@ const Header = () =>{
 		<div id="wrap_header">
 			<div className="indent">
 				<div className="logo">
-					<h2>Reactmon</h2>
+					<Link to={HOME}>
+						<h2>Reactmon</h2>
+					</Link>
 				</div>
 
 				<div className={`pokeball ${activeClass}`} onClick={change} id="pokebola"></div>
@@ -51,19 +54,19 @@ const Header = () =>{
 						<div className="risco risco2"></div>
 					</div>
 					<ul>
-						<Link href="/">
+						<Link to={HOME}>
 							<li onClick={change}>Home</li>
 						</Link>
-						<Link href="/pokedex">
+						<Link to={POKEDEX}>
 							<li onClick={change}>Pokedéx</li>
 						</Link>
-						<Link href="/itens">
+						<Link to={ITENS}>
 							<li onClick={change}>Itens</li>
 						</Link>
-						<Link href="/cidades">
+						<Link to={CIDADES}>
 							<li onClick={change}>Cidades</li>
 						</Link>
-						<Link href="/login">
+						<Link to={LOGIN}>
 							<li onClick={change}>Login</li>
 						</Link>
 					</ul>
