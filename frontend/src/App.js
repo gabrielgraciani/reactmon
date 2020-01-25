@@ -35,10 +35,8 @@ function App({location}) {
 	}, [setUserInfo]);
 
 	if(!checkUserLogged){
-		console.log('ainda não checou usuario logado');
 		return <h1 style={{color:"#000"}}>carregando...</h1>
 	}
-	console.log('checou usuario logado');
 
 	if(isUserLoggedIn){
 		if(location.pathname === LOGIN){
