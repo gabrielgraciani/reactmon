@@ -1,6 +1,8 @@
-import React, {lazy, Suspense} from 'react';
+import React, {lazy, Suspense, useEffect, useContext} from 'react';
 import {Route, Switch} from 'react-router-dom';
 import {CIDADES, ITENS, LOGIN, POKEDEX} from './routes';
+import firebase from './services/firebase';
+import {AuthContext} from './contexts/auth';
 
 import Header from './components/header';
 import Footer from './components/footer';
@@ -13,6 +15,18 @@ const Pokedex = lazy(() => import('./pages/pokedex'));
 
 
 function App({location}) {
+	const {setUserInfo} = useContext(AuthContext);
+
+	useEffect(() => {
+		firebase.auth().onAuthStateChanged((user) => {
+			console.log('dados do usuário:', user);
+			setUserInfo({
+				isUserLoggedIn: !!user,
+				user,
+			})
+		})
+	}, []);
+
   return (
 		  <div id="wrapper_body">
 			  <Header />
