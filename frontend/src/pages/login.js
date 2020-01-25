@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import Formulario from '../components/login/formulario';
 import PokemonList from '../components/login/pokemonList';
 import {AuthContext} from '../contexts/auth';
 
@@ -14,7 +13,6 @@ function Login () {
 			<PokemonList />
 
 
-			<Formulario />
 		</div>
 	)
 }
