@@ -1,10 +1,13 @@
-import React, {useState, useRef, useEffect} from 'react';
+import React, {useState, useRef, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
-import {CIDADES, HOME, ITENS, LOGIN, POKEDEX} from '../routes';
+import {CIDADES, CRUD, HOME, ITENS, LOGIN, POKEDEX} from '../routes';
+import {AuthContext} from '../contexts/auth';
 
 const Header = () =>{
 	const wrapperRef = useRef(null);
 	const [activeClass, setActiveClass] = useState('');
+	const {userInfo, logout} = useContext(AuthContext);
+	const {isUserLoggedIn} = userInfo;
 
 	const change = () => {
 		setActiveClass(activeClass === '' ? 'active' : '');
@@ -60,9 +63,25 @@ const Header = () =>{
 						<Link to={CIDADES}>
 							<li onClick={change}>Cidades</li>
 						</Link>
-						<Link to={LOGIN}>
-							<li onClick={change}>Login</li>
-						</Link>
+
+						{isUserLoggedIn && (
+							<>
+								<Link to={CRUD}>
+									<li onClick={change}>Crud</li>
+								</Link>
+
+							<div onClick={logout}>
+								<li onClick={change}>Logout</li>
+							</div>
+							</>
+						)}
+
+						{!isUserLoggedIn && (
+							<Link to={LOGIN}>
+								<li onClick={change}>Login</li>
+							</Link>
+						)}
+
 					</ul>
 				</div>
 

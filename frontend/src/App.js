@@ -16,7 +16,7 @@ const Pokedex = lazy(() => import('./pages/pokedex'));
 
 
 function App({location}) {
-	const {userInfo, setUserInfo, logout} = useContext(AuthContext);
+	const {userInfo, setUserInfo} = useContext(AuthContext);
 	const [checkUserLogged, setCheckUserLogged] = useState(false);
 
 	const {isUserLoggedIn} = userInfo;
@@ -30,8 +30,6 @@ function App({location}) {
 			});
 			setCheckUserLogged(true);
 		});
-
-		window.logout = logout;
 	}, [setUserInfo]);
 
 	if(!checkUserLogged){
