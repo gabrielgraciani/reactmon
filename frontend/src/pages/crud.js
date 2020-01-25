@@ -1,6 +1,9 @@
 import React, {useState, useContext} from 'react';
 import {db} from '../services/firebase';
 import {AuthContext} from '../contexts/auth';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
+
 
 const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	console.log("Checkbox: ", name, checked);
@@ -126,9 +129,37 @@ function Crud() {
 							<div className="item">TETE</div>
 							<div className="item">TETE</div>
 							<div className="item">TETE</div>
-							<div className="item">
-								<div>edit</div>
-								<div>exc</div>
+							<div className="item actions">
+								<div className="icon"><EditIcon /></div>
+								<div className="icon"><DeleteIcon /></div>
+							</div>
+						</div>
+						<div className="row">
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TTE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item actions">
+								<div className="icon"><EditIcon /></div>
+								<div className="icon"><DeleteIcon /></div>
+							</div>
+						</div>
+						<div className="row">
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TTE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item">TETE</div>
+							<div className="item actions">
+								<div className="icon"><EditIcon /></div>
+								<div className="icon"><DeleteIcon /></div>
 							</div>
 						</div>
 					</div>
