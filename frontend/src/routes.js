@@ -1,5 +1,6 @@
-export const HOME = "/";
-export const POKEDEX = "/pokedex";
-export const ITENS = "/itens";
 export const CIDADES = "/cidades";
+export const CRUD = "/crud";
+export const HOME = "/";
 export const LOGIN = "/login";
+export const ITENS = "/itens";
+export const POKEDEX = "/pokedex";

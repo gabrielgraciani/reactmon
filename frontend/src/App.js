@@ -1,6 +1,6 @@
 import React, {lazy, Suspense, useEffect, useContext} from 'react';
-import {Route, Switch} from 'react-router-dom';
-import {CIDADES, ITENS, LOGIN, POKEDEX} from './routes';
+import {Route, Switch, Redirect} from 'react-router-dom';
+import {CIDADES, CRUD, ITENS, LOGIN, POKEDEX} from './routes';
 import firebase from './services/firebase';
 import {AuthContext} from './contexts/auth';
 
@@ -9,13 +9,16 @@ import Footer from './components/footer';
 
 const Home = lazy(() => import('./pages/index'));
 const Cidades = lazy(() => import('./pages/cidades'));
+const Crud = lazy(() => import('./pages/crud'));
 const Itens = lazy(() => import('./pages/itens'));
 const Login = lazy(() => import('./pages/login'));
 const Pokedex = lazy(() => import('./pages/pokedex'));
 
 
 function App({location}) {
-	const {setUserInfo} = useContext(AuthContext);
+	const {userInfo, setUserInfo} = useContext(AuthContext);
+
+	const {isUserLoggedIn} = userInfo;
 
 	useEffect(() => {
 		firebase.auth().onAuthStateChanged((user) => {
@@ -25,7 +28,17 @@ function App({location}) {
 				user,
 			})
 		})
-	}, []);
+	}, [setUserInfo]);
+
+	if(isUserLoggedIn){
+		console.log('usuario lgoado');
+		if(location.pathname === '/login'){
+			return <Redirect to="/crud" />
+		}
+	}
+	else{
+		console.log('usuario nao logado');
+	}
 
   return (
 		  <div id="wrapper_body">
@@ -35,6 +48,7 @@ function App({location}) {
 				  <Suspense fallback={'Carregando...'}>
 					  <Switch>
 						  <Route path={CIDADES} component={Cidades} />
+						  <Route path={CRUD} component={Crud} />
 						  <Route path={ITENS} component={Itens} />
 						  <Route path={LOGIN} component={Login} />
 						  <Route path={POKEDEX} component={Pokedex} />
