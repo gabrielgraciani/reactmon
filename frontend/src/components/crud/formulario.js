@@ -164,7 +164,7 @@ function Formulario({change, activeClass}) {
 						   placeholder="Próximas evoluções"/>
 				</div>
 
-				<button onClick={handleSubmit}>Salvar</button>
+				<button onClick={handleSubmit} className="salvar">Salvar</button>
 			</div>
 
 		</form>

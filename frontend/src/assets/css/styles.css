@@ -126,3 +126,6 @@ li{font-size:18px;}
 #wrap_formulario .indent .item .checkmark:after { content: ""; position: absolute; display: none;}
 #wrap_formulario .indent .item .container input:checked ~ .checkmark:after {display: block;}
 #wrap_formulario .indent .item .container .checkmark:after { left: 9px; top: 5px; width: 5px; height: 10px; border: solid #333; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
+#wrap_formulario .indent button.salvar{cursor:pointer; transition:all .3s ease; background:#5CB85C; border:1px solid #5CB85C; padding:12px; color:#fff; font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent button.salvar:hover{background:transparent; color:#5CB85C;}
+
