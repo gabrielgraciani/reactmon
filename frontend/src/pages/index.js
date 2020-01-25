@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
-import Background from '../assets/images/bg-item.png';
+import Background from 'assets/images/bg-item.png';
 
 function Home(){
 	const [data, setData] = useState({ pokemon: [] });

@@ -1,7 +1,7 @@
 import React, {useState, useRef, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
-import {CIDADES, CRUD, HOME, ITENS, LOGIN, POKEDEX} from '../routes';
-import {AuthContext} from '../contexts/auth';
+import {CIDADES, CRUD, HOME, ITENS, LOGIN, POKEDEX} from 'routes';
+import {AuthContext} from 'contexts/auth';
 
 const Header = () =>{
 	const wrapperRef = useRef(null);

@@ -1,18 +1,18 @@
 import React, {lazy, Suspense, useState, useEffect, useContext} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {CIDADES, CRUD, ITENS, LOGIN, POKEDEX} from './routes';
-import firebase from './services/firebase';
-import {AuthContext} from './contexts/auth';
+import firebase from 'services/firebase';
+import {AuthContext} from 'contexts/auth';
 
-import Header from './components/header';
-import Footer from './components/footer';
+import Header from 'components/header';
+import Footer from 'components/footer';
 
-const Home = lazy(() => import('./pages/index'));
-const Cidades = lazy(() => import('./pages/cidades'));
-const Crud = lazy(() => import('./pages/crud'));
-const Itens = lazy(() => import('./pages/itens'));
-const Login = lazy(() => import('./pages/login'));
-const Pokedex = lazy(() => import('./pages/pokedex'));
+const Home = lazy(() => import('pages/index'));
+const Cidades = lazy(() => import('pages/cidades'));
+const Crud = lazy(() => import('pages/crud'));
+const Itens = lazy(() => import('pages/itens'));
+const Login = lazy(() => import('pages/login'));
+const Pokedex = lazy(() => import('pages/pokedex'));
 
 
 function App({location}) {

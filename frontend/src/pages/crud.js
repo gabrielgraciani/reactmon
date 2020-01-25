@@ -1,8 +1,7 @@
 import React, {useContext} from 'react';
-import {AuthContext} from '../contexts/auth';
-import Form from '../components/crud/formulario';
-import Tabela from '../components/crud/tabela';
-
+import {AuthContext} from 'contexts/auth';
+import Form from 'components/crud/formulario';
+import Tabela from 'components/crud/tabela';
 function Crud() {
 
 	const {userInfo} = useContext(AuthContext);

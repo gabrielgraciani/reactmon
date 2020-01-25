@@ -1,6 +1,6 @@
 import React, {useContext} from 'react';
-import PokemonList from '../components/login/pokemonList';
-import {AuthContext} from '../contexts/auth';
+import PokemonList from 'components/login/pokemonList';
+import {AuthContext} from 'contexts/auth';
 
 function Login () {
 	const {login} = useContext(AuthContext);

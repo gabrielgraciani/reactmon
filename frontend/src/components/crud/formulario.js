@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {db} from '../../services/firebase';
+import {db} from 'services/firebase';
 
 const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	console.log("Checkbox: ", name, checked);
