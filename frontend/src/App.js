@@ -1,4 +1,4 @@
-import React, {lazy, Suspense, useEffect, useContext} from 'react';
+import React, {lazy, Suspense, useState, useEffect, useContext} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {CIDADES, CRUD, ITENS, LOGIN, POKEDEX} from './routes';
 import firebase from './services/firebase';
@@ -17,6 +17,7 @@ const Pokedex = lazy(() => import('./pages/pokedex'));
 
 function App({location}) {
 	const {userInfo, setUserInfo, logout} = useContext(AuthContext);
+	const [checkUserLogged, setCheckUserLogged] = useState(false);
 
 	const {isUserLoggedIn} = userInfo;
 
@@ -26,10 +27,18 @@ function App({location}) {
 			setUserInfo({
 				isUserLoggedIn: !!user,
 				user,
-			})
-		})
+			});
+			setCheckUserLogged(true);
+		});
+
 		window.logout = logout;
 	}, [setUserInfo]);
+
+	if(!checkUserLogged){
+		console.log('ainda não checou usuario logado');
+		return <h1 style={{color:"#000"}}>carregando...</h1>
+	}
+	console.log('checou usuario logado');
 
 	if(isUserLoggedIn){
 		if(location.pathname === LOGIN){
