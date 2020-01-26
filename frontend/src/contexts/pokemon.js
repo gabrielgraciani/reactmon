@@ -71,6 +71,11 @@ function Pokemon({children}){
 				peso: values.peso,
 				tipo: values.tipo
 			})
+			.then(function(docRef){
+				db.collection('pokemon').doc(docRef.id).update({
+					id: docRef.id
+				});
+			})
 		} catch(e){
 			console.log('erro ao salvar pokemon: ', e);
 		}
@@ -78,8 +83,9 @@ function Pokemon({children}){
 
 	async function deletePokemon(id){
 		try{
-			await db.collection('pokemon').doc("o3klk4x4XNv9BGYgxKgQ").delete().then(() => {
-				console.log("Document successfully deleted!");
+			await db.collection('pokemon').doc(id).delete().then(() => {
+				console.log("pokemon deletado com sucesso");
+				setRefreshTable(oldKey => oldKey + 1);
 			})
 		}
 		catch(e){
@@ -88,7 +94,8 @@ function Pokemon({children}){
 	}
 	//fim do formulario de cadastro
 
-	useEffect(() => {
+
+	const fetchData = () => {
 		let pokemon = [];
 		db.collection('pokemon').get().then(querySnapshot => {
 			querySnapshot.forEach(doc => {
@@ -99,6 +106,11 @@ function Pokemon({children}){
 			});
 			setPokemonDB(pokemon);
 		});
+	};
+
+
+	useEffect(() => {
+		fetchData();
 	}, [refreshTable]);
 
 	return(

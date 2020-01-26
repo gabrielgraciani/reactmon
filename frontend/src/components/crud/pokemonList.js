@@ -6,7 +6,6 @@ import {PokemonContext} from 'contexts/pokemon';
 function PokemonList(){
 	const {pokemonDB, deletePokemon} = useContext(PokemonContext);
 
-	console.log(pokemonDB);
 	return(
 		<>
 			{pokemonDB.map((item) => (
@@ -21,7 +20,7 @@ function PokemonList(){
 					<div className="item">evoluções</div>
 					<div className="item actions">
 						<div className="icon"><EditIcon className="edit" /></div>
-						<div className="icon" onClick={deletePokemon(item.id)}><DeleteIcon className="delete" /></div>
+						<div className="icon"><DeleteIcon className="delete" onClick={() => { if (window.confirm(`Você quer mesmo deletar o pokemon ${item.nome} ?`)) deletePokemon(item.id)}} /></div>
 					</div>
 				</div>
 			))}
