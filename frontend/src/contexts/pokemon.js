@@ -59,7 +59,7 @@ function Pokemon({children}){
 		setRefreshTable(oldKey => oldKey + 1);
 	};
 
-	async function savePokemon(){
+	const savePokemon = async() =>{
 		try{
 			await db.collection('pokemon').add({
 				id: Math.random(),
@@ -79,9 +79,9 @@ function Pokemon({children}){
 		} catch(e){
 			console.log('erro ao salvar pokemon: ', e);
 		}
-	}
+	};
 
-	async function deletePokemon(id){
+	const deletePokemon = async(id) =>{
 		try{
 			await db.collection('pokemon').doc(id).delete().then(() => {
 				console.log("pokemon deletado com sucesso");
@@ -91,7 +91,7 @@ function Pokemon({children}){
 		catch(e){
 			console.log('erro', e);
 		}
-	}
+	};
 	//fim do formulario de cadastro
 
 
