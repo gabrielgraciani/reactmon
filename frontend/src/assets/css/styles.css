@@ -14,7 +14,7 @@ li{font-size:18px;}
 .bold{font-weight:bold;}
 .light{font-weight:lighter;}
 #wrapper_body{min-height:100vh; display:flex; flex-direction:column;}
-#wrapper_components{flex-grow:1;}
+#wrapper_components{flex-grow:1; display:flex; flex-direction:column;}
 
 .indent{width:90%; max-width:1600px; margin:0 auto;}
 
@@ -86,6 +86,15 @@ li{font-size:18px;}
 #wrap_footer .indent{display:flex; align-items:center; justify-content:center; padding:20px 0;}
 #wrap_footer .indent .texto{text-align:center;}
 
+#wrap_login{width:100%; position:relative; flex-grow:1; display:flex; align-items:center; justify-content:center;}
+#wrap_login .indent{display:flex; align-items:center; flex-direction:column; justify-content:center;}
+#wrap_login .indent .titulo{margin:0 0 20px 0;}
+#wrap_login .indent .titulo h3{color:#000;}
+#wrap_login .indent button{transition:all .4s ease; cursor:pointer; background:#666; border:0;  padding:10px 63px; display:flex; align-items:center; border-radius:5px; outline:0;}
+#wrap_login .indent button svg{ width:35px; height:40px;}
+#wrap_login .indent button svg path{transition:all .4s ease; fill:#f5f5f5;}
+#wrap_login .indent button:hover{background:#f5f5f5; box-shadow: 0 0 10px 2px #666}
+#wrap_login .indent button:hover svg path{fill:#666;}
 
 #wrap_crud{width:100%; position:relative;}
 #wrap_crud .indent{display:flex; flex-direction:column; padding:30px 0;}
