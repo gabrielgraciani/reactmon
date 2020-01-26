@@ -7,7 +7,6 @@ const users = createReducer(initialState, {
 	[ADD_POKEMON]: (state, action) => ({
 		...state,
 		[action.payload.id]: {
-			id: action.payload.id,
 			nome: action.payload.nome,
 			tipo: action.payload.tipo,
 			altura: action.payload.altura,

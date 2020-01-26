@@ -1,16 +1,16 @@
 import React, {useState} from 'react';
 import {db} from 'services/firebase';
 import CloseIcon from '@material-ui/icons/Close';
+import {connect} from 'react-redux';
+import {addPokemon} from 'redux/reducers/pokemons/action-creators';
 
 const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
-	console.log("Checkbox: ", name, checked);
-
 	return (
 		<input type={type} name={name} checked={checked} onChange={onChange} />
 	);
 };
 
-function Formulario({change, activeClass}) {
+function Formulario({change, activeClass, onSubmit}) {
 	//teste formulario
 	//USAR O USECALLBACK
 	const initialState = {
@@ -77,8 +77,7 @@ function Formulario({change, activeClass}) {
 		//console.log("checkedItemsFraq: ", checkedItemsFraq);
 	};
 
-	const tipos = [
-		{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
+	const tipos = [{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
 		{name: "poison", key: "2", label: "Poison", value: 'Poison'},
 		{name: "fire", key: "3", label: "Fire", value: "Fire"},
 		{name: "flying", key: "4", label: "Flying", value: "Flying"},
@@ -93,11 +92,9 @@ function Formulario({change, activeClass}) {
 		{name: "ice", key: "13", label: "Ice", value: "Ice"},
 		{name: "Ghost", key: "14", label: "Ghost", value: "Ghost"},
 		{name: "dragon", key: "15", label: "Dragon", value: "Dragon"},
-		{name: "fairy", key: "16", label: "Fairy", value: "Fairy"}
-	];
+		{name: "fairy", key: "16", label: "Fairy", value: "Fairy"}];
 
-	const fraquezas = [
-		{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
+	const fraquezas = [{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
 		{name: "poison", key: "2", label: "Poison", value: 'Poison'},
 		{name: "fire", key: "3", label: "Fire", value: "Fire"},
 		{name: "flying", key: "4", label: "Flying", value: "Flying"},
@@ -112,8 +109,7 @@ function Formulario({change, activeClass}) {
 		{name: "ice", key: "13", label: "Ice", value: "Ice"},
 		{name: "Ghost", key: "14", label: "Ghost", value: "Ghost"},
 		{name: "dragon", key: "15", label: "Dragon", value: "Dragon"},
-		{name: "fairy", key: "16", label: "Fairy", value: "Fairy"}
-	];
+		{name: "fairy", key: "16", label: "Fairy", value: "Fairy"}];
 
 	return(
 		<form id="wrap_formulario" className={`${activeClass}`}>
@@ -175,11 +171,25 @@ function Formulario({change, activeClass}) {
 						   placeholder="Próximas evoluções"/>
 				</div>
 
-				<button onClick={handleSubmit} className="salvar">Salvar</button>
+				<button onClick={onSubmit} className="salvar">Salvar</button>
 			</div>
 
 		</form>
 	)
 }
 
-export default Formulario;
+const mapDispatchToProps = (dispatch) => ({
+	onSubmit: (e) => {
+		e.preventDefault();
+		dispatch(addPokemon({
+			nome: "eqwewq",
+			tipo: "",
+			altura: "",
+			peso: "",
+			fraquezas: "",
+			evolucoes: ""
+		}))
+	}
+});
+
+export default connect(null, mapDispatchToProps)(Formulario);
