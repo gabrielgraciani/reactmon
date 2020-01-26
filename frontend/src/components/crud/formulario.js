@@ -13,7 +13,7 @@ const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 function Formulario({change, activeClass}) {
 	//teste formulario
 	//USAR O USECALLBACK
-	const [values, setValues] = useState({
+	const initialState = {
 		nome: '',
 		imagem: '',
 		tipo:[],
@@ -21,7 +21,8 @@ function Formulario({change, activeClass}) {
 		peso: '',
 		fraquezas: [],
 		evolucoes: []
-	});
+	};
+	const [values, setValues] = useState(initialState);
 
 	const handleChange = (e) => setValues({
 		...values,
@@ -35,6 +36,7 @@ function Formulario({change, activeClass}) {
 		console.log(values);
 		savePokemon();
 		change();
+		setValues(initialState);
 	};
 
 	async function savePokemon(){
