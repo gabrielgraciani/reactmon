@@ -6,6 +6,8 @@ import {AuthContext} from 'contexts/auth';
 
 import Header from 'components/header';
 import Footer from 'components/footer';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 const Home = lazy(() => import('pages/index'));
 const Cidades = lazy(() => import('pages/cidades'));
@@ -32,7 +34,11 @@ function App({location}) {
 	}, [setUserInfo]);
 
 	if(!checkUserLogged){
-		return <h1 style={{color:"#000"}}>carregando...</h1>
+		return(
+		<div id="wrap_loading">
+			<CircularProgress size={250} />
+		</div>
+		)
 	}
 
 	if(isUserLoggedIn){
