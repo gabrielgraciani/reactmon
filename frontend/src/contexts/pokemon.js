@@ -75,6 +75,17 @@ function Pokemon({children}){
 			console.log('erro ao salvar pokemon: ', e);
 		}
 	}
+
+	async function deletePokemon(id){
+		try{
+			await db.collection('pokemon').doc("o3klk4x4XNv9BGYgxKgQ").delete().then(() => {
+				console.log("Document successfully deleted!");
+			})
+		}
+		catch(e){
+			console.log('erro', e);
+		}
+	}
 	//fim do formulario de cadastro
 
 	useEffect(() => {
@@ -96,6 +107,7 @@ function Pokemon({children}){
 			handleChange,
 			handleSubmit,
 			savePokemon,
+			deletePokemon,
 			handleChangeBox,
 			handleChangeBoxFraq,
 			checkedItems,

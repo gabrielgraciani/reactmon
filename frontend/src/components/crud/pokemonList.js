@@ -4,7 +4,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import {PokemonContext} from 'contexts/pokemon';
 
 function PokemonList(){
-	const {pokemonDB} = useContext(PokemonContext);
+	const {pokemonDB, deletePokemon} = useContext(PokemonContext);
 
 	console.log(pokemonDB);
 	return(
@@ -21,7 +21,7 @@ function PokemonList(){
 					<div className="item">evoluções</div>
 					<div className="item actions">
 						<div className="icon"><EditIcon className="edit" /></div>
-						<div className="icon"><DeleteIcon className="delete" /></div>
+						<div className="icon" onClick={deletePokemon(item.id)}><DeleteIcon className="delete" /></div>
 					</div>
 				</div>
 			))}
