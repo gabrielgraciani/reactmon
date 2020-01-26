@@ -92,6 +92,29 @@ function Pokemon({children}){
 			console.log('erro', e);
 		}
 	};
+
+	const showEditPokemon = (id) =>{
+		changeClass();
+		console.log(id);
+
+		db.collection("pokemon").where("id", "==", id).get().then(function(querySnapshot) {
+			querySnapshot.forEach(function (doc) {
+				console.log(doc.id, " => ", doc.data());
+				const {nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
+
+				setValues({
+						nome: nome,
+						imagem: imagem,
+						tipo: tipo,
+						altura: altura,
+						peso: peso,
+						fraquezas: fraquezas,
+						evolucoes: evolucoes
+				})
+			});
+		});
+	};
+
 	//fim do formulario de cadastro
 
 
@@ -120,6 +143,7 @@ function Pokemon({children}){
 			handleSubmit,
 			savePokemon,
 			deletePokemon,
+			showEditPokemon,
 			handleChangeBox,
 			handleChangeBoxFraq,
 			checkedItems,
