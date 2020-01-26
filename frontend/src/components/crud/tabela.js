@@ -39,8 +39,8 @@ function Tabela({change}) {
 					<div className="item">TETE</div>
 					<div className="item">TETE</div>
 					<div className="item actions">
-						<div className="icon"><EditIcon /></div>
-						<div className="icon"><DeleteIcon /></div>
+						<div className="icon"><EditIcon className="edit" /></div>
+						<div className="icon"><DeleteIcon className="delete" /></div>
 					</div>
 				</div>
 				<div className="row">
@@ -53,8 +53,8 @@ function Tabela({change}) {
 					<div className="item">TETE</div>
 					<div className="item">TETE</div>
 					<div className="item actions">
-						<div className="icon"><EditIcon /></div>
-						<div className="icon"><DeleteIcon /></div>
+						<div className="icon"><EditIcon className="edit" /></div>
+						<div className="icon"><DeleteIcon className="delete" /></div>
 					</div>
 				</div>
 				<div className="row">
@@ -67,8 +67,8 @@ function Tabela({change}) {
 					<div className="item">TETE</div>
 					<div className="item">TETE</div>
 					<div className="item actions">
-						<div className="icon"><EditIcon /></div>
-						<div className="icon"><DeleteIcon /></div>
+						<div className="icon"><EditIcon className="edit" /></div>
+						<div className="icon"><DeleteIcon className="delete" /></div>
 					</div>
 				</div>
 			</div>

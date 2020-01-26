@@ -120,8 +120,7 @@ function Formulario({change, activeClass}) {
 				</div>
 				<div className="item">
 					<label htmlFor="imagem">Imagem</label>
-					<input type="text" name="imagem" value={values.imagem} onChange={handleChange}
-						   placeholder="Imagem"/>
+					<input type="text" name="imagem" value={values.imagem} onChange={handleChange} />
 				</div>
 				<div className="item">
 					<label htmlFor="tipo">Tipo</label>
@@ -138,12 +137,11 @@ function Formulario({change, activeClass}) {
 				</div>
 				<div className="item">
 					<label htmlFor="altura">Altura</label>
-					<input type="text" name="altura" value={values.altura} onChange={handleChange}
-						   placeholder="Altura"/>
+					<input type="text" name="altura" value={values.altura} onChange={handleChange} />
 				</div>
 				<div className="item">
 					<label htmlFor="peso">Peso</label>
-					<input type="text" name="peso" value={values.peso} onChange={handleChange} placeholder="Peso"/>
+					<input type="text" name="peso" value={values.peso} onChange={handleChange} />
 				</div>
 				<div className="item">
 					<label htmlFor="fraquezas">Fraquezas</label>

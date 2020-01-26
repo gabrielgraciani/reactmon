@@ -26,7 +26,7 @@ function Crud() {
 			</div>
 		</div>
 
-		<Form activeClass={activeClass} />
+		<Form activeClass={activeClass} change={change} />
 		</>
 	)
 }
