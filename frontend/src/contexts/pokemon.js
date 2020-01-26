@@ -15,14 +15,33 @@ function Pokemon({children}){
 		fraquezas: [],
 		evolucoes: []
 	};
+
 	const [values, setValues] = useState(initialState);
+	const [checkedItems, setCheckedItems] = useState({});
+	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
+	const [pokemonDB, setPokemonDB] = useState([]);
 
 	const handleChange = (e) => setValues({
 		...values,
 		[e.target.name]: e.target.value
 	});
 
-	const  handleSubmit = async (e) => {
+	const handleChangeBox = event => {
+		setCheckedItems({
+			...checkedItems,
+			[event.target.name]: event.target.checked
+		});
+		//console.log("checkedItems: ", checkedItems);
+	};
+	const handleChangeBoxFraq = event => {
+		setCheckedItemsFraq({
+			...checkedItemsFraq,
+			[event.target.name]: event.target.checked
+		});
+		//console.log("checkedItemsFraq: ", checkedItemsFraq);
+	};
+
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		values.tipo = checkedItems;
 		values.fraquezas = checkedItemsFraq;
@@ -50,27 +69,6 @@ function Pokemon({children}){
 		}
 	}
 
-
-	const [checkedItems, setCheckedItems] = useState({});
-	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
-
-	const handleChangeBox = event => {
-		setCheckedItems({
-			...checkedItems,
-			[event.target.name]: event.target.checked
-		});
-		//console.log("checkedItems: ", checkedItems);
-	};
-	const handleChangeBoxFraq = event => {
-		setCheckedItemsFraq({
-			...checkedItemsFraq,
-			[event.target.name]: event.target.checked
-		});
-		//console.log("checkedItemsFraq: ", checkedItemsFraq);
-	};
-
-	const [pokemonDB, setPokemonDB] = useState([]);
-	//pegar os dados de uma tabela no firestore
 	useEffect(() => {
 		let pokemon = [];
 		db.collection('pokemon').get().then(querySnapshot => {
