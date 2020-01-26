@@ -5,6 +5,7 @@ import App from './App';
 import {Provider} from 'react-redux';
 import configureStore from 'redux/configure-store';
 import AuthProvider from 'contexts/auth';
+import PokemonProvider from 'contexts/pokemon';
 
 const store = configureStore();
 
@@ -12,9 +13,11 @@ const store = configureStore();
 const Root = () =>(
 	<Provider store={store}>
 		<AuthProvider>
-			<BrowserRouter>
-				<Route component={App} />
-			</BrowserRouter>
+			<PokemonProvider>
+				<BrowserRouter>
+					<Route component={App} />
+				</BrowserRouter>
+			</PokemonProvider>
 		</AuthProvider>
 
 	</Provider>

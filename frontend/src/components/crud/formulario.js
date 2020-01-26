@@ -1,8 +1,6 @@
-import React, {useState} from 'react';
-import {db} from 'services/firebase';
+import React, {useContext} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
-import {connect} from 'react-redux';
-import {addPokemon} from 'redux/reducers/pokemons/action-creators';
+import {PokemonContext} from 'contexts/pokemon';
 
 const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	return (
@@ -10,72 +8,14 @@ const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	);
 };
 
-function Formulario({change, activeClass, onSubmit}) {
-	//teste formulario
-	//USAR O USECALLBACK
-	const initialState = {
-		nome: '',
-		imagem: '',
-		tipo:[],
-		altura: '',
-		peso: '',
-		fraquezas: [],
-		evolucoes: []
-	};
-	const [values, setValues] = useState(initialState);
-
-	const handleChange = (e) => setValues({
-		...values,
-		[e.target.name]: e.target.value
-	});
-
-	const  handleSubmit = async (e) => {
-		e.preventDefault();
-		values.tipo = checkedItems;
-		values.fraquezas = checkedItemsFraq;
-		console.log(values);
-		savePokemon();
-		change();
-		setValues(initialState);
-		setCheckedItems({});
-		setCheckedItemsFraq({});
-	};
-
-	async function savePokemon(){
-		try{
-			await db.collection('pokemon').add({
-				id: Math.random(),
-				nome: values.nome,
-				imagem: values.imagem,
-				altura: values.altura,
-				evolucoes: values.evolucoes,
-				fraquezas: values.fraquezas,
-				peso: values.peso,
-				tipo: values.tipo
-			})
-		} catch(e){
-			console.log('erro ao salvar pokemon: ', e);
-		}
-	}
-
-
-	const [checkedItems, setCheckedItems] = useState({});
-	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
-
-	const handleChangeBox = event => {
-		setCheckedItems({
-			...checkedItems,
-			[event.target.name]: event.target.checked
-		});
-		//console.log("checkedItems: ", checkedItems);
-	};
-	const handleChangeBoxFraq = event => {
-		setCheckedItemsFraq({
-			...checkedItemsFraq,
-			[event.target.name]: event.target.checked
-		});
-		//console.log("checkedItemsFraq: ", checkedItemsFraq);
-	};
+function Formulario({change, activeClass}) {
+	const {values,
+		handleChange,
+		handleSubmit,
+		handleChangeBox,
+		handleChangeBoxFraq,
+		checkedItems,
+		checkedItemsFraq} = useContext(PokemonContext);
 
 	const tipos = [{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
 		{name: "poison", key: "2", label: "Poison", value: 'Poison'},
@@ -171,25 +111,11 @@ function Formulario({change, activeClass, onSubmit}) {
 						   placeholder="Próximas evoluções"/>
 				</div>
 
-				<button onClick={onSubmit} className="salvar">Salvar</button>
+				<button onClick={handleSubmit} className="salvar">Salvar</button>
 			</div>
 
 		</form>
 	)
 }
 
-const mapDispatchToProps = (dispatch) => ({
-	onSubmit: (e) => {
-		e.preventDefault();
-		dispatch(addPokemon({
-			nome: "eqwewq",
-			tipo: "",
-			altura: "",
-			peso: "",
-			fraquezas: "",
-			evolucoes: ""
-		}))
-	}
-});
-
-export default connect(null, mapDispatchToProps)(Formulario);
+export default Formulario;

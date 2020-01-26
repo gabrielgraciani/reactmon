@@ -1,5 +1,5 @@
 import React from 'react';
-import PokemonList from 'components/login/pokemonList';
+import PokemonList from 'components/crud/pokemonList';
 
 
 function Tabela({change}) {

@@ -1,26 +1,11 @@
-import React, {useState, useEffect} from 'react';
-import {db} from 'services/firebase';
+import React, {useContext} from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import {PokemonContext} from 'contexts/pokemon';
+
 
 function PokemonList(){
-
-	const [pokemonDB, setPokemonDB] = useState([]);
-	//pegar os dados de uma tabela no firestore
-	useEffect(() => {
-		let pokemon = [];
-		db.collection('pokemon').get().then(querySnapshot => {
-			querySnapshot.forEach(doc => {
-				pokemon.push({
-					id: doc.id,
-					...doc.data()
-				})
-			});
-			setPokemonDB(pokemon);
-		});
-	}, []);
-
-	console.log(pokemonDB);
+	const {pokemonDB} = useContext(PokemonContext);
 
 	return(
 		<>
