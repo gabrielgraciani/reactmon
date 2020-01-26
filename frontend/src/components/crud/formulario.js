@@ -34,6 +34,7 @@ function Formulario({change, activeClass}) {
 		values.fraquezas = checkedItemsFraq;
 		console.log(values);
 		savePokemon();
+		change();
 	};
 
 	async function savePokemon(){
