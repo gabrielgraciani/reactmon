@@ -21,6 +21,7 @@ function Pokemon({children}){
 	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
 	const [pokemonDB, setPokemonDB] = useState([]);
 	const [activeClass, setActiveClass] = useState('');
+	const [refreshTable, setRefreshTable] = useState(0);
 
 	//começo para o fomulario de cadastro
 	const changeClass = () => {
@@ -55,6 +56,7 @@ function Pokemon({children}){
 		setValues(initialState);
 		setCheckedItems({});
 		setCheckedItemsFraq({});
+		setRefreshTable(oldKey => oldKey + 1);
 	};
 
 	async function savePokemon(){
@@ -86,7 +88,7 @@ function Pokemon({children}){
 			});
 			setPokemonDB(pokemon);
 		});
-	}, [pokemonDB]);
+	}, [refreshTable]);
 
 	return(
 		<PokemonContext.Provider value={{

@@ -6,6 +6,7 @@ import {PokemonContext} from 'contexts/pokemon';
 function PokemonList(){
 	const {pokemonDB} = useContext(PokemonContext);
 
+	console.log(pokemonDB);
 	return(
 		<>
 			{pokemonDB.map((item) => (
