@@ -8,22 +8,25 @@ function PokemonList(){
 
 	return(
 		<>
+			<tbody>
 			{pokemonDB.map((item) => (
-				<div className="row" key={item.id}>
-					<div className="item">{item.id}</div>
-					<div className="item">{item.nome}</div>
-					<div className="item">{item.imagem}</div>
-					<div className="item">tipos</div>
-					<div className="item">{item.altura}</div>
-					<div className="item">{item.peso}</div>
-					<div className="item">fraquezas</div>
-					<div className="item">evoluções</div>
-					<div className="item actions">
+				<tr className="row" key={item.id}>
+					<td className="item">{item.id}</td>
+					<td className="item">{item.nome}</td>
+					<td className="item">{item.imagem}</td>
+					<td className="item">tipos</td>
+					<td className="item">{item.altura}</td>
+					<td className="item">{item.peso}</td>
+					<td className="item">fraquezas</td>
+					<td className="item">evoluções</td>
+					<td className="item actions">
 						<div className="icon"><EditIcon className="edit" onClick={() => showEditPokemon(item.id)} /></div>
 						<div className="icon"><DeleteIcon className="delete" onClick={() => { if (window.confirm(`Você quer mesmo deletar o pokemon ${item.nome} ?`)) deletePokemon(item.id)}} /></div>
-					</div>
-				</div>
+					</td>
+				</tr>
 			))}
+			</tbody>
+
 		</>
 	)
 }

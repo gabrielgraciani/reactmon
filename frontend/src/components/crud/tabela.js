@@ -15,21 +15,23 @@ function Tabela({changeClass}) {
 				</div>
 			</div>
 
-			<div className="conteudo">
-				<div className="row thead">
-					<div className="item">ID</div>
-					<div className="item">Nome</div>
-					<div className="item">Imagem</div>
-					<div className="item">Tipo</div>
-					<div className="item">Altura</div>
-					<div className="item">Peso</div>
-					<div className="item">Fraquezas</div>
-					<div className="item">Evoluções</div>
-					<div className="item">Ações</div>
-				</div>
+			<table className="conteudo">
+				<thead>
+					<tr className="row head">
+						<th className="item">ID</th>
+						<th className="item">Nome</th>
+						<th className="item">Imagem</th>
+						<th className="item">Tipo</th>
+						<th className="item">Altura</th>
+						<th className="item">Peso</th>
+						<th className="item">Fraquezas</th>
+						<th className="item">Evoluções</th>
+						<th className="item">Ações</th>
+					</tr>
+				</thead>
 
 				<PokemonList />
-			</div>
+			</table>
 		</div>
 	)
 }
