@@ -1,6 +1,8 @@
 import React from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import PokemonList from 'components/login/pokemonList';
+
 
 function Tabela({change}) {
 
@@ -28,6 +30,9 @@ function Tabela({change}) {
 					<div className="item">Evoluções</div>
 					<div className="item">Ações</div>
 				</div>
+
+				<PokemonList />
+
 
 				<div className="row">
 					<div className="item">TETE</div>

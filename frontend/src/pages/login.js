@@ -1,5 +1,4 @@
 import React, {useContext} from 'react';
-import PokemonList from 'components/login/pokemonList';
 import {AuthContext} from 'contexts/auth';
 import GitHubIcon from '@material-ui/icons/GitHub';
 
@@ -16,7 +15,6 @@ function Login () {
 				<button onClick={login}><GitHubIcon/></button>
 			</div>
 		</div>
-			<PokemonList />
 		</>
 	)
 }

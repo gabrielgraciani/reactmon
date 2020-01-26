@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {db} from 'services/firebase';
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 function PokemonList(){
 
@@ -18,16 +20,27 @@ function PokemonList(){
 		});
 	}, []);
 
-	return(
-		<div>
-			pokemon teste
+	console.log(pokemonDB);
 
+	return(
+		<>
 			{pokemonDB.map((item) => (
-				<div key={item.id}>
-					{item.name}
+				<div className="row" key={item.id}>
+					<div className="item">{item.id}</div>
+					<div className="item">{item.nome}</div>
+					<div className="item">{item.imagem}</div>
+					<div className="item">tipos</div>
+					<div className="item">{item.altura}</div>
+					<div className="item">{item.peso}</div>
+					<div className="item">fraquezas</div>
+					<div className="item">evoluções</div>
+					<div className="item actions">
+						<div className="icon"><EditIcon className="edit" /></div>
+						<div className="icon"><DeleteIcon className="delete" /></div>
+					</div>
 				</div>
 			))}
-		</div>
+		</>
 	)
 }
 
