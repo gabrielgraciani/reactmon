@@ -85,6 +85,7 @@ li{font-size:18px;}
 #wrap_footer{width:100%; position:relative; background:#000; margin-top:50px; box-shadow:0 0 5px #000;}
 #wrap_footer .indent{display:flex; align-items:center; justify-content:center; padding:20px 0;}
 #wrap_footer .indent .texto{text-align:center;}
+#wrap_footer .indent .texto span{font-size:12px;}
 
 #wrap_login{width:100%; position:relative; flex-grow:1; display:flex; align-items:center; justify-content:center;}
 #wrap_login .indent{display:flex; align-items:center; flex-direction:column; justify-content:center;}

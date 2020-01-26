@@ -4,7 +4,7 @@ const Footer = () => (
 	<div id="wrap_footer">
 		<div className="indent">
 			<div className="texto">
-				<h3>&copy; Desenvolvido por Gabriel Thomaz Graciani</h3>
+				<span>&copy; Desenvolvido por Gabriel Thomaz Graciani</span>
 			</div>
 		</div>
 	</div>

@@ -67,14 +67,14 @@ function Formulario({change, activeClass}) {
 			...checkedItems,
 			[event.target.name]: event.target.checked
 		});
-		console.log("checkedItems: ", checkedItems);
+		//console.log("checkedItems: ", checkedItems);
 	};
 	const handleChangeBoxFraq = event => {
 		setCheckedItemsFraq({
 			...checkedItemsFraq,
 			[event.target.name]: event.target.checked
 		});
-		console.log("checkedItemsFraq: ", checkedItemsFraq);
+		//console.log("checkedItemsFraq: ", checkedItemsFraq);
 	};
 
 	const tipos = [
