@@ -73,33 +73,41 @@ function Formulario({change, activeClass}) {
 	};
 
 	const tipos = [
-		{
-			name: "fogo",
-			key: "1",
-			label: "Fogo",
-			value: 'Fogo'
-		},
-		{
-			name: "agua",
-			key: "2",
-			label: "Água",
-			value: 'Água'
-		}
+		{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
+		{name: "poison", key: "2", label: "Poison", value: 'Poison'},
+		{name: "fire", key: "3", label: "Fire", value: "Fire"},
+		{name: "flying", key: "4", label: "Flying", value: "Flying"},
+		{name: "water", key: "5", label: "Water", value: "Water"},
+		{name: "bug", key: "6", label: "Bug", value: "Bug"},
+		{name: "normal", key: "7", label: "Normal", value: "Normal"},
+		{name: "electric", key: "8", label: "Electric", value: "Electric"},
+		{name: "ground", key: "9", label: "Ground", value: "Ground"},
+		{name: "fighting", key: "10", label: "Fighting", value: "Fighting"},
+		{name: "psychic", key: "11", label: "Psychic", value: "Psychic"},
+		{name: "rock", key: "12", label: "Rock", value: "Rock"},
+		{name: "ice", key: "13", label: "Ice", value: "Ice"},
+		{name: "Ghost", key: "14", label: "Ghost", value: "Ghost"},
+		{name: "dragon", key: "15", label: "Dragon", value: "Dragon"},
+		{name: "fairy", key: "16", label: "Fairy", value: "Fairy"}
 	];
 
 	const fraquezas = [
-		{
-			name: "fogo",
-			key: "1",
-			label: "Fogo",
-			value: 'Fogo'
-		},
-		{
-			name: "agua",
-			key: "2",
-			label: "Água",
-			value: 'Água'
-		}
+		{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
+		{name: "poison", key: "2", label: "Poison", value: 'Poison'},
+		{name: "fire", key: "3", label: "Fire", value: "Fire"},
+		{name: "flying", key: "4", label: "Flying", value: "Flying"},
+		{name: "water", key: "5", label: "Water", value: "Water"},
+		{name: "bug", key: "6", label: "Bug", value: "Bug"},
+		{name: "normal", key: "7", label: "Normal", value: "Normal"},
+		{name: "electric", key: "8", label: "Electric", value: "Electric"},
+		{name: "ground", key: "9", label: "Ground", value: "Ground"},
+		{name: "fighting", key: "10", label: "Fighting", value: "Fighting"},
+		{name: "psychic", key: "11", label: "Psychic", value: "Psychic"},
+		{name: "rock", key: "12", label: "Rock", value: "Rock"},
+		{name: "ice", key: "13", label: "Ice", value: "Ice"},
+		{name: "Ghost", key: "14", label: "Ghost", value: "Ghost"},
+		{name: "dragon", key: "15", label: "Dragon", value: "Dragon"},
+		{name: "fairy", key: "16", label: "Fairy", value: "Fairy"}
 	];
 
 	return(
