@@ -1,6 +1,4 @@
 import React from 'react';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteIcon from '@material-ui/icons/Delete';
 import PokemonList from 'components/login/pokemonList';
 
 
@@ -32,50 +30,6 @@ function Tabela({change}) {
 				</div>
 
 				<PokemonList />
-
-
-				<div className="row">
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TTE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item actions">
-						<div className="icon"><EditIcon className="edit" /></div>
-						<div className="icon"><DeleteIcon className="delete" /></div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TTE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item actions">
-						<div className="icon"><EditIcon className="edit" /></div>
-						<div className="icon"><DeleteIcon className="delete" /></div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TTE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item">TETE</div>
-					<div className="item actions">
-						<div className="icon"><EditIcon className="edit" /></div>
-						<div className="icon"><DeleteIcon className="delete" /></div>
-					</div>
-				</div>
 			</div>
 		</div>
 	)
