@@ -20,6 +20,7 @@ function Pokemon({children}){
 	const [checkedItems, setCheckedItems] = useState({});
 	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
 	const [pokemonDB, setPokemonDB] = useState([]);
+	const [isEditing, setIsEditing] = useState(false);
 	const [activeClass, setActiveClass] = useState('');
 	const [refreshTable, setRefreshTable] = useState(0);
 
@@ -94,25 +95,32 @@ function Pokemon({children}){
 	};
 
 	const showEditPokemon = (id) =>{
+		setIsEditing(true);
 		changeClass();
 		console.log(id);
 
 		db.collection("pokemon").where("id", "==", id).get().then(function(querySnapshot) {
 			querySnapshot.forEach(function (doc) {
 				console.log(doc.id, " => ", doc.data());
-				const {nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
+				const {id, nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
 
 				setValues({
-						nome: nome,
-						imagem: imagem,
-						tipo: tipo,
-						altura: altura,
-						peso: peso,
-						fraquezas: fraquezas,
-						evolucoes: evolucoes
+					id: id,
+					nome: nome,
+					imagem: imagem,
+					tipo: tipo,
+					altura: altura,
+					peso: peso,
+					fraquezas: fraquezas,
+					evolucoes: evolucoes
 				})
 			});
 		});
+
+	};
+
+	const handleEdit = (id) => {
+		console.log('vamos editar!!!', id);
 	};
 
 	//fim do formulario de cadastro
@@ -150,7 +158,9 @@ function Pokemon({children}){
 			checkedItemsFraq,
 			pokemonDB,
 			changeClass,
-			activeClass
+			activeClass,
+			isEditing,
+			handleEdit
 		}}>
 			{children}
 		</PokemonContext.Provider>

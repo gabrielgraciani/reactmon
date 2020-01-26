@@ -15,7 +15,9 @@ function Formulario({changeClass, activeClass}) {
 		handleChangeBox,
 		handleChangeBoxFraq,
 		checkedItems,
-		checkedItemsFraq} = useContext(PokemonContext);
+		checkedItemsFraq,
+		isEditing,
+		handleEdit} = useContext(PokemonContext);
 
 	const tipos = [{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
 		{name: "poison", key: "2", label: "Poison", value: 'Poison'},
@@ -39,7 +41,12 @@ function Formulario({changeClass, activeClass}) {
 			<div className="indent">
 				<div className="head">
 					<div className="titulo">
-						<h3>Criar Pokemon</h3>
+						{isEditing && (
+							<h3>Editar Pokemon</h3>
+						)}
+						{!isEditing && (
+							<h3>Criar Pokemon</h3>
+						)}
 					</div>
 					<div className="fechar">
 						<CloseIcon onClick={changeClass} />
@@ -94,7 +101,12 @@ function Formulario({changeClass, activeClass}) {
 						   placeholder="Próximas evoluções"/>
 				</div>
 
-				<button onClick={handleSubmit} className="salvar">Salvar</button>
+				{isEditing && (
+					<button onClick={(id) => handleEdit(values.id)} className="salvar">Editar</button>
+				)}
+				{!isEditing && (
+					<button onClick={() => handleSubmit} className="salvar">Salvar</button>
+				)}
 			</div>
 
 		</form>
