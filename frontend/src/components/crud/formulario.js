@@ -37,6 +37,8 @@ function Formulario({change, activeClass}) {
 		savePokemon();
 		change();
 		setValues(initialState);
+		setCheckedItems({});
+		setCheckedItemsFraq({});
 	};
 
 	async function savePokemon(){
