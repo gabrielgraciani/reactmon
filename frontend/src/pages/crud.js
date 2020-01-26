@@ -1,17 +1,14 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {AuthContext} from 'contexts/auth';
 import Form from 'components/crud/formulario';
 import Tabela from 'components/crud/tabela';
+import {PokemonContext} from 'contexts/pokemon';
+
 function Crud() {
 
 	const {userInfo} = useContext(AuthContext);
 	const nomeUser = userInfo.user.displayName;
-
-	const [activeClass, setActiveClass] = useState('');
-
-	const change = () => {
-		setActiveClass(activeClass === '' ? 'active' : '');
-	};
+	const {changeClass, activeClass} = useContext(PokemonContext);
 
 	return(
 		<>
@@ -21,12 +18,12 @@ function Crud() {
 					<h1>Olá {nomeUser}</h1>
 				</div>
 
-				<Tabela change={change} />
+				<Tabela changeClass={changeClass} />
 
 			</div>
 		</div>
 
-		<Form activeClass={activeClass} change={change} />
+		<Form activeClass={activeClass} changeClass={changeClass} />
 		</>
 	)
 }

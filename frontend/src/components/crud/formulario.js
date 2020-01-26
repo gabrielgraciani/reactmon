@@ -8,7 +8,7 @@ const Checkbox = ({ type = "checkbox", name, checked = false, onChange }) => {
 	);
 };
 
-function Formulario({change, activeClass}) {
+function Formulario({changeClass, activeClass}) {
 	const {values,
 		handleChange,
 		handleSubmit,
@@ -42,7 +42,7 @@ function Formulario({change, activeClass}) {
 						<h3>Criar Pokemon</h3>
 					</div>
 					<div className="fechar">
-						<CloseIcon onClick={change} />
+						<CloseIcon onClick={changeClass} />
 					</div>
 				</div>
 

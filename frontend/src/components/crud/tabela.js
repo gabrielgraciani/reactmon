@@ -1,8 +1,7 @@
 import React from 'react';
 import PokemonList from 'components/crud/pokemonList';
 
-
-function Tabela({change}) {
+function Tabela({changeClass}) {
 
 	return(
 		<div id="wrap_tabela">
@@ -12,7 +11,7 @@ function Tabela({change}) {
 				</div>
 
 				<div className="botoes">
-					<button onClick={change}>Criar Pokemon</button>
+					<button onClick={changeClass}>Criar Pokemon</button>
 				</div>
 			</div>
 

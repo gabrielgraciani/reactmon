@@ -20,6 +20,12 @@ function Pokemon({children}){
 	const [checkedItems, setCheckedItems] = useState({});
 	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
 	const [pokemonDB, setPokemonDB] = useState([]);
+	const [activeClass, setActiveClass] = useState('');
+
+	//começo para o fomulario de cadastro
+	const changeClass = () => {
+		setActiveClass(activeClass === '' ? 'active' : '');
+	};
 
 	const handleChange = (e) => setValues({
 		...values,
@@ -31,14 +37,12 @@ function Pokemon({children}){
 			...checkedItems,
 			[event.target.name]: event.target.checked
 		});
-		//console.log("checkedItems: ", checkedItems);
 	};
 	const handleChangeBoxFraq = event => {
 		setCheckedItemsFraq({
 			...checkedItemsFraq,
 			[event.target.name]: event.target.checked
 		});
-		//console.log("checkedItemsFraq: ", checkedItemsFraq);
 	};
 
 	const handleSubmit = async (e) => {
@@ -47,6 +51,7 @@ function Pokemon({children}){
 		values.fraquezas = checkedItemsFraq;
 		console.log(values);
 		savePokemon();
+		changeClass();
 		setValues(initialState);
 		setCheckedItems({});
 		setCheckedItemsFraq({});
@@ -68,6 +73,7 @@ function Pokemon({children}){
 			console.log('erro ao salvar pokemon: ', e);
 		}
 	}
+	//fim do formulario de cadastro
 
 	useEffect(() => {
 		let pokemon = [];
@@ -85,17 +91,16 @@ function Pokemon({children}){
 	return(
 		<PokemonContext.Provider value={{
 			values,
-			setValues,
 			handleChange,
 			handleSubmit,
 			savePokemon,
 			handleChangeBox,
 			handleChangeBoxFraq,
 			checkedItems,
-			setCheckedItems,
 			checkedItemsFraq,
-			setCheckedItemsFraq,
-			pokemonDB
+			pokemonDB,
+			changeClass,
+			activeClass
 		}}>
 			{children}
 		</PokemonContext.Provider>
