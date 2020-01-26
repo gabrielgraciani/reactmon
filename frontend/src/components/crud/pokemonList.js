@@ -3,7 +3,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {PokemonContext} from 'contexts/pokemon';
 
-
 function PokemonList(){
 	const {pokemonDB} = useContext(PokemonContext);
 
