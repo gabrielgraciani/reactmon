@@ -3,9 +3,12 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {PokemonContext} from 'contexts/pokemon';
 
+import map from 'lodash/map';
+
 function PokemonList(){
 	const {pokemonDB, deletePokemon, showEditPokemon} = useContext(PokemonContext);
 
+	console.log(pokemonDB);
 	return(
 		<>
 			<tbody>
@@ -14,7 +17,9 @@ function PokemonList(){
 					<td className="item">{item.id}</td>
 					<td className="item">{item.nome}</td>
 					<td className="item">{item.imagem}</td>
-					<td className="item">tipos</td>
+					<td className="item">{map(item.tipo, (v, k) => {
+						{console.log(v, k)}
+					})}</td>
 					<td className="item">{item.altura}</td>
 					<td className="item">{item.peso}</td>
 					<td className="item">fraquezas</td>
