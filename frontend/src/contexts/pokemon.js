@@ -1,5 +1,6 @@
 import React, {createContext, useState, useEffect} from 'react';
 import {db} from 'services/firebase';
+import map from 'lodash/map';
 
 
 export const PokemonContext = createContext();
@@ -102,11 +103,21 @@ function Pokemon({children}){
 			querySnapshot.forEach(function (doc) {
 				console.log(doc.id, " => ", doc.data());
 				const {id, nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
+
+				const teste = map(tipo, (v, k) => (
+					setCheckedItems({
+						...checkedItems,
+						[k]: v
+					}),
+						console.log(k, v)
+				));
+
 				setValues({
+					...values,
 					id: id,
 					nome: nome,
 					imagem: imagem,
-					tipo: tipo,
+					tipo: teste,
 					altura: altura,
 					peso: peso,
 					fraquezas: fraquezas,
