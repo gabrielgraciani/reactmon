@@ -105,7 +105,7 @@ function Formulario({changeClass, activeClass}) {
 					<button onClick={(id) => handleEdit(values.id)} className="salvar" type="button">Editar</button>
 				)}
 				{!isEditing && (
-					<button onClick={() => handleSubmit} className="salvar">Salvar</button>
+					<button onClick={ handleSubmit} className="salvar" type="button">Salvar</button>
 				)}
 			</div>
 

@@ -17,12 +17,14 @@ function PokemonList(){
 					<td className="item">{item.id}</td>
 					<td className="item">{item.nome}</td>
 					<td className="item">{item.imagem}</td>
-					<td className="item">{map(item.tipo, (v, k) => {
-						{console.log(v, k)}
-					})}</td>
+					<td className="item">{map(item.tipo, (v, k) => (
+						<>{v}{k}, </>
+						))}</td>
 					<td className="item">{item.altura}</td>
 					<td className="item">{item.peso}</td>
-					<td className="item">fraquezas</td>
+					<td className="item">{map(item.fraquezas, (v, k) => (
+						<>{v}{k}, </>
+					))}</td>
 					<td className="item">evoluções</td>
 					<td className="item actions">
 						<div className="icon"><EditIcon className="edit" onClick={() => showEditPokemon(item.id)} /></div>
