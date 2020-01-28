@@ -97,13 +97,11 @@ function Pokemon({children}){
 	const showEditPokemon = (id) =>{
 		setIsEditing(true);
 		changeClass();
-		console.log(id);
 
 		db.collection("pokemon").where("id", "==", id).get().then(function(querySnapshot) {
 			querySnapshot.forEach(function (doc) {
 				console.log(doc.id, " => ", doc.data());
 				const {id, nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
-
 				setValues({
 					id: id,
 					nome: nome,
