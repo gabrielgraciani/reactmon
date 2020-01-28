@@ -120,7 +120,27 @@ function Pokemon({children}){
 	};
 
 	const handleEdit = (id) => {
-		console.log('vamos editar!!!', id);
+		try{
+			db.collection('pokemon').doc(id).update({
+				nome: values.nome,
+				imagem: values.imagem,
+				altura: values.altura,
+				evolucoes: values.evolucoes,
+				fraquezas: values.fraquezas,
+				peso: values.peso,
+				tipo: values.tipo
+			});
+			setValues(initialState);
+			setCheckedItems({});
+			setCheckedItemsFraq({});
+			setRefreshTable(oldKey => oldKey + 1);
+			changeClass();
+			console.log('editado com sucesso');
+		}
+		catch(e){
+			console.log('erro ao editar pokemon', e);
+		}
+
 	};
 
 	//fim do formulario de cadastro
