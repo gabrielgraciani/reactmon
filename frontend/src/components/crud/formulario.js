@@ -67,7 +67,7 @@ function Formulario({changeClass, activeClass}) {
 						{tipos.map(item => (
 							<label className="container" key={item.key}>{item.label}
 								<Checkbox name={item.name}
-										  checked={checkedItems[item.name]}
+										  checked={checkedItems.includes(item.name)}
 										  onChange={handleChangeBox} />
 								<span className="checkmark"> </span>
 							</label>

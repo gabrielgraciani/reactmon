@@ -1,7 +1,5 @@
 import React, {createContext, useState, useEffect} from 'react';
 import {db} from 'services/firebase';
-import map from 'lodash/map';
-
 
 export const PokemonContext = createContext();
 
@@ -18,7 +16,7 @@ function Pokemon({children}){
 	};
 
 	const [values, setValues] = useState(initialState);
-	const [checkedItems, setCheckedItems] = useState({});
+	const [checkedItems, setCheckedItems] = useState([]);
 	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
 	const [pokemonDB, setPokemonDB] = useState([]);
 	const [isEditing, setIsEditing] = useState(false);
@@ -36,11 +34,12 @@ function Pokemon({children}){
 	});
 
 	const handleChangeBox = event => {
-		setCheckedItems({
+		setCheckedItems([
 			...checkedItems,
-			[event.target.name]: event.target.checked
-		});
+			event.target.name
+		]);
 	};
+
 	const handleChangeBoxFraq = event => {
 		setCheckedItemsFraq({
 			...checkedItemsFraq,
@@ -56,7 +55,7 @@ function Pokemon({children}){
 		savePokemon();
 		changeClass();
 		setValues(initialState);
-		setCheckedItems({});
+		setCheckedItems([]);
 		setCheckedItemsFraq({});
 		setRefreshTable(oldKey => oldKey + 1);
 	};
@@ -104,21 +103,14 @@ function Pokemon({children}){
 				console.log(doc.id, " => ", doc.data());
 				const {id, nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
 
-				const teste = {};
-				map(tipo, (v, k) => {
-					if(v){
-						teste[k] = v;
-					}
-				});
-
-				setCheckedItems(teste);
+				setCheckedItems(tipo);
 
 				setValues({
 					...values,
 					id: id,
 					nome: nome,
-					imagem: imagem,
-					tipo: teste,
+					imagem,
+					tipo,
 					altura: altura,
 					peso: peso,
 					fraquezas: fraquezas,
@@ -142,7 +134,7 @@ function Pokemon({children}){
 				tipo: checkedItems
 			});
 			setValues(initialState);
-			setCheckedItems({});
+			setCheckedItems([]);
 			setCheckedItemsFraq({});
 			setRefreshTable(oldKey => oldKey + 1);
 			changeClass();
