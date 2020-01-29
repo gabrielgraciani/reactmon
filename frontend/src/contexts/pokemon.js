@@ -104,13 +104,14 @@ function Pokemon({children}){
 				console.log(doc.id, " => ", doc.data());
 				const {id, nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
 
-				const teste = map(tipo, (v, k) => (
-					setCheckedItems({
-						...checkedItems,
-						[k]: v
-					}),
-						console.log(k, v)
-				));
+				const teste = {};
+				map(tipo, (v, k) => {
+					if(v){
+						teste[k] = v;
+					}
+				});
+
+				setCheckedItems(teste);
 
 				setValues({
 					...values,
