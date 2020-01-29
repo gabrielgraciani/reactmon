@@ -131,6 +131,7 @@ function Pokemon({children}){
 
 	const handleEdit = (id) => {
 		try{
+			console.log(values);
 			db.collection('pokemon').doc(id).update({
 				nome: values.nome,
 				imagem: values.imagem,
@@ -138,7 +139,7 @@ function Pokemon({children}){
 				evolucoes: values.evolucoes,
 				fraquezas: values.fraquezas,
 				peso: values.peso,
-				tipo: values.tipo
+				tipo: checkedItems
 			});
 			setValues(initialState);
 			setCheckedItems({});
