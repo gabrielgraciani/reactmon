@@ -25,7 +25,7 @@ function Pokemon({children}){
 
 	//começo para o fomulario de cadastro
 	const changeClass = () => {
-		setActiveClass(activeClass === '' ? 'active' : '');
+		setActiveClass(activeClass === '' ? 'active' : '', setValues(initialState), setCheckedItems([]), setCheckedItemsFraq([]));
 	};
 
 	const handleChange = (e) => setValues({
