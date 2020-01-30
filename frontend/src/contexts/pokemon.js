@@ -17,7 +17,7 @@ function Pokemon({children}){
 
 	const [values, setValues] = useState(initialState);
 	const [checkedItems, setCheckedItems] = useState([]);
-	const [checkedItemsFraq, setCheckedItemsFraq] = useState({});
+	const [checkedItemsFraq, setCheckedItemsFraq] = useState([]);
 	const [pokemonDB, setPokemonDB] = useState([]);
 	const [isEditing, setIsEditing] = useState(false);
 	const [activeClass, setActiveClass] = useState('');
@@ -41,10 +41,10 @@ function Pokemon({children}){
 	};
 
 	const handleChangeBoxFraq = event => {
-		setCheckedItemsFraq({
+		setCheckedItemsFraq([
 			...checkedItemsFraq,
-			[event.target.name]: event.target.checked
-		});
+			event.target.name
+		]);
 	};
 
 	const handleSubmit = async (e) => {
@@ -56,7 +56,7 @@ function Pokemon({children}){
 		changeClass();
 		setValues(initialState);
 		setCheckedItems([]);
-		setCheckedItemsFraq({});
+		setCheckedItemsFraq([]);
 		setRefreshTable(oldKey => oldKey + 1);
 	};
 
@@ -104,6 +104,7 @@ function Pokemon({children}){
 				const {id, nome, imagem, tipo, altura, peso, fraquezas, evolucoes} = doc.data();
 
 				setCheckedItems(tipo);
+				setCheckedItemsFraq(fraquezas);
 
 				setValues({
 					...values,
@@ -113,7 +114,7 @@ function Pokemon({children}){
 					tipo,
 					altura: altura,
 					peso: peso,
-					fraquezas: fraquezas,
+					fraquezas,
 					evolucoes: evolucoes
 				})
 			});
@@ -129,13 +130,13 @@ function Pokemon({children}){
 				imagem: values.imagem,
 				altura: values.altura,
 				evolucoes: values.evolucoes,
-				fraquezas: values.fraquezas,
 				peso: values.peso,
-				tipo: checkedItems
+				tipo: checkedItems,
+				fraquezas: checkedItemsFraq,
 			});
 			setValues(initialState);
 			setCheckedItems([]);
-			setCheckedItemsFraq({});
+			setCheckedItemsFraq([]);
 			setRefreshTable(oldKey => oldKey + 1);
 			changeClass();
 			console.log('editado com sucesso');
