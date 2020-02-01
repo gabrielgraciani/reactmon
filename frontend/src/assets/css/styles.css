@@ -129,20 +129,20 @@ li{font-size:18px;}
 #wrap_pokemon .indent .card .conteudo{padding:0 0 20px 0; background:rgba(255, 255, 255, 0.65); width:100%; display:flex; flex-direction:column;}
 #wrap_pokemon .indent .card .conteudo .tipos{margin-top:-17px; width:100%; display:flex; align-items:center; justify-content:flex-end; padding:0 15px 0 0;}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo{margin:0 0 0 10px; padding:5px; display:flex; align-items:center; justify-content:center;}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.normal{background:#C08A53;}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.water{background:#1CB5E0}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.electric{background:#eed535;}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.normal{background:var(--normal);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.water{background:var(--water);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.electric{background:var(--electric);}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.electric span{color:var(--black);}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.fire{background:#c71800}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.psychic{background:#ff2cc3}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.grass{background:#6e7f0e}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.ice{background:#6fb8eb}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.fairy{background:#ff8a95}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.poison{background:#b97fc9}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.bug{background:#729F3F}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.fighting{background:#d56723}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.rock{background:#a38c21}
-#wrap_pokemon .indent .card .conteudo .tipos .tipo.ghost{background:#7b62a3}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.fire{background:var(--fire);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.psychic{background:var(--psychic);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.grass{background:var(--grass);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.ice{background:var(--ice);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.fairy{background:var(--fairy);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.poison{background:var(--poison);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.bug{background:var(--bug);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.fighting{background:var(--fighting);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.rock{background:var(--rock);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.ghost{background:var(--ghost);}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.flying{background:var(--flying)}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.flying span{color:var(--black);}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.ground{background:var(--ground)}
