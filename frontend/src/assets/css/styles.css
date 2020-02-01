@@ -32,13 +32,13 @@
 	--ice:#51c4e7;
 	--psychic:#f366b9;
 	--poison:#b97fc9;
-
 	--bug:#729f3f;
-	--flying:linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
-	--ground:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
 	--fighting:#d56723;
 	--rock:#a38c21;
 	--ghost:#7b62a3;
+
+	--flying:linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+	--ground:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
 	--dragon:linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
 }
 
@@ -206,6 +206,10 @@ li{font-size:18px;}
 .card.ice{background:linear-gradient(230deg, #caeaf6 0%, #a0eaf1 46%, #6fb8eb 100%)}
 .card.fairy{background:linear-gradient(45deg, #ffe6f0 0%, #ffc5e0 34%, #ffa6b9 71%, #ff8a95 100%)}
 .card.poison{background:linear-gradient(45deg, #f2dff7 0%, #d8afe4 34%, #9654a8 71%, #B97FC9 100%)}
+.card.bug{background:linear-gradient(45deg, #c9e8a6 0%, #9bc36c 34%, #548022 71%, #729F3F 100%)}
+.card.fighting{background:linear-gradient(45deg, #ffaf7e 0%, #e5874d 34%, #a94b11 71%, #d56723 100%)}
+.card.rock{background:linear-gradient(45deg, #e8d26f 0%, #c1aa3f 34%, #7e6907 71%, #a38c21 100%)}
+.card.ghost{background:linear-gradient(45deg, #ccc1e0 0%, #a28fc2 34%, #5a3e87 71%, #7b62a3 100%)}
 .card .imagem{width:100%; padding:40px 0 20px; display:flex; justify-content:center; align-items:center; background-color: rgba(0, 0, 0, 0.7);}
 .card .imagem img{width:100%; max-width:200px;}
 .card .conteudo{padding:0 0 20px 0; background:rgba(255, 255, 255, 0.65); width:100%; display:flex; flex-direction:column;}
@@ -221,6 +225,10 @@ li{font-size:18px;}
 .card .conteudo .tipos .tipo.ice{background:#6fb8eb}
 .card .conteudo .tipos .tipo.fairy{background:#ff8a95}
 .card .conteudo .tipos .tipo.poison{background:#b97fc9}
+.card .conteudo .tipos .tipo.bug{background:#729F3F}
+.card .conteudo .tipos .tipo.fighting{background:#d56723}
+.card .conteudo .tipos .tipo.rock{background:#a38c21}
+.card .conteudo .tipos .tipo.ghost{background:#7b62a3}
 .card .conteudo .tipos .tipo span{text-transform:uppercase; color:var(--white); font-size:19px; font-weight:300; letter-spacing: 1px;}
 .card .conteudo .nome{width:100%; text-align:center;}
 .card .conteudo .nome h4{color:var(--black); font-size:24px; font-weight:700;}
