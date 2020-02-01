@@ -63,7 +63,7 @@
 
 *{margin:0; padding:0;}
 *, *:before, *:after {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-body, input, textarea {background:var(--gray-light); font-family: Arial, Helvetica, sans-serif; overflow-X:hidden;}
+body, input, textarea {background:var(--gray-light); font-family:Open Sans, Arial, Helvetica, sans-serif; overflow-X:hidden;}
 a {color:inherit; text-decoration:none;}
 a:hover {text-decoration:none;}
 ul, li {list-style:none; margin:0;} fieldset {border:0;} textarea {resize:none;}
@@ -231,6 +231,21 @@ li{font-size:18px;}
 #wrap_formulario .indent button.salvar:hover{background:transparent; color:#5CB85C;}
 
 #wrap_loading{width:100%; height:100vh; display:flex; align-items:center; justify-content:center;}
+
+
+#wrap_itens{width:100%; position:relative;}
+#wrap_itens .indent{padding:50px 0 0 0; display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));	grid-gap: 40px 1.6%;}
+#wrap_itens .indent .item{transition:all .3s ease; width:100%; border-radius:10px; display:flex; flex-direction:column;}
+#wrap_itens .indent .item:hover{box-shadow:0px 5px 20px -5px #3A1C71; transform:translateY(-4%);}
+#wrap_itens .indent .item .imagem{width:100%; display:flex; align-items:center; justify-content:center; padding:40px 0; background:linear-gradient(45deg, #7f9686 0%, #657366 34%, #505a51 71%, #4f5940 100%); border-top-left-radius:10px; border-top-right-radius:10px;}
+#wrap_itens .indent .item .imagem img{}
+#wrap_itens .indent .item .conteudo{background:#fff; width:100%; display:flex; flex-direction:column; padding:20px;}
+#wrap_itens .indent .item .conteudo .nome{width:100%; text-align:center;}
+#wrap_itens .indent .item .conteudo .nome h4{font-size:26px; color:var(--black);}
+#wrap_itens .indent .item .conteudo .descricao{width:100%; text-align:center;}
+#wrap_itens .indent .item .conteudo .descricao span{font-size:14px; color:#9E9E9E;}
+#wrap_itens .indent .item .footer{width:100%; padding:25px 0; background:#F6901A; display:flex; align-items:center; justify-content:center; border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
+#wrap_itens .indent .item .footer h4{font-size:20px;}
 
 
 @media screen and (max-width: 1080px){
