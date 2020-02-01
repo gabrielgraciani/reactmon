@@ -31,8 +31,8 @@
 	--fairy:#fdb9e9;
 	--ice:#51c4e7;
 	--psychic:#f366b9;
-
 	--poison:#b97fc9;
+
 	--bug:#729f3f;
 	--flying:linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
 	--ground:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
@@ -205,6 +205,7 @@ li{font-size:18px;}
 .card.grass{background:linear-gradient(140deg, #c4da3d 0%, #6e7f0e 69%, #275009 100%)}
 .card.ice{background:linear-gradient(230deg, #caeaf6 0%, #a0eaf1 46%, #6fb8eb 100%)}
 .card.fairy{background:linear-gradient(45deg, #ffe6f0 0%, #ffc5e0 34%, #ffa6b9 71%, #ff8a95 100%)}
+.card.poison{background:linear-gradient(45deg, #f2dff7 0%, #d8afe4 34%, #9654a8 71%, #B97FC9 100%)}
 .card .imagem{width:100%; padding:40px 0 20px; display:flex; justify-content:center; align-items:center; background-color: rgba(0, 0, 0, 0.7);}
 .card .imagem img{width:100%; max-width:200px;}
 .card .conteudo{padding:0 0 20px 0; background:rgba(255, 255, 255, 0.65); width:100%; display:flex; flex-direction:column;}
@@ -219,6 +220,7 @@ li{font-size:18px;}
 .card .conteudo .tipos .tipo.grass{background:#6e7f0e}
 .card .conteudo .tipos .tipo.ice{background:#6fb8eb}
 .card .conteudo .tipos .tipo.fairy{background:#ff8a95}
+.card .conteudo .tipos .tipo.poison{background:#b97fc9}
 .card .conteudo .tipos .tipo span{text-transform:uppercase; color:var(--white); font-size:19px; font-weight:300; letter-spacing: 1px;}
 .card .conteudo .nome{width:100%; text-align:center;}
 .card .conteudo .nome h4{color:var(--black); font-size:24px; font-weight:700;}
