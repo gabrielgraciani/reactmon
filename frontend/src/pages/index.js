@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
+import Carousel from 'components/carousel';
 
 function Home(){
 	const [data, setData] = useState({ pokemon: [] });
@@ -17,9 +18,7 @@ function Home(){
 	return(
 		<>
 		<div id="wrap_banner">
-			<div className="item">
-				carousel
-			</div>
+			<Carousel />
 		</div>
 
 		<ul>

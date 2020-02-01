@@ -101,7 +101,15 @@ li{font-size:18px;}
 #wrap_header .indent .pokeball:hover:before{background: var(--dark); box-shadow: 2px 0 0 0 rgba(0,0,0,0.2), 0 0 0 5px #d63031, 0 0 0 8px var(--dark);}
 
 #wrap_banner{width:100%; position:relative;}
-#wrap_banner .item{background:var(--primary);  height:500px;}
+#wrap_banner{width:100%; height:500px;}
+#wrap_banner .prev-icon{width:50px; height:50px; display:flex; align-items:center; justify-content:center;}
+#wrap_banner .next-icon{width:50px; height:50px; display:flex; align-items:center; justify-content:center;}
+#wrap_banner .container .icons{visibility:visible !important; opacity:1 !important;}
+#wrap_banner .container .icons.play-icon{display:none;}
+#wrap_banner .container .icons.left:after{box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important; transform:rotate(45deg) translateX(0px) translateY(1px) !important}
+#wrap_banner .container .icons.left:before{box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important;}
+#wrap_banner .container .icons.right:before {box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important; transform: rotate(-45deg) translateX(0px) translateY(1px) !important;}
+#wrap_banner .container .icons.right:after {box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important;}
 
 
 #wrap_pokemon{width:100%; position:relative;}
