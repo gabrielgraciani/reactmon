@@ -526,6 +526,126 @@ const Pokedex = () => (
 				</div>
 			</div>
 
+			<div className="card flying">
+				<div className="imagem">
+					<img src={imagem} alt="teste"/>
+				</div>
+				<div className="conteudo">
+					<div className="tipos">
+						<div className="tipo flying">
+							<span>flying</span>
+						</div>
+					</div>
+					<div className="nome">
+						<h4>Venusaur</h4>
+					</div>
+					<div className="especificacoes">
+						<div className="col">
+							<div className="item">
+								<span>Peso:</span>
+							</div>
+							<div className="item">
+								<span>Altura:</span>
+							</div>
+							<div className="item">
+								<span>Fraquezas:</span>
+							</div>
+						</div>
+						<div className="col col2">
+							<div className="item">
+								<span>55</span>
+							</div>
+							<div className="item">
+								<span>55</span>
+							</div>
+							<div className="item">
+								<span>55</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div className="card ground">
+				<div className="imagem">
+					<img src={imagem} alt="teste"/>
+				</div>
+				<div className="conteudo">
+					<div className="tipos">
+						<div className="tipo ground">
+							<span>ground</span>
+						</div>
+					</div>
+					<div className="nome">
+						<h4>Venusaur</h4>
+					</div>
+					<div className="especificacoes">
+						<div className="col">
+							<div className="item">
+								<span>Peso:</span>
+							</div>
+							<div className="item">
+								<span>Altura:</span>
+							</div>
+							<div className="item">
+								<span>Fraquezas:</span>
+							</div>
+						</div>
+						<div className="col col2">
+							<div className="item">
+								<span>55</span>
+							</div>
+							<div className="item">
+								<span>55</span>
+							</div>
+							<div className="item">
+								<span>55</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div className="card dragon">
+				<div className="imagem">
+					<img src={imagem} alt="teste"/>
+				</div>
+				<div className="conteudo">
+					<div className="tipos">
+						<div className="tipo dragon">
+							<span>dragon</span>
+						</div>
+					</div>
+					<div className="nome">
+						<h4>Venusaur</h4>
+					</div>
+					<div className="especificacoes">
+						<div className="col">
+							<div className="item">
+								<span>Peso:</span>
+							</div>
+							<div className="item">
+								<span>Altura:</span>
+							</div>
+							<div className="item">
+								<span>Fraquezas:</span>
+							</div>
+						</div>
+						<div className="col col2">
+							<div className="item">
+								<span>55</span>
+							</div>
+							<div className="item">
+								<span>55</span>
+							</div>
+							<div className="item">
+								<span>55</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
 		</div>
 	</div>
 );

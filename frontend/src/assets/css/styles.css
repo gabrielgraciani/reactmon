@@ -36,9 +36,9 @@
 	--fighting:#d56723;
 	--rock:#a38c21;
 	--ghost:#7b62a3;
-
 	--flying:linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
 	--ground:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+
 	--dragon:linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
 }
 
@@ -210,6 +210,9 @@ li{font-size:18px;}
 .card.fighting{background:linear-gradient(45deg, #ffaf7e 0%, #e5874d 34%, #a94b11 71%, #d56723 100%)}
 .card.rock{background:linear-gradient(45deg, #e8d26f 0%, #c1aa3f 34%, #7e6907 71%, #a38c21 100%)}
 .card.ghost{background:linear-gradient(45deg, #ccc1e0 0%, #a28fc2 34%, #5a3e87 71%, #7b62a3 100%)}
+.card.flying{background:linear-gradient(45deg, #95e2f7 0%, #3dc7ef 34%, #eae7e6 71%, #bdb9b8 100%)}
+.card.ground{background:linear-gradient(45deg, #fff08e 0%, #f7de3f 34%, #fceeb1 71%, #ab9842 100%)}
+.card.dragon{background:linear-gradient(45deg, #addaf1 0%, #53a4cf 34%, #ffb7aa 71%, #f16e57 100%)}
 .card .imagem{width:100%; padding:40px 0 20px; display:flex; justify-content:center; align-items:center; background-color: rgba(0, 0, 0, 0.7);}
 .card .imagem img{width:100%; max-width:200px;}
 .card .conteudo{padding:0 0 20px 0; background:rgba(255, 255, 255, 0.65); width:100%; display:flex; flex-direction:column;}
@@ -229,7 +232,13 @@ li{font-size:18px;}
 .card .conteudo .tipos .tipo.fighting{background:#d56723}
 .card .conteudo .tipos .tipo.rock{background:#a38c21}
 .card .conteudo .tipos .tipo.ghost{background:#7b62a3}
-.card .conteudo .tipos .tipo span{text-transform:uppercase; color:var(--white); font-size:19px; font-weight:300; letter-spacing: 1px;}
+.card .conteudo .tipos .tipo.flying{background:linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%)}
+.card .conteudo .tipos .tipo.flying span{color:var(--black);}
+.card .conteudo .tipos .tipo.ground{background:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%)}
+.card .conteudo .tipos .tipo.ground span{color:var(--black);}
+.card .conteudo .tipos .tipo.dragon{background:linear-gradient(180deg, #53a4cf 50%, #f16e57 50%)}
+.card .conteudo .tipos .tipo.dragon span{color:var(--black);}
+.card .conteudo .tipos .tipo span{text-transform:uppercase; color:var(--white); font-size:15px; font-family:'Open Sans'; font-weight:400; letter-spacing: 1px;}
 .card .conteudo .nome{width:100%; text-align:center;}
 .card .conteudo .nome h4{color:var(--black); font-size:24px; font-weight:700;}
 .card .conteudo .especificacoes{width:100%; display:flex; align-items:center; justify-content:space-between;}
