@@ -17,7 +17,7 @@ function Home(){
 	return(
 		<>
 		<div id="wrap_banner">
-			<div style={{width:'100%', height:'500px', background: 'red'}}>
+			<div className="item">
 				carousel
 			</div>
 		</div>
