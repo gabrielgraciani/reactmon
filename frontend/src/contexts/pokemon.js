@@ -1,5 +1,6 @@
 import React, {createContext, useState, useEffect} from 'react';
 import {db} from 'services/firebase';
+import firebase from 'services/firebase';
 
 export const PokemonContext = createContext();
 
@@ -18,6 +19,7 @@ function Pokemon({children}){
 	const [values, setValues] = useState(initialState);
 	const [checkedItems, setCheckedItems] = useState([]);
 	const [checkedItemsFraq, setCheckedItemsFraq] = useState([]);
+	const [changeFile, setChangeFile] = useState([]);
 	const [pokemonDB, setPokemonDB] = useState([]);
 	const [isEditing, setIsEditing] = useState(false);
 	const [activeClass, setActiveClass] = useState('');
@@ -45,6 +47,10 @@ function Pokemon({children}){
 			...checkedItemsFraq,
 			event.target.name
 		]);
+	};
+
+	const handleChangeFile = (e) => {
+		setChangeFile(e.target.files[0]);
 	};
 
 	const handleSubmit = async (e) => {
@@ -76,6 +82,61 @@ function Pokemon({children}){
 				db.collection('pokemon').doc(docRef.id).update({
 					id: docRef.id
 				});
+
+
+				/* começo da função de upload de imagens no storage firebase */
+				const storageRef = firebase.storage().ref();
+				const file = changeFile;
+				const metadata = {
+					contentType: 'image/jpeg'
+				};
+				const uploadTask = storageRef.child('images/' +docRef.id + '/' + file.name).put(file, metadata);
+
+				uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+					function(snapshot) {
+						const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+						console.log('Upload is ' + progress + '% done');
+						switch (snapshot.state) {
+							case firebase.storage.TaskState.PAUSED:
+								console.log('Upload is paused');
+								break;
+							case firebase.storage.TaskState.RUNNING:
+								console.log('Upload is running');
+								break;
+							default:
+								console.log('certo');
+						}
+					}, function(error) {
+
+						switch (error.code) {
+							case 'storage/unauthorized':
+								break;
+
+							case 'storage/canceled':
+								break;
+
+							case 'storage/unknown':
+								break;
+							default:
+								console.log('erro');
+
+						}
+					}, function() {
+						uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+							console.log('File available at', downloadURL);
+
+							db.collection('pokemon').doc(docRef.id).update({
+								imagem: downloadURL
+							});
+						});
+					});
+				/* fim da função de upload de imagens no storage firebase */
+
+
+
+
+
+
 			})
 		} catch(e){
 			console.log('erro ao salvar pokemon: ', e);
@@ -178,6 +239,7 @@ function Pokemon({children}){
 			showEditPokemon,
 			handleChangeBox,
 			handleChangeBoxFraq,
+			handleChangeFile,
 			checkedItems,
 			checkedItemsFraq,
 			pokemonDB,

@@ -14,7 +14,8 @@ function PokemonList(){
 				<tr className="row" key={item.id}>
 					<td className="item">{item.id}</td>
 					<td className="item">{item.nome}</td>
-					<td className="item">{item.imagem}</td>
+					<td className="item">
+						<img src={item.imagem} alt={item.nome} /></td>
 					<td className="item">{item.tipo.join(', ')}</td>
 					<td className="item">{item.altura}</td>
 					<td className="item">{item.peso}</td>

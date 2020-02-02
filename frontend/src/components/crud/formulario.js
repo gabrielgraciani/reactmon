@@ -14,6 +14,7 @@ function Formulario({changeClass, activeClass}) {
 		handleSubmit,
 		handleChangeBox,
 		handleChangeBoxFraq,
+		handleChangeFile,
 		checkedItems,
 		checkedItemsFraq,
 		isEditing,
@@ -59,7 +60,7 @@ function Formulario({changeClass, activeClass}) {
 				</div>
 				<div className="item">
 					<label htmlFor="imagem">Imagem</label>
-					<input type="text" name="imagem" value={values.imagem} onChange={handleChange} />
+					<input type="file" onChange={handleChangeFile} />
 				</div>
 				<div className="item">
 					<label htmlFor="tipo">Tipo</label>

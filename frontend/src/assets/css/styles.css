@@ -199,6 +199,7 @@ li{font-size:18px;}
 #wrap_tabela .conteudo .row:hover{background:#DAE8D1;}
 #wrap_tabela .conteudo .row:nth-last-child(1){border-bottom:0; border-bottom-left-radius:15px; border-bottom-right-radius:15px;}
 #wrap_tabela .conteudo .row .item{width:inherit; display:flex; word-break:break-word; padding:0 10px; align-items:center; font-size:15px; color:#566787}
+#wrap_tabela .conteudo .row .item img{width:100%;}
 #wrap_tabela .conteudo .row.thead .item{font-weight:bold;}
 #wrap_tabela .conteudo .row .item.actions .icon{cursor:pointer;}
 #wrap_tabela .conteudo .row .item.actions .icon:nth-child(1){margin-right:5px;}
