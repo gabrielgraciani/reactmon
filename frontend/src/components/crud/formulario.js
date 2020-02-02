@@ -17,7 +17,7 @@ function Formulario({changeClass, activeClass}) {
 		handleChangeFile,
 		checkedItems,
 		checkedItemsFraq,
-		changeFile,
+		/*changeFile,*/
 		isEditing,
 		handleEdit} = useContext(PokemonContext);
 
