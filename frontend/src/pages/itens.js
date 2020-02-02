@@ -1,11 +1,15 @@
 import React from 'react';
+import Potion from 'assets/images/potion.png';
+import SPotion from 'assets/images/spotion.png';
+import HPotion from 'assets/images/hpotion.png';
+import MPotion from 'assets/images/mpotion.png';
 
 const Itens = () => (
 	<div id="wrap_itens">
 		<div className="indent">
 			<div className="item">
 				<div className="imagem">
-					<img src="https://pokemythology.net/conteudo/imgs/dw/item/Dream_Potion_Sprite.png" alt="pocao" />
+					<img src={Potion} alt="pocao" />
 				</div>
 				<div className="conteudo">
 					<div className="nome">
@@ -22,7 +26,7 @@ const Itens = () => (
 
 			<div className="item">
 				<div className="imagem">
-					<img src="https://pokemythology.net/conteudo/imgs/dw/item/Dream_Super_Potion_Sprite.png" alt="pocao" />
+					<img src={SPotion} alt="pocao" />
 				</div>
 				<div className="conteudo">
 					<div className="nome">
@@ -39,7 +43,7 @@ const Itens = () => (
 
 			<div className="item">
 				<div className="imagem">
-					<img src="https://pokemythology.net/conteudo/imgs/dw/item/Dream_Hyper_Potion_Sprite.png" alt="pocao" />
+					<img src={HPotion} alt="pocao" />
 				</div>
 				<div className="conteudo">
 					<div className="nome">
@@ -56,7 +60,7 @@ const Itens = () => (
 
 			<div className="item">
 				<div className="imagem">
-					<img src="https://pokemythology.net/conteudo/imgs/dw/item/Dream_Max_Potion_Sprite.png" alt="pocao" />
+					<img src={MPotion} alt="pocao" />
 				</div>
 				<div className="conteudo">
 					<div className="nome">
