@@ -133,7 +133,7 @@ li{font-size:18px;}
 #wrap_pokemon .indent .card.ground{background:var(--ground-gradient)}
 #wrap_pokemon .indent .card.dragon{background:var(--dragon-gradient)}
 #wrap_pokemon .indent .card .imagem{width:100%; padding:40px 0 20px; display:flex; justify-content:center; align-items:center; background-color: rgba(0, 0, 0, 0.7);}
-#wrap_pokemon .indent .card .imagem img{width:100%; max-width:200px;}
+#wrap_pokemon .indent .card .imagem img{width:100%; max-width:200px; height:200px;}
 #wrap_pokemon .indent .card .conteudo{padding:0 0 20px 0; background:rgba(255, 255, 255, 0.65); width:100%; display:flex; flex-direction:column;}
 #wrap_pokemon .indent .card .conteudo .tipos{margin-top:-17px; width:100%; display:flex; align-items:center; justify-content:flex-end; padding:0 15px 0 0;}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo{margin:0 0 0 10px; padding:5px; display:flex; align-items:center; justify-content:center;}
