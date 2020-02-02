@@ -3,28 +3,20 @@ import Potion from 'assets/images/potion.png';
 import SPotion from 'assets/images/spotion.png';
 import HPotion from 'assets/images/hpotion.png';
 import MPotion from 'assets/images/mpotion.png';
+import Banner from 'components/banner';
 
 const Itens = () => (
 	<>
-		<div id="wrap_banner_padrao" className="itens">
-			<div className="indent">
-				<div className="conteudo">
-					<div className="titulo">
-						<h1>Itens</h1>
-					</div>
-					<div className="texto">
-						<p>No universo de Pokémon existem diversos itens a nossa disposição e cada um possui a sua
-							funcionalidade e importância.</p>
-						<p>Os <b>Held Itens</b> são itens que podem ser segurados por seus Pokémon e alguns são considerados
-							os mais importantes para quem joga na modalidade competitiva, proporcionando diversas vantagens
-							ao Pokémon portador, seja aumento dos atributos ofensivos e defensivos, diminuição de dados causados
-							pelo oponente, recuperação de HP (health points), dentre outros. </p>
-						<p>Além disso, as Berries também são muito utilizadas no competitivo e ao contrário dos itens que
-							só possuem efeito em batalha  elas podem ser utilizadas fora dela também.</p>
-					</div>
-				</div>
-			</div>
-		</div>
+		<Banner className="itens" titulo="Itens">
+			<p>No universo de Pokémon existem diversos itens a nossa disposição e cada um possui a sua
+				funcionalidade e importância.</p>
+			<p>Os <b>Held Itens</b> são itens que podem ser segurados por seus Pokémon e alguns são considerados
+				os mais importantes para quem joga na modalidade competitiva, proporcionando diversas vantagens
+				ao Pokémon portador, seja aumento dos atributos ofensivos e defensivos, diminuição de dados causados
+				pelo oponente, recuperação de HP (health points), dentre outros. </p>
+			<p>Além disso, as Berries também são muito utilizadas no competitivo e ao contrário dos itens que
+				só possuem efeito em batalha  elas podem ser utilizadas fora dela também.</p>
+		</Banner>
 
 
 		<div id="wrap_itens">
