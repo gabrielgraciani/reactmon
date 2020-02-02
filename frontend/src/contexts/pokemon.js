@@ -179,6 +179,7 @@ function Pokemon({children}){
 
 				setCheckedItems(tipo);
 				setCheckedItemsFraq(fraquezas);
+				setChangeFile(imagem);
 
 				setValues({
 					...values,
@@ -255,6 +256,7 @@ function Pokemon({children}){
 			handleChangeFile,
 			checkedItems,
 			checkedItemsFraq,
+			changeFile,
 			pokemonDB,
 			changeClass,
 			activeClass,
