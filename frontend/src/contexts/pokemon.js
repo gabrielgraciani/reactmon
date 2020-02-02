@@ -53,19 +53,6 @@ function Pokemon({children}){
 		setChangeFile(e.target.files[0]);
 	};
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-		values.tipo = checkedItems;
-		values.fraquezas = checkedItemsFraq;
-		console.log(values);
-		savePokemon();
-		changeClass();
-		setValues(initialState);
-		setCheckedItems([]);
-		setCheckedItemsFraq([]);
-		setRefreshTable(oldKey => oldKey + 1);
-	};
-
 	const savePokemon = async() =>{
 		try{
 			await db.collection('pokemon').add({
@@ -83,64 +70,74 @@ function Pokemon({children}){
 					id: docRef.id
 				});
 
-
-				/* começo da função de upload de imagens no storage firebase */
-				const storageRef = firebase.storage().ref();
-				const file = changeFile;
-				const metadata = {
-					contentType: 'image/jpeg'
-				};
-				const uploadTask = storageRef.child('images/' +docRef.id + '/' + file.name).put(file, metadata);
-
-				uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-					function(snapshot) {
-						const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-						console.log('Upload is ' + progress + '% done');
-						switch (snapshot.state) {
-							case firebase.storage.TaskState.PAUSED:
-								console.log('Upload is paused');
-								break;
-							case firebase.storage.TaskState.RUNNING:
-								console.log('Upload is running');
-								break;
-							default:
-								console.log('certo');
-						}
-					}, function(error) {
-
-						switch (error.code) {
-							case 'storage/unauthorized':
-								break;
-
-							case 'storage/canceled':
-								break;
-
-							case 'storage/unknown':
-								break;
-							default:
-								console.log('erro');
-
-						}
-					}, function() {
-						uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-							console.log('File available at', downloadURL);
-
-							db.collection('pokemon').doc(docRef.id).update({
-								imagem: downloadURL
-							});
-						});
-					});
-				/* fim da função de upload de imagens no storage firebase */
-
-
-
-
-
+				//função para salvar as imagens
+				saveImagePokemon(docRef.id);
 
 			})
 		} catch(e){
 			console.log('erro ao salvar pokemon: ', e);
 		}
+	};
+
+	const saveImagePokemon = (docRefId) =>{
+		const storageRef = firebase.storage().ref();
+		const file = changeFile;
+		const metadata = {
+			contentType: 'image/jpeg'
+		};
+		const uploadTask = storageRef.child('images/' + docRefId + '/' + file.name).put(file, metadata);
+
+		uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+			function(snapshot) {
+				const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+				console.log('Upload is ' + progress + '% done');
+				switch (snapshot.state) {
+					case firebase.storage.TaskState.PAUSED:
+						console.log('Upload is paused');
+						break;
+					case firebase.storage.TaskState.RUNNING:
+						console.log('Upload is running');
+						break;
+					default:
+						console.log('certo');
+				}
+			}, function(error) {
+
+				switch (error.code) {
+					case 'storage/unauthorized':
+						break;
+
+					case 'storage/canceled':
+						break;
+
+					case 'storage/unknown':
+						break;
+					default:
+						console.log('erro');
+
+				}
+			}, function() {
+				uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+					console.log('File available at', downloadURL);
+
+					db.collection('pokemon').doc(docRefId).update({
+						imagem: downloadURL
+					});
+				});
+			});
+	};
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		values.tipo = checkedItems;
+		values.fraquezas = checkedItemsFraq;
+		console.log(values);
+		savePokemon();
+		changeClass();
+		setValues(initialState);
+		setCheckedItems([]);
+		setCheckedItemsFraq([]);
+		setRefreshTable(oldKey => oldKey + 1);
 	};
 
 	const deletePokemon = async(id) =>{

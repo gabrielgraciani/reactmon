@@ -6,7 +6,6 @@ import {PokemonContext} from 'contexts/pokemon';
 function PokemonList(){
 	const {pokemonDB, deletePokemon, showEditPokemon} = useContext(PokemonContext);
 
-	console.log(pokemonDB);
 	return(
 		<>
 			<tbody>
