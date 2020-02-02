@@ -57,7 +57,7 @@ function Formulario({changeClass, activeClass}) {
 
 				<div className="item">
 					<label htmlFor="nome">Nome</label>
-					<input type="text" name="nome" value={values.nome} onChange={handleChange} />
+					<input type="text" name="nome" value={values.nome} onChange={handleChange} autoComplete="off" />
 				</div>
 				<div className="item">
 					<label htmlFor="imagem">Imagem</label>
@@ -78,11 +78,11 @@ function Formulario({changeClass, activeClass}) {
 				</div>
 				<div className="item">
 					<label htmlFor="altura">Altura</label>
-					<input type="text" name="altura" value={values.altura} onChange={handleChange} />
+					<input type="text" name="altura" value={values.altura} onChange={handleChange} autoComplete="off" />
 				</div>
 				<div className="item">
 					<label htmlFor="peso">Peso</label>
-					<input type="text" name="peso" value={values.peso} onChange={handleChange} />
+					<input type="text" name="peso" value={values.peso} onChange={handleChange} autoComplete="off" />
 				</div>
 				<div className="item">
 					<label htmlFor="fraquezas">Fraquezas</label>
@@ -100,7 +100,7 @@ function Formulario({changeClass, activeClass}) {
 				</div>
 				<div className="item">
 					<input type="text" name="evolucoes" value={values.evolucoes} onChange={handleChange}
-						   placeholder="Próximas evoluções"/>
+						   placeholder="Próximas evoluções" autoComplete="off" />
 				</div>
 
 				{isEditing && (
