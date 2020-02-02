@@ -58,7 +58,9 @@ function Pokemon({children}){
 			await db.collection('pokemon').add({
 				id: Math.random(),
 				nome: values.nome,
-				imagem: "",
+				imagem:{
+					url: ""
+				},
 				altura: values.altura,
 				evolucoes: values.evolucoes,
 				fraquezas: values.fraquezas,
@@ -119,9 +121,13 @@ function Pokemon({children}){
 			}, function() {
 				uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
 					console.log('File available at', downloadURL);
+					console.log(changeFile);
 
 					db.collection('pokemon').doc(docRefId).update({
-						imagem: downloadURL
+						imagem: {
+							url: downloadURL,
+							name: changeFile.name
+						},
 					});
 					setRefreshTable(oldKey => oldKey + 1);
 				});
@@ -141,11 +147,20 @@ function Pokemon({children}){
 		setRefreshTable(oldKey => oldKey + 1);
 	};
 
-	const deletePokemon = async(id) =>{
+	const deletePokemon = async(id, imagem) =>{
 		try{
 			await db.collection('pokemon').doc(id).delete().then(() => {
 				console.log("pokemon deletado com sucesso");
 				setRefreshTable(oldKey => oldKey + 1);
+
+				const storageRef = firebase.storage().ref();
+				var desertRef = storageRef.child(`images/${id}/${imagem}`);
+				desertRef.delete().then(function() {
+					console.log('foto deletada com sucesso');
+				}).catch(function(error) {
+					console.log('erro', error);
+				});
+
 			})
 		}
 		catch(e){

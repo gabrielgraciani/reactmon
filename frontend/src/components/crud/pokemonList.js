@@ -16,11 +16,11 @@ function PokemonList(){
 					<td className="item">{item.id}</td>
 					<td className="item">{item.nome}</td>
 					<td className="item">
-						{item.imagem === '' && (
+						{item.imagem.url === '' && (
 							<CircularProgress size={25} />
 						)}
-						{item.imagem !== '' && (
-							<img src={item.imagem} alt={item.nome} />
+						{item.imagem.url !== '' && (
+							<img src={item.imagem.url} alt={item.nome} />
 						)}
 						</td>
 					<td className="item">{item.tipo.join(', ')}</td>
@@ -30,7 +30,7 @@ function PokemonList(){
 					<td className="item">evoluções</td>
 					<td className="item actions">
 						<div className="icon"><EditIcon className="edit" onClick={() => showEditPokemon(item.id)} /></div>
-						<div className="icon"><DeleteIcon className="delete" onClick={() => { if (window.confirm(`Você quer mesmo deletar o pokemon ${item.nome} ?`)) deletePokemon(item.id)}} /></div>
+						<div className="icon"><DeleteIcon className="delete" onClick={() => { if (window.confirm(`Você quer mesmo deletar o pokemon ${item.nome} ?`)) deletePokemon(item.id, item.imagem.name)}} /></div>
 					</td>
 				</tr>
 			))}
