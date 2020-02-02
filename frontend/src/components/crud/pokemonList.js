@@ -2,6 +2,8 @@ import React, {useContext} from 'react';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import {PokemonContext} from 'contexts/pokemon';
+import CircularProgress from '@material-ui/core/CircularProgress';
+
 
 function PokemonList(){
 	const {pokemonDB, deletePokemon, showEditPokemon} = useContext(PokemonContext);
@@ -14,7 +16,13 @@ function PokemonList(){
 					<td className="item">{item.id}</td>
 					<td className="item">{item.nome}</td>
 					<td className="item">
-						<img src={item.imagem} alt={item.nome} /></td>
+						{item.imagem === '' && (
+							<CircularProgress size={25} />
+						)}
+						{item.imagem !== '' && (
+							<img src={item.imagem} alt={item.nome} />
+						)}
+						</td>
 					<td className="item">{item.tipo.join(', ')}</td>
 					<td className="item">{item.altura}</td>
 					<td className="item">{item.peso}</td>

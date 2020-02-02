@@ -19,7 +19,7 @@ function Pokemon({children}){
 	const [values, setValues] = useState(initialState);
 	const [checkedItems, setCheckedItems] = useState([]);
 	const [checkedItemsFraq, setCheckedItemsFraq] = useState([]);
-	const [changeFile, setChangeFile] = useState([]);
+	const [changeFile, setChangeFile] = useState('');
 	const [pokemonDB, setPokemonDB] = useState([]);
 	const [isEditing, setIsEditing] = useState(false);
 	const [activeClass, setActiveClass] = useState('');
@@ -58,7 +58,7 @@ function Pokemon({children}){
 			await db.collection('pokemon').add({
 				id: Math.random(),
 				nome: values.nome,
-				imagem: values.imagem,
+				imagem: "",
 				altura: values.altura,
 				evolucoes: values.evolucoes,
 				fraquezas: values.fraquezas,
@@ -123,6 +123,7 @@ function Pokemon({children}){
 					db.collection('pokemon').doc(docRefId).update({
 						imagem: downloadURL
 					});
+					setRefreshTable(oldKey => oldKey + 1);
 				});
 			});
 	};
