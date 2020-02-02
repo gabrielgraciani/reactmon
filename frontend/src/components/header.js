@@ -46,10 +46,13 @@ const Header = () =>{
 				<div className={`pokeball ${activeClass}`} onClick={change} id="pokebola"> </div>
 
 				<div className={`menu ${activeClass}`} ref={wrapperRef} id="menu">
-					<div className={`fechar ${activeClass}`} id="fechar"  onClick={change}>
+					{/*<div className={`fechar ${activeClass}`} id="fechar"  onClick={change}>
 						<div className="risco risco1"> </div>
 						<div className="risco risco2"> </div>
-					</div>
+					</div>*/}
+
+					<div className={`premierball ${activeClass}`} onClick={change} id="pokebola"> </div>
+
 					<ul>
 						<Link to={HOME}>
 							<li onClick={change}>Home</li>
