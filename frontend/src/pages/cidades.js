@@ -6,11 +6,11 @@ const Cidades = () => (
 			<div className="cidade">
 				<div className="imagem">
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSCesKFa9Bj3NHo8TZJZGm3Ml-a8GoS4WT2slAe18nNrm3QTJ0z" alt="cidade"/>
+
+					<svg class="wavy" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+						<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none'}}></path>
+					</svg>
 				</div>
-				<svg class="card__svg" viewBox="0 0 800 500">
-					<path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"></path>
-					<path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"></path>
-				</svg>
 				<div className="conteudo">
 					<div className="nome">
 						<h4>Lorem ipsum</h4>
@@ -26,11 +26,11 @@ const Cidades = () => (
 			<div className="cidade">
 				<div className="imagem">
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSCesKFa9Bj3NHo8TZJZGm3Ml-a8GoS4WT2slAe18nNrm3QTJ0z" alt="cidade"/>
+
+					<svg class="wavy" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+						<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none'}}></path>
+					</svg>
 				</div>
-				<svg class="card__svg" viewBox="0 0 800 500">
-					<path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"></path>
-					<path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"></path>
-				</svg>
 				<div className="conteudo">
 					<div className="nome">
 						<h4>Lorem ipsum</h4>
@@ -46,11 +46,11 @@ const Cidades = () => (
 			<div className="cidade">
 				<div className="imagem">
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSCesKFa9Bj3NHo8TZJZGm3Ml-a8GoS4WT2slAe18nNrm3QTJ0z" alt="cidade"/>
+
+					<svg class="wavy" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+						<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none'}}></path>
+					</svg>
 				</div>
-				<svg class="card__svg" viewBox="0 0 800 500">
-					<path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"></path>
-					<path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"></path>
-				</svg>
 				<div className="conteudo">
 					<div className="nome">
 						<h4>Lorem ipsum</h4>
@@ -66,11 +66,11 @@ const Cidades = () => (
 			<div className="cidade">
 				<div className="imagem">
 					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSCesKFa9Bj3NHo8TZJZGm3Ml-a8GoS4WT2slAe18nNrm3QTJ0z" alt="cidade"/>
+
+					<svg class="wavy" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
+						<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none'}}></path>
+					</svg>
 				</div>
-				<svg class="card__svg" viewBox="0 0 800 500">
-					<path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="transparent" fill="#333"></path>
-					<path class="card__line" d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="pink" stroke-width="3" fill="transparent"></path>
-				</svg>
 				<div className="conteudo">
 					<div className="nome">
 						<h4>Lorem ipsum</h4>
@@ -82,6 +82,7 @@ const Cidades = () => (
 					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 );
