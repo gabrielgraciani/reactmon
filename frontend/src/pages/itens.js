@@ -4,6 +4,7 @@ import SPotion from 'assets/images/spotion.png';
 import HPotion from 'assets/images/hpotion.png';
 import MPotion from 'assets/images/mpotion.png';
 import Banner from 'components/banner';
+import Search from 'components/search';
 
 const Itens = () => (
 	<>
@@ -18,6 +19,7 @@ const Itens = () => (
 				só possuem efeito em batalha  elas podem ser utilizadas fora dela também.</p>
 		</Banner>
 
+		<Search placeholder="Pesquise um item" />
 
 		<div id="wrap_itens">
 			<div className="indent">

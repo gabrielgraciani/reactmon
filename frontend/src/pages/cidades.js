@@ -1,5 +1,6 @@
 import React from 'react';
 import Banner from 'components/banner';
+import Search from 'components/search';
 
 const Cidades = () => (
 	<>
@@ -17,6 +18,8 @@ const Cidades = () => (
 				os moradores da diferentes regiões, nas versões em inglês dos jogos Pokémon Gold
 				e Pokémon Silver, o mapa refere-se a Kanto e Johto como countrys.</p>
 		</Banner>
+
+		<Search placeholder="Pesquise uma cidade" />
 
 		<div id="wrap_cidades">
 			<div className="indent">
