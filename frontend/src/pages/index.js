@@ -1,18 +1,30 @@
 import React, {useState, useEffect} from 'react'
 import axios from 'axios';
 import Carousel from 'components/carousel';
+import {useDispatch, useSelector} from "react-redux";
+import {pokemonFetch} from "../redux/actions/pokemon";
 
 function Home(){
+	const dispatch = useDispatch();
+
 	const [data, setData] = useState({ pokemon: [] });
 
+	const { list, isLoading } = useSelector(store => store.pokemon);
 
 	useEffect(() => {
+
+		if (list.length === 0) {
+			dispatch(pokemonFetch());
+		}
+
+		/*
 		const fetchData = async () => {
 			const result = await axios(
 				'http://localhost:8080/api/v1/pokemon/');
 			setData(result.data);
 		};
 		fetchData();
+		*/
 	}, []);
 
 	return(
@@ -27,7 +39,7 @@ function Home(){
 
 		<div id="wrap_pokemon">
 			<div className="indent">
-				{data.pokemon.map(item => (
+				{list.map(item => (
 					<div className={`card ${item.type[0].toLowerCase()}`} key={item.id}>
 						<div className="imagem">
 							<img src={item.img} className="pokemon" alt={item.name} />

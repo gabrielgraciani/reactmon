@@ -4,16 +4,21 @@ import "assets/css/styles.css";
 import App from './App';
 import AuthProvider from 'contexts/auth';
 import PokemonProvider from 'contexts/pokemon';
+import { Provider } from 'react-redux';
 
-const Root = () =>(
+import configRedux from './redux/configRedux';
+const store = configRedux();
+
+const Root = () => (
+	<Provider store={store}>
 		<AuthProvider>
 			<PokemonProvider>
 				<BrowserRouter>
-					<Route component={App} />
+					<Route component={App}/>
 				</BrowserRouter>
 			</PokemonProvider>
 		</AuthProvider>
-
+	</Provider>
 );
 
 export default Root;
