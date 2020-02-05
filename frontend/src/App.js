@@ -1,6 +1,6 @@
 import React, {lazy, Suspense, useState, useEffect, useContext} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import {CIDADES, CRUD, ITENS, LOGIN, POKEDEX} from './routes';
+import {CIDADES, CRUD_POKEMON, CRUD_ITEM, ITENS, LOGIN, POKEDEX} from './routes';
 import firebase from 'services/firebase';
 import {AuthContext} from 'contexts/auth';
 
@@ -11,7 +11,8 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Home = lazy(() => import('pages/index'));
 const Cidades = lazy(() => import('pages/cidades'));
-const Crud = lazy(() => import('pages/crud'));
+const Crud_Pokemon = lazy(() => import('pages/crud-pokemon'));
+const Crud_Item = lazy(() => import('pages/crud-item'));
 const Itens = lazy(() => import('pages/itens'));
 const Login = lazy(() => import('pages/login'));
 const Pokedex = lazy(() => import('pages/pokedex'));
@@ -43,11 +44,11 @@ function App({location}) {
 
 	if(isUserLoggedIn){
 		if(location.pathname === LOGIN){
-			return <Redirect to={CRUD} />
+			return <Redirect to={CRUD_POKEMON} />
 		}
 	}
 	else{
-		if(location.pathname === CRUD){
+		if(location.pathname === CRUD_POKEMON){
 			return <Redirect to={LOGIN} />
 		}
 	}
@@ -60,7 +61,8 @@ function App({location}) {
 			  <Suspense fallback={'Carregando...'}>
 				  <Switch>
 					  <Route path={CIDADES} component={Cidades} />
-					  <Route path={CRUD} component={Crud} />
+					  <Route path={CRUD_POKEMON} component={Crud_Pokemon} />
+					  <Route path={CRUD_ITEM} component={Crud_Item} />
 					  <Route path={ITENS} component={Itens} />
 					  <Route path={LOGIN} component={Login} />
 					  <Route path={POKEDEX} component={Pokedex} />

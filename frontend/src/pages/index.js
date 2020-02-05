@@ -11,7 +11,6 @@ function Home(){
 	const { list, isLoading } = useSelector(store => store.pokemon);
 
 	useEffect(() => {
-
 		if (list.length === 0) {
 			dispatch(pokemonFetch());
 		}

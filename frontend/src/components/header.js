@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect, useContext} from 'react';
 import {Link} from 'react-router-dom';
-import {CIDADES, CRUD, HOME, ITENS, LOGIN, POKEDEX} from 'routes';
+import {CIDADES, CRUD_POKEMON, CRUD_ITEM, HOME, ITENS, LOGIN, POKEDEX} from 'routes';
 import {AuthContext} from 'contexts/auth';
 
 const Header = () =>{
@@ -67,19 +67,21 @@ const Header = () =>{
 							<li onClick={change}>Cidades</li>
 						</Link>
 
-						{isUserLoggedIn && (
+						{isUserLoggedIn ? (
 							<>
-								<Link to={CRUD}>
-									<li onClick={change}>Crud</li>
+								<Link to={CRUD_POKEMON}>
+									<li onClick={change}>Crud Pokemon</li>
 								</Link>
 
-							<div onClick={logout}>
-								<li onClick={change}>Logout</li>
-							</div>
-							</>
-						)}
+								<Link to={CRUD_ITEM}>
+									<li onClick={change}>Crud Item</li>
+								</Link>
 
-						{!isUserLoggedIn && (
+								<div onClick={logout}>
+									<li onClick={change}>Logout</li>
+								</div>
+							</>
+						) : (
 							<Link to={LOGIN}>
 								<li onClick={change}>Login</li>
 							</Link>

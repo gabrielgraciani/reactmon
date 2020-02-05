@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {AuthContext} from 'contexts/auth';
-import Form from 'components/crud/formulario';
-import Tabela from 'components/crud/tabela';
+import Form from 'components/crud/pokemon/formulario';
+import Tabela from 'components/crud/pokemon/tabela';
 import {PokemonContext} from 'contexts/pokemon';
 
 function Crud() {
