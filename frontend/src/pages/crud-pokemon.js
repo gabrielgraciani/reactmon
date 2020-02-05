@@ -4,7 +4,7 @@ import Form from 'components/crud/pokemon/formulario';
 import Tabela from 'components/crud/pokemon/tabela';
 import {PokemonContext} from 'contexts/pokemon';
 
-function Crud() {
+function Crud_Pokemon() {
 
 	const {userInfo} = useContext(AuthContext);
 	const nomeUser = userInfo.user.displayName;
@@ -28,4 +28,4 @@ function Crud() {
 	)
 }
 
-export default Crud;
+export default Crud_Pokemon;
