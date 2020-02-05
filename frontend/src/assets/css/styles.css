@@ -122,7 +122,7 @@ li{font-size:18px;}
 #wrap_banner .container .icons.right:after {box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important;}
 
 
-#wrap_pokemon{width:100%; position:relative;}
+#wrap_pokemon{width:100%; position:relative; display:flex; flex-direction:column; align-items:center;}
 #wrap_pokemon .indent{padding:50px 0 0 0; display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));	grid-gap: 40px 1.6%;}
 #wrap_pokemon .indent .card{transition:all .3s ease; width:100%; font-family:'Open Sans Condensed'; box-shadow: 0px 5px 20px -10px #3A1C71; position:relative; border-radius:10px; padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center;}
 #wrap_pokemon .indent .card:hover{transform:translateY(-4%); box-shadow:0px 5px 20px -5px #3A1C71;}

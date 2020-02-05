@@ -1,13 +1,12 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios';
+import React, {useEffect} from 'react'
 import Carousel from 'components/carousel';
 import {useDispatch, useSelector} from "react-redux";
 import {pokemonFetch} from "../redux/actions/pokemon";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 function Home(){
 	const dispatch = useDispatch();
 
-	const [data, setData] = useState({ pokemon: [] });
 
 	const { list, isLoading } = useSelector(store => store.pokemon);
 
@@ -16,15 +15,6 @@ function Home(){
 		if (list.length === 0) {
 			dispatch(pokemonFetch());
 		}
-
-		/*
-		const fetchData = async () => {
-			const result = await axios(
-				'http://localhost:8080/api/v1/pokemon/');
-			setData(result.data);
-		};
-		fetchData();
-		*/
 	}, []);
 
 	return(
@@ -38,6 +28,9 @@ function Home(){
 		</ul>
 
 		<div id="wrap_pokemon">
+			{isLoading && (
+				<CircularProgress size={250} />
+			)}
 			<div className="indent">
 				{list.map(item => (
 					<div className={`card ${item.type[0].toLowerCase()}`} key={item.id}>
