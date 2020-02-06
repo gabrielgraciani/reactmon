@@ -6,7 +6,7 @@ import {itemSend, itemFetch} from "../redux/actions/item";
 function Crud_Item(){
 	const dispatch = useDispatch();
 
-	const { list, isLoading } = useSelector(store => store.pokemon);
+	const { list, isLoading } = useSelector(store => store.item);
 	console.log("list", list);
 
 	useEffect(() => {
@@ -29,9 +29,9 @@ function Crud_Item(){
 			<input type="submit" value="Enviar"/>
 		</form>
 
-		{list.map(item => (
-				<div>{item.nome}</div>
-			))}
+		{/*{list.map((item, index) => (
+				<div key={index}>item</div>
+			))}*/}
 		</>
 	)
 }

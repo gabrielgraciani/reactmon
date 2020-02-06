@@ -1,7 +1,9 @@
-import { takeLatest, all, put } from 'redux-saga/effects';
+import { takeLatest, all, put, call } from 'redux-saga/effects';
 import {db} from 'services/firebase';
 
 import * as actions from '../actions/item';
+import Item from '../../services/item';
+
 
 function* itemSendWorker(data) {
 	try {
@@ -27,18 +29,10 @@ function* itemSendWorker(data) {
 
 function* itemFetchWorker() {
 	try {
-		let item = [];
-		db.collection('item').get().then(querySnapshot => {
-			querySnapshot.forEach(doc => {
-				console.log(doc.data());
-				item.push({
-					id: doc.id,
-					...doc.data()
-				})
-			});
-			console.log("item: ", item);
-			put(actions.itemFullFilled(item));
-		});
+
+		yield put(actions.itemFullFilled(yield call(Item.getItens)));
+
+
 	} catch (error) {
 		console.log('error', error);
 	}
