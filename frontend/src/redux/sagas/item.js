@@ -4,7 +4,6 @@ import * as actions from '../actions/item';
 
 function* sendItemWorker() {
 	try {
-		yield put(actions.sendItem());
 
 	} catch (error) {
 		console.log('error', error);
