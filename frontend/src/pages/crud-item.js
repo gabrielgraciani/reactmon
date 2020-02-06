@@ -1,18 +1,19 @@
-import React from 'react';
-import {useDispatch, /*useSelector*/} from "react-redux";
-import {itemSend} from "../redux/actions/item";
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {itemSend, itemFetch} from "../redux/actions/item";
 
 
 function Crud_Item(){
 	const dispatch = useDispatch();
 
-	/*const {saving} = useSelector(store => store.pokemon)
+	const { list, isLoading } = useSelector(store => store.item);
+	console.log(list);
 
 	useEffect(() => {
-		if (!saving) {
-			//dispatch
+		if (list.length === 0) {
+			dispatch(itemFetch());
 		}
-	}, [saving]);*/
+	}, []);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -23,11 +24,17 @@ function Crud_Item(){
 	};
 
 	return(
+		<>
 		<form action="" onSubmit={onSubmit}>
 			<input type="text" name="nome" placeholder="Nome" />
 			<input type="text" name="descricao" placeholder="Descrição"/>
 			<input type="submit" value="Enviar"/>
 		</form>
+
+		{list.map(item => (
+				<div>{item.nome}</div>
+			))}
+		</>
 	)
 }
 

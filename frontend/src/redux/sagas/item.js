@@ -3,7 +3,7 @@ import {db} from 'services/firebase';
 
 import * as actions from '../actions/item';
 
-function* sendItemWorker(data) {
+function* itemSendWorker(data) {
 	try {
 		const {nome, descricao} = data.payload;
 		/*console.log(nome, descricao);*/
@@ -25,13 +25,35 @@ function* sendItemWorker(data) {
 	}
 }
 
-function* sendItemWatcher() {
-	yield takeLatest(actions.ITEM_SEND, sendItemWorker);
+function* itemFetchWorker() {
+	try {
+		let item = [];
+		db.collection('item').get().then(querySnapshot => {
+			querySnapshot.forEach(doc => {
+				item.push({
+					id: doc.id,
+					...doc.data()
+				})
+			});
+		});
+			yield put(actions.itemFullfilled(item));
+	} catch (error) {
+		console.log('error', error);
+	}
+}
+
+function* itemSendWatcher() {
+	yield takeLatest(actions.ITEM_SEND, itemSendWorker);
+}
+
+function* itemFetchWatcher() {
+	yield takeLatest(actions.ITEM_FETCH, itemFetchWorker);
 }
 
 function* itemWatcher() {
 	yield all([
-		sendItemWatcher()
+		itemSendWatcher(),
+		itemFetchWatcher()
 	]);
 }
 

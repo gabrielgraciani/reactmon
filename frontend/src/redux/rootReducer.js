@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import pokemon from './reducers/pokemon.js';
-import item from './reducers/item';
+import item from './reducers/item.js';
 
 const reducers = combineReducers({
 	pokemon,
