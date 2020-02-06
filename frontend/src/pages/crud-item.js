@@ -1,14 +1,14 @@
 import React from 'react';
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch, /*useSelector*/} from "react-redux";
 import {sendItem} from "../redux/actions/item";
 
 
 function Crud_Item(){
 	const dispatch = useDispatch();
 
-	const {saving} = useSelector(store => store.pokemon)
+	/*const {saving} = useSelector(store => store.pokemon)
 
-/*	useEffect(() => {
+	useEffect(() => {
 		if (!saving) {
 			//dispatch
 		}

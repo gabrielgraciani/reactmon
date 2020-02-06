@@ -1,4 +1,4 @@
-import { takeLatest, all, call, put } from 'redux-saga/effects';
+import { takeLatest, all, put } from 'redux-saga/effects';
 import {db} from 'services/firebase';
 
 import * as actions from '../actions/item';
@@ -16,8 +16,8 @@ function* sendItemWorker(data) {
 			db.collection('item').doc(docRef.id).update({
 				id: docRef.id
 			});
-			actions.savedSuccess();
-		})
+		});
+			yield put (actions.savedSuccess());
 
 
 	} catch (error) {

@@ -5,7 +5,7 @@ export const initialState = {
 	saving: false
 };
 
-export default function pokemonReducer(
+export default function itemReducer(
 	state = initialState,
 	{ type, payload }
 ) {
