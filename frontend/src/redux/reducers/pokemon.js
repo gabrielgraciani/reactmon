@@ -18,7 +18,7 @@ export default function pokemonReducer(
 				isLoading: true
 			};
 
-		case actions.POKEMON_FULFILLED:
+		case actions.POKEMON_FULLFILLED:
 			return {
 				...initialState,
 				...state,

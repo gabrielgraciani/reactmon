@@ -9,7 +9,7 @@ function* pokemonFetchWorker() {
 		const { pokemon } = data;
 
 		if (status === 200) {
-			yield put(actions.pokemonFulfilled(pokemon));
+			yield put(actions.pokemonFullfilled(pokemon));
 		} else {
 			throw new Error(status.message);
 		}

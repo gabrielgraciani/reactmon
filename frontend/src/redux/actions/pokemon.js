@@ -1,5 +1,5 @@
 export const POKEMON_FETCH = 'POKEMON_FETCH';
-export const POKEMON_FULFILLED = 'POKEMON_FULFILLED';
+export const POKEMON_FULLFILLED = 'POKEMON_FULLFILLED';
 export const POKEMON_REJECTED = 'POKEMON_REJECTED';
 
 export const pokemonFetch = () => ({
@@ -7,8 +7,8 @@ export const pokemonFetch = () => ({
 	payload: {}
 });
 
-export const pokemonFulfilled = (list) => ({
-	type: POKEMON_FULFILLED,
+export const pokemonFullfilled = (list) => ({
+	type: POKEMON_FULLFILLED,
 	payload: {
 		list
 	}
