@@ -30,13 +30,15 @@ function* itemFetchWorker() {
 		let item = [];
 		db.collection('item').get().then(querySnapshot => {
 			querySnapshot.forEach(doc => {
+				console.log(doc.data());
 				item.push({
 					id: doc.id,
 					...doc.data()
 				})
 			});
+			console.log("item: ", item);
+			put(actions.itemFullFilled(item));
 		});
-			yield put(actions.itemFullfilled(item));
 	} catch (error) {
 		console.log('error', error);
 	}

@@ -6,13 +6,11 @@ import {itemSend, itemFetch} from "../redux/actions/item";
 function Crud_Item(){
 	const dispatch = useDispatch();
 
-	const { list, isLoading } = useSelector(store => store.item);
-	console.log(list);
+	const { list, isLoading } = useSelector(store => store.pokemon);
+	console.log("list", list);
 
 	useEffect(() => {
-		if (list.length === 0) {
-			dispatch(itemFetch());
-		}
+		dispatch(itemFetch());
 	}, []);
 
 	const onSubmit = (e) => {
