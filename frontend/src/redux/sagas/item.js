@@ -16,6 +16,7 @@ function* sendItemWorker(data) {
 			db.collection('item').doc(docRef.id).update({
 				id: docRef.id
 			});
+			actions.savedSuccess();
 		})
 
 

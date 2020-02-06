@@ -6,6 +6,14 @@ import {sendItem} from "../redux/actions/item";
 function Crud_Item(){
 	const dispatch = useDispatch();
 
+	const {saving} = useSelector(store => store.pokemon)
+
+/*	useEffect(() => {
+		if (!saving) {
+			//dispatch
+		}
+	}, [saving]);*/
+
 	const onSubmit = (e) => {
 		e.preventDefault();
 		const {nome, descricao} = e.target;

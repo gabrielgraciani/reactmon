@@ -1,7 +1,8 @@
 import * as actions from '../actions/item';
 
 export const initialState = {
-	data: []
+	data: [],
+	saving: false
 };
 
 export default function pokemonReducer(
@@ -15,6 +16,14 @@ export default function pokemonReducer(
 				...initialState,
 				...state,
 				data: [payload],
+				saving: true,
+			};
+
+		case actions.SAVED_SUCCESS:
+			return{
+				...initialState,
+				...state,
+				saving: false
 			};
 
 
