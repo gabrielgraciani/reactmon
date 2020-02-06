@@ -6,14 +6,13 @@ import * as actions from '../actions/item';
 function* sendItemWorker(data) {
 	try {
 		const {nome, descricao} = data.payload;
-		console.log(nome, descricao);
+		/*console.log(nome, descricao);*/
 
 		db.collection('item').add({
 		id: Math.random(),
 		nome,
 		descricao
-		})
-		.then(function(docRef){
+		}).then(function(docRef){
 			db.collection('item').doc(docRef.id).update({
 				id: docRef.id
 			});

@@ -10,7 +10,7 @@ export default function pokemonReducer(
 ) {
 	switch (type) {
 		case actions.SEND_ITEM:
-			console.log(payload)
+			/*console.log(payload);*/
 			return {
 				...initialState,
 				...state,
