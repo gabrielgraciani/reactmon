@@ -10,7 +10,7 @@ export default function itemReducer(
 	{ type, payload }
 ) {
 	switch (type) {
-		case actions.SEND_ITEM:
+		case actions.ITEM_SEND:
 			/*console.log(payload);*/
 			return {
 				...initialState,
@@ -19,7 +19,7 @@ export default function itemReducer(
 				saving: true,
 			};
 
-		case actions.SAVED_SUCCESS:
+		case actions.ITEM_SAVED_SUCCESS:
 			return{
 				...initialState,
 				...state,

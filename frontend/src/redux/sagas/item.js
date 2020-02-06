@@ -17,7 +17,7 @@ function* sendItemWorker(data) {
 				id: docRef.id
 			});
 		});
-			yield put (actions.savedSuccess());
+			yield put (actions.itemSavedSuccess());
 
 
 	} catch (error) {
@@ -26,7 +26,7 @@ function* sendItemWorker(data) {
 }
 
 function* sendItemWatcher() {
-	yield takeLatest(actions.SEND_ITEM, sendItemWorker);
+	yield takeLatest(actions.ITEM_SEND, sendItemWorker);
 }
 
 function* itemWatcher() {

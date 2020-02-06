@@ -1,11 +1,11 @@
-export const SEND_ITEM = 'SEND_ITEM';
-export const SAVED_SUCCESS = 'SAVED_SUCCESS';
+export const ITEM_SEND = 'ITEM_SEND';
+export const ITEM_SAVED_SUCCESS = 'ITEM_SAVED_SUCCESS';
 
-export const sendItem = (payload) => ({
-	type: SEND_ITEM,
+export const itemSend = (payload) => ({
+	type: ITEM_SEND,
 	payload
 });
 
-export const savedSuccess = () => ({
-	type: SAVED_SUCCESS
+export const itemSavedSuccess = () => ({
+	type: ITEM_SAVED_SUCCESS
 });

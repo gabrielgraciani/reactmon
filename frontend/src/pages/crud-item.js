@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, /*useSelector*/} from "react-redux";
-import {sendItem} from "../redux/actions/item";
+import {itemSend} from "../redux/actions/item";
 
 
 function Crud_Item(){
@@ -19,7 +19,7 @@ function Crud_Item(){
 		const {nome, descricao} = e.target;
 		console.log(nome.value, descricao.value);
 
-		dispatch(sendItem({nome: nome.value, descricao: descricao.value}))
+		dispatch(itemSend({nome: nome.value, descricao: descricao.value}))
 	};
 
 	return(
