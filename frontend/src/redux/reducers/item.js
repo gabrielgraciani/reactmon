@@ -25,7 +25,10 @@ export default function itemReducer(
 			return{
 				...initialState,
 				...state,
-				...payload,
+				list: [
+					...state.list,
+					payload
+				],
 				saving: false
 			};
 

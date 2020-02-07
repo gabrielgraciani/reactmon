@@ -20,12 +20,12 @@ function* itemSendWorker(data) {
 				id: docRef.id
 			});
 		});
-			yield put (actions.itemSavedSuccess());
+			yield put (actions.itemSavedSuccess({
+				nome,
+				descricao
+			}));
 
-			yield put(actions.itemFetch());
-
-			/*const fetch = yield call(Item.getItens);
-			yield put(actions.itemFullFilled(fetch));*/
+			/*yield put(actions.itemFetch());*/
 
 	} catch (error) {
 		console.log('error', error);

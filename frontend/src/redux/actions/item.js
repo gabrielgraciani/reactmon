@@ -8,8 +8,9 @@ export const itemSend = (payload) => ({
 	payload
 });
 
-export const itemSavedSuccess = () => ({
-	type: ITEM_SAVED_SUCCESS
+export const itemSavedSuccess = (payload) => ({
+	type: ITEM_SAVED_SUCCESS,
+	payload
 });
 
 export const itemFetch = () => ({
