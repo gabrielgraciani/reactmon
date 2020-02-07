@@ -9,6 +9,7 @@ function* itemSendWorker(data) {
 	try {
 		const {nome, descricao} = data.payload;
 		/*console.log(nome, descricao);*/
+		console.log("data payload", data.payload, "data teste", data.teste);
 
 		db.collection('item').add({
 		id: Math.random(),
@@ -20,6 +21,8 @@ function* itemSendWorker(data) {
 			});
 		});
 			yield put (actions.itemSavedSuccess());
+
+			yield put(actions.itemFetch());
 
 			/*const fetch = yield call(Item.getItens);
 			yield put(actions.itemFullFilled(fetch));*/
