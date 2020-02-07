@@ -20,7 +20,7 @@ function* itemSendWorker(data) {
 			});
 		});
 			yield put (actions.itemSavedSuccess());
-
+			yield put(actions.itemFullFilled(yield call(Item.getItens)));
 
 	} catch (error) {
 		console.log('error', error);
@@ -30,9 +30,7 @@ function* itemSendWorker(data) {
 function* itemFetchWorker() {
 	try {
 
-		const teste = yield put(actions.itemFullFilled(yield call(Item.getItens)));
-		console.log(teste);
-
+		yield put(actions.itemFullFilled(yield call(Item.getItens)));
 
 	} catch (error) {
 		console.log('error', error);
