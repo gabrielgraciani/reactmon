@@ -30,7 +30,8 @@ function* itemSendWorker(data) {
 function* itemFetchWorker() {
 	try {
 
-		yield put(actions.itemFullFilled(yield call(Item.getItens)));
+		const teste = yield put(actions.itemFullFilled(yield call(Item.getItens)));
+		console.log(teste);
 
 
 	} catch (error) {
