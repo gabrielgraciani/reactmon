@@ -17,9 +17,9 @@ export const itemFetch = () => ({
 	payload: {}
 });
 
-export const itemFullFilled = (list) => ({
+export const itemFullFilled = (data) => ({
 	type: ITEM_FULLFILLED,
 	payload: {
-		list
+		data
 	}
 });

@@ -1,13 +1,14 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {itemSend, itemFetch} from "../redux/actions/item";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 function Crud_Item(){
 	const dispatch = useDispatch();
 
-	const { list, isLoading } = useSelector(store => store.item);
-	console.log("list", list);
+	const { data, isLoading } = useSelector(store => store.item);
+	console.log("list", data);
 
 	useEffect(() => {
 		dispatch(itemFetch());
@@ -29,9 +30,12 @@ function Crud_Item(){
 			<input type="submit" value="Enviar"/>
 		</form>
 
-		{/*{list.map((item, index) => (
-				<div key={index}>item</div>
-			))}*/}
+		{isLoading && (
+			<CircularProgress size={25} />
+		)}
+		{data.map((item, index) => (
+				<div key={index}>{item.nome}</div>
+			))}
 		</>
 	)
 }
