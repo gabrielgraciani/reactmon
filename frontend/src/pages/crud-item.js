@@ -7,14 +7,14 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 function Crud_Item(){
 	const dispatch = useDispatch();
 
-	const { data, isLoading } = useSelector(store => store.item);
-	console.log("list", data.length);
+	const { list, isLoading } = useSelector(store => store.item);
+	console.log("list", list);
 
 	useEffect(() => {
-		if(data.length === 0){
+		if(list.length === 0){
 			dispatch(itemFetch());
 		}
-	}, []);
+	}, [isLoading]);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -35,7 +35,7 @@ function Crud_Item(){
 		{isLoading && (
 			<CircularProgress size={25} />
 		)}
-		{data.map((item, index) => (
+		{list.map((item, index) => (
 				<div key={index}>{item.nome}</div>
 			))}
 		</>

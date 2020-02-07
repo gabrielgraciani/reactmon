@@ -3,7 +3,8 @@ import * as actions from '../actions/item';
 export const initialState = {
 	data: [],
 	saving: false,
-	isLoading: false
+	isLoading: false,
+	list: []
 };
 
 export default function itemReducer(
@@ -24,6 +25,7 @@ export default function itemReducer(
 			return{
 				...initialState,
 				...state,
+				...payload,
 				saving: false
 			};
 
@@ -31,7 +33,7 @@ export default function itemReducer(
 			return {
 				...initialState,
 				...state,
-				data: [],
+				list: [],
 				isLoading: true
 			};
 
