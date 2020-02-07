@@ -8,10 +8,12 @@ function Crud_Item(){
 	const dispatch = useDispatch();
 
 	const { data, isLoading } = useSelector(store => store.item);
-	console.log("list", data);
+	console.log("list", data.length);
 
 	useEffect(() => {
-		dispatch(itemFetch());
+		if(data.length === 0){
+			dispatch(itemFetch());
+		}
 	}, []);
 
 	const onSubmit = (e) => {

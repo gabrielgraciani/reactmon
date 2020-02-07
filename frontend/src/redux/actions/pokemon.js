@@ -7,7 +7,7 @@ export const pokemonFetch = () => ({
 	payload: {}
 });
 
-export const pokemonFullfilled = (list) => ({
+export const pokemonFullFilled = (list) => ({
 	type: POKEMON_FULLFILLED,
 	payload: {
 		list
