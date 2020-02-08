@@ -14,7 +14,7 @@ function Home(){
 		if (list.length === 0) {
 			dispatch(pokemonFetch());
 		}
-	}, []);
+	}, [dispatch, list.length]);
 
 	return(
 		<>

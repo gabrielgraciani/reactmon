@@ -16,7 +16,7 @@ function DataList(){
 		if(list.length === 0){
 			dispatch(itemFetch());
 		}
-	}, [isLoading]);
+	}, [dispatch, list.length]);
 
 	return(
 		<>
