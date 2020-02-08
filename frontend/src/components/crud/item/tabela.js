@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {activeClass} from "../../../redux/actions/activeClass";
+import {activeClass} from "redux/actions/activeClass";
 import DataList from './dataList';
 
 function Tabela() {
