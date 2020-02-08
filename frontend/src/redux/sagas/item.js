@@ -5,7 +5,6 @@ import * as actions from '../actions/item';
 import Item from '../../services/item';
 import {desactiveClass} from '../actions/activeClass';
 
-
 function* itemSendWorker(data) {
 	try {
 		const {nome, descricao} = data.payload;
@@ -21,13 +20,13 @@ function* itemSendWorker(data) {
 				id: docRef.id
 			});
 		});
-			yield put (actions.itemSavedSuccess({
+			/*yield put (actions.itemSavedSuccess({
 				nome,
 				descricao
-			}));
+			}));*/
 
+			yield put(actions.itemFetch());
 			yield put(desactiveClass());
-			/*yield put(actions.itemFetch());*/
 
 	} catch (error) {
 		console.log('error', error);
@@ -50,7 +49,9 @@ function* itemDeleteWorker(data){
 		const id = data.payload;
 		db.collection('item').doc(id).delete().then(() => {
 			console.log("item deletado com sucesso");
-		})
+		});
+
+		yield put(actions.itemFetch());
 	} catch(error){
 		console.log('error', error);
 	}
