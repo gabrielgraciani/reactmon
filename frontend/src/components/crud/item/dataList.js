@@ -9,6 +9,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 function DataList(){
 	const dispatch = useDispatch();
 
+	const {payload} = useSelector(store => store.item);
+	console.log('seila: ', payload);
+
 	const { list, isLoading } = useSelector(store => store.item);
 	console.log("list", list);
 
