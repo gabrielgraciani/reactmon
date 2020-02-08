@@ -22,9 +22,13 @@ function DataList(){
 		<>
 		<tbody>
 		{isLoading && (
-			<div className="loading">
-				<CircularProgress size={50} />
-			</div>
+			<tr className="row">
+				<td className="loading">
+					<div className="loading">
+						<CircularProgress size={50} />
+					</div>
+				</td>
+			</tr>
 		)}
 		{list.map((item, index) => (
 			<tr className="row" key={item.id}>
