@@ -3,6 +3,7 @@ import {db} from 'services/firebase';
 
 import * as actions from '../actions/item';
 import Item from '../../services/item';
+import {desactiveClass} from '../actions/activeClass';
 
 
 function* itemSendWorker(data) {
@@ -25,6 +26,7 @@ function* itemSendWorker(data) {
 				descricao
 			}));
 
+			yield put(desactiveClass());
 			/*yield put(actions.itemFetch());*/
 
 	} catch (error) {
