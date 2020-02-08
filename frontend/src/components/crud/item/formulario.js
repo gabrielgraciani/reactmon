@@ -1,17 +1,22 @@
 import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
-
+import {useDispatch, useSelector} from "react-redux";
+import {desactiveClass} from "../../../redux/actions/activeClass";
 
 function Formulario() {
+	const dispatch = useDispatch();
+
+	const {active} = useSelector(store => store.activeClass);
+
 	return(
-		<form id="wrap_formulario">
+		<form id="wrap_formulario" className={active}>
 			<div className="indent">
 				<div className="head">
 					<div className="titulo">
 						<h3>Criar Pokemon</h3>
 					</div>
 					<div className="fechar">
-						<CloseIcon />
+						<CloseIcon onClick={() => dispatch(desactiveClass())} />
 					</div>
 				</div>
 
