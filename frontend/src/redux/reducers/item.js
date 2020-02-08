@@ -54,7 +54,7 @@ export default function itemReducer(
 				data: [payload],
 			};
 
-		case actions.ITEM_UPDATE:
+		case actions.ITEM_SHOW_EDIT:
 			return {
 				...initialState,
 				...state,

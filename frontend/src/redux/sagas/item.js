@@ -57,10 +57,9 @@ function* itemDeleteWorker(data){
 	}
 }
 
-function* itemUpdateWorker(data){
+function* itemShowEditWorker(data){
 	try{
-		const id = data.payload;
-		console.log('id: ', id);
+		console.log('id: ', data.payload);
 		yield put(activeClass());
 
 	} catch(error){
@@ -80,8 +79,8 @@ function* itemDeleteWatcher(){
 	yield takeLatest(actions.ITEM_DELETE, itemDeleteWorker);
 }
 
-function* itemUpdateWatcher(){
-	yield takeLatest(actions.ITEM_UPDATE, itemUpdateWorker);
+function* itemShowEditWatcher(){
+	yield takeLatest(actions.ITEM_SHOW_EDIT, itemShowEditWorker);
 }
 
 function* itemWatcher() {
@@ -89,7 +88,7 @@ function* itemWatcher() {
 		itemSendWatcher(),
 		itemFetchWatcher(),
 		itemDeleteWatcher(),
-		itemUpdateWatcher()
+		itemShowEditWatcher()
 	]);
 }
 

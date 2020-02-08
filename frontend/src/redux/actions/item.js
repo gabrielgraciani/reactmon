@@ -3,7 +3,7 @@ export const ITEM_SAVED_SUCCESS = 'ITEM_SAVED_SUCCESS';
 export const ITEM_FETCH = 'ITEM_FETCH';
 export const ITEM_FULLFILLED = 'ITEM_FULLFILLED';
 export const ITEM_DELETE = 'ITEM_DELETE';
-export const ITEM_UPDATE = 'ITEM_UPDATE';
+export const ITEM_SHOW_EDIT = 'ITEM_SHOW_EDIT';
 
 export const itemSend = (payload) => ({
 	type: ITEM_SEND,
@@ -32,7 +32,7 @@ export const itemDelete = (payload) => ({
 	payload
 });
 
-export const itemUpdate = (payload) => ({
-	type: ITEM_UPDATE,
+export const itemShowEdit = (payload) => ({
+	type: ITEM_SHOW_EDIT,
 	payload
 });
