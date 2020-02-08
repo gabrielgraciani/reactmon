@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {itemFetch} from "redux/actions/item";
+import {itemFetch, itemDelete} from "redux/actions/item";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -37,7 +37,7 @@ function DataList(){
 				<td className="item">{item.descricao}</td>
 				<td className="item actions">
 					<div className="icon"><EditIcon className="edit" /></div>
-					<div className="icon"><DeleteIcon className="delete" /></div>
+					<div className="icon"><DeleteIcon className="delete" onClick={() => {if (window.confirm(`Você quer mesmo deletar o item ${item.nome} ?`)) dispatch(itemDelete(item.id))}} /></div>
 				</td>
 			</tr>
 		))}

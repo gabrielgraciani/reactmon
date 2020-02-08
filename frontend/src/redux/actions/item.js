@@ -2,6 +2,7 @@ export const ITEM_SEND = 'ITEM_SEND';
 export const ITEM_SAVED_SUCCESS = 'ITEM_SAVED_SUCCESS';
 export const ITEM_FETCH = 'ITEM_FETCH';
 export const ITEM_FULLFILLED = 'ITEM_FULLFILLED';
+export const ITEM_DELETE = 'ITEM_DELETE';
 
 export const itemSend = (payload) => ({
 	type: ITEM_SEND,
@@ -23,4 +24,9 @@ export const itemFullFilled = (list) => ({
 	payload: {
 		list
 	}
+});
+
+export const itemDelete = (payload) => ({
+	type: ITEM_DELETE,
+	payload
 });

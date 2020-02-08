@@ -45,6 +45,17 @@ function* itemFetchWorker() {
 	}
 }
 
+function* itemDeleteWorker(data){
+	try{
+		const id = data.payload;
+		db.collection('item').doc(id).delete().then(() => {
+			console.log("item deletado com sucesso");
+		})
+	} catch(error){
+		console.log('error', error);
+	}
+}
+
 function* itemSendWatcher() {
 	yield takeLatest(actions.ITEM_SEND, itemSendWorker);
 }
@@ -53,10 +64,15 @@ function* itemFetchWatcher() {
 	yield takeLatest(actions.ITEM_FETCH, itemFetchWorker);
 }
 
+function* itemDeleteWatcher(){
+	yield takeLatest(actions.ITEM_DELETE, itemDeleteWorker);
+}
+
 function* itemWatcher() {
 	yield all([
 		itemSendWatcher(),
-		itemFetchWatcher()
+		itemFetchWatcher(),
+		itemDeleteWatcher()
 	]);
 }
 

@@ -41,12 +41,20 @@ export default function itemReducer(
 			};
 
 		case actions.ITEM_FULLFILLED:
-			console.log("payload: ", payload)
+			console.log("payload: ", payload);
 			return {
 				...initialState,
 				...state,
 				...payload,
 				isLoading: false
+			};
+
+		case actions.ITEM_DELETE:
+			console.log('payload delete: ', payload);
+			return {
+				...initialState,
+				...state,
+				data: [payload],
 			};
 
 
