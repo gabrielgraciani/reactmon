@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {itemFetch, itemDelete, itemShowEdit} from "redux/actions/item";
 import EditIcon from '@material-ui/icons/Edit';
@@ -7,19 +7,23 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 function DataList(){
+	const [values, setValues] = useState([]);
 	const dispatch = useDispatch();
 
-	const {payload} = useSelector(store => store.item);
-	console.log('seila: ', payload);
-
-	const { list, isLoading } = useSelector(store => store.item);
+	const { list, isLoading, payload } = useSelector(store => store.item);
 	console.log("list", list);
+	console.log('seila: ', payload);
 
 	useEffect(() => {
 		if(list.length === 0){
 			dispatch(itemFetch());
 		}
 	}, [dispatch, list.length]);
+
+	useEffect(() => {
+		setValues(payload);
+		console.log("values: ", values);
+	}, [values, payload]);
 
 	return(
 		<>
