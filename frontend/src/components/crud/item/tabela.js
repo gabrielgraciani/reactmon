@@ -1,12 +1,17 @@
 import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {activeClass} from "../../../redux/actions/activeClass";
 
 function Tabela() {
+	const dispatch = useDispatch();
+
+	const {active} = useSelector(store => store.activeClass);
 
 	return(
-		<div id="wrap_tabela">
+		<div id="wrap_tabela" className={active}>
 			<div className="head">
 				<div className="titulo">
-					<h3>Itens</h3>
+					<h3 onClick={() => dispatch(activeClass())}>Itens</h3>
 				</div>
 
 				<div className="botoes">
