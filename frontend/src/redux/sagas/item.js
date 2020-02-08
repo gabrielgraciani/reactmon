@@ -3,7 +3,7 @@ import {db} from 'services/firebase';
 
 import * as actions from '../actions/item';
 import Item from '../../services/item';
-import {desactiveClass} from '../actions/activeClass';
+import {activeClass, desactiveClass} from '../actions/activeClass';
 
 function* itemSendWorker(data) {
 	try {
@@ -57,6 +57,17 @@ function* itemDeleteWorker(data){
 	}
 }
 
+function* itemUpdateWorker(data){
+	try{
+		const id = data.payload;
+		console.log('id: ', id);
+		yield put(activeClass());
+
+	} catch(error){
+		console.log('error', error);
+	}
+}
+
 function* itemSendWatcher() {
 	yield takeLatest(actions.ITEM_SEND, itemSendWorker);
 }
@@ -69,11 +80,16 @@ function* itemDeleteWatcher(){
 	yield takeLatest(actions.ITEM_DELETE, itemDeleteWorker);
 }
 
+function* itemUpdateWatcher(){
+	yield takeLatest(actions.ITEM_UPDATE, itemUpdateWorker);
+}
+
 function* itemWatcher() {
 	yield all([
 		itemSendWatcher(),
 		itemFetchWatcher(),
-		itemDeleteWatcher()
+		itemDeleteWatcher(),
+		itemUpdateWatcher()
 	]);
 }
 

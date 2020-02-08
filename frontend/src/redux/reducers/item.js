@@ -54,6 +54,13 @@ export default function itemReducer(
 				data: [payload],
 			};
 
+		case actions.ITEM_UPDATE:
+			return {
+				...initialState,
+				...state,
+				data: [payload],
+			};
+
 
 		default:
 			return state;
