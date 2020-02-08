@@ -61,6 +61,14 @@ export default function itemReducer(
 				data: [payload],
 			};
 
+		case actions.ITEM_EDIT_FULLFILLED:
+			return {
+				...initialState,
+				...state,
+				...payload,
+				isLoading: false
+			};
+
 
 		default:
 			return state;

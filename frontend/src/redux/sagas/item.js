@@ -60,6 +60,10 @@ function* itemDeleteWorker(data){
 function* itemShowEditWorker(data){
 	try{
 		console.log('id: ', data.payload);
+		const {id} = data.payload;
+
+
+		yield put(actions.itemEditFullFilled(data.payload));
 		yield put(activeClass());
 
 	} catch(error){

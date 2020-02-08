@@ -2,12 +2,15 @@ import React from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
 import {desactiveClass} from "redux/actions/activeClass";
-import {itemSend} from "redux/actions/item";
+import {itemSend, itemShowEdit} from "redux/actions/item";
 
 function Formulario() {
 	const dispatch = useDispatch();
 
 	const {active} = useSelector(store => store.activeClass);
+
+	const {payload} = useSelector(store => store.item);
+	console.log('seila: ', payload);
 
 	const onSubmit = (e) => {
 		e.preventDefault();

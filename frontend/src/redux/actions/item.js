@@ -4,6 +4,7 @@ export const ITEM_FETCH = 'ITEM_FETCH';
 export const ITEM_FULLFILLED = 'ITEM_FULLFILLED';
 export const ITEM_DELETE = 'ITEM_DELETE';
 export const ITEM_SHOW_EDIT = 'ITEM_SHOW_EDIT';
+export const ITEM_EDIT_FULLFILLED = 'ITEM_EDIT_FULLFILLED';
 
 export const itemSend = (payload) => ({
 	type: ITEM_SEND,
@@ -35,4 +36,11 @@ export const itemDelete = (payload) => ({
 export const itemShowEdit = (payload) => ({
 	type: ITEM_SHOW_EDIT,
 	payload
+});
+
+export const itemEditFullFilled = (payload) => ({
+	type: ITEM_EDIT_FULLFILLED,
+	payload: {
+		payload
+	}
 });
