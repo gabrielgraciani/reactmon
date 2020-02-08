@@ -74,6 +74,7 @@ h3{font-size:21px;}
 h4{font-size:18px;}
 span{font-size:15px;}
 li{font-size:18px;}
+p{font-size:21px;}
 .bold{font-weight:bold;}
 .light{font-weight:lighter;}
 #wrapper_body{min-height:100vh; display:flex; flex-direction:column;}
@@ -302,5 +303,26 @@ li{font-size:18px;}
 #wrap_search .indent .search svg path{fill:var(--white);}
 
 @media screen and (max-width: 1080px){
+	h1{font-size:50px !important;}
+	p{font-size:17px !important;}
 
+	#wrap_header{position:fixed; top:0; left:0;}
+	#wrap_header .indent .menu{max-width:55%;}
+	#wrap_header .indent .pokeball{right:5vw}
+	#wrap_header .indent .pokeball.active{right:-15%}
+	#wrap_header .indent .premierball.active{right:5vw;}
+
+	#wrapper_components{margin-top:94px;}
+
+	#wrap_banner_padrao{height:auto;}
+	#wrap_banner_padrao .indent{padding:20px 0 40px 0;}
+
+	#wrap_pokemon .indent .card .conteudo .nome{margin-top:5px;}
+}
+
+@media screen and (max-width: 500px){
+	#wrap_search .indent .search:hover .search-input{width:200px;}
+	#wrap_itens .indent{grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));}
+	#wrap_cidades .indent{grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));}
+	#wrap_pokemon .indent{grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));}
 }
