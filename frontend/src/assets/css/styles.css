@@ -222,7 +222,7 @@ li{font-size:18px;}
 
 #wrap_formulario{transition:opacity .1s ease .5s ; opacity:0; visibility: hidden; width:100%;}
 #wrap_formulario.active{transition:opacity .1s ease ; opacity:1; visibility: visible; display:flex; justify-content:center; }
-#wrap_formulario.active:after{width:100%; height:100%; content:''; position:absolute; top:0; left:0; background:var(--dark); opacity:0.6; z-index:999;}
+#wrap_formulario.active:after{width:100%; height:100%; content:''; position:fixed; top:0; left:0; background:var(--dark); opacity:0.6; z-index:999;}
 #wrap_formulario .indent{transition:all .5s ease; z-index:9999; padding:20px 30px; position:fixed; top:-50%; left:50%; transform:translate(-50%, -50%); max-width:550px; background:var(--white); box-shadow:0 0 10px var(--dark); display:flex;flex-direction:column; align-items:center; max-height:70vh; overflow-Y:scroll}
 #wrap_formulario.active .indent{top:50%; transition:all .5s ease;}
 #wrap_formulario .indent .head{width:100%; display:flex; justify-content:space-between;}
@@ -244,6 +244,8 @@ li{font-size:18px;}
 #wrap_formulario .indent .item .container .checkmark:after { left: 9px; top: 5px; width: 5px; height: 10px; border: solid #333; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
 #wrap_formulario .indent button.salvar{cursor:pointer; transition:all .3s ease; background:#5CB85C; border:1px solid #5CB85C; padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
 #wrap_formulario .indent button.salvar:hover{background:transparent; color:#5CB85C;}
+#wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:#5CB85C; border:1px solid #5CB85C; padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent input[type='submit']:hover{background:transparent; color:#5CB85C;}
 
 #wrap_loading{width:100%; height:100vh; display:flex; align-items:center; justify-content:center;}
 
