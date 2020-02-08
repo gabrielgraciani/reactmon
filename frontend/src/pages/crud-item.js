@@ -2,6 +2,8 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {itemSend, itemFetch} from "../redux/actions/item";
 import CircularProgress from '@material-ui/core/CircularProgress';
+import Form from 'components/crud/item/formulario';
+import Tabela from 'components/crud/item/tabela';
 
 
 function Crud_Item(){
@@ -26,6 +28,22 @@ function Crud_Item(){
 
 	return(
 		<>
+
+		<div id="wrap_crud">
+			<div className="indent">
+				<div className="titulo">
+					<h1>Olá teste</h1>
+				</div>
+
+				<Tabela />
+
+			</div>
+		</div>
+
+		<Form />
+
+
+
 		<form action="" onSubmit={onSubmit}>
 			<input type="text" name="nome" placeholder="Nome" />
 			<input type="text" name="descricao" placeholder="Descrição"/>
@@ -39,6 +57,8 @@ function Crud_Item(){
 				<div key={index}>{item.nome}</div>
 			))}
 		</>
+
+
 	)
 }
 
