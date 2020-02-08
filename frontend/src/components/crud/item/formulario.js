@@ -9,6 +9,10 @@ function Formulario() {
 
 	const {active} = useSelector(store => store.activeClass);
 
+	const { payload } = useSelector(store => store.item);
+
+	console.log('chegou aqui', payload);
+
 	const onSubmit = (e) => {
 		e.preventDefault();
 		const {nome, descricao} = e.target;
@@ -31,7 +35,7 @@ function Formulario() {
 
 				<div className="item">
 					<label htmlFor="nome">Nome</label>
-					<input type="text" name="nome" autoComplete="off" />
+					<input type="text" name="nome" value={(payload) ? payload.nome : ''} autoComplete="off" />
 				</div>
 				<div className="item">
 					<label htmlFor="descricao">Descrição</label>
