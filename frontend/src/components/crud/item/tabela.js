@@ -1,6 +1,7 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
 import {activeClass} from "../../../redux/actions/activeClass";
+import DataList from './dataList';
 
 function Tabela() {
 	const dispatch = useDispatch();
@@ -23,9 +24,11 @@ function Tabela() {
 					<th className="item">ID</th>
 					<th className="item">Nome</th>
 					<th className="item">Descrição</th>
+					<th className="item">Ações</th>
 				</tr>
 				</thead>
 
+				<DataList />
 			</table>
 		</div>
 	)

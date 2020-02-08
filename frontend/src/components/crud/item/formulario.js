@@ -13,7 +13,7 @@ function Formulario() {
 			<div className="indent">
 				<div className="head">
 					<div className="titulo">
-						<h3>Criar Pokemon</h3>
+						<h3>Criar Item</h3>
 					</div>
 					<div className="fechar">
 						<CloseIcon onClick={() => dispatch(desactiveClass())} />
