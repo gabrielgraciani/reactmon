@@ -213,10 +213,12 @@ li{font-size:18px;}
 #wrap_tabela .conteudo .row .item{width:inherit; display:flex; word-break:break-word; padding:0 10px; align-items:center; font-size:15px; color:#566787}
 #wrap_tabela .conteudo .row .item img{width:100%;}
 #wrap_tabela .conteudo .row.thead .item{font-weight:bold;}
+#wrap_tabela .conteudo .row.head{border-radius:0;}
 #wrap_tabela .conteudo .row .item.actions .icon{cursor:pointer;}
 #wrap_tabela .conteudo .row .item.actions .icon:nth-child(1){margin-right:5px;}
 #wrap_tabela .conteudo .row .item.actions .icon svg.edit path{fill:#FFC720;}
 #wrap_tabela .conteudo .row .item.actions .icon svg.delete path{fill:#D9534F;}
+#wrap_tabela .conteudo .loading{width:100%; display:flex; justify-content:center; background:#fff;}
 
 #wrap_formulario{transition:opacity .1s ease .5s ; opacity:0; visibility: hidden; width:100%;}
 #wrap_formulario.active{transition:opacity .1s ease ; opacity:1; visibility: visible; display:flex; justify-content:center; }
