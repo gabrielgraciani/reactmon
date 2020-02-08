@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {activeClass} from "../../../redux/actions/activeClass";
+import {activeClass, desactiveClass} from "../../../redux/actions/activeClass";
 
 function Tabela() {
 	const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function Tabela() {
 				</div>
 
 				<div className="botoes">
-					<button>Criar Item</button>
+					<button onClick={() => dispatch(desactiveClass())}>Criar Item</button>
 				</div>
 			</div>
 

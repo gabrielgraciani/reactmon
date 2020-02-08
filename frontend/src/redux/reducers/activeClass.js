@@ -16,6 +16,13 @@ export default function activeClassReducer(
 				active: "active"
 			};
 
+		case actions.DESACTIVE_CLASS:
+			return {
+				...initialState,
+				...state,
+				active: ""
+			};
+
 		default:
 			return state;
 	}
