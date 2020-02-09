@@ -94,7 +94,10 @@ export default function itemReducer(
 				...state,
 				active: "",
 				isEditing: false,
-				payload: initialState
+				payload: {
+					nome: '',
+					descricao: ''
+				}
 			};
 
 		default:
