@@ -7,6 +7,8 @@ export const initialState = {
 	isEditing: false,
 	list: [],
 	saving: false,
+	nome: '',
+	descricao: ''
 };
 
 export default function itemReducer(
@@ -87,11 +89,13 @@ export default function itemReducer(
 			};
 
 		case actions.ITEM_CLOSE_FORM:
+			console.log('close', payload);
 			return{
 				...initialState,
 				...state,
 				active: "",
 				isEditing: false,
+				payload: initialState
 			};
 
 		default:

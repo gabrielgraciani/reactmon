@@ -59,5 +59,6 @@ export const itemOpenForm = () => ({
 });
 
 export const itemCloseForm = () => ({
-	type: ITEM_CLOSE_FORM
+	type: ITEM_CLOSE_FORM,
+	payload: {}
 });
