@@ -26,14 +26,19 @@ function Formulario() {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		const {nome, descricao} = e.target;
-		console.log(nome.value, descricao.value);
+		console.log("valores do formulario ao cadastrar: ", values);
 
-		dispatch(itemSend({nome: nome.value, descricao: descricao.value}))
+		const {nome, descricao} = values;
+		dispatch(itemSend({nome, descricao}))
+	};
+
+	const onUpdate = (e) => {
+		e.preventDefault();
+		console.log('valores do formulario ao editar: ', values);
 	};
 
 	return(
-		<form id="wrap_formulario" className={active} onSubmit={onSubmit}>
+		<form id="wrap_formulario" className={active}>
 			<div className="indent">
 				<div className="head">
 					<div className="titulo">
@@ -53,7 +58,7 @@ function Formulario() {
 					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
 				</div>
 
-				{isEditing ? <input type="submit" value="Editar" /> : <input type="submit" value="Salvar" />}
+				{isEditing ? <input type="submit" value="Editar" onClick={onUpdate} /> : <input type="submit" value="Salvar" onClick={onSubmit} />}
 
 			</div>
 
