@@ -1,12 +1,12 @@
 import * as actions from '../actions/item';
 
 export const initialState = {
+	active: '',
 	data: [],
-	saving: false,
 	isLoading: false,
-	list: [],
 	isEditing: false,
-	active: ''
+	list: [],
+	saving: false,
 };
 
 export default function itemReducer(
@@ -37,8 +37,8 @@ export default function itemReducer(
 			return {
 				...initialState,
 				...state,
+				isLoading: true,
 				list: [],
-				isLoading: true
 			};
 
 		case actions.ITEM_FULLFILLED:
@@ -60,9 +60,9 @@ export default function itemReducer(
 			return {
 				...initialState,
 				...state,
+				active: "active",
 				data: [payload],
 				isEditing: true,
-				active: "active"
 			};
 
 		case actions.ITEM_EDIT_FULLFILLED:
@@ -83,7 +83,8 @@ export default function itemReducer(
 			return{
 				...initialState,
 				...state,
-				active: ""
+				active: "",
+				isEditing: false,
 			};
 
 		default:
