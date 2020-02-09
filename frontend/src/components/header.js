@@ -54,27 +54,27 @@ const Header = () =>{
 					<div className={`premierball ${activeClass}`} onClick={change} id="pokebola"> </div>
 
 					<ul>
-						<Link to={HOME}>
-							<li onClick={change}>Home</li>
+						<Link to={HOME} onClick={change}>
+							<li>Home</li>
 						</Link>
-						<Link to={POKEDEX}>
-							<li onClick={change}>Pokedéx</li>
+						<Link to={POKEDEX} onClick={change}>
+							<li>Pokedéx</li>
 						</Link>
-						<Link to={ITENS}>
-							<li onClick={change}>Itens</li>
+						<Link to={ITENS} onClick={change}>
+							<li>Itens</li>
 						</Link>
-						<Link to={CIDADES}>
-							<li onClick={change}>Cidades</li>
+						<Link to={CIDADES} onClick={change}>
+							<li>Cidades</li>
 						</Link>
 
 						{isUserLoggedIn ? (
 							<>
-								<Link to={CRUD_POKEMON}>
-									<li onClick={change}>Crud Pokemon</li>
+								<Link to={CRUD_POKEMON} onClick={change}>
+									<li>Crud Pokemon</li>
 								</Link>
 
-								<Link to={CRUD_ITEM}>
-									<li onClick={change}>Crud Item</li>
+								<Link to={CRUD_ITEM} onClick={change}>
+									<li>Crud Item</li>
 								</Link>
 
 								<div onClick={logout}>
