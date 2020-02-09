@@ -185,6 +185,8 @@ p{font-size:21px;}
 #wrap_footer .indent{display:flex; align-items:center; justify-content:center; padding:20px 0;}
 #wrap_footer .indent .texto{text-align:center;}
 #wrap_footer .indent .texto span{font-size:12px;}
+#wrap_footer .indent .texto span a{transition:all .3s ease;}
+#wrap_footer .indent .texto span a:hover{color:var(--primary)}
 
 #wrap_login{width:100%; position:relative; flex-grow:1; display:flex; align-items:center; justify-content:center;}
 #wrap_login .indent{display:flex; align-items:center; flex-direction:column; justify-content:center;}
