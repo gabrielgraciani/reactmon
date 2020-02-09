@@ -3,7 +3,6 @@ import {db} from 'services/firebase';
 
 import * as actions from '../actions/item';
 import Item from '../../services/item';
-import {activeClass, desactiveClass} from '../actions/activeClass';
 
 function* itemSendWorker(data) {
 	try {
@@ -26,7 +25,7 @@ function* itemSendWorker(data) {
 			}));*/
 
 			yield put(actions.itemFetch());
-			yield put(desactiveClass());
+			yield put(actions.itemCloseForm());
 
 	} catch (error) {
 		console.log('error', error);
@@ -62,7 +61,6 @@ function* itemShowEditWorker(data){
 		console.log('id: ', data.payload);
 
 		yield put(actions.itemEditFullFilled(data.payload));
-		yield put(activeClass());
 
 	} catch(error){
 		console.log('error', error);

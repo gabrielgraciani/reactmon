@@ -5,6 +5,8 @@ export const ITEM_FULLFILLED = 'ITEM_FULLFILLED';
 export const ITEM_DELETE = 'ITEM_DELETE';
 export const ITEM_SHOW_EDIT = 'ITEM_SHOW_EDIT';
 export const ITEM_EDIT_FULLFILLED = 'ITEM_EDIT_FULLFILLED';
+export const ITEM_OPEN_FORM = 'ITEM_OPEN_FORM';
+export const ITEM_CLOSE_FORM = 'ITEM_CLOSE_FORM';
 
 export const itemSend = (payload) => ({
 	type: ITEM_SEND,
@@ -43,4 +45,12 @@ export const itemEditFullFilled = (payload) => ({
 	payload: {
 		payload
 	}
+});
+
+export const itemOpenForm = () => ({
+	type: ITEM_OPEN_FORM
+});
+
+export const itemCloseForm = () => ({
+	type: ITEM_CLOSE_FORM
 });

@@ -5,7 +5,8 @@ export const initialState = {
 	saving: false,
 	isLoading: false,
 	list: [],
-	isEditing: false
+	isEditing: false,
+	active: ''
 };
 
 export default function itemReducer(
@@ -60,7 +61,8 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				data: [payload],
-				isEditing: true
+				isEditing: true,
+				active: "active"
 			};
 
 		case actions.ITEM_EDIT_FULLFILLED:
@@ -70,6 +72,19 @@ export default function itemReducer(
 				...payload,
 			};
 
+		case actions.ITEM_OPEN_FORM:
+			return{
+				...initialState,
+				...state,
+				active: "active"
+			};
+
+		case actions.ITEM_CLOSE_FORM:
+			return{
+				...initialState,
+				...state,
+				active: ""
+			};
 
 		default:
 			return state;

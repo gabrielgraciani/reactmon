@@ -1,6 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
-import {activeClass} from "redux/actions/activeClass";
+import {itemOpenForm} from "redux/actions/item";
 import DataList from './dataList';
 
 function Tabela() {
@@ -14,7 +14,7 @@ function Tabela() {
 				</div>
 
 				<div className="botoes">
-					<button onClick={() => dispatch(activeClass())}>Criar Item</button>
+					<button onClick={() => dispatch(itemOpenForm())}>Criar Item</button>
 				</div>
 			</div>
 

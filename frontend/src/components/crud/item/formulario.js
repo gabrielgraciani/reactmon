@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
-import {desactiveClass} from "redux/actions/activeClass";
-import {itemSend} from "redux/actions/item";
+import {itemSend, itemCloseForm} from "redux/actions/item";
 
 function Formulario() {
 	const initialState = {
@@ -16,8 +15,7 @@ function Formulario() {
 	});
 
 	const dispatch = useDispatch();
-	const {active} = useSelector(store => store.activeClass);
-	const { payload, isEditing } = useSelector(store => store.item);
+	const {active, payload, isEditing } = useSelector(store => store.item);
 	console.log('chegou aqui', payload);
 
 	useEffect(() => {
@@ -42,7 +40,7 @@ function Formulario() {
 						<h3>Criar Item</h3>
 					</div>
 					<div className="fechar">
-						<CloseIcon onClick={() => dispatch(desactiveClass())} />
+						<CloseIcon onClick={() => dispatch(itemCloseForm())} />
 					</div>
 				</div>
 
