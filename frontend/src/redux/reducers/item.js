@@ -89,7 +89,6 @@ export default function itemReducer(
 			};
 
 		case actions.ITEM_CLOSE_FORM:
-			console.log('close', payload);
 			return{
 				...initialState,
 				...state,

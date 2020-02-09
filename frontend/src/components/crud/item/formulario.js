@@ -16,7 +16,6 @@ function Formulario() {
 
 	const dispatch = useDispatch();
 	const {active, payload, isEditing } = useSelector(store => store.item);
-	console.log('chegou aqui', payload);
 
 	useEffect(() => {
 		if(payload){
@@ -26,7 +25,6 @@ function Formulario() {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		console.log("valores do formulario ao cadastrar: ", values);
 
 		const {nome, descricao} = values;
 		dispatch(itemSend({nome, descricao}));
@@ -34,7 +32,6 @@ function Formulario() {
 
 	const onUpdate = (e) => {
 		e.preventDefault();
-		console.log('valores do formulario ao editar: ', values);
 
 		const {id, nome, descricao} = values;
 		dispatch(itemUpdate({id, nome, descricao}));

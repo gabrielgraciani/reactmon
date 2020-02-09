@@ -10,7 +10,6 @@ function DataList(){
 	const dispatch = useDispatch();
 
 	const { list, isLoading } = useSelector(store => store.item);
-	console.log("list", list);
 
 	useEffect(() => {
 		if(list.length === 0){

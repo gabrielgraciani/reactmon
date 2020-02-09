@@ -7,8 +7,6 @@ import Item from '../../services/item';
 function* itemSendWorker(data) {
 	try {
 		const {nome, descricao} = data.payload;
-		/*console.log(nome, descricao);*/
-		console.log("data payload", data.payload, "data teste", data.teste);
 
 		db.collection('item').add({
 		id: Math.random(),
@@ -58,8 +56,6 @@ function* itemDeleteWorker(data){
 
 function* itemShowEditWorker(data){
 	try{
-		console.log('id: ', data.payload);
-
 		yield put(actions.itemEditFullFilled(data.payload));
 
 	} catch(error){

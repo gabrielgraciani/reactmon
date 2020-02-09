@@ -11,7 +11,6 @@ export default class item{
 						...doc.data()
 					})
 				});
-				console.log("item: ", item);
 				res(item)
 			}).catch(rej)
 		});
