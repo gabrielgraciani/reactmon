@@ -4,7 +4,8 @@ export const initialState = {
 	data: [],
 	saving: false,
 	isLoading: false,
-	list: []
+	list: [],
+	isEditing: false
 };
 
 export default function itemReducer(
@@ -59,6 +60,7 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				data: [payload],
+				isEditing: true
 			};
 
 		case actions.ITEM_EDIT_FULLFILLED:
@@ -66,7 +68,6 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				...payload,
-				isLoading: false
 			};
 
 

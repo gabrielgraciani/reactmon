@@ -17,7 +17,7 @@ function Formulario() {
 
 	const dispatch = useDispatch();
 	const {active} = useSelector(store => store.activeClass);
-	const { payload } = useSelector(store => store.item);
+	const { payload, isEditing } = useSelector(store => store.item);
 	console.log('chegou aqui', payload);
 
 	useEffect(() => {
@@ -55,7 +55,8 @@ function Formulario() {
 					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
 				</div>
 
-				<input type="submit" value="Salvar" />
+				{isEditing ? <input type="submit" value="Editar" /> : <input type="submit" value="Salvar" />}
+
 			</div>
 
 		</form>
