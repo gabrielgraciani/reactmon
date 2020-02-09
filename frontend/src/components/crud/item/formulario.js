@@ -1,17 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
 import {desactiveClass} from "redux/actions/activeClass";
 import {itemSend} from "redux/actions/item";
 
 function Formulario() {
+	const initialState = {
+		nome: '',
+		descricao: ''
+	};
+	const [values, setValues] = useState(initialState);
+	const handleChange = (e) => setValues({
+		...values,
+		[e.target.name]: e.target.value
+	});
+
 	const dispatch = useDispatch();
-
 	const {active} = useSelector(store => store.activeClass);
-
 	const { payload } = useSelector(store => store.item);
-
 	console.log('chegou aqui', payload);
+
+	useEffect(() => {
+		if(payload){
+			setValues(payload);
+		}
+	}, [payload]);
 
 	const onSubmit = (e) => {
 		e.preventDefault();
@@ -35,11 +48,11 @@ function Formulario() {
 
 				<div className="item">
 					<label htmlFor="nome">Nome</label>
-					<input type="text" name="nome" value={(payload) ? payload.nome : ''} autoComplete="off" />
+					<input type="text" name="nome" value={values.nome} onChange={handleChange} autoComplete="off" />
 				</div>
 				<div className="item">
 					<label htmlFor="descricao">Descrição</label>
-					<input type="text" name="descricao" autoComplete="off" />
+					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
 				</div>
 
 				<input type="submit" value="Salvar" />
