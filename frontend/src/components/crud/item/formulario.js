@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
-import {itemSend, itemCloseForm} from "redux/actions/item";
+import {itemSend, itemUpdate, itemCloseForm} from "redux/actions/item";
 
 function Formulario() {
 	const initialState = {
@@ -29,12 +29,15 @@ function Formulario() {
 		console.log("valores do formulario ao cadastrar: ", values);
 
 		const {nome, descricao} = values;
-		dispatch(itemSend({nome, descricao}))
+		dispatch(itemSend({nome, descricao}));
 	};
 
 	const onUpdate = (e) => {
 		e.preventDefault();
 		console.log('valores do formulario ao editar: ', values);
+
+		const {id, nome, descricao} = values;
+		dispatch(itemUpdate({id, nome, descricao}));
 	};
 
 	return(

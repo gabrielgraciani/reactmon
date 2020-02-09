@@ -72,6 +72,13 @@ export default function itemReducer(
 				...payload,
 			};
 
+		case actions.ITEM_UPDATE:
+			return {
+				...initialState,
+				...state,
+				data: [payload],
+			};
+
 		case actions.ITEM_OPEN_FORM:
 			return{
 				...initialState,

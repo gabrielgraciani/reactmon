@@ -67,6 +67,24 @@ function* itemShowEditWorker(data){
 	}
 }
 
+function* itemUpdateWorker(data){
+	try{
+		const {id, nome, descricao} = data.payload;
+		db.collection('item').doc(id).update({
+			nome,
+			descricao
+		});
+		console.log('editado com sucesso');
+
+		yield put(actions.itemFetch());
+		yield put(actions.itemCloseForm());
+
+
+	} catch(error){
+		console.log('error', error);
+	}
+}
+
 function* itemSendWatcher() {
 	yield takeLatest(actions.ITEM_SEND, itemSendWorker);
 }
@@ -83,12 +101,17 @@ function* itemShowEditWatcher(){
 	yield takeLatest(actions.ITEM_SHOW_EDIT, itemShowEditWorker);
 }
 
+function* itemUpdateWatcher(){
+	yield takeLatest(actions.ITEM_UPDATE, itemUpdateWorker);
+}
+
 function* itemWatcher() {
 	yield all([
 		itemSendWatcher(),
 		itemFetchWatcher(),
 		itemDeleteWatcher(),
-		itemShowEditWatcher()
+		itemShowEditWatcher(),
+		itemUpdateWatcher()
 	]);
 }
 

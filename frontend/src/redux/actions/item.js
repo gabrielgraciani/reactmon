@@ -5,6 +5,7 @@ export const ITEM_FULLFILLED = 'ITEM_FULLFILLED';
 export const ITEM_DELETE = 'ITEM_DELETE';
 export const ITEM_SHOW_EDIT = 'ITEM_SHOW_EDIT';
 export const ITEM_EDIT_FULLFILLED = 'ITEM_EDIT_FULLFILLED';
+export const ITEM_UPDATE = 'ITEM_UPDATE';
 export const ITEM_OPEN_FORM = 'ITEM_OPEN_FORM';
 export const ITEM_CLOSE_FORM = 'ITEM_CLOSE_FORM';
 
@@ -46,6 +47,12 @@ export const itemEditFullFilled = (payload) => ({
 		payload
 	}
 });
+
+export const itemUpdate = (payload) => ({
+	type: ITEM_UPDATE,
+	payload
+});
+
 
 export const itemOpenForm = () => ({
 	type: ITEM_OPEN_FORM
