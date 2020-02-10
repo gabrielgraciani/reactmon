@@ -5,7 +5,7 @@ import {db} from 'services/firebase';
 function Pagination(){
 	const [values, setValues] = useState([]);
 	const [last, setLast] = useState();
-	const [next, setNext] = useState();
+	const [first, setFirst] = useState();
 
 	let pageSize = 3;
 	let field = 'nome';
@@ -20,13 +20,11 @@ function Pagination(){
 				})
 			});
 
-			var lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
+			let lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
 			console.log('last', lastVisible);
-			var firstVisible = querySnapshot.docs[querySnapshot.docs.length-querySnapshot.docs.length];
-			console.log('first', firstVisible);
+
 			setValues(item);
 			setLast(lastVisible);
-			setNext(firstVisible);
 		});
 	};
 
@@ -37,11 +35,32 @@ function Pagination(){
 				item.push({
 					id: doc.id,
 					...doc.data()
-				})
+				});
 				console.log('data next', doc.data());
 			});
 			setValues(item);
-			console.log(item);
+			console.log("item next", item);
+
+			let firstVisible = querySnapshot.docs[querySnapshot.docs.length-querySnapshot.docs.length];
+			console.log('first', firstVisible);
+			setFirst(firstVisible);
+
+		});
+	};
+
+	const prevData = (first) => {
+		console.log(first);
+
+		db.collection('item').orderBy(field).endBefore(first).limitToLast(pageSize).get().then(querySnapshot => {
+			querySnapshot.forEach(doc => {
+				item.push({
+					id: doc.id,
+					...doc.data()
+				});
+				console.log('data prev', doc.data());
+			});
+			setValues(item);
+			console.log("item prev", item);
 		});
 	};
 
@@ -85,6 +104,7 @@ function Pagination(){
 		))}
 
 		<button type="button" onClick={() => {nextData(last)}}>next</button>
+		<button type="button" onClick={() => {prevData(first)}}>prev</button>
 		</>
 	)
 }
