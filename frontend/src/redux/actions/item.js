@@ -32,11 +32,6 @@ export const itemFullFilled = (list) => ({
 	}
 });
 
-export const itemDelete = (payload) => ({
-	type: ITEM_DELETE,
-	payload
-});
-
 export const itemShowEdit = (payload) => ({
 	type: ITEM_SHOW_EDIT,
 	payload
@@ -49,14 +44,14 @@ export const itemEditFullFilled = (payload) => ({
 	}
 });
 
-export const itemUpdate = (payload) => ({
-	type: ITEM_UPDATE,
+export const itemDelete = (payload) => ({
+	type: ITEM_DELETE,
 	payload
 });
 
-
-export const itemOpenForm = () => ({
-	type: ITEM_OPEN_FORM
+export const itemUpdate = (payload) => ({
+	type: ITEM_UPDATE,
+	payload
 });
 
 export const itemUpdateList = (list) => ({
@@ -64,6 +59,10 @@ export const itemUpdateList = (list) => ({
 	payload: {
 		list
 	}
+});
+
+export const itemOpenForm = () => ({
+	type: ITEM_OPEN_FORM
 });
 
 export const itemCloseForm = () => ({

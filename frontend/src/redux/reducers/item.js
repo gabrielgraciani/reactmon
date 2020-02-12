@@ -51,13 +51,6 @@ export default function itemReducer(
 				isLoading: false
 			};
 
-		case actions.ITEM_DELETE:
-			return {
-				...initialState,
-				...state,
-				data: [payload],
-			};
-
 		case actions.ITEM_SHOW_EDIT:
 			return {
 				...initialState,
@@ -74,11 +67,27 @@ export default function itemReducer(
 				...payload,
 			};
 
+		case actions.ITEM_DELETE:
+			return {
+				...initialState,
+				...state,
+				data: [payload],
+			};
+
 		case actions.ITEM_UPDATE:
 			return {
 				...initialState,
 				...state,
 				data: [payload],
+			};
+
+		case actions.ITEM_UPDATE_LIST:
+			return {
+				...initialState,
+				...state,
+				list: [
+					...payload.list
+				]
 			};
 
 		case actions.ITEM_OPEN_FORM:
@@ -98,15 +107,6 @@ export default function itemReducer(
 					nome: '',
 					descricao: ''
 				}
-			};
-
-		case actions.ITEM_UPDATE_LIST:
-			return {
-				...initialState,
-				...state,
-				list: [
-					...payload.list
-				]
 			};
 
 		default:
