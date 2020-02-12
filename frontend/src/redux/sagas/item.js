@@ -7,27 +7,24 @@ import Item from '../../services/item';
 function* itemSendWorker(data) {
 	try {
 		const {nome, descricao} = data.payload;
-		let id = [];
 
-		db.collection('item').add({
-		id: Math.random(),
-		nome,
-		descricao
-		}).then((docRef) => {
-			id.push('xd');
-			console.log('id', id);
-			db.collection('item').doc(docRef.id).update({
-				id: docRef.id
-			});
-		});
-		console.log('id2', id);
-			/*yield put (actions.itemSavedSuccess({
+		let newDoc = db.collection('item').doc();
+		console.log(newDoc.id);
+		const id = newDoc.id;
+		newDoc.set({
 				nome,
 				descricao
-			}));*/
+			}
+		);
 
-			yield put(actions.itemFetch());
-			yield put(actions.itemCloseForm());
+		yield put (actions.itemSavedSuccess({
+			id,
+			nome,
+			descricao
+		}));
+
+		/*yield put(actions.itemFetch());*/
+		yield put(actions.itemCloseForm());
 
 	} catch (error) {
 		console.log('error', error);
