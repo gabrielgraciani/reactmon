@@ -98,7 +98,6 @@ function Pagination(){
 	return(
 
 		<>
-		EITA CUZAO
 		{values.map((item) => (
 			<div key={item.id}>{item.nome}</div>
 		))}
