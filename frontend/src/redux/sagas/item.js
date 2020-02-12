@@ -1,5 +1,5 @@
 import { takeLatest, all, put, call, select } from 'redux-saga/effects';
-import {db} from 'services/firebase';
+import firebase, {db} from 'services/firebase';
 import { findIndex, filter } from 'lodash';
 
 import * as actions from '../actions/item';
@@ -14,7 +14,8 @@ function* itemSendWorker(data) {
 		const id = newDoc.id;
 		newDoc.set({
 			nome,
-			descricao
+			descricao,
+			createdAt: firebase.firestore.FieldValue.serverTimestamp()
 		});
 
 		yield put (actions.itemSavedSuccess({
@@ -77,7 +78,7 @@ function* itemUpdateWorker(data){
 
 		if (i !== -1) {
 
-			yield db.collection('item').doc(id).set({
+			yield db.collection('item').doc(id).update({
 				nome,
 				descricao
 			});

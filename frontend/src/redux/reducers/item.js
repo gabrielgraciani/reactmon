@@ -29,8 +29,8 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				list: [
-					...state.list,
-					payload
+					payload,
+					...state.list
 				],
 				saving: false
 			};
