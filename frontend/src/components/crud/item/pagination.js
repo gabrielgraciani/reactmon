@@ -8,11 +8,11 @@ function Pagination(){
 	const [first, setFirst] = useState();
 
 	let pageSize = 3;
-	let field = 'nome';
+	let field = 'createdAt';
 
 		let item = [];
 	const fetchData = () => {
-		db.collection('item').orderBy(field).limit(pageSize).get().then(querySnapshot => {
+		db.collection('item').orderBy(field, 'desc').limit(pageSize).get().then(querySnapshot => {
 			querySnapshot.forEach(doc => {
 				item.push({
 					id: doc.id,
@@ -30,7 +30,7 @@ function Pagination(){
 
 	const nextData = (last) => {
 		console.log(last);
-		db.collection('item').orderBy(field).startAfter(last).limit(pageSize).get().then(querySnapshot => {
+		db.collection('item').orderBy(field, 'desc').startAfter(last).limit(pageSize).get().then(querySnapshot => {
 			querySnapshot.forEach(doc => {
 				item.push({
 					id: doc.id,
@@ -42,8 +42,11 @@ function Pagination(){
 			console.log("item next", item);
 
 			let firstVisible = querySnapshot.docs[querySnapshot.docs.length-querySnapshot.docs.length];
+			let lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
 			console.log('first', firstVisible);
 			setFirst(firstVisible);
+			setLast(lastVisible);
+
 
 		});
 	};
@@ -51,7 +54,7 @@ function Pagination(){
 	const prevData = (first) => {
 		console.log(first);
 
-		db.collection('item').orderBy(field).endBefore(first).limitToLast(pageSize).get().then(querySnapshot => {
+		db.collection('item').orderBy(field, 'desc').endBefore(first).limitToLast(pageSize).get().then(querySnapshot => {
 			querySnapshot.forEach(doc => {
 				item.push({
 					id: doc.id,
@@ -61,34 +64,15 @@ function Pagination(){
 			});
 			setValues(item);
 			console.log("item prev", item);
+
+			let firstVisible = querySnapshot.docs[querySnapshot.docs.length-querySnapshot.docs.length];
+			let lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
+			console.log('first', firstVisible);
+			setFirst(firstVisible);
+			setLast(lastVisible);
 		});
 	};
 
-
-
-/*	function nextPage(last){
-		let query = db.collection('item').orderBy(field).startAfter(last[field]).limit(pageSize).get().then(querySnapshot => {
-			querySnapshot.forEach(doc => {
-				item.push({
-					id: doc.id,
-					...doc.data()
-				})
-			});
-			console.log(item);
-		});
-	}
-
-	function prevPage(first){
-		let query = db.collection('item').orderBy(field).endBefore(first[field]).limitToLast(pageSize).get().then(querySnapshot => {
-			querySnapshot.forEach(doc => {
-				item.push({
-					id: doc.id,
-					...doc.data()
-				})
-			});
-			console.log(item);
-		});
-	}*/
 
 	useEffect(() => {
 		fetchData();

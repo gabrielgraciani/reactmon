@@ -1,7 +1,7 @@
 import React from 'react';
 import Form from 'components/crud/item/formulario';
 import Tabela from 'components/crud/item/tabela';
-/*import Pagination from 'components/crud/item/pagination';*/
+import Pagination from 'components/crud/item/pagination';
 
 
 function Crud_Item(){
@@ -21,7 +21,7 @@ function Crud_Item(){
 
 		<Form />
 
-		{/*<Pagination/>*/}
+		<Pagination/>
 		</>
 
 
