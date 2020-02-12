@@ -1,5 +1,6 @@
-import { takeLatest, all, put, call } from 'redux-saga/effects';
+import { takeLatest, all, put, call, select } from 'redux-saga/effects';
 import {db} from 'services/firebase';
+import { findIndex, filter } from 'lodash';
 
 import * as actions from '../actions/item';
 import Item from '../../services/item';
@@ -12,10 +13,9 @@ function* itemSendWorker(data) {
 		console.log(newDoc.id);
 		const id = newDoc.id;
 		newDoc.set({
-				nome,
-				descricao
-			}
-		);
+			nome,
+			descricao
+		});
 
 		yield put (actions.itemSavedSuccess({
 			id,
@@ -23,7 +23,6 @@ function* itemSendWorker(data) {
 			descricao
 		}));
 
-		/*yield put(actions.itemFetch());*/
 		yield put(actions.itemCloseForm());
 
 	} catch (error) {
@@ -49,7 +48,10 @@ function* itemDeleteWorker(data){
 			console.log("item deletado com sucesso");
 		});
 
-		yield put(actions.itemFetch());
+		const { list } = yield select(store => store.item);
+		const updatedList = filter([...list], item => item.id !== id);
+
+		yield put(actions.itemUpdateList(updatedList));
 	} catch(error){
 		console.log('error', error);
 	}
@@ -65,19 +67,32 @@ function* itemShowEditWorker(data){
 }
 
 function* itemUpdateWorker(data){
-	try{
+	try {
+
 		const {id, nome, descricao} = data.payload;
-		db.collection('item').doc(id).update({
-			nome,
-			descricao
-		});
-		console.log('editado com sucesso');
 
-		yield put(actions.itemFetch());
-		yield put(actions.itemCloseForm());
+		const { list } = yield select(store => store.item);
+		const i = findIndex(list, { id });
+		const updatedList = [...list];
 
+		if (i !== -1) {
 
-	} catch(error){
+			yield db.collection('item').doc(id).set({
+				nome,
+				descricao
+			});
+
+			updatedList[i] = {
+				id,
+				nome,
+				descricao
+			};
+			yield put(actions.itemUpdateList(updatedList));
+			yield put(actions.itemCloseForm());
+
+		}
+
+	} catch(error) {
 		console.log('error', error);
 	}
 }

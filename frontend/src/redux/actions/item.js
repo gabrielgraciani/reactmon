@@ -8,6 +8,7 @@ export const ITEM_EDIT_FULLFILLED = 'ITEM_EDIT_FULLFILLED';
 export const ITEM_UPDATE = 'ITEM_UPDATE';
 export const ITEM_OPEN_FORM = 'ITEM_OPEN_FORM';
 export const ITEM_CLOSE_FORM = 'ITEM_CLOSE_FORM';
+export const ITEM_UPDATE_LIST = 'ITEM_UPDATE_LIST';
 
 export const itemSend = (payload) => ({
 	type: ITEM_SEND,
@@ -56,6 +57,13 @@ export const itemUpdate = (payload) => ({
 
 export const itemOpenForm = () => ({
 	type: ITEM_OPEN_FORM
+});
+
+export const itemUpdateList = (list) => ({
+	type: ITEM_UPDATE_LIST,
+	payload: {
+		list
+	}
 });
 
 export const itemCloseForm = () => ({

@@ -100,6 +100,15 @@ export default function itemReducer(
 				}
 			};
 
+		case actions.ITEM_UPDATE_LIST:
+			return {
+				...initialState,
+				...state,
+				list: [
+					...payload.list
+				]
+			};
+
 		default:
 			return state;
 	}
