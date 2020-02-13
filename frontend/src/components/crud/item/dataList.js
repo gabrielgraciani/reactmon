@@ -30,15 +30,6 @@ function DataList(){
 	return(
 		<>
 		<tbody>
-		{isLoading && (
-			<tr className="row">
-				<td className="loading">
-					<div className="loading">
-						<CircularProgress size={50} />
-					</div>
-				</td>
-			</tr>
-		)}
 		{list.map((item, index) => (
 			<tr className="row" key={item.id}>
 				<td className="item">{item.id}</td>
@@ -50,8 +41,16 @@ function DataList(){
 				</td>
 			</tr>
 		))}
+		{isLoading && (
+			<tr className="row">
+				<td className="loading">
+					<div className="loading">
+						<CircularProgress size={50} />
+					</div>
+				</td>
+			</tr>
+		)}
 		</tbody>
-		{isLoading && 'Fetching more list items...'}
 
 		</>
 	)
