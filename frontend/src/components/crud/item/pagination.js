@@ -12,36 +12,16 @@ function Pagination(){
 	}
 
 	let item = [];
-	const fetchData = () => {
-		db.collection('item').orderBy('createdAt', 'desc').limit(5).get().then(querySnapshot => {
-			querySnapshot.forEach(doc => {
-				item.push({
-					id: doc.id,
-					...doc.data()
-				})
-			});
-
-			let lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
-			console.log('last', lastVisible);
-
-			setValues(item);
-			setLast(lastVisible);
-		});
-	};
-
 	const fetchMoreListItems = (last) => {
-		db.collection('item').orderBy('createdAt', 'desc').startAfter(last).limit(5).get().then(querySnapshot => {
+		db.collection('item').orderBy('createdAt', 'desc').startAfter(last).limit(3).get().then(querySnapshot => {
 			querySnapshot.forEach(doc => {
 				item.push({
 					id: doc.id,
 					...doc.data()
 				});
-				console.log('data next', doc.data());
 			});
-			console.log("valor: ", values);
 			setValues([...values, ...item]);
 			console.log("item next", item);
-			console.log("valor: ", values);
 			setIsFetching(false);
 
 			let lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
@@ -52,7 +32,7 @@ function Pagination(){
 	};
 
 	useEffect(() => {
-		fetchData();
+		fetchMoreListItems('');
 	}, []);
 
 	useEffect(() => {
