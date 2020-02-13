@@ -21,7 +21,7 @@ function Pagination(){
 				});
 			});
 			setValues([...values, ...item]);
-			console.log("item next", item);
+			//console.log("item next", item);
 			setIsFetching(false);
 
 			let lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];

@@ -7,15 +7,25 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 function DataList(){
+
 	const dispatch = useDispatch();
 
-	const { list, isLoading } = useSelector(store => store.item);
+	const { list = [], isLoading } = useSelector(store => store.item);
+	console.log('list', list);
 
 	useEffect(() => {
-		if(list.length === 0){
-			dispatch(itemFetch(""));
+		dispatch(itemFetch());
+	}, [dispatch]);
+
+	useEffect(() => {
+		function handleScroll() {
+			if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
+			dispatch(itemFetch());
 		}
-	}, [dispatch, list.length]);
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, [isLoading, dispatch]);
 
 	return(
 		<>
@@ -41,6 +51,8 @@ function DataList(){
 			</tr>
 		))}
 		</tbody>
+		{isLoading && 'Fetching more list items...'}
+
 		</>
 	)
 }

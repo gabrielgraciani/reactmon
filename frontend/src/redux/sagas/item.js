@@ -31,12 +31,12 @@ function* itemSendWorker(data) {
 	}
 }
 
-function* itemFetchWorker(payload) {
+function* itemFetchWorker() {
 	try {
-		let last = payload.last;
+		const { last } = yield select(store => store.item);
 
-		const fetch = yield call(Item.getItens, last);
-		yield put(actions.itemFullFilled(fetch));
+		const {item, lastVisible} = yield call(Item.getItens, last);
+		yield put(actions.itemFullFilled(item, lastVisible));
 
 	} catch (error) {
 		console.log('error', error);

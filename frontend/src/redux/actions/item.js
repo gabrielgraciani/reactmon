@@ -20,15 +20,15 @@ export const itemSavedSuccess = (payload) => ({
 	payload
 });
 
-export const itemFetch = (last) => ({
-	type: ITEM_FETCH,
-	last
+export const itemFetch = () => ({
+	type: ITEM_FETCH
 });
 
-export const itemFullFilled = (list) => ({
+export const itemFullFilled = (list, last) => ({
 	type: ITEM_FULLFILLED,
 	payload: {
-		list
+		list,
+		last
 	}
 });
 

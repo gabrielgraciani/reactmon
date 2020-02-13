@@ -8,7 +8,8 @@ export const initialState = {
 	list: [],
 	saving: false,
 	nome: '',
-	descricao: ''
+	descricao: '',
+	last: ''
 };
 
 export default function itemReducer(
@@ -40,16 +41,20 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				...payload,
-				isLoading: true,
-				list: [],
+				isLoading: true
 			};
 
 		case actions.ITEM_FULLFILLED:
+			console.log('payload', payload);
 			return {
 				...initialState,
 				...state,
-				...payload,
-				isLoading: false
+				list:[
+					...state.list,
+					...payload.list,
+				],
+				last: payload.last,
+				isLoading: false,
 			};
 
 		case actions.ITEM_SHOW_EDIT:
