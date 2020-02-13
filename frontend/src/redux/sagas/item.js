@@ -31,10 +31,11 @@ function* itemSendWorker(data) {
 	}
 }
 
-function* itemFetchWorker() {
+function* itemFetchWorker(payload) {
 	try {
+		let last = payload.last;
 
-		const fetch = yield call(Item.getItens);
+		const fetch = yield call(Item.getItens, last);
 		yield put(actions.itemFullFilled(fetch));
 
 	} catch (error) {

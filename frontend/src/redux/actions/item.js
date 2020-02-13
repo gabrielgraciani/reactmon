@@ -20,9 +20,9 @@ export const itemSavedSuccess = (payload) => ({
 	payload
 });
 
-export const itemFetch = () => ({
+export const itemFetch = (last) => ({
 	type: ITEM_FETCH,
-	payload: {}
+	last
 });
 
 export const itemFullFilled = (list) => ({

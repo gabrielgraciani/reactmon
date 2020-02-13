@@ -39,6 +39,7 @@ export default function itemReducer(
 			return {
 				...initialState,
 				...state,
+				...payload,
 				isLoading: true,
 				list: [],
 			};

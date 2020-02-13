@@ -13,7 +13,7 @@ function DataList(){
 
 	useEffect(() => {
 		if(list.length === 0){
-			dispatch(itemFetch());
+			dispatch(itemFetch(""));
 		}
 	}, [dispatch, list.length]);
 
