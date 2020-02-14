@@ -4,6 +4,7 @@ import {itemFetch, itemDelete, itemShowEdit} from "../../../redux/actions/item";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import GifPikachu from 'assets/images/gifs/gif-pikachu.gif';
 
 
 function DataList(){
@@ -53,8 +54,9 @@ function DataList(){
 		)}
 		{endInfiniteScroll && (
 			<tr className="row">
-				<td className="loading">
+				<td className="loading fim">
 					Não há mais arquivos abaixo... =(
+					<img src={GifPikachu} alt="Pikachu chorando" />
 				</td>
 			</tr>
 		)}

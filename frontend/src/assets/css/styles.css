@@ -222,6 +222,8 @@ p{font-size:21px;}
 #wrap_tabela .conteudo .row .item.actions .icon svg.edit path{fill:#FFC720;}
 #wrap_tabela .conteudo .row .item.actions .icon svg.delete path{fill:#D9534F;}
 #wrap_tabela .conteudo .loading{width:100%; display:flex; justify-content:center;}
+#wrap_tabela .conteudo .loading.fim{align-items:center;}
+#wrap_tabela .conteudo .loading.fim img{width:150px;}
 
 #wrap_formulario{transition:opacity .1s ease .5s ; opacity:0; visibility: hidden; width:100%;}
 #wrap_formulario.active{transition:opacity .1s ease ; opacity:1; visibility: visible; display:flex; justify-content:center; }
