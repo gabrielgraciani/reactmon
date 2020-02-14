@@ -55,7 +55,7 @@ function DataList(){
 		{endInfiniteScroll && (
 			<tr className="row">
 				<td className="loading fim">
-					Não há mais arquivos abaixo... =(
+					Não há mais registros abaixo... =(
 					<img src={GifPikachu} alt="Pikachu chorando" />
 				</td>
 			</tr>
