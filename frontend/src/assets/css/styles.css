@@ -4,6 +4,7 @@
 	--primary: #d63031;
 	--primary-dark: #890101;
 	--primary-light: #ff8686;
+	--primary-light-ultra: #ffd2d2;
 	--secondary: #b01616;
 	--dark:#2d3436;
 
@@ -204,15 +205,15 @@ p{font-size:21px;}
 #wrap_crud .indent .titulo{margin:0 0 40px 0;}
 #wrap_crud .indent .titulo h1{color:var(--black);}
 #wrap_tabela{width:100%; display:flex; flex-direction:column; border:0; border-radius:10px;}
-#wrap_tabela .head{width:100%; padding:13px 20px; background:#435D7D; display:flex; justify-content:space-between; align-items:center; border-top-left-radius:15px; border-top-right-radius:15px;}
+#wrap_tabela .head{width:100%; padding:13px 20px; background:var(--dark); display:flex; justify-content:space-between; align-items:center; border-top-left-radius:15px; border-top-right-radius:15px;}
 #wrap_tabela .head .titulo{margin:0;}
 #wrap_tabela .head .titulo h3{color:var(--white);}
 #wrap_tabela .head .botoes{display:flex; align-items:center; justify-content:space-between;}
-#wrap_tabela .head .botoes button{transition:all .3s ease; cursor:pointer; background:#5CB85C; color:var(--white); font-size:16px; border:1px solid #5CB85C; outline:0; border-radius:5px; padding:10px 20px; display:flex; align-items:center; justify-content:center;}
-#wrap_tabela .head .botoes button:hover{background:#f5f5f5; color:#5cB85C}
+#wrap_tabela .head .botoes button{transition:all .3s ease; cursor:pointer; background:var(--primary); color:var(--white); font-size:16px; border:1px solid var(--primary); outline:0; border-radius:5px; padding:10px 20px; display:flex; align-items:center; justify-content:center;}
+#wrap_tabela .head .botoes button:hover{background:var(--dark); color:var(--primary)}
 #wrap_tabela .conteudo{width:100%; display:flex; flex-direction:column;}
 #wrap_tabela .conteudo .row{background:var(--white); transition:all .3s ease; width:100%; padding:15px 20px;  display:flex; justify-content:space-between; border-bottom:1px solid #c0c0c0;}
-#wrap_tabela .conteudo .row:hover{background:#DAE8D1;}
+#wrap_tabela .conteudo .row:hover{background:var(--primary-light-ultra);}
 #wrap_tabela .conteudo .row:nth-last-child(1){border-bottom:0; border-bottom-left-radius:15px; border-bottom-right-radius:15px;}
 #wrap_tabela .conteudo .row .item{width:inherit; display:flex; word-break:break-word; padding:0 10px; align-items:center; font-size:15px; color:#566787}
 #wrap_tabela .conteudo .row .item img{width:100%;}
@@ -240,19 +241,19 @@ p{font-size:21px;}
 #wrap_formulario .indent .item{width:100%; margin:10px 0; display:flex; flex-direction:column;}
 #wrap_formulario .indent .item label{margin:0 0 5px 0; font-size:14px; color:#566787;}
 #wrap_formulario .indent .item input{transition:all .3s ease; width:100%; border:1px solid #ccc; background:transparent; outline:0; padding:7px;}
-#wrap_formulario .indent .item input:focus{border:1px solid #5CB85C; color:#5CB85C;}
+#wrap_formulario .indent .item input:focus{border:1px solid var(--primary); color:var(--primary);}
 #wrap_formulario .indent .item .checkboxes{width:100%; display:flex; flex-wrap:wrap;}
 #wrap_formulario .indent .item .container { display: block; position: relative; padding:5px 0 0 35px; width:22%; margin:5px 3% 0 0; cursor: pointer; font-size: 17px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 #wrap_formulario .indent .item .container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0;}
 #wrap_formulario .indent .item .checkmark { position: absolute; top: 0; left: 0; height: 25px; width: 25px; border-radius:5px; border:1px solid #c0c0c0;}
-#wrap_formulario .indent .item .container input:checked ~ .checkmark {	border: 1px solid #5CB85C;}
+#wrap_formulario .indent .item .container input:checked ~ .checkmark {	border: 1px solid var(--primary);}
 #wrap_formulario .indent .item .checkmark:after { content: ""; position: absolute; display: none;}
 #wrap_formulario .indent .item .container input:checked ~ .checkmark:after {display: block;}
 #wrap_formulario .indent .item .container .checkmark:after { left: 9px; top: 5px; width: 5px; height: 10px; border: solid #333; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
-#wrap_formulario .indent button.salvar{cursor:pointer; transition:all .3s ease; background:#5CB85C; border:1px solid #5CB85C; padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
-#wrap_formulario .indent button.salvar:hover{background:transparent; color:#5CB85C;}
-#wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:#5CB85C; border:1px solid #5CB85C; padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
-#wrap_formulario .indent input[type='submit']:hover{background:transparent; color:#5CB85C;}
+#wrap_formulario .indent button.salvar{cursor:pointer; transition:all .3s ease; background:var(--primary); border:1px solid var(--primary); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent button.salvar:hover{background:transparent; color:var(--primary);}
+#wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:var(--primary); border:1px solid var(--primary); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent input[type='submit']:hover{background:transparent; color:var(--primary);}
 
 #wrap_loading{width:100%; height:100vh; display:flex; align-items:center; justify-content:center;}
 
