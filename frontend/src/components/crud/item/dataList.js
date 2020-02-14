@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {itemFetch, itemDelete, itemShowEdit} from "../../../redux/actions/item";
 import EditIcon from '@material-ui/icons/Edit';
@@ -10,18 +10,31 @@ import Loading from 'components/loading';
 function DataList(){
 	const dispatch = useDispatch();
 	const { list = [], isLoading, last, endInfiniteScroll } = useSelector(store => store.item);
+	const [teste, setTeste] = useState('');
+	const [teste2, setTeste2] = useState('');
 
 	useEffect(() => {
-		dispatch(itemFetch());
-	}, [dispatch]);
+		if(list.length === 0){
+			dispatch(itemFetch());
+		}
+	}, [dispatch, list.length]);
 
 	useEffect(() => {
 		function handleScroll() {
-			if (window.innerHeight + document.documentElement.scrollTop !== document.documentElement.offsetHeight) return;
-
-			if(last){
+			if (Math.round(window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight || Math.round(window.innerHeight + document.documentElement.scrollTop + 1) === document.documentElement.offsetHeight){
+				if(last){
 				dispatch(itemFetch());
 			}
+			}
+			console.log(window.innerHeight);
+			console.log(document.documentElement.scrollTop);
+			console.log(document.documentElement.offsetHeight);
+			console.log(window.innerHeight + document.documentElement.scrollTop);
+			
+			setTeste(window.innerHeight + document.documentElement.scrollTop);
+			setTeste2(document.documentElement.offsetHeight);
+
+			
 
 		}
 
@@ -61,7 +74,8 @@ function DataList(){
 			</tr>
 		)}
 		</tbody>
-
+		{teste} <br />
+		{teste2}
 		</>
 	)
 }
