@@ -2,6 +2,7 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 import {itemOpenForm} from "redux/actions/item";
 import DataList from './dataList';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Tabela() {
 	const dispatch = useDispatch();
@@ -11,6 +12,13 @@ function Tabela() {
 			<div className="head">
 				<div className="titulo">
 					<h3>Itens</h3>
+				</div>
+
+				<div className="search">
+					<input className="search-input" type="text" name="" placeholder="Pesquise um item" />
+					<div className="search-btn">
+						<SearchIcon />
+					</div>
 				</div>
 
 				<div className="botoes">
