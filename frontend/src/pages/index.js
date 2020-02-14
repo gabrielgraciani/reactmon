@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import Carousel from 'components/carousel';
 import {useDispatch, useSelector} from "react-redux";
 import {pokemonFetch} from "../redux/actions/pokemon";
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Loading from 'components/loading';
 
 function Home(){
 	const dispatch = useDispatch();
@@ -28,7 +28,7 @@ function Home(){
 
 		<div id="wrap_pokemon">
 			{isLoading && (
-				<CircularProgress size={250} />
+				<Loading/>
 			)}
 			<div className="indent">
 				{list.map(item => (

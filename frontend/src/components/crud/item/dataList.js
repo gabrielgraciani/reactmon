@@ -3,8 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {itemFetch, itemDelete, itemShowEdit} from "../../../redux/actions/item";
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import GifPikachu from 'assets/images/gifs/gif-pikachu.gif';
+import Loading from 'components/loading';
 
 
 function DataList(){
@@ -47,7 +47,7 @@ function DataList(){
 			<tr className="row">
 				<td className="loading">
 					<div className="loading">
-						<CircularProgress size={50} />
+						<Loading />
 					</div>
 				</td>
 			</tr>
