@@ -24,11 +24,12 @@ export const itemFetch = () => ({
 	type: ITEM_FETCH
 });
 
-export const itemFullFilled = (list, last) => ({
+export const itemFullFilled = (list, last, endInfiniteScroll) => ({
 	type: ITEM_FULLFILLED,
 	payload: {
 		list,
-		last
+		last,
+		endInfiniteScroll
 	}
 });
 

@@ -33,10 +33,10 @@ function* itemSendWorker(data) {
 
 function* itemFetchWorker() {
 	try {
-		const { last } = yield select(store => store.item);
+		const { last, endInfiniteScroll } = yield select(store => store.item);
 
-		const {item, lastVisible} = yield call(Item.getItens, last);
-		yield put(actions.itemFullFilled(item, lastVisible));
+		const {item, lastVisible, end} = yield call(Item.getItens, last, endInfiniteScroll);
+		yield put(actions.itemFullFilled(item, lastVisible, end));
 
 	} catch (error) {
 		console.log('error', error);

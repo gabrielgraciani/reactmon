@@ -11,9 +11,16 @@ export default class item{
 						...doc.data()
 					})
 				});
-				let lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
+				const lastVisible = querySnapshot.docs[querySnapshot.docs.length-1];
+				let end;
 
-				res({item, lastVisible});
+				if(lastVisible){
+					end = false;
+					res({item, lastVisible, end});
+				}else{
+					end = true;
+					res({item, end});
+				}
 			}).catch(rej)
 		});
 

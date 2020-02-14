@@ -3,13 +3,14 @@ import * as actions from '../actions/item';
 export const initialState = {
 	active: '',
 	data: [],
+	endInfiniteScroll: false,
 	isLoading: false,
 	isEditing: false,
+	last: '',
 	list: [],
-	saving: false,
 	nome: '',
 	descricao: '',
-	last: ''
+	saving: false,
 };
 
 export default function itemReducer(
@@ -45,16 +46,16 @@ export default function itemReducer(
 			};
 
 		case actions.ITEM_FULLFILLED:
-			console.log('payload', payload);
 			return {
 				...initialState,
 				...state,
+				endInfiniteScroll: payload.endInfiniteScroll,
+				isLoading: false,
+				last: payload.last,
 				list:[
 					...state.list,
 					...payload.list,
 				],
-				last: payload.last,
-				isLoading: false,
 			};
 
 		case actions.ITEM_SHOW_EDIT:
