@@ -30,7 +30,6 @@ function DataList(){
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, [isLoading, dispatch, last]);
 
-	console.log('list', list);
 	return(
 		<>
 		<tbody>

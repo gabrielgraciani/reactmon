@@ -39,7 +39,6 @@ function* itemFetchWorker() {
 		const { last, endInfiniteScroll } = yield select(store => store.item);
 
 		const {item, lastVisible, end} = yield call(Item.getItens, last, endInfiniteScroll);
-		console.log('item', item);
 		yield put(actions.itemFullFilled(item, lastVisible, end));
 
 	} catch (error) {
@@ -65,6 +64,7 @@ function* itemDeleteWorker(data){
 
 function* itemShowEditWorker(data){
 	try{
+		console.log('payload', data.payload);
 		yield put(actions.itemEditFullFilled(data.payload));
 
 	} catch(error){

@@ -61,9 +61,15 @@ function Formulario() {
 					<label htmlFor="descricao">Descrição</label>
 					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
 				</div>
-				<div className="item">
-					<label htmlFor="imagem">Imagem</label>
-					<input type="file" accept="image/*" onChange={handleChangeFile} />
+
+				<div className="item file">
+					<label className="upload">
+						<input type="file" accept="image/*" multiple onChange={handleChangeFile} />
+						Selecione um arquivo
+					</label>
+					{changeFile && (
+						<label>{changeFile.name}</label>
+					)}
 				</div>
 
 				{isEditing ? <input type="submit" value="Editar" onClick={onUpdate} /> : <input type="submit" value="Salvar" onClick={onSubmit} />}

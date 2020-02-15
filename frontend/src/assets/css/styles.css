@@ -244,6 +244,7 @@ p{font-size:21px;}
 #wrap_tabela .search{background:var(--primary)}
 #wrap_tabela .search .search-btn{background:var(--primary)}
 
+
 #wrap_formulario{transition:opacity .1s ease .5s ; opacity:0; visibility: hidden; width:100%;}
 #wrap_formulario.active{transition:opacity .1s ease ; opacity:1; visibility: visible; display:flex; justify-content:center; }
 #wrap_formulario.active:after{width:100%; height:100%; content:''; position:fixed; top:0; left:0; background:var(--dark); opacity:0.6; z-index:999;}
@@ -271,6 +272,10 @@ p{font-size:21px;}
 #wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:var(--primary); border:1px solid var(--primary); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
 #wrap_formulario .indent input[type='submit']:hover{background:transparent; color:var(--primary);}
 
+#wrap_formulario .indent input[type="file"] {display: none;}
+#wrap_formulario .indent .item.file{flex-direction:row; justify-content:space-between;}
+#wrap_formulario .indent .item.file label{width:49%; background:var(--dark); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; text-align:center; padding:5px 0;}
+#wrap_formulario .indent .item.file label.upload{cursor:pointer;}
 #wrap_loading{width:100%; height:100vh; display:flex; align-items:center; justify-content:center;}
 
 
