@@ -271,7 +271,8 @@ p{font-size:21px;}
 #wrap_formulario .indent button.salvar:hover{background:transparent; color:var(--primary);}
 #wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:var(--primary); border:1px solid var(--primary); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
 #wrap_formulario .indent input[type='submit']:hover{background:transparent; color:var(--primary);}
-
+#wrap_formulario .indent .load{width:50%; display:flex; align-items:center; justify-content:center; background:var(--primary); padding:12px; border-radius:25px;}
+#wrap_formulario .indent .load svg{color:var(--white);}
 #wrap_formulario .indent input[type="file"] {display: none;}
 #wrap_formulario .indent .item.file{flex-direction:row; justify-content:space-between;}
 #wrap_formulario .indent .item.file label{width:49%; background:var(--dark); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; text-align:center; padding:5px 0;}

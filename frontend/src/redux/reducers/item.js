@@ -90,6 +90,7 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				data: [payload],
+				saving: true,
 			};
 
 		case actions.ITEM_UPDATE_LIST:
@@ -98,7 +99,8 @@ export default function itemReducer(
 				...state,
 				list: [
 					...payload.list
-				]
+				],
+				saving: false
 			};
 
 		case actions.ITEM_OPEN_FORM:

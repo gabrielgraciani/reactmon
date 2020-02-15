@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
 import {itemSend, itemUpdate, itemCloseForm} from "redux/actions/item";
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 function Formulario() {
 	const initialState = {
@@ -25,7 +26,7 @@ function Formulario() {
 	};
 
 	const dispatch = useDispatch();
-	const {active, payload, isEditing } = useSelector(store => store.item);
+	const {active, payload, isEditing, saving } = useSelector(store => store.item);
 
 	useEffect(() => {
 		if(payload){
@@ -81,7 +82,8 @@ function Formulario() {
 					}
 				</div>
 
-				{isEditing ? <input type="submit" value="Editar" onClick={onUpdate} /> : <input type="submit" value="Salvar" onClick={onSubmit} />}
+				{saving ? <div className="load"><CircularProgress size={25} /> </div> : isEditing ? <input type="submit" value="Editar" onClick={onUpdate} /> : <input type="submit" value="Salvar" onClick={onSubmit} />}
+
 
 			</div>
 
