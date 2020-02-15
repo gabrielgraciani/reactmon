@@ -9,9 +9,10 @@ function Formulario() {
 		id: '',
 		nome: '',
 		descricao: '',
-		imagem: {}
+		imagem: ''
 	};
 	const [values, setValues] = useState(initialState);
+	const [validate, setValidate] = useState(false);
 	const handleChange = (e) => setValues({
 		...values,
 		[e.target.name]: e.target.value
@@ -38,14 +39,25 @@ function Formulario() {
 		e.preventDefault();
 
 		const {nome, descricao, imagem} = values;
-		dispatch(itemSend({nome, descricao, imagem}));
+		if(!nome || !descricao || !imagem){
+			setValidate(true);
+		}
+		else{
+			dispatch(itemSend({nome, descricao, imagem}));
+		}
+
 	};
 
 	const onUpdate = (e) => {
 		e.preventDefault();
 
 		const {id, nome, descricao, imagem} = values;
-		dispatch(itemUpdate({id, nome, descricao, imagem}));
+		if(!nome || !descricao || !imagem){
+			setValidate(true);
+		}
+		else{
+			dispatch(itemUpdate({id, nome, descricao, imagem}));
+		}
 	};
 
 	return(
@@ -61,18 +73,18 @@ function Formulario() {
 				</div>
 
 				<div className="item">
-					<label htmlFor="nome">Nome</label>
+					<label htmlFor="nome">Nome<span>{validate && '*'}</span></label>
 					<input type="text" name="nome" value={values.nome} onChange={handleChange} autoComplete="off" />
 				</div>
 				<div className="item">
-					<label htmlFor="descricao">Descrição</label>
+					<label htmlFor="descricao">Descrição<span>{validate && '*'}</span></label>
 					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
 				</div>
 
 				<div className="item file">
 					<label className="upload">
 						<input type="file" accept="image/*" multiple onChange={handleChangeFile} />
-						Selecione um arquivo
+						Selecione um arquivo<span>{validate && '*'}</span>
 					</label>
 
 					{values.imagem.name &&
@@ -81,6 +93,8 @@ function Formulario() {
 						</label>
 					}
 				</div>
+
+				<div className="item"><label htmlFor=""><span>{validate && 'Preencha os campos com *'}</span></label></div>
 
 				{saving ? <div className="load"><CircularProgress size={25} /> </div> : isEditing ? <input type="submit" value="Editar" onClick={onUpdate} /> : <input type="submit" value="Salvar" onClick={onSubmit} />}
 

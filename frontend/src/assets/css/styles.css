@@ -257,6 +257,7 @@ p{font-size:21px;}
 #wrap_formulario .indent .head .titulo h3{color:#566787;}
 #wrap_formulario .indent .item{width:100%; margin:10px 0; display:flex; flex-direction:column;}
 #wrap_formulario .indent .item label{margin:0 0 5px 0; font-size:14px; color:#566787;}
+#wrap_formulario .indent .item label span{color:var(--primary);}
 #wrap_formulario .indent .item input{transition:all .3s ease; width:100%; border:1px solid #ccc; background:transparent; outline:0; padding:7px;}
 #wrap_formulario .indent .item input:focus{border:1px solid var(--primary); color:var(--primary);}
 #wrap_formulario .indent .item .checkboxes{width:100%; display:flex; flex-wrap:wrap;}
