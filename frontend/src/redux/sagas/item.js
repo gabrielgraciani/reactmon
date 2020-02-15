@@ -65,7 +65,6 @@ function* itemDeleteWorker(data){
 
 function* itemShowEditWorker(data){
 	try{
-		console.log('payload', data.payload);
 		yield put(actions.itemEditFullFilled(data.payload));
 
 	} catch(error){
