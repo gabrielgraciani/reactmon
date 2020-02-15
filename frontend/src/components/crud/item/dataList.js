@@ -5,7 +5,6 @@ import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import GifPikachu from 'assets/images/gifs/gif-pikachu.gif';
 import Loading from 'components/loading';
-import CircularProgress from '@material-ui/core/CircularProgress';
 
 function DataList(){
 	const dispatch = useDispatch();
@@ -39,11 +38,8 @@ function DataList(){
 				<td className="item">{item.id}</td>
 				<td className="item">{item.nome}</td>
 				<td className="item">
-					{item.imagem.url === '' && (
-						<CircularProgress size={25} />
-					)}
-					{item.imagem.url !== '' && (
-						<img src={item.imagem.url} alt={item.nome} />
+					{item.imagem.url && (
+						<img src={item.imagem.url} alt="imagem" />
 					)}
 				</td>
 				<td className="item">{item.descricao}</td>
