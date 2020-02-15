@@ -76,8 +76,8 @@ export default class item{
 
 						const name = imagem.name;
 						res({url, name});
-					});
-				});
+					}).catch(rej)
+				})
 		});
-	}
+	};
 }
