@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
-import {itemSend, itemUpdate, itemCloseForm} from "redux/actions/item";
+import {itemSend, itemUpdate, itemCloseForm} from "../../../redux/actions/item";
 import CircularProgress from '@material-ui/core/CircularProgress';
 
 function Formulario() {
@@ -13,6 +13,16 @@ function Formulario() {
 	};
 	const [values, setValues] = useState(initialState);
 	const [validate, setValidate] = useState(false);
+
+	const dispatch = useDispatch();
+	const {active, payload, isEditing, saving } = useSelector(store => store.item);
+
+	useEffect(() => {
+		if(payload){
+			setValues(payload);
+		}
+	}, [payload]);
+
 	const handleChange = (e) => setValues({
 		...values,
 		[e.target.name]: e.target.value
@@ -26,25 +36,12 @@ function Formulario() {
 		})
 	};
 
-	const dispatch = useDispatch();
-	const {active, payload, isEditing, saving } = useSelector(store => store.item);
-
-	useEffect(() => {
-		if(payload){
-			setValues(payload);
-		}
-	}, [payload]);
-
 	const onSubmit = (e) => {
 		e.preventDefault();
 
 		const {nome, descricao, imagem} = values;
-		if(!nome || !descricao || !imagem){
-			setValidate(true);
-		}
-		else{
-			dispatch(itemSend({nome, descricao, imagem}));
-		}
+		if(!nome || !descricao || !imagem){ setValidate(true); }
+		else{ dispatch(itemSend({nome, descricao, imagem})); }
 
 	};
 
@@ -52,12 +49,8 @@ function Formulario() {
 		e.preventDefault();
 
 		const {id, nome, descricao, imagem} = values;
-		if(!nome || !descricao || !imagem){
-			setValidate(true);
-		}
-		else{
-			dispatch(itemUpdate({id, nome, descricao, imagem}));
-		}
+		if(!nome || !descricao || !imagem){ setValidate(true); }
+		else{ dispatch(itemUpdate({id, nome, descricao, imagem})); }
 	};
 
 	return(

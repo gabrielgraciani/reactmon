@@ -1,7 +1,7 @@
 import React from 'react';
-import {useDispatch} from "react-redux";
-import {itemOpenForm} from "redux/actions/item";
 import DataList from './dataList';
+import {itemOpenForm} from "../../../redux/actions/item";
+import {useDispatch} from "react-redux";
 
 function Tabela() {
 	const dispatch = useDispatch();

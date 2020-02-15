@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
-import {useDispatch, useSelector} from "react-redux";
-import {itemFetch, itemDelete, itemShowEdit} from "../../../redux/actions/item";
-import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 import GifPikachu from 'assets/images/gifs/gif-pikachu.gif';
 import Loading from 'components/loading';
+import {itemDelete, itemFetch, itemShowEdit} from "../../../redux/actions/item";
+import {useDispatch, useSelector} from "react-redux";
 
 function DataList(){
 	const dispatch = useDispatch();
-	const { list = [], isLoading, last, endInfiniteScroll } = useSelector(store => store.item);
+	const { endInfiniteScroll, isLoading, last, list = [] } = useSelector(store => store.item);
 
 	useEffect(() => {
 		if(list.length === 0){
@@ -20,9 +20,7 @@ function DataList(){
 		function handleScroll() {
 			if (Math.round(window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight ||
 				Math.round(window.innerHeight + document.documentElement.scrollTop + 1) >= document.documentElement.offsetHeight){
-				if(last){
-					dispatch(itemFetch());
-				}
+				if(last){ dispatch(itemFetch()); }
 			}
 		}
 
