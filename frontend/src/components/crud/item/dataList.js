@@ -30,6 +30,7 @@ function DataList(){
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, [isLoading, dispatch, last]);
 
+	console.log('list', list);
 	return(
 		<>
 		<tbody>
@@ -50,7 +51,7 @@ function DataList(){
 			</tr>
 		))}
 		{isLoading && (
-			<tr className="row">
+			<tr className="row loading">
 				<td className="loading">
 					<div className="loading">
 						<Loading />
