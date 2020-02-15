@@ -6,7 +6,10 @@ import {itemSend, itemUpdate, itemCloseForm} from "redux/actions/item";
 function Formulario() {
 	const initialState = {
 		nome: '',
-		descricao: ''
+		descricao: '',
+		imagem: {
+			name: ''
+		}
 	};
 	const [values, setValues] = useState(initialState);
 	const [changeFile, setChangeFile] = useState('');
@@ -16,6 +19,7 @@ function Formulario() {
 	});
 	const handleChangeFile = (e) => {
 		setChangeFile(e.target.files[0]);
+		setValues({imagem:{name: ''}})
 	};
 
 	const dispatch = useDispatch();
@@ -67,9 +71,22 @@ function Formulario() {
 						<input type="file" accept="image/*" multiple onChange={handleChangeFile} />
 						Selecione um arquivo
 					</label>
-					{changeFile && (
-						<label>{changeFile.name}</label>
-					)}
+
+					{changeFile && values.imagem.name &&
+						<label htmlFor="">
+							{values.imagem.name}
+						</label>
+					}
+					{!changeFile && values.imagem.name &&
+						<label htmlFor="">
+							{values.imagem.name}
+						</label>
+					}
+					{changeFile && !values.imagem.name &&
+						<label htmlFor="">
+							{changeFile.name}
+						</label>
+					}
 				</div>
 
 				{isEditing ? <input type="submit" value="Editar" onClick={onUpdate} /> : <input type="submit" value="Salvar" onClick={onSubmit} />}

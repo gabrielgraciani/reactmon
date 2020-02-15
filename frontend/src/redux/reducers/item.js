@@ -11,6 +11,9 @@ export const initialState = {
 	nome: '',
 	descricao: '',
 	saving: false,
+	imagem: {
+		name: ''
+	}
 };
 
 export default function itemReducer(
@@ -112,7 +115,10 @@ export default function itemReducer(
 				isEditing: false,
 				payload: {
 					nome: '',
-					descricao: ''
+					descricao: '',
+					imagem: {
+						name: ''
+					}
 				}
 			};
 
