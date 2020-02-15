@@ -21,11 +21,11 @@ function* itemSendWorker(data) {
 		yield put (actions.itemSavedSuccess({
 			id,
 			nome,
+			descricao,
 			imagem: {
 				name,
 				url
 			},
-			descricao
 		}));
 
 		yield put(actions.itemCloseForm());
@@ -76,7 +76,7 @@ function* itemShowEditWorker(data){
 function* itemUpdateWorker(data){
 	try {
 
-		const {id, nome, descricao} = data.payload;
+		const {id, nome, descricao, imagem} = data.payload;
 
 		const { list } = yield select(store => store.item);
 		const i = findIndex(list, { id });
@@ -89,10 +89,16 @@ function* itemUpdateWorker(data){
 				descricao
 			});
 
+			const {url, name} = yield call(Item.saveImage, imagem, id);
+
 			updatedList[i] = {
 				id,
 				nome,
-				descricao
+				descricao,
+				imagem: {
+					name,
+					url
+				},
 			};
 			yield put(actions.itemUpdateList(updatedList));
 			yield put(actions.itemCloseForm());

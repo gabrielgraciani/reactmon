@@ -43,8 +43,8 @@ function Formulario() {
 	const onUpdate = (e) => {
 		e.preventDefault();
 
-		const {id, nome, descricao} = values;
-		dispatch(itemUpdate({id, nome, descricao}));
+		const {id, nome, descricao, imagem} = values;
+		dispatch(itemUpdate({id, nome, descricao, imagem}));
 	};
 
 	return(
