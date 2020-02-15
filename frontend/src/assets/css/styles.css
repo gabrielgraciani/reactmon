@@ -226,6 +226,7 @@ p{font-size:21px;}
 #wrap_tabela .head .botoes button:hover{background:var(--dark); color:var(--primary)}
 #wrap_tabela .conteudo{width:100%; display:flex; flex-direction:column;}
 #wrap_tabela .conteudo .row{min-height:100px; background:var(--white); transition:all .3s ease; width:100%; padding:15px 20px;  display:flex; justify-content:space-between; border-bottom:1px solid #c0c0c0;}
+#wrap_tabela .conteudo .row:nth-child(even){background:#f0f0f0;}
 #wrap_tabela .conteudo .row:hover{background:var(--primary-light-ultra);}
 #wrap_tabela .conteudo .row:nth-last-child(1){border-bottom:0; border-bottom-left-radius:15px; border-bottom-right-radius:15px;}
 #wrap_tabela .conteudo .row .item{width:inherit; display:flex; word-break:break-word; padding:0 10px; align-items:center; font-size:15px; color:#566787}
@@ -335,6 +336,18 @@ p{font-size:21px;}
 	#wrap_banner_padrao .indent{padding:20px 0 40px 0;}
 
 	#wrap_pokemon .indent .card .conteudo .nome{margin-top:5px;}
+
+	#wrap_tabela .conteudo .row{flex-direction:column;}
+	#wrap_tabela .conteudo .row.head{display:none;}
+	#wrap_tabela .conteudo .row .item{margin:5px 0; text-align:right; justify-content:flex-end; position:relative;}
+	#wrap_tabela .conteudo .row .item img{max-width:50px;}
+	#wrap_tabela .conteudo .row .item:before {position: absolute;top: 50%; transform:translate(0, -50%); left:0; text-align:left; width:40%; padding:10px 10px; height:100%; font-weight:bold; display:flex; align-items:center;}
+	#wrap_tabela .conteudo .row .item:nth-of-type(1):before { content: "ID"; }
+	#wrap_tabela .conteudo .row .item:nth-of-type(2):before { content: "Nome"; }
+	#wrap_tabela .conteudo .row .item:nth-of-type(3):before { content: "Imagem"; }
+	#wrap_tabela .conteudo .row .item:nth-of-type(4):before { content: "Descrição"; }
+	#wrap_tabela .conteudo .row .item:nth-of-type(5):before { content: "Ações"; }
+
 }
 
 @media screen and (max-width: 500px){

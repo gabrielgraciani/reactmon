@@ -36,7 +36,7 @@ export default class item{
 		return new Promise((res, rej) => {
 			uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
 				function(snapshot) {
-					const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+					//const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 					//console.log('Upload is ' + progress + '% done');
 					switch (snapshot.state) {
 						case firebase.storage.TaskState.PAUSED:

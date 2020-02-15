@@ -18,19 +18,17 @@ function Tabela() {
 				</div>
 			</div>
 
-			<table className="conteudo">
-				<thead>
-				<tr className="row head">
-					<th className="item">ID</th>
-					<th className="item">Nome</th>
-					<th className="item">Imagem</th>
-					<th className="item">Descrição</th>
-					<th className="item">Ações</th>
-				</tr>
-				</thead>
+			<div className="conteudo">
+				<div className="row head">
+					<div className="item">ID</div>
+					<div className="item">Nome</div>
+					<div className="item">Imagem</div>
+					<div className="item">Descrição</div>
+					<div className="item">Ações</div>
+				</div>
 
 				<DataList />
-			</table>
+			</div>
 		</div>
 	)
 }

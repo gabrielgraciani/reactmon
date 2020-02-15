@@ -30,41 +30,39 @@ function DataList(){
 
 	return(
 		<>
-		<tbody>
 		{list.map((item, index) => (
-			<tr className="row" key={item.id}>
-				<td className="item">{item.id}</td>
-				<td className="item">{item.nome}</td>
-				<td className="item">
+			<div className="row" key={item.id}>
+				<div className="item">{item.id}</div>
+				<div className="item">{item.nome}</div>
+				<div className="item">
 					{item.imagem.url && (
 						<img src={item.imagem.url} alt="imagem" />
 					)}
-				</td>
-				<td className="item">{item.descricao}</td>
-				<td className="item actions">
+				</div>
+				<div className="item">{item.descricao}</div>
+				<div className="item actions">
 					<div className="icon"><EditIcon className="edit" onClick={() => {dispatch(itemShowEdit(item))}} /></div>
 					<div className="icon"><DeleteIcon className="delete" onClick={() => {if (window.confirm(`Você quer mesmo deletar o item ${item.nome} ?`)) dispatch(itemDelete(item.id))}} /></div>
-				</td>
-			</tr>
+				</div>
+			</div>
 		))}
 		{isLoading && (
-			<tr className="row loading">
-				<td className="loading">
+			<div className="row loading">
+				<div className="loading">
 					<div className="loading">
 						<Loading />
 					</div>
-				</td>
-			</tr>
+				</div>
+			</div>
 		)}
 		{endInfiniteScroll && (
-			<tr className="row">
-				<td className="loading fim">
+			<div className="row">
+				<div className="loading fim">
 					Não há mais registros abaixo... =(
 					<img src={GifPikachu} alt="Pikachu chorando" />
-				</td>
-			</tr>
+				</div>
+			</div>
 		)}
-		</tbody>
 		</>
 	)
 }
