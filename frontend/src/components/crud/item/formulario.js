@@ -5,21 +5,23 @@ import {itemSend, itemUpdate, itemCloseForm} from "redux/actions/item";
 
 function Formulario() {
 	const initialState = {
+		id: '',
 		nome: '',
 		descricao: '',
-		imagem: {
-			name: ''
-		}
+		imagem: {}
 	};
 	const [values, setValues] = useState(initialState);
-	const [changeFile, setChangeFile] = useState('');
 	const handleChange = (e) => setValues({
 		...values,
 		[e.target.name]: e.target.value
 	});
 	const handleChangeFile = (e) => {
-		setChangeFile(e.target.files[0]);
-		setValues({imagem:{name: ''}})
+		setValues({
+			id: values.id,
+			nome: values.nome,
+			descricao: values.descricao,
+			imagem: e.target.files[0]
+		})
 	};
 
 	const dispatch = useDispatch();
@@ -34,8 +36,8 @@ function Formulario() {
 	const onSubmit = (e) => {
 		e.preventDefault();
 
-		const {nome, descricao} = values;
-		dispatch(itemSend({nome, descricao, changeFile}));
+		const {nome, descricao, imagem} = values;
+		dispatch(itemSend({nome, descricao, imagem}));
 	};
 
 	const onUpdate = (e) => {
@@ -72,19 +74,9 @@ function Formulario() {
 						Selecione um arquivo
 					</label>
 
-					{changeFile && values.imagem.name &&
+					{values.imagem.name &&
 						<label htmlFor="">
 							{values.imagem.name}
-						</label>
-					}
-					{!changeFile && values.imagem.name &&
-						<label htmlFor="">
-							{values.imagem.name}
-						</label>
-					}
-					{changeFile && !values.imagem.name &&
-						<label htmlFor="">
-							{changeFile.name}
 						</label>
 					}
 				</div>

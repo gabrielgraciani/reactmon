@@ -25,9 +25,9 @@ export default class item{
 		});
 	};
 
-	static saveImage = (changeFile, id) => {
+	static saveImage = (imagem, id) => {
 		const storageRef = firebase.storage().ref();
-		const file = changeFile;
+		const file = imagem;
 		const metadata = {
 			contentType: 'image/jpeg'
 		};
@@ -64,22 +64,20 @@ export default class item{
 
 					}
 				}, function() {
-					uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-						console.log('File available at', downloadURL);
-						console.log(changeFile);
+					uploadTask.snapshot.ref.getDownloadURL().then(function(url) {
+						console.log('File available at', url);
 
 						db.collection('item').doc(id).update({
 							imagem: {
-								url: downloadURL,
-								name: changeFile.name
+								url,
+								name: imagem.name
 							},
 						});
 
-						res(downloadURL);
+						const name = imagem.name;
+						res({url, name});
 					});
 				});
-		})
-
-
+		});
 	}
 }

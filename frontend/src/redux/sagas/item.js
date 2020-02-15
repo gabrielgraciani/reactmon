@@ -7,7 +7,7 @@ import Item from '../../services/item';
 
 function* itemSendWorker(data) {
 	try {
-		const {nome, descricao, changeFile} = data.payload;
+		const {nome, descricao, imagem} = data.payload;
 
 		let newDoc = db.collection('item').doc();
 		const id = newDoc.id;
@@ -17,11 +17,12 @@ function* itemSendWorker(data) {
 			createdAt: firebase.firestore.FieldValue.serverTimestamp()
 		});
 
-		const url = yield call(Item.saveImage, changeFile, id);
+		const {url, name} = yield call(Item.saveImage, imagem, id);
 		yield put (actions.itemSavedSuccess({
 			id,
 			nome,
 			imagem: {
+				name,
 				url
 			},
 			descricao

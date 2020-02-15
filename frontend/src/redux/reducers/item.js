@@ -12,7 +12,8 @@ export const initialState = {
 	descricao: '',
 	saving: false,
 	imagem: {
-		name: ''
+		name: '',
+		url: ''
 	}
 };
 
@@ -117,7 +118,8 @@ export default function itemReducer(
 					nome: '',
 					descricao: '',
 					imagem: {
-						name: ''
+						name: '',
+						url: ''
 					}
 				}
 			};
