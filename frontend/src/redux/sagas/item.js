@@ -89,18 +89,32 @@ function* itemUpdateWorker(data){
 				descricao
 			});
 
-			const {url, name} = yield call(Item.saveImage, imagem, id);
+			if(imagem.lastModified){
+				const {url, name} = yield call(Item.saveImage, imagem, id);
 
-			updatedList[i] = {
-				id,
-				nome,
-				descricao,
-				imagem: {
-					name,
-					url
-				},
-			};
-			yield put(actions.itemUpdateList(updatedList));
+				updatedList[i] = {
+					id,
+					nome,
+					descricao,
+					imagem: {
+						name,
+						url
+					},
+				};
+				yield put(actions.itemUpdateList(updatedList));
+			}else{
+				updatedList[i] = {
+					id,
+					nome,
+					descricao,
+					imagem: {
+						name: imagem.name,
+						url: imagem.url
+					},
+				};
+				yield put(actions.itemUpdateList(updatedList));
+			}
+
 			yield put(actions.itemCloseForm());
 
 		}
