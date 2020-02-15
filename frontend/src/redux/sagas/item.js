@@ -31,7 +31,7 @@ function* itemSendWorker(data) {
 		yield put(actions.itemCloseForm());
 
 	} catch (error) {
-		console.log('error', error);
+		alert(`Erro ${error}, tente novamente mais tarde`);
 	}
 }
 
@@ -43,7 +43,7 @@ function* itemFetchWorker() {
 		yield put(actions.itemFullFilled(item, lastVisible, end));
 
 	} catch (error) {
-		console.log('error', error);
+		alert(`Erro ${error}, tente novamente mais tarde`);
 	}
 }
 
@@ -59,7 +59,7 @@ function* itemDeleteWorker(data){
 
 		yield put(actions.itemUpdateList(updatedList));
 	} catch(error){
-		console.log('error', error);
+		alert(`Erro ${error}, tente novamente mais tarde`);
 	}
 }
 
@@ -69,7 +69,7 @@ function* itemShowEditWorker(data){
 		yield put(actions.itemEditFullFilled(data.payload));
 
 	} catch(error){
-		console.log('error', error);
+		alert(`Erro ${error}, tente novamente mais tarde`);
 	}
 }
 
@@ -120,7 +120,7 @@ function* itemUpdateWorker(data){
 		}
 
 	} catch(error) {
-		console.log('error', error);
+		alert(`Erro ${error}, tente novamente mais tarde`);
 	}
 }
 

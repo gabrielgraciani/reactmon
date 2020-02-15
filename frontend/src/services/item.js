@@ -37,13 +37,13 @@ export default class item{
 			uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
 				function(snapshot) {
 					const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-					console.log('Upload is ' + progress + '% done');
+					//console.log('Upload is ' + progress + '% done');
 					switch (snapshot.state) {
 						case firebase.storage.TaskState.PAUSED:
-							console.log('Upload is paused');
+							//console.log('Upload is paused');
 							break;
 						case firebase.storage.TaskState.RUNNING:
-							console.log('Upload is running');
+							//console.log('Upload is running');
 							break;
 						default:
 							console.log('certo');
@@ -60,13 +60,12 @@ export default class item{
 						case 'storage/unknown':
 							break;
 						default:
-							console.log('erro');
+							alert(`Erro, tente novamente mais tarde`);
 
 					}
 				}, function() {
 					uploadTask.snapshot.ref.getDownloadURL().then(function(url) {
-						console.log('File available at', url);
-
+						//console.log('File available at', url);
 						db.collection('item').doc(id).update({
 							imagem: {
 								url,
