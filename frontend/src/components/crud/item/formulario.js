@@ -9,10 +9,14 @@ function Formulario() {
 		descricao: ''
 	};
 	const [values, setValues] = useState(initialState);
+	const [changeFile, setChangeFile] = useState('');
 	const handleChange = (e) => setValues({
 		...values,
 		[e.target.name]: e.target.value
 	});
+	const handleChangeFile = (e) => {
+		setChangeFile(e.target.files[0]);
+	};
 
 	const dispatch = useDispatch();
 	const {active, payload, isEditing } = useSelector(store => store.item);
@@ -27,7 +31,7 @@ function Formulario() {
 		e.preventDefault();
 
 		const {nome, descricao} = values;
-		dispatch(itemSend({nome, descricao}));
+		dispatch(itemSend({nome, descricao, changeFile}));
 	};
 
 	const onUpdate = (e) => {
@@ -56,6 +60,10 @@ function Formulario() {
 				<div className="item">
 					<label htmlFor="descricao">Descrição</label>
 					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
+				</div>
+				<div className="item">
+					<label htmlFor="imagem">Imagem</label>
+					<input type="file" accept="image/*" onChange={handleChangeFile} />
 				</div>
 
 				{isEditing ? <input type="submit" value="Editar" onClick={onUpdate} /> : <input type="submit" value="Salvar" onClick={onSubmit} />}
