@@ -1,13 +1,32 @@
-import React, {useState, useRef, useEffect, useContext} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {CIDADES, CRUD_POKEMON, CRUD_ITEM, HOME, ITENS, LOGIN, POKEDEX} from 'routes';
-import {AuthContext} from 'contexts/auth';
+import {useSelector} from "react-redux";
+import firebase from 'services/firebase';
 
 const Header = () =>{
 	const wrapperRef = useRef(null);
 	const [activeClass, setActiveClass] = useState('');
-	const {userInfo, logout} = useContext(AuthContext);
-	const {isUserLoggedIn} = userInfo;
+
+	const {usuario} = useSelector(store => store.auth);
+
+	const [userInfo2, setUserInfo2] = useState({
+		isUserLoggedIn2: false,
+		user: null
+	});
+	const {isUserLoggedIn2} = userInfo2;
+	useEffect(() => {
+		firebase.auth().onAuthStateChanged((user) => {
+			setUserInfo2({
+				isUserLoggedIn2: !!user,
+				user
+			});
+		});
+	}, [usuario]);
+
+
+
+
 
 	const change = () => {
 		setActiveClass(activeClass === '' ? 'active' : '');
@@ -46,11 +65,6 @@ const Header = () =>{
 				<div className={`pokeball ${activeClass}`} onClick={change} id="pokebola"> </div>
 
 				<div className={`menu ${activeClass}`} ref={wrapperRef} id="menu">
-					{/*<div className={`fechar ${activeClass}`} id="fechar"  onClick={change}>
-						<div className="risco risco1"> </div>
-						<div className="risco risco2"> </div>
-					</div>*/}
-
 					<div className={`premierball ${activeClass}`} onClick={change} id="pokebola"> </div>
 
 					<ul>
@@ -67,7 +81,7 @@ const Header = () =>{
 							<li>Cidades</li>
 						</Link>
 
-						{isUserLoggedIn ? (
+						{isUserLoggedIn2 ? (
 							<>
 								<Link to={CRUD_POKEMON} onClick={change}>
 									<li>Crud Pokemon</li>
@@ -77,7 +91,7 @@ const Header = () =>{
 									<li>Crud Item</li>
 								</Link>
 
-								<div onClick={logout}>
+								<div onClick={() => {}}>
 									<li onClick={change}>Logout</li>
 								</div>
 							</>
