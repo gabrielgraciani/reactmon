@@ -2,7 +2,6 @@ import React, {lazy, Suspense, useState, useEffect} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {CIDADES, CRUD_POKEMON, CRUD_ITEM, ITENS, LOGIN, POKEDEX} from './routes';
 import firebase from 'services/firebase';
-import {useSelector} from "react-redux";
 
 import Header from 'components/header';
 import Footer from 'components/footer';
@@ -21,55 +20,17 @@ const Pokedex = lazy(() => import('pages/pokedex'));
 
 function App({location}) {
 
-	const {usuario} = useSelector(store => store.auth);
-
-	const [userInfo2, setUserInfo2] = useState({
-		isUserLoggedIn2: false,
+	const [userInfo, setUserInfo] = useState({
+		isUserLoggedIn: false,
 		user: null
 	});
-	//console.log('userinfo2', userInfo2);
-	const [checkUserLogged2, setCheckUserLogged2] = useState(false);
-	const {isUserLoggedIn2} = userInfo2;
-	//console.log('isuserloggedin2', isUserLoggedIn2);
-	useEffect(() => {
-		firebase.auth().onAuthStateChanged((user) => {
-			setUserInfo2({
-				isUserLoggedIn2: !!user,
-				user
-			});
-			setCheckUserLogged2(true);
-		});
-	}, [usuario]);
-
-	if(!checkUserLogged2){
-		return(
-			<div id="wrap_loading">
-				<Loading />
-			</div>
-		)
-	}
-
-	if(isUserLoggedIn2){
-		if(location.pathname === LOGIN){
-			return <Redirect to={CRUD_POKEMON} />
-		}
-	}
-	else{
-		if(location.pathname === CRUD_POKEMON){
-			return <Redirect to={LOGIN} />
-		}
-	}
-
-
-	/*const {userInfo, setUserInfo} = useContext(AuthContext);
-	console.log('userinfo', userInfo);
 	const [checkUserLogged, setCheckUserLogged] = useState(false);
 	const {isUserLoggedIn} = userInfo;
 	useEffect(() => {
 		firebase.auth().onAuthStateChanged((user) => {
 			setUserInfo({
 				isUserLoggedIn: !!user,
-				user,
+				user
 			});
 			setCheckUserLogged(true);
 		});
@@ -77,9 +38,9 @@ function App({location}) {
 
 	if(!checkUserLogged){
 		return(
-		<div id="wrap_loading">
-			<Loading />
-		</div>
+			<div id="wrap_loading">
+				<Loading />
+			</div>
 		)
 	}
 
@@ -92,7 +53,7 @@ function App({location}) {
 		if(location.pathname === CRUD_POKEMON){
 			return <Redirect to={LOGIN} />
 		}
-	}*/
+	}
 
   return (
 	  <div id="wrapper_body">

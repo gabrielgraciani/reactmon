@@ -61,6 +61,18 @@ function* authSendLoginWorker(data){
 	}
 }
 
+function* authLogoutWorker(){
+	try{
+		firebase.auth().signOut().then(() => {
+			console.log('deslogou!');
+		});
+
+		yield put(actions.authLogoutSuccess());
+	} catch(error){
+		alert(`Erro ${error}, tente novamente mais tarde`);
+	}
+}
+
 function* authSendCadastroWatcher() {
 	yield takeLatest(actions.AUTH_SEND_CADASTRO, authSendCadastroWorker);
 }
@@ -69,10 +81,15 @@ function* authSendLoginWatcher(){
 	yield takeLatest(actions.AUTH_SEND_LOGIN, authSendLoginWorker);
 }
 
+function* authLogoutWatcher(){
+	yield takeLatest(actions.AUTH_LOGOUT, authLogoutWorker);
+}
+
 function* authWatcher() {
 	yield all([
 		authSendCadastroWatcher(),
-		authSendLoginWatcher()
+		authSendLoginWatcher(),
+		authLogoutWatcher()
 	]);
 }
 

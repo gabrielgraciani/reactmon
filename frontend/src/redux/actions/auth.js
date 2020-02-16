@@ -4,6 +4,8 @@ export const AUTH_SEND_CADASTRO = 'AUTH_SEND_CADASTRO';
 export const AUTH_SEND_CADASTRO_SUCCESS = 'AUTH_SEND_CADASTRO_SUCCESS';
 export const AUTH_SEND_LOGIN = 'AUTH_SEND_LOGIN';
 export const AUTH_SEND_LOGIN_SUCCESS = 'AUTH_SEND_LOGIN_SUCCESS';
+export const AUTH_LOGOUT = 'AUTH_LOGOUT';
+export const AUTH_LOGOUT_SUCCESS = 'AUTH_LOGOUT_SUCCESS';
 
 export const authOpenForm = () => ({
 	type: AUTH_OPEN_FORM
@@ -35,4 +37,12 @@ export const authSendLoginSuccess = (mensagem, usuario) => ({
 		mensagem,
 		usuario
 	}
+});
+
+export const authLogout = () => ({
+	type: AUTH_LOGOUT,
+});
+
+export const authLogoutSuccess = () => ({
+	type: AUTH_LOGOUT_SUCCESS,
 });

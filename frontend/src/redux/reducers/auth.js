@@ -10,7 +10,8 @@ export const initialState = {
 	success: false,
 	loading: false,
 	mensagemErro: '',
-	usuario: []
+	usuario: [],
+	logout: false
 };
 
 
@@ -69,6 +70,20 @@ export default function itemReducer(
 				loading: false,
 				mensagem: payload.mensagem,
 				usuario: payload.usuario
+			};
+
+		case actions.AUTH_LOGOUT:
+			return{
+				...initialState,
+				...state,
+				logout: true
+			};
+
+		case actions.AUTH_LOGOUT_SUCCESS:
+			return{
+				...initialState,
+				...state,
+				logout: false
 			};
 
 		default:
