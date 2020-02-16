@@ -84,7 +84,8 @@ export default function itemReducer(
 			return{
 				...initialState,
 				...state,
-				logout: false
+				logout: false,
+				usuario: null
 			};
 
 		case actions.AUTH_CHECK_USER_LOGGED_IN:
