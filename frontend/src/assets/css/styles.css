@@ -270,7 +270,8 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario .indent .head svg path{fill:#ccc;}
 #wrap_formulario .indent .head .titulo{}
 #wrap_formulario .indent .head .titulo h3{color:#566787;}
-#wrap_formulario .indent .item{width:100%; margin:10px 0; display:flex; flex-direction:column;}
+#wrap_formulario .indent .item{width:100%; margin:10px 0; display:flex; flex-direction:column; position:relative;}
+#wrap_formulario .indent .item .validate{font-size:12px; color:var(--primary); position:absolute; bottom:-15px; left:0;}
 #wrap_formulario .indent .item label{margin:0 0 5px 0; font-size:14px; color:#566787;}
 #wrap_formulario .indent .item label span{color:var(--primary);}
 #wrap_formulario .indent .item input{transition:all .3s ease; width:100%; border:1px solid #ccc; background:transparent; outline:0; padding:7px 15px; border-radius:25px;}
@@ -292,11 +293,11 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario .indent .item .checkmark:after { content: ""; position: absolute; display: none;}
 #wrap_formulario .indent .item .container input:checked ~ .checkmark:after {display: block;}
 #wrap_formulario .indent .item .container .checkmark:after { left: 9px; top: 5px; width: 5px; height: 10px; border: solid #333; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
-#wrap_formulario .indent button.salvar{cursor:pointer; transition:all .3s ease; background:var(--green); border:1px solid var(--green); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent button.salvar{margin-top:10px; cursor:pointer; transition:all .3s ease; background:var(--green); border:1px solid var(--green); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
 #wrap_formulario .indent button.salvar:hover{background:transparent; color:var(--green);}
-#wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:var(--green); border:1px solid var(--green); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent input[type='submit']{margin-top:10px; cursor:pointer; transition:all .3s ease; background:var(--green); border:1px solid var(--green); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
 #wrap_formulario .indent input[type='submit']:hover{background:transparent; color:var(--green);}
-#wrap_formulario .indent .load{width:50%; display:flex; align-items:center; justify-content:center; background:var(--green); padding:12px; border-radius:25px;}
+#wrap_formulario .indent .load{margin-top:10px; width:50%; display:flex; align-items:center; justify-content:center; background:var(--green); padding:12px; border-radius:25px;}
 #wrap_formulario .indent .load svg{color:var(--white);}
 #wrap_formulario .indent input[type="file"] {display: none;}
 #wrap_formulario .indent .item.file{flex-direction:row; justify-content:space-between;}

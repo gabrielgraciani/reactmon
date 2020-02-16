@@ -28,6 +28,8 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				active: "",
+				saving: false,
+				success: false,
 				payload: {
 					nome: '',
 					email: '',

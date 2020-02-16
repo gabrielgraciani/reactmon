@@ -12,6 +12,7 @@ function Cadastro(){
 		senha: ''
 	};
 	const [values, setValues] = useState(initialState);
+	const [validate, setValidate] = useState(false);
 
 	const dispatch = useDispatch();
 	const {active, payload, saving, success} = useSelector(store => store.auth);
@@ -31,7 +32,13 @@ function Cadastro(){
 		e.preventDefault();
 		const {nome, email, senha} = values;
 
-		dispatch(authSendCadastro({nome, email, senha}));
+		if(!nome || !email || !senha){
+			setValidate(true);
+		}else{
+			setValidate(false);
+			dispatch(authSendCadastro({nome, email, senha}));
+		}
+
 	};
 	return(
 		<div id="wrap_formulario" className={`${active} cadastro`}>
@@ -47,12 +54,15 @@ function Cadastro(){
 
 				<div className="item">
 					<input type="text" name="nome" onChange={handleChange} value={values.nome} autoComplete="off" placeholder="Nome Completo" />
+					{validate && <div className="validate">Preencha o nome</div>}
 				</div>
 				<div className="item">
 					<input type="text" name="email" onChange={handleChange} value={values.email} autoComplete="off" placeholder="E-mail" />
+					{validate && <div className="validate">Preencha o e-mail</div>}
 				</div>
 				<div className="item">
 					<input type="password" name="senha" onChange={handleChange} value={values.senha} autoComplete="off" placeholder="Senha" />
+					{validate && <div className="validate">Preencha a senha</div>}
 				</div>
 
 				{success ? <div className="load"><CheckIcon size={25} /></div> : saving ? <div className="load"><CircularProgress size={25} /></div> : <input type="submit" value="Cadastrar" onClick={handleSubmit} /> }
