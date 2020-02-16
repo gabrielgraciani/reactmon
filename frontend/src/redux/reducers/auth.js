@@ -65,7 +65,8 @@ export default function itemReducer(
 
 		case actions.AUTH_SEND_LOGIN_SUCCESS:
 			return{
-				loading: false
+				loading: false,
+				mensagem: payload.mensagem
 			};
 
 		default:

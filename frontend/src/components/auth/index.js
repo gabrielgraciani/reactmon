@@ -13,7 +13,8 @@ function LoginForm () {
 	const [values, setValues] = useState(initialState);
 
 	const dispatch = useDispatch();
-	const {loading} = useSelector(store => store.auth);
+	const {loading, mensagem} = useSelector(store => store.auth);
+	console.log(mensagem);
 
 	const handleChange = (e) => setValues({
 		...values,
