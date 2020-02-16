@@ -25,6 +25,7 @@ function LoginForm () {
 		const {email, senha} = values;
 		firebase.auth().signInWithEmailAndPassword(email, senha).then((u) => {
 			console.log('logou certinho');
+			console.log('u', u);
 		}).catch((error) => {
 			console.log(error);
 		})

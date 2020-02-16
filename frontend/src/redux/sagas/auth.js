@@ -1,5 +1,5 @@
 import { takeLatest, all, put, delay } from 'redux-saga/effects';
-import firebase, {db} from 'services/firebase';
+import firebase from 'services/firebase';
 
 import * as actions from '../actions/auth';
 
@@ -7,17 +7,13 @@ function* authSendCadastroWorker(data) {
 	try {
 		const {nome, email, senha} = data.payload;
 
-		let newDoc = db.collection('usuarios').doc();
-		newDoc.set({
-			nome,
-			email,
-			senha,
-			createdAt: firebase.firestore.FieldValue.serverTimestamp()
-		});
-
-		firebase.auth().createUserWithEmailAndPassword(email, senha).catch(function(error) {
-			var errorCode = error.code;
-			var errorMessage = error.message;
+		firebase.auth().createUserWithEmailAndPassword(email, senha).then(function(user){
+			const userLogado = user.user;
+				userLogado.updateProfile({
+					displayName: nome
+				});
+		}).catch(function(error) {
+			alert(`erro ao cadastrar: , ${error.code}, ${error.message}`);
 		});
 
 		yield put (actions.authSendCadastroSuccess());
