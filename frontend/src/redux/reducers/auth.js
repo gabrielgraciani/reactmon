@@ -86,6 +86,14 @@ export default function itemReducer(
 				logout: false
 			};
 
+		case actions.AUTH_CHECK_USER_LOGGED_IN:
+			console.log('payload: ', payload);
+			return{
+				...initialState,
+				...state,
+				usuario: payload
+			}
+
 		default:
 			return state;
 	}

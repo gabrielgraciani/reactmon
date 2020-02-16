@@ -53,9 +53,6 @@ function* authSendLoginWorker(data){
 
 			yield put(actions.authSendLoginSuccess(null, usuario));
 		}
-
-
-
 	} catch(error){
 		console.log(`${error}, tente novamente mais tarde`);
 	}
@@ -73,6 +70,14 @@ function* authLogoutWorker(){
 	}
 }
 
+function* authCheckUserLoggedInWorker(data){
+	try{
+		console.log('chegou aqu', data.payload);
+	} catch(error){
+		alert(`Erro ${error}, tente novamente mais tarde`);
+	}
+}
+
 function* authSendCadastroWatcher() {
 	yield takeLatest(actions.AUTH_SEND_CADASTRO, authSendCadastroWorker);
 }
@@ -85,11 +90,16 @@ function* authLogoutWatcher(){
 	yield takeLatest(actions.AUTH_LOGOUT, authLogoutWorker);
 }
 
+function* authCheckUserLoggedInWatcher(){
+	yield takeLatest(actions.AUTH_CHECK_USER_LOGGED_IN, authCheckUserLoggedInWorker);
+}
+
 function* authWatcher() {
 	yield all([
 		authSendCadastroWatcher(),
 		authSendLoginWatcher(),
-		authLogoutWatcher()
+		authLogoutWatcher(),
+		authCheckUserLoggedInWatcher()
 	]);
 }
 

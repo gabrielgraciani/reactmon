@@ -2,6 +2,8 @@ import React, {lazy, Suspense, useState, useEffect} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {CIDADES, CRUD_POKEMON, CRUD_ITEM, ITENS, LOGIN, POKEDEX} from './routes';
 import firebase from 'services/firebase';
+import {useDispatch} from "react-redux";
+import {authCheckUserLoggedIn} from './redux/actions/auth';
 
 import Header from 'components/header';
 import Footer from 'components/footer';
@@ -20,6 +22,8 @@ const Pokedex = lazy(() => import('pages/pokedex'));
 
 function App({location}) {
 
+	const dispatch = useDispatch();
+
 	const [userInfo, setUserInfo] = useState({
 		isUserLoggedIn: false,
 		user: null
@@ -33,8 +37,11 @@ function App({location}) {
 				user
 			});
 			setCheckUserLogged(true);
+
+			dispatch(authCheckUserLoggedIn(user));
 		});
 	}, [setUserInfo]);
+	console.log(userInfo);
 
 	if(!checkUserLogged){
 		return(
