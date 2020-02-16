@@ -1,6 +1,9 @@
 import * as actions from '../actions/auth';
 
 export const initialState = {
+	nome: '',
+	email: '',
+	senha: '',
 	active: '',
 	data: [],
 	saving: false,
@@ -25,6 +28,11 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				active: "",
+				payload: {
+					nome: '',
+					email: '',
+					senha: ''
+				}
 			};
 
 		case actions.AUTH_SEND_CADASTRO:

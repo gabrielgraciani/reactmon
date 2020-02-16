@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import CheckIcon from '@material-ui/icons/Check';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -14,8 +14,13 @@ function Cadastro(){
 	const [values, setValues] = useState(initialState);
 
 	const dispatch = useDispatch();
-	const {active, saving, success} = useSelector(store => store.auth);
+	const {active, payload, saving, success} = useSelector(store => store.auth);
 
+	useEffect(() => {
+		if(payload){
+			setValues(payload);
+		}
+	}, [payload]);
 
 	const handleChange = (e) => setValues({
 		...values,
