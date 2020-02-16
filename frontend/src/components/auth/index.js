@@ -3,6 +3,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 import {authOpenForm} from '../../redux/actions/auth';
 import {useDispatch} from "react-redux";
+import firebase from 'services/firebase';
 
 function LoginForm () {
 	const initialState = {
@@ -21,6 +22,12 @@ function LoginForm () {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(values);
+		const {email, senha} = values;
+		firebase.auth().signInWithEmailAndPassword(email, senha).then((u) => {
+			console.log('logou certinho');
+		}).catch((error) => {
+			console.log(error);
+		})
 	};
 
 	return(

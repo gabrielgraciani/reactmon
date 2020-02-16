@@ -6,7 +6,8 @@ import {AuthContext} from 'contexts/auth';
 
 import Header from 'components/header';
 import Footer from 'components/footer';
-import CircularProgress from '@material-ui/core/CircularProgress';
+import Loading from 'components/loading';
+
 
 
 const Home = lazy(() => import('pages/index'));
@@ -37,7 +38,7 @@ function App({location}) {
 	if(!checkUserLogged){
 		return(
 		<div id="wrap_loading">
-			<CircularProgress size={250} />
+			<Loading />
 		</div>
 		)
 	}
@@ -58,7 +59,7 @@ function App({location}) {
 		  <Header />
 
 		  <div id="wrapper_components">
-			  <Suspense fallback={'Carregando...'}>
+			  <Suspense fallback={''}>
 				  <Switch>
 					  <Route path={CIDADES} component={Cidades} />
 					  <Route path={CRUD_POKEMON} component={Crud_Pokemon} />

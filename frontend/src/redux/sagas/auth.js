@@ -15,6 +15,11 @@ function* authSendCadastroWorker(data) {
 			createdAt: firebase.firestore.FieldValue.serverTimestamp()
 		});
 
+		firebase.auth().createUserWithEmailAndPassword(email, senha).catch(function(error) {
+			var errorCode = error.code;
+			var errorMessage = error.message;
+		});
+
 		yield put (actions.authSendCadastroSuccess());
 
 		yield delay(1000);

@@ -304,6 +304,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario .indent .item.file label{width:49%; background:var(--dark); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; text-align:center; padding:5px 0;}
 #wrap_formulario .indent .item.file label.upload{cursor:pointer;}
 #wrap_loading{width:100%; height:100vh; display:flex; align-items:center; justify-content:center;}
+#wrap_loading img{width:150px;}
 
 
 #wrap_itens{width:100%; position:relative;}
