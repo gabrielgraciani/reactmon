@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
-import {authCloseForm} from "../../redux/actions/auth";
+import {authCloseForm, authSendCadastro} from "../../redux/actions/auth";
 
 function Cadastro(){
 	const initialState = {
@@ -22,7 +22,9 @@ function Cadastro(){
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('enviando...', values);
+		const {nome, email, senha} = values;
+
+		dispatch(authSendCadastro({nome, email, senha}));
 	};
 	return(
 		<div id="wrap_formulario" className={`${active} cadastro`}>
