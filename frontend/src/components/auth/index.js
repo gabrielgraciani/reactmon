@@ -14,7 +14,6 @@ function LoginForm () {
 
 	const dispatch = useDispatch();
 	const {loading, mensagem} = useSelector(store => store.auth);
-	console.log(mensagem);
 
 	const handleChange = (e) => setValues({
 		...values,
@@ -38,13 +37,17 @@ function LoginForm () {
 				<form action="">
 					<div className="item">
 						<EmailIcon />
-						<input type="text" placeholder="E-mail" name="email" value={values.email} onChange={handleChange} autoComplete="off" />
+						<input className={mensagem === 1 || mensagem === 3 ? 'erro' : ''} type="text" placeholder="E-mail" name="email" value={values.email} onChange={handleChange} autoComplete="off" />
 					</div>
 
 					<div className="item">
 						<LockIcon />
-						<input type="password" placeholder="Senha" name="senha" value={values.senha} onChange={handleChange} autoComplete="off" />
+						<input className={mensagem === 2 || mensagem === 3 ? 'erro' : ''} type="password" placeholder="Senha" name="senha" value={values.senha} onChange={handleChange} autoComplete="off" />
 					</div>
+
+					{mensagem === 3 && (
+						<span>Inúmeras tentativas com falhas, tente novamente mais tarde</span>
+					)}
 
 					{loading ? <div className="load"><CircularProgress size={25} /></div> : <input type="submit" value="LOGIN" onClick={handleSubmit} />}
 				</form>

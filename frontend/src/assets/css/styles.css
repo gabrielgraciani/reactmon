@@ -197,7 +197,7 @@ p{font-size:21px;}
 #wrap_login .indent form{width:100%; display:flex; flex-direction:column;}
 #wrap_login .indent form .item{width:100%; margin:10px 0; position:relative;}
 #wrap_login .indent form .item svg{position:absolute; top:50%; left:20px; transform:translate(0, -50%); color:var(--dark);}
-#wrap_login .indent form .item input{transition:all .3s ease; width:100%; font-size:15px; color:var(--dark); border:1px solid transparent; border-radius:25px; outline:0; padding:15px 15px 15px 55px; background:#fff;}
+#wrap_login .indent form .item input{transition:all .3s ease; width:100%; font-size:15px; color:var(--dark); border:1px solid transparent; border-radius:25px; outline:0; padding:15px 50px 15px 55px; background:#fff;}
 #wrap_login .indent form .item input::-webkit-input-placeholder {color: var(--dark); transition:all .3s ease;}
 #wrap_login .indent form .item input:-moz-placeholder {color: var(--dark); transition:all .3s ease;}
 #wrap_login .indent form .item input::-moz-placeholder {color: var(--dark); transition:all .3s ease;}
@@ -207,9 +207,15 @@ p{font-size:21px;}
 #wrap_login .indent form .item input:focus:-moz-placeholder {color: var(--green);}
 #wrap_login .indent form .item input:focus::-moz-placeholder {color: var(--green);}
 #wrap_login .indent form .item input:focus:-ms-input-placeholder {color: var(--green);}
-#wrap_login .indent form input[type='submit']{transition:all .3s ease; cursor:pointer; width:100%; background: var(--green); color:var(--gray-light); font-size:15px; font-weight:bold; padding:15px 0; display:flex; align-items:center; justify-content:center; border:1px solid var(--green); border-radius:25px;}
+#wrap_login .indent form .item input.erro{transition:0s; border:1px solid var(--primary); color:var(--primary); background:url(../images/error.png) no-repeat; background-position:95%; background-size:20px;}
+#wrap_login .indent form .item input.erro::-webkit-input-placeholder {color: var(--primary);}
+#wrap_login .indent form .item input.erro:-moz-placeholder {color: var(--primary);}
+#wrap_login .indent form .item input.erro::-moz-placeholder {color: var(--primary);}
+#wrap_login .indent form .item input.erro:-ms-input-placeholder {color: var(--primary);}
+#wrap_login .indent form input[type='submit']{margin-top:10px; transition:all .3s ease; cursor:pointer; width:100%; background: var(--green); color:var(--gray-light); font-size:15px; font-weight:bold; padding:15px 0; display:flex; align-items:center; justify-content:center; border:1px solid var(--green); border-radius:25px;}
 #wrap_login .indent form input[type='submit']:hover{color:var(--green); background:transparent;}
-#wrap_login .indent form .load{cursor:pointer; width:100%; background: var(--green); font-size:15px; font-weight:bold; padding:15px 0; display:flex; align-items:center; justify-content:center; border:1px solid var(--green); border-radius:25px;}
+#wrap_login .indent form span{color:var(--primary); font-size:12px;}
+#wrap_login .indent form .load{margin-top:10px; cursor:pointer; width:100%; background: var(--green); font-size:15px; font-weight:bold; padding:15px 0; display:flex; align-items:center; justify-content:center; border:1px solid var(--green); border-radius:25px;}
 #wrap_login .indent form .load svg{color:var(--white);}
 #wrap_login .indent .criar{width:100%; margin:30px 0 0 0;}
 #wrap_login .indent .criar span{font-size:14px; color:var(--dark);}

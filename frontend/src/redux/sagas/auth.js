@@ -34,19 +34,22 @@ function* authSendLoginWorker(data){
 
 		let mensagem = '';
 		if(res.code === 'auth/invalid-email'){
-			mensagem = 'E-mail inválido';
-			yield put(actions.authSendLoginSuccess(mensagem));
-		}
-		else if(res.code === 'auth/too-many-requests'){
-			mensagem = 'Muitas tentativas com falhas, tente novamente mais tarde';
+			//mensagem = 'E-mail inválido';
+			mensagem = 1;
 			yield put(actions.authSendLoginSuccess(mensagem));
 		}
 		else if(res.code === 'auth/wrong-password'){
-			mensagem = 'Senha inválida';
+			//mensagem = 'Senha inválida';
+			mensagem = 2;
+			yield put(actions.authSendLoginSuccess(mensagem));
+		}
+		else if(res.code === 'auth/too-many-requests'){
+			//mensagem = 'Muitas tentativas com falhas, tente novamente mais tarde';
+			mensagem = 3;
 			yield put(actions.authSendLoginSuccess(mensagem));
 		}
 		else{
-			console.log(res);
+			//console.log(res);
 			yield put(actions.authSendLoginSuccess());
 		}
 
