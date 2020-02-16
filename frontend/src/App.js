@@ -23,7 +23,6 @@ function App({location}) {
 
 	const dispatch = useDispatch();
 	const {usuario, checkUserLoggedIn} = useSelector(store => store.auth);
-	console.log('usuario', usuario, checkUserLoggedIn);
 
 	useEffect(() => {
 		dispatch(authCheckUserLoggedIn());
