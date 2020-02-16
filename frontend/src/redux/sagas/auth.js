@@ -70,9 +70,15 @@ function* authLogoutWorker(){
 	}
 }
 
-function* authCheckUserLoggedInWorker(data){
+function* authCheckUserLoggedInWorker(){
 	try{
-		console.log('chegou aqu', data.payload);
+
+		const {usuario, checkUserLoggedIn} = yield call(Auth.checkUserLoggedIn);
+		console.log('teste', usuario, checkUserLoggedIn);
+
+
+		yield put(actions.authCheckUserLoggedInSuccess(usuario, checkUserLoggedIn));
+
 	} catch(error){
 		alert(`Erro ${error}, tente novamente mais tarde`);
 	}

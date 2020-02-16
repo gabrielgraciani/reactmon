@@ -7,6 +7,7 @@ export const AUTH_SEND_LOGIN_SUCCESS = 'AUTH_SEND_LOGIN_SUCCESS';
 export const AUTH_LOGOUT = 'AUTH_LOGOUT';
 export const AUTH_LOGOUT_SUCCESS = 'AUTH_LOGOUT_SUCCESS';
 export const AUTH_CHECK_USER_LOGGED_IN = 'AUTH_CHECK_USER_LOGED_IN';
+export const AUTH_CHECK_USER_LOGGED_IN_SUCCESS = 'AUTH_CHECK_USER_LOGED_IN_SUCCESS';
 
 export const authOpenForm = () => ({
 	type: AUTH_OPEN_FORM
@@ -48,7 +49,14 @@ export const authLogoutSuccess = () => ({
 	type: AUTH_LOGOUT_SUCCESS,
 });
 
-export const authCheckUserLoggedIn = (payload) => ({
-	type: AUTH_CHECK_USER_LOGGED_IN,
-	payload
-})
+export const authCheckUserLoggedIn = () => ({
+	type: AUTH_CHECK_USER_LOGGED_IN
+});
+
+export const authCheckUserLoggedInSuccess = (usuario, checkUserLoggedIn) => ({
+	type: AUTH_CHECK_USER_LOGGED_IN_SUCCESS,
+	payload: {
+		usuario,
+		checkUserLoggedIn
+	}
+});

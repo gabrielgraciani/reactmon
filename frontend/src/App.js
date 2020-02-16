@@ -2,7 +2,7 @@ import React, {lazy, Suspense, useState, useEffect} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {CIDADES, CRUD_POKEMON, CRUD_ITEM, ITENS, LOGIN, POKEDEX} from './routes';
 import firebase from 'services/firebase';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {authCheckUserLoggedIn} from './redux/actions/auth';
 
 import Header from 'components/header';
@@ -23,27 +23,45 @@ const Pokedex = lazy(() => import('pages/pokedex'));
 function App({location}) {
 
 	const dispatch = useDispatch();
+	const {usuario, checkUserLoggedIn} = useSelector(store => store.auth);
+	console.log('usuario', usuario, checkUserLoggedIn);
 
-	const [userInfo, setUserInfo] = useState({
-		isUserLoggedIn: false,
-		user: null
-	});
-	const [checkUserLogged, setCheckUserLogged] = useState(false);
-	const {isUserLoggedIn} = userInfo;
 	useEffect(() => {
-		firebase.auth().onAuthStateChanged((user) => {
-			setUserInfo({
-				isUserLoggedIn: !!user,
-				user
-			});
-			setCheckUserLogged(true);
+		dispatch(authCheckUserLoggedIn());
+	}, [usuario, dispatch]);
 
-			dispatch(authCheckUserLoggedIn(user));
+
+	if(usuario){
+		if(location.pathname === LOGIN){
+			return <Redirect to={CRUD_POKEMON} />
+		}
+	}
+	else {
+		if (location.pathname === CRUD_POKEMON) {
+			return <Redirect to={LOGIN}/>
+		}
+	}
+
+	/*	const [userInfo, setUserInfo] = useState({
+			isUserLoggedIn: false,
+			user: null
 		});
-	}, [setUserInfo]);
-	console.log(userInfo);
+		const [checkUserLogged, setCheckUserLogged] = useState(false);
+		const {isUserLoggedIn} = userInfo;
+		useEffect(() => {
+			firebase.auth().onAuthStateChanged((user) => {
+				setUserInfo({
+					isUserLoggedIn: !!user,
+					user
+				});
+				setCheckUserLogged(true);
 
-	if(!checkUserLogged){
+				dispatch(authCheckUserLoggedIn(user));
+			});
+		}, [setUserInfo]);*/
+	//console.log(userInfo);
+
+/*	if(!checkUserLogged){
 		return(
 			<div id="wrap_loading">
 				<Loading />
@@ -60,9 +78,15 @@ function App({location}) {
 		if(location.pathname === CRUD_POKEMON){
 			return <Redirect to={LOGIN} />
 		}
-	}
+	}*/
 
   return (
+  	<>
+	{!checkUserLoggedIn && (
+		<div id="wrap_loading">
+			<Loading />
+		</div>
+	)}
 	  <div id="wrapper_body">
 		  <Header />
 
@@ -82,6 +106,7 @@ function App({location}) {
 
 		  <Footer />
 	  </div>
+	</>
   );
 }
 

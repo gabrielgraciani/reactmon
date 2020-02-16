@@ -10,8 +10,9 @@ export const initialState = {
 	success: false,
 	loading: false,
 	mensagemErro: '',
-	usuario: [],
-	logout: false
+	usuario: null,
+	logout: false,
+	checkUserLoggedIn: false,
 };
 
 
@@ -87,12 +88,20 @@ export default function itemReducer(
 			};
 
 		case actions.AUTH_CHECK_USER_LOGGED_IN:
-			console.log('payload: ', payload);
 			return{
 				...initialState,
 				...state,
-				usuario: payload
-			}
+				data: [payload]
+			};
+
+		case actions.AUTH_CHECK_USER_LOGGED_IN_SUCCESS:
+			return{
+				...initialState,
+				...state,
+				data: [payload],
+				usuario: payload.usuario,
+				checkUserLoggedIn: payload.checkUserLoggedIn
+			};
 
 		default:
 			return state;

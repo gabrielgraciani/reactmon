@@ -9,5 +9,22 @@ export default class auth{
 				 res(error);
 			 });
 		})
+	};
+
+	static checkUserLoggedIn = () => {
+		return new Promise((res, rej) => {
+			firebase.auth().onAuthStateChanged((usuario) => {
+				console.log('user', usuario);
+				if(usuario){
+					const checkUserLoggedIn = true;
+					res({usuario, checkUserLoggedIn});
+				}
+				else{
+					const checkUserLoggedIn = true;
+					res({usuario, checkUserLoggedIn});
+				}
+
+			});
+		})
 	}
 }
