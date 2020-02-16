@@ -191,14 +191,28 @@ p{font-size:21px;}
 #wrap_footer .indent .texto span a:hover{color:var(--primary)}
 
 #wrap_login{width:100%; position:relative; flex-grow:1; display:flex; align-items:center; justify-content:center;}
-#wrap_login .indent{display:flex; align-items:center; flex-direction:column; justify-content:center;}
-#wrap_login .indent .titulo{margin:0 0 20px 0;}
-#wrap_login .indent .titulo h3{color:var(--black);}
-#wrap_login .indent button{transition:all .4s ease; cursor:pointer; background:var(--dark); border:0;  padding:10px 63px; display:flex; align-items:center; border-radius:5px; outline:0;}
-#wrap_login .indent button svg{ width:35px; height:40px;}
-#wrap_login .indent button svg path{transition:all .4s ease; fill:var(--gray-light);}
-#wrap_login .indent button:hover{background:var(--gray-light); box-shadow: 0 0 10px 2px var(--dark)}
-#wrap_login .indent button:hover svg path{fill:var(--dark);}
+#wrap_login .indent{max-width:400px; display:flex; align-items:center; flex-direction:column; justify-content:center;}
+#wrap_login .indent .titulo{width:100%; text-align:center; margin:0 0 30px 0;}
+#wrap_login .indent .titulo h1{color:var(--dark)}
+#wrap_login .indent form{width:100%; display:flex; flex-direction:column;}
+#wrap_login .indent form .item{width:100%; margin:10px 0; position:relative;}
+#wrap_login .indent form .item svg{position:absolute; top:50%; left:20px; transform:translate(0, -50%); color:var(--dark);}
+#wrap_login .indent form .item input{transition:all .3s ease; width:100%; font-size:15px; color:var(--dark); border:1px solid transparent; border-radius:25px; outline:0; padding:15px 15px 15px 55px; background:#fff;}
+#wrap_login .indent form .item input::-webkit-input-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_login .indent form .item input:-moz-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_login .indent form .item input::-moz-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_login .indent form .item input:-ms-input-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_login .indent form .item input:focus{border:1px solid var(--green); color:var(--green)}
+#wrap_login .indent form .item input:focus::-webkit-input-placeholder {color: var(--green);}
+#wrap_login .indent form .item input:focus:-moz-placeholder {color: var(--green);}
+#wrap_login .indent form .item input:focus::-moz-placeholder {color: var(--green);}
+#wrap_login .indent form .item input:focus:-ms-input-placeholder {color: var(--green);}
+#wrap_login .indent form input[type='submit']{transition:all .3s ease; cursor:pointer; width:100%; background: var(--green); color:var(--gray-light); font-size:15px; font-weight:bold; padding:15px 0; display:flex; align-items:center; justify-content:center; border:1px solid var(--green); border-radius:25px;}
+#wrap_login .indent form input[type='submit']:hover{color:var(--green); background:transparent;}
+#wrap_login .indent .criar{width:100%; margin:30px 0 0 0;}
+#wrap_login .indent .criar span{font-size:14px; color:var(--dark);}
+#wrap_login .indent .criar button{cursor:pointer; background:transparent; border:0; outline:0; font-weight:bold; color:var(--dark)}
+button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var(--dark); border:0;  padding:10px 63px; display:flex; align-items:center; border-radius:5px; outline:0;}
 
 #wrap_search{width:100%; position:relative;}
 #wrap_search .indent{padding:35px 0 0 0; display:flex; justify-content:flex-end;}
