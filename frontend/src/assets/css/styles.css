@@ -273,8 +273,17 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario .indent .item{width:100%; margin:10px 0; display:flex; flex-direction:column;}
 #wrap_formulario .indent .item label{margin:0 0 5px 0; font-size:14px; color:#566787;}
 #wrap_formulario .indent .item label span{color:var(--primary);}
-#wrap_formulario .indent .item input{transition:all .3s ease; width:100%; border:1px solid #ccc; background:transparent; outline:0; padding:7px;}
-#wrap_formulario .indent .item input:focus{border:1px solid var(--primary); color:var(--primary);}
+#wrap_formulario .indent .item input{transition:all .3s ease; width:100%; border:1px solid #ccc; background:transparent; outline:0; padding:7px 15px; border-radius:25px;}
+#wrap_formulario.cadastro .indent .item input{font-size:15px; padding:12px;}
+#wrap_formulario .indent .item input::-webkit-input-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item input:-moz-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item input::-moz-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item input:-ms-input-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item input:focus{border:1px solid var(--green); color:var(--green);}
+#wrap_formulario .indent .item input:focus::-webkit-input-placeholder {color: var(--green);}
+#wrap_formulario .indent .item input:focus:-moz-placeholder {color: var(--green);}
+#wrap_formulario .indent .item input:focus::-moz-placeholder {color: var(--green);}
+#wrap_formulario .indent .item input:focus:-ms-input-placeholder {color: var(--green);}
 #wrap_formulario .indent .item .checkboxes{width:100%; display:flex; flex-wrap:wrap;}
 #wrap_formulario .indent .item .container { display: block; position: relative; padding:5px 0 0 35px; width:22%; margin:5px 3% 0 0; cursor: pointer; font-size: 17px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 #wrap_formulario .indent .item .container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0;}
@@ -283,11 +292,11 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario .indent .item .checkmark:after { content: ""; position: absolute; display: none;}
 #wrap_formulario .indent .item .container input:checked ~ .checkmark:after {display: block;}
 #wrap_formulario .indent .item .container .checkmark:after { left: 9px; top: 5px; width: 5px; height: 10px; border: solid #333; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg);}
-#wrap_formulario .indent button.salvar{cursor:pointer; transition:all .3s ease; background:var(--primary); border:1px solid var(--primary); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
-#wrap_formulario .indent button.salvar:hover{background:transparent; color:var(--primary);}
-#wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:var(--primary); border:1px solid var(--primary); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
-#wrap_formulario .indent input[type='submit']:hover{background:transparent; color:var(--primary);}
-#wrap_formulario .indent .load{width:50%; display:flex; align-items:center; justify-content:center; background:var(--primary); padding:12px; border-radius:25px;}
+#wrap_formulario .indent button.salvar{cursor:pointer; transition:all .3s ease; background:var(--green); border:1px solid var(--green); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent button.salvar:hover{background:transparent; color:var(--green);}
+#wrap_formulario .indent input[type='submit']{cursor:pointer; transition:all .3s ease; background:var(--green); border:1px solid var(--green); padding:12px; color:var(--white); font-size:15px; font-weight:bold; width:50%; display:flex; align-items:center; justify-content:center; outline:0; border-radius:25px;}
+#wrap_formulario .indent input[type='submit']:hover{background:transparent; color:var(--green);}
+#wrap_formulario .indent .load{width:50%; display:flex; align-items:center; justify-content:center; background:var(--green); padding:12px; border-radius:25px;}
 #wrap_formulario .indent .load svg{color:var(--white);}
 #wrap_formulario .indent input[type="file"] {display: none;}
 #wrap_formulario .indent .item.file{flex-direction:row; justify-content:space-between;}

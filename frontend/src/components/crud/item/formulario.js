@@ -41,7 +41,7 @@ function Formulario() {
 
 		const {nome, descricao, imagem} = values;
 		if(!nome || !descricao || !imagem){ setValidate(true); }
-		else{ dispatch(itemSend({nome, descricao, imagem})); }
+		else{ dispatch(itemSend({nome, descricao, imagem})); setValidate(false);}
 
 	};
 
@@ -50,7 +50,7 @@ function Formulario() {
 
 		const {id, nome, descricao, imagem} = values;
 		if(!nome || !descricao || !imagem){ setValidate(true); }
-		else{ dispatch(itemUpdate({id, nome, descricao, imagem})); }
+		else{ dispatch(itemUpdate({id, nome, descricao, imagem})); setValidate(false);}
 	};
 
 	return(
