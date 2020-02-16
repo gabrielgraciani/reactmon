@@ -1,29 +1,15 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {CIDADES, CRUD_POKEMON, CRUD_ITEM, HOME, ITENS, LOGIN, POKEDEX} from 'routes';
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {authLogout} from '../redux/actions/auth';
-import firebase from 'services/firebase';
 
 const Header = () =>{
 	const wrapperRef = useRef(null);
 	const [activeClass, setActiveClass] = useState('');
 
 	const dispatch = useDispatch();
-
-	const [userInfo, setUserInfo] = useState({
-		isUserLoggedIn: false,
-		user: null
-	});
-	const {isUserLoggedIn} = userInfo;
-	useEffect(() => {
-		firebase.auth().onAuthStateChanged((user) => {
-			setUserInfo({
-				isUserLoggedIn: !!user,
-				user
-			});
-		});
-	}, [setUserInfo]);
+	const {usuario} = useSelector(store => store.auth);
 
 	const logout = () => {
 		dispatch(authLogout());
@@ -82,7 +68,7 @@ const Header = () =>{
 							<li>Cidades</li>
 						</Link>
 
-						{isUserLoggedIn ? (
+						{usuario ? (
 							<>
 								<Link to={CRUD_POKEMON} onClick={change}>
 									<li>Crud Pokemon</li>
