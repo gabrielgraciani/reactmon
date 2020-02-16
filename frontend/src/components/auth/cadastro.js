@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
+import CheckIcon from '@material-ui/icons/Check';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import {useDispatch, useSelector} from "react-redux";
 import {authCloseForm, authSendCadastro} from "../../redux/actions/auth";
 
@@ -12,7 +14,7 @@ function Cadastro(){
 	const [values, setValues] = useState(initialState);
 
 	const dispatch = useDispatch();
-	const {active} = useSelector(store => store.auth);
+	const {active, saving, success} = useSelector(store => store.auth);
 
 
 	const handleChange = (e) => setValues({
@@ -48,7 +50,7 @@ function Cadastro(){
 					<input type="password" name="senha" onChange={handleChange} value={values.senha} autoComplete="off" placeholder="Senha" />
 				</div>
 
-				<input type="submit" value="Cadastrar" onClick={handleSubmit} />
+				{success ? <div className="load"><CheckIcon size={25} /></div> : saving ? <div className="load"><CircularProgress size={25} /></div> : <input type="submit" value="Cadastrar" onClick={handleSubmit} /> }
 			</div>
 		</div>
 	)

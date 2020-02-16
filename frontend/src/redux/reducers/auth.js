@@ -3,7 +3,8 @@ import * as actions from '../actions/auth';
 export const initialState = {
 	active: '',
 	data: [],
-	saving: false
+	saving: false,
+	success: false
 };
 
 
@@ -38,7 +39,8 @@ export default function itemReducer(
 			return{
 				...initialState,
 				...state,
-				saving: false
+				saving: false,
+				success: true
 			};
 
 		default:
