@@ -74,10 +74,12 @@ function* authCheckUserLoggedInWorker(){
 	try{
 
 		const {usuario, checkUserLoggedIn} = yield call(Auth.checkUserLoggedIn);
-		console.log('teste', usuario, checkUserLoggedIn);
-
-
 		yield put(actions.authCheckUserLoggedInSuccess(usuario, checkUserLoggedIn));
+
+		if(checkUserLoggedIn){
+			yield delay(1000);
+			yield put(actions.authCheckUserLoggedInSuccess(usuario, false));
+		}
 
 	} catch(error){
 		alert(`Erro ${error}, tente novamente mais tarde`);

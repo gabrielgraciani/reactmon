@@ -39,6 +39,9 @@ function App({location}) {
 		if (location.pathname === CRUD_POKEMON) {
 			return <Redirect to={LOGIN}/>
 		}
+		if (location.pathname === CRUD_ITEM) {
+			return <Redirect to={LOGIN}/>
+		}
 	}
 
 	/*	const [userInfo, setUserInfo] = useState({
@@ -81,7 +84,7 @@ function App({location}) {
 
   return (
   	<>
-	{!checkUserLoggedIn && (
+	{checkUserLoggedIn && (
 		<div id="wrap_loading">
 			<Loading />
 		</div>

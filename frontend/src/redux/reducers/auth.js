@@ -92,7 +92,7 @@ export default function itemReducer(
 			return{
 				...initialState,
 				...state,
-				data: [payload]
+				checkUserLoggedIn: true,
 			};
 
 		case actions.AUTH_CHECK_USER_LOGGED_IN_SUCCESS:

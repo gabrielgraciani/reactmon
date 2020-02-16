@@ -14,13 +14,12 @@ export default class auth{
 	static checkUserLoggedIn = () => {
 		return new Promise((res, rej) => {
 			firebase.auth().onAuthStateChanged((usuario) => {
-				console.log('user', usuario);
 				if(usuario){
 					const checkUserLoggedIn = true;
 					res({usuario, checkUserLoggedIn});
 				}
 				else{
-					const checkUserLoggedIn = true;
+					const checkUserLoggedIn = false;
 					res({usuario, checkUserLoggedIn});
 				}
 
