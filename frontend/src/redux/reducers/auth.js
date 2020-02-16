@@ -7,7 +7,8 @@ export const initialState = {
 	active: '',
 	data: [],
 	saving: false,
-	success: false
+	success: false,
+	loading: false,
 };
 
 
@@ -51,6 +52,21 @@ export default function itemReducer(
 				...state,
 				saving: false,
 				success: true
+			};
+
+		case actions.AUTH_SEND_LOGIN:
+			return{
+				...initialState,
+				...state,
+				data: [payload],
+				loading: true
+			};
+
+		case actions.AUTH_SEND_LOGIN_SUCCESS:
+			return{
+				...initialState,
+				...state,
+				loading: false
 			};
 
 		default:

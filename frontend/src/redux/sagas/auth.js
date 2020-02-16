@@ -17,7 +17,6 @@ function* authSendCadastroWorker(data) {
 		});
 
 		yield put (actions.authSendCadastroSuccess());
-
 		yield delay(1000);
 		yield put(actions.authCloseForm());
 
@@ -26,13 +25,31 @@ function* authSendCadastroWorker(data) {
 	}
 }
 
+function* authSendLoginWorker(data){
+	try{
+		const {email, senha} = data.payload;
+
+		firebase.auth().signInWithEmailAndPassword(email, senha);
+
+		yield put(actions.authSendLoginSuccess);
+
+	} catch(error){
+		alert(`Erro ${error}, tente novamente mais tarde`);
+	}
+}
+
 function* authSendCadastroWatcher() {
 	yield takeLatest(actions.AUTH_SEND_CADASTRO, authSendCadastroWorker);
+}
+
+function* authSendLoginWatcher(){
+	yield takeLatest(actions.AUTH_SEND_LOGIN, authSendLoginWorker);
 }
 
 function* authWatcher() {
 	yield all([
 		authSendCadastroWatcher(),
+		authSendLoginWatcher()
 	]);
 }
 

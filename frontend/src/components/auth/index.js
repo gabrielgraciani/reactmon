@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
-import {authOpenForm} from '../../redux/actions/auth';
-import {useDispatch} from "react-redux";
-import firebase from 'services/firebase';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import {authOpenForm, authSendLogin} from '../../redux/actions/auth';
+import {useDispatch, useSelector} from "react-redux";
 
 function LoginForm () {
 	const initialState = {
@@ -13,6 +13,7 @@ function LoginForm () {
 	const [values, setValues] = useState(initialState);
 
 	const dispatch = useDispatch();
+	const {loading} = useSelector(store => store.auth);
 
 	const handleChange = (e) => setValues({
 		...values,
@@ -23,12 +24,10 @@ function LoginForm () {
 		e.preventDefault();
 		console.log(values);
 		const {email, senha} = values;
-		firebase.auth().signInWithEmailAndPassword(email, senha).then((u) => {
-			console.log('logou certinho');
-			console.log('u', u);
-		}).catch((error) => {
-			console.log(error);
-		})
+
+
+		dispatch(authSendLogin({email, senha}));
+
 	};
 
 	return(
@@ -48,7 +47,7 @@ function LoginForm () {
 						<input type="password" placeholder="Senha" name="senha" value={values.senha} onChange={handleChange} autoComplete="off" />
 					</div>
 
-					<input type="submit" value="LOGIN" onClick={handleSubmit} />
+					{loading ? <div className="load"><CircularProgress size={25} /></div> : <input type="submit" value="LOGIN" onClick={handleSubmit} />}
 				</form>
 
 				<div className="criar">

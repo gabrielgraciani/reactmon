@@ -209,6 +209,8 @@ p{font-size:21px;}
 #wrap_login .indent form .item input:focus:-ms-input-placeholder {color: var(--green);}
 #wrap_login .indent form input[type='submit']{transition:all .3s ease; cursor:pointer; width:100%; background: var(--green); color:var(--gray-light); font-size:15px; font-weight:bold; padding:15px 0; display:flex; align-items:center; justify-content:center; border:1px solid var(--green); border-radius:25px;}
 #wrap_login .indent form input[type='submit']:hover{color:var(--green); background:transparent;}
+#wrap_login .indent form .load{cursor:pointer; width:100%; background: var(--green); font-size:15px; font-weight:bold; padding:15px 0; display:flex; align-items:center; justify-content:center; border:1px solid var(--green); border-radius:25px;}
+#wrap_login .indent form .load svg{color:var(--white);}
 #wrap_login .indent .criar{width:100%; margin:30px 0 0 0;}
 #wrap_login .indent .criar span{font-size:14px; color:var(--dark);}
 #wrap_login .indent .criar button{cursor:pointer; background:transparent; border:0; outline:0; font-weight:bold; color:var(--dark)}
