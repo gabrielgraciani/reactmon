@@ -1,7 +1,6 @@
-import React, {lazy, Suspense, useState, useEffect} from 'react';
+import React, {lazy, Suspense, useEffect} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
 import {CIDADES, CRUD_POKEMON, CRUD_ITEM, ITENS, LOGIN, POKEDEX} from './routes';
-import firebase from 'services/firebase';
 import {useDispatch, useSelector} from "react-redux";
 import {authCheckUserLoggedIn} from './redux/actions/auth';
 

@@ -1,8 +1,7 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import Form from 'components/crud/pokemon/formulario';
 import Tabela from 'components/crud/pokemon/tabela';
 import {PokemonContext} from 'contexts/pokemon';
-import firebase from 'services/firebase';
 
 function Crud_Pokemon() {
 
@@ -15,6 +14,7 @@ function Crud_Pokemon() {
 		<div id="wrap_crud">
 			<div className="indent">
 				<div className="titulo">
+					<h1>Olá teste</h1>
 				</div>
 
 				<Tabela changeClass={changeClass} />
