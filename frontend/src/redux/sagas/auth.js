@@ -29,12 +29,17 @@ function* authSendLoginWorker(data){
 	try{
 		const {email, senha} = data.payload;
 
-		firebase.auth().signInWithEmailAndPassword(email, senha);
+		firebase.auth().signInWithEmailAndPassword(email, senha).then((user) => {
+			 console.log('logou certinho');
+			 console.log('u', user);
+		 }).catch((error) => {
+			 console.log(error);
+		 });
 
 		yield put(actions.authSendLoginSuccess);
 
 	} catch(error){
-		alert(`Erro ${error}, tente novamente mais tarde`);
+		console.log(`${error}, tente novamente mais tarde`);
 	}
 }
 
