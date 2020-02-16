@@ -6,8 +6,8 @@ import {PokemonContext} from 'contexts/pokemon';
 
 function Crud_Pokemon() {
 
-	const {userInfo} = useContext(AuthContext);
-	const nomeUser = userInfo.user.displayName;
+	/*const {userInfo} = useContext(AuthContext);
+	const nomeUser = userInfo.user.displayName;*/
 	const {changeClass, activeClass} = useContext(PokemonContext);
 
 	return(
@@ -15,7 +15,8 @@ function Crud_Pokemon() {
 		<div id="wrap_crud">
 			<div className="indent">
 				<div className="titulo">
-					<h1>Olá {nomeUser}</h1>
+					{/*<h1>Olá {nomeUser}</h1>*/}
+					<h1>oLÁ teste</h1>
 				</div>
 
 				<Tabela changeClass={changeClass} />

@@ -30,27 +30,28 @@ function* authSendLoginWorker(data){
 	try{
 		const {email, senha} = data.payload;
 
-		const res = yield call(Auth.checkUser, email, senha);
+		const usuario = yield call(Auth.checkUser, email, senha);
 
 		let mensagem = '';
-		if(res.code === 'auth/invalid-email'){
+		if(usuario.code === 'auth/invalid-email' || usuario.code === 'auth/user-not-found'){
 			//mensagem = 'E-mail inválido';
 			mensagem = 1;
 			yield put(actions.authSendLoginSuccess(mensagem));
 		}
-		else if(res.code === 'auth/wrong-password'){
+		else if(usuario.code === 'auth/wrong-password'){
 			//mensagem = 'Senha inválida';
 			mensagem = 2;
 			yield put(actions.authSendLoginSuccess(mensagem));
 		}
-		else if(res.code === 'auth/too-many-requests'){
+		else if(usuario.code === 'auth/too-many-requests'){
 			//mensagem = 'Muitas tentativas com falhas, tente novamente mais tarde';
 			mensagem = 3;
 			yield put(actions.authSendLoginSuccess(mensagem));
 		}
 		else{
-			//console.log(res);
-			yield put(actions.authSendLoginSuccess());
+			//console.log(usuario);
+
+			yield put(actions.authSendLoginSuccess(null, usuario));
 		}
 
 
