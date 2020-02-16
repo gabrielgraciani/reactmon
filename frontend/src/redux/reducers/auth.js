@@ -104,6 +104,12 @@ export default function itemReducer(
 				checkUserLoggedIn: payload.checkUserLoggedIn
 			};
 
+		case actions.AUTH_LOGIN_GITHUB:
+			return{
+				...initialState,
+				...state
+			};
+
 		default:
 			return state;
 	}

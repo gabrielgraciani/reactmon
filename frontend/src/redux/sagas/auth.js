@@ -86,6 +86,17 @@ function* authCheckUserLoggedInWorker(){
 	}
 }
 
+function* authLoginGithubWorker(){
+	try{
+		const usuario = yield call(Auth.loginGithub);
+
+		yield put(actions.authSendLoginSuccess(null, usuario));
+
+	} catch(error){
+		alert(`Erro ${error}, tente novamente mais tarde`);
+	}
+}
+
 function* authSendCadastroWatcher() {
 	yield takeLatest(actions.AUTH_SEND_CADASTRO, authSendCadastroWorker);
 }
@@ -102,12 +113,17 @@ function* authCheckUserLoggedInWatcher(){
 	yield takeLatest(actions.AUTH_CHECK_USER_LOGGED_IN, authCheckUserLoggedInWorker);
 }
 
+function* authLoginGithubWatcher(){
+	yield takeLatest(actions.AUTH_LOGIN_GITHUB, authLoginGithubWorker);
+}
+
 function* authWatcher() {
 	yield all([
 		authSendCadastroWatcher(),
 		authSendLoginWatcher(),
 		authLogoutWatcher(),
-		authCheckUserLoggedInWatcher()
+		authCheckUserLoggedInWatcher(),
+		authLoginGithubWatcher()
 	]);
 }
 

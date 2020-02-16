@@ -26,4 +26,11 @@ export default class auth{
 			});
 		})
 	}
+
+	static loginGithub = () => {
+		return new Promise((res, rej) => {
+			const provider = new firebase.auth.GithubAuthProvider();
+			firebase.auth().signInWithRedirect(provider);
+		})
+	}
 }

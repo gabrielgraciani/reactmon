@@ -194,6 +194,12 @@ p{font-size:21px;}
 #wrap_login .indent{max-width:400px; display:flex; align-items:center; flex-direction:column; justify-content:center;}
 #wrap_login .indent .titulo{width:100%; text-align:center; margin:0 0 30px 0;}
 #wrap_login .indent .titulo h1{color:var(--dark)}
+#wrap_login .indent .sociais{width:100%; display:flex; justify-content:space-between;}
+#wrap_login .indent button.github{transition:all .4s ease; width:40%; cursor:pointer; background:var(--dark); border:0;  padding:10px; display:flex; align-items:center; justify-content:center; border-radius:5px; outline:0;}
+#wrap_login .indent button.github svg{ width:30px; height:30px;}
+#wrap_login .indent button.github svg path{transition:all .4s ease; fill:var(--gray-light);}
+#wrap_login .indent button.github:hover{background:var(--gray-light); box-shadow: 0 0 10px 2px var(--dark)}
+#wrap_login .indent button.github:hover svg path{fill:var(--dark);}
 #wrap_login .indent form{width:100%; display:flex; flex-direction:column;}
 #wrap_login .indent form .item{width:100%; margin:10px 0; position:relative;}
 #wrap_login .indent form .item svg{position:absolute; top:50%; left:20px; transform:translate(0, -50%); color:var(--dark);}

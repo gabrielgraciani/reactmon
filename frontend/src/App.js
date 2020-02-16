@@ -43,44 +43,6 @@ function App({location}) {
 		}
 	}
 
-	/*	const [userInfo, setUserInfo] = useState({
-			isUserLoggedIn: false,
-			user: null
-		});
-		const [checkUserLogged, setCheckUserLogged] = useState(false);
-		const {isUserLoggedIn} = userInfo;
-		useEffect(() => {
-			firebase.auth().onAuthStateChanged((user) => {
-				setUserInfo({
-					isUserLoggedIn: !!user,
-					user
-				});
-				setCheckUserLogged(true);
-
-				dispatch(authCheckUserLoggedIn(user));
-			});
-		}, [setUserInfo]);*/
-	//console.log(userInfo);
-
-/*	if(!checkUserLogged){
-		return(
-			<div id="wrap_loading">
-				<Loading />
-			</div>
-		)
-	}
-
-	if(isUserLoggedIn){
-		if(location.pathname === LOGIN){
-			return <Redirect to={CRUD_POKEMON} />
-		}
-	}
-	else{
-		if(location.pathname === CRUD_POKEMON){
-			return <Redirect to={LOGIN} />
-		}
-	}*/
-
   return (
   	<>
 	{checkUserLoggedIn && (
