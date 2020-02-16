@@ -1,7 +1,8 @@
-import { takeLatest, all, put, delay } from 'redux-saga/effects';
+import { takeLatest, all, put, delay, call } from 'redux-saga/effects';
 import firebase from 'services/firebase';
 
 import * as actions from '../actions/auth';
+import Auth from '../../services/auth';
 
 function* authSendCadastroWorker(data) {
 	try {
@@ -29,14 +30,22 @@ function* authSendLoginWorker(data){
 	try{
 		const {email, senha} = data.payload;
 
-		firebase.auth().signInWithEmailAndPassword(email, senha).then((user) => {
-			 console.log('logou certinho');
-			 console.log('u', user);
-		 }).catch((error) => {
-			 console.log(error);
-		 });
 
-		yield put(actions.authSendLoginSuccess);
+		const res = yield call(Auth.checkUser, email, senha);
+		if(res.code === 'auth/invalid-email'){
+			console.log('email invalidio');
+		}
+		else if(res.code === 'auth/too-many-requests'){
+			console.log('muitas tentativas erradas, tente novamente mais tarde');
+		}
+		else if(res.code === 'auth/wrong-password'){
+			console.log('senha invalida');
+		}
+		else{
+			console.log(res);
+		}
+
+		yield put(actions.authSendLoginSuccess());
 
 	} catch(error){
 		console.log(`${error}, tente novamente mais tarde`);

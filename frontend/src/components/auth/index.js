@@ -22,9 +22,7 @@ function LoginForm () {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(values);
 		const {email, senha} = values;
-
 
 		dispatch(authSendLogin({email, senha}));
 

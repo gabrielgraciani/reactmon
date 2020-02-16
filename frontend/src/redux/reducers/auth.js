@@ -9,6 +9,7 @@ export const initialState = {
 	saving: false,
 	success: false,
 	loading: false,
+	mensagemErro: ''
 };
 
 
@@ -64,8 +65,6 @@ export default function itemReducer(
 
 		case actions.AUTH_SEND_LOGIN_SUCCESS:
 			return{
-				...initialState,
-				...state,
 				loading: false
 			};
 
