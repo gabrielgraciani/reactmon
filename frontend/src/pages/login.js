@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {AuthContext} from 'contexts/auth';
-import LoginForm from 'components/login';
-import CadastroForm from 'components/login/cadastro';
+import LoginForm from 'components/auth';
+import CadastroForm from 'components/auth/cadastro';
 
 function Login () {
 	const {login} = useContext(AuthContext);

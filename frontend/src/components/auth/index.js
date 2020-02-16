@@ -1,7 +1,7 @@
 import React from 'react';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
-import {loginOpenForm} from '../../redux/actions/login';
+import {authOpenForm} from '../../redux/actions/auth';
 import {useDispatch} from "react-redux";
 
 function LoginForm () {
@@ -28,7 +28,7 @@ function LoginForm () {
 				</form>
 
 				<div className="criar">
-					<span>Não possui uma conta? <button type="button" onClick={() => dispatch(loginOpenForm())}>Crie agora.</button></span>
+					<span>Não possui uma conta? <button type="button" onClick={() => dispatch(authOpenForm())}>Crie agora.</button></span>
 				</div>
 			</div>
 		</div>

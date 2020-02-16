@@ -1,4 +1,4 @@
-import * as actions from '../actions/login';
+import * as actions from '../actions/auth';
 
 export const initialState = {
 	active: '',
@@ -10,14 +10,14 @@ export default function itemReducer(
 	{ type, payload }
 ) {
 	switch (type) {
-		case actions.LOGIN_OPEN_FORM:
+		case actions.AUTH_OPEN_FORM:
 			return{
 				...initialState,
 				...state,
 				active: "active"
 			};
 
-		case actions.LOGIN_CLOSE_FORM:
+		case actions.AUTH_CLOSE_FORM:
 			return{
 				...initialState,
 				...state,

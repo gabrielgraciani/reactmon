@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import CloseIcon from '@material-ui/icons/Close';
 import {useDispatch, useSelector} from "react-redux";
-import {loginCloseForm} from "../../redux/actions/login";
+import {authCloseForm} from "../../redux/actions/auth";
 
 function Cadastro(){
 	const initialState = {
@@ -12,7 +12,7 @@ function Cadastro(){
 	const [values, setValues] = useState(initialState);
 
 	const dispatch = useDispatch();
-	const {active} = useSelector(store => store.login);
+	const {active} = useSelector(store => store.auth);
 
 
 	const handleChange = (e) => setValues({
@@ -32,7 +32,7 @@ function Cadastro(){
 						<h3>Registro de usuário</h3>
 					</div>
 					<div className="fechar">
-						<CloseIcon onClick={() => dispatch(loginCloseForm())} />
+						<CloseIcon onClick={() => dispatch(authCloseForm())} />
 					</div>
 				</div>
 
