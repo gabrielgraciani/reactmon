@@ -2,12 +2,9 @@ import React, {useContext} from 'react';
 import Form from 'components/crud/pokemon/formulario';
 import Tabela from 'components/crud/pokemon/tabela';
 import {PokemonContext} from 'contexts/pokemon';
-import {useSelector} from "react-redux";
+import NomeUser from 'components/crud/commons/nomeUser';
 
 function Crud_Pokemon() {
-
-	const {usuario} = useSelector(store => store.auth);
-	const nome = usuario.displayName;
 
 	const {changeClass, activeClass} = useContext(PokemonContext);
 
@@ -15,9 +12,7 @@ function Crud_Pokemon() {
 		<>
 		<div id="wrap_crud">
 			<div className="indent">
-				<div className="titulo">
-					<h1>Olá {nome}</h1>
-				</div>
+				<NomeUser />
 
 				<Tabela changeClass={changeClass} />
 
