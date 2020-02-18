@@ -1,6 +1,20 @@
 import firebase from 'services/firebase';
 
 export default class auth{
+	static registerUser = (nome, email, senha) => {
+		return new Promise((res, rej) => {
+			firebase.auth().createUserWithEmailAndPassword(email, senha).then(function(user){
+				const userLogado = user.user;
+				userLogado.updateProfile({
+					displayName: nome
+				});
+				res(1);
+			}).catch(function(error) {
+				res(error.code);
+			});
+		})
+	};
+
 	static checkUser = (email, senha) => {
 		return new Promise((res, rej) => {
 			firebase.auth().signInWithEmailAndPassword(email, senha).then((user) => {

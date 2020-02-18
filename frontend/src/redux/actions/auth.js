@@ -24,9 +24,13 @@ export const authSendCadastro = (payload) => ({
 	payload
 });
 
-export const authSendCadastroSuccess = (payload) => ({
+export const authSendCadastroSuccess = (mensagem, success, payload) => ({
 	type: AUTH_SEND_CADASTRO_SUCCESS,
-	payload
+	payload: {
+		mensagem,
+		success,
+		payload
+	}
 });
 
 export const authSendLogin = (payload) => ({

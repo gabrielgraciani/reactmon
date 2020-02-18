@@ -8,18 +8,25 @@ function* authSendCadastroWorker(data) {
 	try {
 		const {nome, email, senha} = data.payload;
 
-		firebase.auth().createUserWithEmailAndPassword(email, senha).then(function(user){
-			const userLogado = user.user;
-				userLogado.updateProfile({
-					displayName: nome
-				});
-		}).catch(function(error) {
-			alert(`erro ao cadastrar: , ${error.code}, ${error.message}`);
-		});
 
-		yield put (actions.authSendCadastroSuccess());
-		yield delay(1000);
-		yield put(actions.authCloseForm());
+		const res = yield call(Auth.registerUser, nome, email, senha);
+
+		let mensagem = '';
+		let success = false;
+		if(res === 'auth/email-already-in-use'){
+			//mensagem = 'Email já em uso';
+			mensagem = 1;
+			console.log('email ja em uso');
+			yield put (actions.authSendCadastroSuccess(mensagem, success));
+		}
+		else{
+			success = true;
+			yield put (actions.authSendCadastroSuccess(mensagem, success));
+			yield delay(1000);
+			yield put(actions.authCloseForm());
+		}
+
+
 
 	} catch (error) {
 		alert(`Erro ${error}, tente novamente mais tarde`);

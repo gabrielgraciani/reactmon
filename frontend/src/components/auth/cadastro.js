@@ -15,7 +15,8 @@ function Cadastro(){
 	const [validate, setValidate] = useState(false);
 
 	const dispatch = useDispatch();
-	const {active, payload, saving, success} = useSelector(store => store.auth);
+	const {active, payload, saving, success, mensagem} = useSelector(store => store.auth);
+	console.log('success, mensagem', success, mensagem);
 
 	useEffect(() => {
 		if(payload){
@@ -57,13 +58,16 @@ function Cadastro(){
 					{validate && <div className="validate">Preencha o nome</div>}
 				</div>
 				<div className="item">
-					<input type="text" name="email" onChange={handleChange} value={values.email} autoComplete="off" placeholder="E-mail" />
+					<input type="email" name="email" onChange={handleChange} value={values.email} autoComplete="off" placeholder="E-mail" />
 					{validate && <div className="validate">Preencha o e-mail</div>}
 				</div>
 				<div className="item">
 					<input type="password" name="senha" onChange={handleChange} value={values.senha} autoComplete="off" placeholder="Senha" />
 					{validate && <div className="validate">Preencha a senha</div>}
 				</div>
+				{mensagem === 1 && (
+					<span style={{color:'#000'}}>E-mail já cadastrado. Desista agora...</span>
+				)}
 
 				{success ? <div className="load"><CheckIcon size={25} /></div> : saving ? <div className="load"><CircularProgress size={25} /></div> : <input type="submit" value="Cadastrar" onClick={handleSubmit} /> }
 			</div>

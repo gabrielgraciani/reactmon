@@ -55,7 +55,8 @@ export default function itemReducer(
 				...initialState,
 				...state,
 				saving: false,
-				success: true
+				success: payload.success,
+				mensagem: payload.mensagem
 			};
 
 		case actions.AUTH_SEND_LOGIN:
