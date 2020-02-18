@@ -24,6 +24,7 @@ function Tabela() {
 					<div className="item">Nome</div>
 					<div className="item">Imagem</div>
 					<div className="item">Descrição</div>
+					<div className="item">Função</div>
 					<div className="item">Ações</div>
 				</div>
 

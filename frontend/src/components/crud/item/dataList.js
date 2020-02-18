@@ -34,12 +34,13 @@ function DataList(){
 			<div className="row" key={item.id}>
 				<div className="item">{item.id}</div>
 				<div className="item">{item.nome}</div>
+				<div className="item">{item.descricao}</div>
+				<div className="item">{item.funcao}</div>
 				<div className="item">
 					{item.imagem.url && (
 						<img src={item.imagem.url} alt="imagem" />
 					)}
 				</div>
-				<div className="item">{item.descricao}</div>
 				<div className="item actions">
 					<div className="icon"><EditIcon className="edit" onClick={() => {dispatch(itemShowEdit(item))}} /></div>
 					<div className="icon"><DeleteIcon className="delete" onClick={() => {if (window.confirm(`Você quer mesmo deletar o item ${item.nome} ?`)) dispatch(itemDelete(item.id))}} /></div>

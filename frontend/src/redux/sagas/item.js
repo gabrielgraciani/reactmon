@@ -7,13 +7,14 @@ import Item from '../../services/item';
 
 function* itemSendWorker(data) {
 	try {
-		const {nome, descricao, imagem} = data.payload;
+		const {nome, descricao, funcao, imagem} = data.payload;
 
 		let newDoc = db.collection('item').doc();
 		const id = newDoc.id;
 		newDoc.set({
 			nome,
 			descricao,
+			funcao,
 			createdAt: firebase.firestore.FieldValue.serverTimestamp()
 		});
 
@@ -22,6 +23,7 @@ function* itemSendWorker(data) {
 			id,
 			nome,
 			descricao,
+			funcao,
 			imagem: {
 				name,
 				url
@@ -75,7 +77,7 @@ function* itemShowEditWorker(data){
 function* itemUpdateWorker(data){
 	try {
 
-		const {id, nome, descricao, imagem} = data.payload;
+		const {id, nome, descricao, funcao, imagem} = data.payload;
 
 		const { list } = yield select(store => store.item);
 		const i = findIndex(list, { id });
@@ -85,7 +87,8 @@ function* itemUpdateWorker(data){
 
 			yield db.collection('item').doc(id).update({
 				nome,
-				descricao
+				descricao,
+				funcao
 			});
 
 			if(imagem.lastModified){
@@ -95,6 +98,7 @@ function* itemUpdateWorker(data){
 					id,
 					nome,
 					descricao,
+					funcao,
 					imagem: {
 						name,
 						url
@@ -106,6 +110,7 @@ function* itemUpdateWorker(data){
 					id,
 					nome,
 					descricao,
+					funcao,
 					imagem: {
 						name: imagem.name,
 						url: imagem.url

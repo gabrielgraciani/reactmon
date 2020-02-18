@@ -10,6 +10,7 @@ export const initialState = {
 	list: [],
 	nome: '',
 	descricao: '',
+	funcao: '',
 	saving: false,
 	imagem: {
 		name: '',
@@ -119,6 +120,7 @@ export default function itemReducer(
 				payload: {
 					nome: '',
 					descricao: '',
+					funcao: '',
 					imagem: {
 						name: '',
 						url: ''

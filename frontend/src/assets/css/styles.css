@@ -386,7 +386,8 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 	#wrap_tabela .conteudo .row .item:nth-of-type(2):before { content: "Nome"; }
 	#wrap_tabela .conteudo .row .item:nth-of-type(3):before { content: "Imagem"; }
 	#wrap_tabela .conteudo .row .item:nth-of-type(4):before { content: "Descrição"; }
-	#wrap_tabela .conteudo .row .item:nth-of-type(5):before { content: "Ações"; }
+	#wrap_tabela .conteudo .row .item:nth-of-type(5):before { content: "Função"; }
+	#wrap_tabela .conteudo .row .item:nth-of-type(6):before { content: "Ações"; }
 
 }
 

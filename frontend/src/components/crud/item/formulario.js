@@ -9,6 +9,7 @@ function Formulario() {
 		id: '',
 		nome: '',
 		descricao: '',
+		funcao: '',
 		imagem: ''
 	};
 	const [values, setValues] = useState(initialState);
@@ -32,6 +33,7 @@ function Formulario() {
 			id: values.id,
 			nome: values.nome,
 			descricao: values.descricao,
+			funcao: values.funcao,
 			imagem: e.target.files[0]
 		})
 	};
@@ -39,18 +41,18 @@ function Formulario() {
 	const onSubmit = (e) => {
 		e.preventDefault();
 
-		const {nome, descricao, imagem} = values;
-		if(!nome || !descricao || !imagem){ setValidate(true); }
-		else{ dispatch(itemSend({nome, descricao, imagem})); setValidate(false);}
+		const {nome, descricao, funcao, imagem} = values;
+		if(!nome || !descricao || !funcao || !imagem){ setValidate(true); }
+		else{ dispatch(itemSend({nome, descricao, funcao, imagem})); setValidate(false);}
 
 	};
 
 	const onUpdate = (e) => {
 		e.preventDefault();
 
-		const {id, nome, descricao, imagem} = values;
-		if(!nome || !descricao || !imagem){ setValidate(true); }
-		else{ dispatch(itemUpdate({id, nome, descricao, imagem})); setValidate(false);}
+		const {id, nome, descricao, funcao, imagem} = values;
+		if(!nome || !descricao || !funcao || !imagem){ setValidate(true); }
+		else{ dispatch(itemUpdate({id, nome, descricao, funcao, imagem})); setValidate(false);}
 	};
 
 	return(
@@ -72,6 +74,10 @@ function Formulario() {
 				<div className="item">
 					<label htmlFor="descricao">Descrição<span>{validate && '*'}</span></label>
 					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
+				</div>
+				<div className="item">
+					<label htmlFor="funcao">Função<span>{validate && '*'}</span></label>
+					<input type="text" name="funcao" value={values.funcao} onChange={handleChange} autoComplete="off" />
 				</div>
 
 				<div className="item file">
