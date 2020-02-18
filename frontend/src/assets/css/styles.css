@@ -279,6 +279,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario.active:after{width:100%; height:100%; content:''; position:fixed; top:0; left:0; background:var(--dark); opacity:0.6; z-index:999;}
 #wrap_formulario .indent{transition:all .5s ease; z-index:9999; padding:20px 30px; border-radius:25px; position:fixed; top:-50%; left:50%; transform:translate(-50%, -50%); max-width:550px; background:var(--white); box-shadow:0 0 10px var(--dark); display:flex;flex-direction:column; align-items:center; max-height:70vh; overflow:auto}
 #wrap_formulario.active .indent{top:50%; transition:all .5s ease; overflow:auto;}
+#wrap_formulario .indent .validate{font-size:13px; color:var(--primary);}
 #wrap_formulario .indent .head{width:100%; display:flex; justify-content:space-between;}
 #wrap_formulario .indent .head .fechar{cursor:pointer;}
 #wrap_formulario .indent .head svg path{fill:#ccc;}

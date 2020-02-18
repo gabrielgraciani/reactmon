@@ -10,7 +10,9 @@ export default class auth{
 				});
 				res(1);
 			}).catch(function(error) {
+				console.log(`erro ao cadastrar: , ${error.code}, ${error.message}`);
 				res(error.code);
+
 			});
 		})
 	};

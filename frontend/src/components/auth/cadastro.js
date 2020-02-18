@@ -16,7 +16,6 @@ function Cadastro(){
 
 	const dispatch = useDispatch();
 	const {active, payload, saving, success, mensagem} = useSelector(store => store.auth);
-	console.log('success, mensagem', success, mensagem);
 
 	useEffect(() => {
 		if(payload){
@@ -66,7 +65,13 @@ function Cadastro(){
 					{validate && <div className="validate">Preencha a senha</div>}
 				</div>
 				{mensagem === 1 && (
-					<span style={{color:'#000'}}>E-mail já cadastrado. Desista agora...</span>
+					<div className="validate">E-mail já cadastrado. Desista agora...</div>
+				)}
+				{mensagem === 2 && (
+					<div className="validate">Digite um e-mail real, sem viajar na maionese...</div>
+				)}
+				{mensagem === 3 && (
+					<div className="validate">A senha precisa ter pelo menos 6 caracteres, faz uma força...</div>
 				)}
 
 				{success ? <div className="load"><CheckIcon size={25} /></div> : saving ? <div className="load"><CircularProgress size={25} /></div> : <input type="submit" value="Cadastrar" onClick={handleSubmit} /> }

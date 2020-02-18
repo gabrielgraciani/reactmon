@@ -19,14 +19,22 @@ function* authSendCadastroWorker(data) {
 			console.log('email ja em uso');
 			yield put (actions.authSendCadastroSuccess(mensagem, success));
 		}
+		else if(res === 'auth/invalid-email'){
+			//mensagem = 'email digitado errado';
+			mensagem = 2;
+			yield put (actions.authSendCadastroSuccess(mensagem, success));
+		}
+		else if(res === 'auth/weak-password'){
+			//mensagem = 'a senha precisa ter 6 caracteres';
+			mensagem = 3;
+			yield put (actions.authSendCadastroSuccess(mensagem, success));
+		}
 		else{
 			success = true;
 			yield put (actions.authSendCadastroSuccess(mensagem, success));
 			yield delay(1000);
 			yield put(actions.authCloseForm());
 		}
-
-
 
 	} catch (error) {
 		alert(`Erro ${error}, tente novamente mais tarde`);
