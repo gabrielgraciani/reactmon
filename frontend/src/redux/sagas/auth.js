@@ -34,6 +34,9 @@ function* authSendCadastroWorker(data) {
 			yield put (actions.authSendCadastroSuccess(mensagem, success));
 			yield delay(1000);
 			yield put(actions.authCloseForm());
+
+			const usuario = yield call(Auth.checkUser, email, senha);
+			yield put(actions.authSendLoginSuccess(null, usuario));
 		}
 
 	} catch (error) {
