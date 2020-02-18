@@ -31,7 +31,7 @@ function App({location}) {
 
 	if(usuario){
 		if(location.pathname === LOGIN){
-			return <Redirect to={CRUD_POKEMON} />
+			return <Redirect to={Home} />
 		}
 	}
 	else {
