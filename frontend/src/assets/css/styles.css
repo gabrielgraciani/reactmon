@@ -238,6 +238,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 .search .search-input::-moz-placeholder {color: var(--white);}
 .search .search-input:-ms-input-placeholder {color: var(--white);}
 .search .search-input:focus{width:250px; padding:0 0 0 10px;}
+.search .search-input.active{width:250px; padding:0 0 0 10px;}
 .search:hover .search-input{width:250px; padding:0 0 0 10px;}
 .search svg path{fill:var(--white);}
 

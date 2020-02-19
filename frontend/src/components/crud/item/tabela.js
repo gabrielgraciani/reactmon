@@ -19,6 +19,7 @@ function Tabela() {
 
 	const [searchTerm, setSearchTerm] = useState('');
 	const [searchResult, setSearchResult] = useState([]);
+	const [active, setActive] = useState('');
 
 	const handleChange = (e) => {
 		setSearchTerm(e.target.value.toLowerCase());
@@ -29,6 +30,12 @@ function Tabela() {
 			item.nome.toLowerCase().includes(searchTerm));
 		setSearchResult(results);
 
+		if(searchTerm){
+			setActive('active');
+		} else{
+			setActive('');
+		}
+
 	}, [listSearch, searchTerm]);
 
 	return(
@@ -36,7 +43,7 @@ function Tabela() {
 
 			<div id="wrap_search" className="crud">
 				<div className="search">
-					<input className="search-input" type="text" name=""  value={searchTerm} onChange={handleChange} placeholder="Pesquise um item" />
+					<input className={`search-input ${active}`} type="text" name=""  value={searchTerm} onChange={handleChange} placeholder="Pesquise um item" />
 					<div className="search-btn">
 						<SearchIcon />
 					</div>
