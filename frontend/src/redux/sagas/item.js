@@ -131,16 +131,9 @@ function* itemUpdateWorker(data){
 
 function* itemFetchSearchWorker() {
 	try {
-		console.log('chegou aqui');
 		const {item} = yield call(Item.getFullItens);
-		console.log('teste', item);
 
 		yield put(actions.itemFetchSearchSuccess(item));
-
-		//const { last, endInfiniteScroll } = yield select(store => store.item);
-		//const {item, lastVisible, end} = yield call(Item.getItens, last, endInfiniteScroll);
-		//yield put(actions.itemFullFilled(item, lastVisible, end));
-
 	} catch (error) {
 		alert(`Erro ${error}, tente novamente mais tarde`);
 	}

@@ -9,7 +9,6 @@ import SearchIcon from '@material-ui/icons/Search';
 function Tabela() {
 	const dispatch = useDispatch();
 	const { listSearch} = useSelector(store => store.item);
-	console.log('listsearch', listSearch);
 
 	useEffect(() => {
 		if(listSearch.length === 0){
@@ -24,14 +23,12 @@ function Tabela() {
 
 	const handleChange = (e) => {
 		setSearchTerm(e.target.value.toLowerCase());
-		console.log(e.target.value);
 	};
 
 	useEffect(() => {
 		const results = listSearch.filter(item =>
 			item.nome.toLowerCase().includes(searchTerm));
 		setSearchResult(results);
-		console.log('results', results);
 
 	}, [listSearch, searchTerm]);
 
@@ -67,11 +64,9 @@ function Tabela() {
 					<div className="item">Ações</div>
 				</div>
 
-				{searchResult.map((item, index) => (
-					<div key={index}>{item.nome}</div>
-				))}
 
-				<DataList />
+
+				<DataList searchResult={searchResult} searchTerm={searchTerm} />
 			</div>
 		</div>
 	)
