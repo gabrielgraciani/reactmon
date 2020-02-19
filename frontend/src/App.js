@@ -3,6 +3,7 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 import {CIDADES, CRUD_POKEMON, CRUD_ITEM, ITENS, LOGIN, POKEDEX} from './routes';
 import {useDispatch, useSelector} from "react-redux";
 import {authCheckUserLoggedIn} from './redux/actions/auth';
+import { useCookies } from 'react-cookie';
 
 import Header from 'components/header';
 import Footer from 'components/footer';
@@ -20,18 +21,23 @@ const Pokedex = lazy(() => import('pages/pokedex'));
 
 
 function App({location}) {
+	const [cookies, setCookie] = useCookies(['name']);
+	console.log(cookies.name);
 
 	const dispatch = useDispatch();
 	const {usuario, checkUserLoggedIn} = useSelector(store => store.auth);
 
 	useEffect(() => {
 		dispatch(authCheckUserLoggedIn());
-	}, [usuario, dispatch]);
+		if(usuario){
+			setCookie('name', usuario.displayName || '', {path: '/'})
+		}
+	}, [usuario, dispatch, setCookie]);
 
 
 	if(usuario){
 		if(location.pathname === LOGIN){
-			return <Redirect to={Home} />
+			return <Redirect to={CRUD_POKEMON} />
 		}
 	}
 	else {
@@ -43,8 +49,10 @@ function App({location}) {
 		}
 	}
 
+
   return (
   	<>
+
 	{checkUserLoggedIn && (
 		<div id="wrap_loading">
 			<Loading />

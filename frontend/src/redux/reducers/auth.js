@@ -10,7 +10,9 @@ export const initialState = {
 	success: false,
 	loading: false,
 	mensagemErro: '',
-	usuario: null,
+	usuario: {
+		displayName: ''
+	},
 	logout: false,
 	checkUserLoggedIn: false,
 };

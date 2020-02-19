@@ -95,7 +95,6 @@ function* authCheckUserLoggedInWorker(){
 		yield put(actions.authCheckUserLoggedInSuccess(usuario, checkUserLoggedIn));
 
 		if(checkUserLoggedIn){
-			yield delay(1000);
 			yield put(actions.authCheckUserLoggedInSuccess(usuario, false));
 		}
 
