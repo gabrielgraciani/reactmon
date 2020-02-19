@@ -9,7 +9,6 @@ import SearchIcon from '@material-ui/icons/Search';
 function Tabela() {
 	const dispatch = useDispatch();
 	const { listSearch} = useSelector(store => store.item);
-
 	useEffect(() => {
 		if(listSearch.length === 0){
 			dispatch(itemFetchSearch());

@@ -143,7 +143,6 @@ export default function itemReducer(
 				...state,
 				isLoading:false,
 				listSearch:[
-					...state.listSearch,
 					...payload.listSearch
 				]
 			};
