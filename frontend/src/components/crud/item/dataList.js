@@ -48,15 +48,15 @@ function DataList(){
 		});
 
 		const results = item.filter(item =>
-		item.nome.includes(searchTerm));
+		item.nome.toLowerCase().includes(searchTerm));
 		setSearchResult(results);
 		console.log('results', results);
 
-	}, [item, searchTerm]);
+	}, [searchTerm]);
 	console.log('item', item);
 
 	const handleChange = (e) => {
-		setSearchTerm(e.target.value);
+		setSearchTerm(e.target.value.toLowerCase());
 		console.log(e.target.value);
 	};
 

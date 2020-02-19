@@ -29,7 +29,7 @@ function App({location}) {
 	}, [usuario, dispatch]);
 
 
-	if(usuario){
+/*	if(usuario){
 		if(location.pathname === LOGIN){
 			return <Redirect to={Home} />
 		}
@@ -41,7 +41,7 @@ function App({location}) {
 		if (location.pathname === CRUD_ITEM) {
 			return <Redirect to={LOGIN}/>
 		}
-	}
+	}*/
 
   return (
   	<>
