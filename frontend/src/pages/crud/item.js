@@ -3,7 +3,7 @@ import Form from 'components/crud/item/formulario';
 import Tabela from 'components/crud/item/tabela';
 import NomeUser from 'components/crud/commons/nomeUser';
 
-function Crud_Item(){
+function CrudItem(){
 
 	return(
 		<>
@@ -25,4 +25,4 @@ function Crud_Item(){
 	)
 }
 
-export default Crud_Item;
+export default CrudItem;
