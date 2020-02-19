@@ -17,7 +17,6 @@ function DataList({searchResult, searchTerm}){
 	}, [dispatch, list.length]);
 
 	useEffect(() => {
-		console.log('search', searchTerm);
 		if(!searchTerm){
 			function handleScroll() {
 				if (Math.round(window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight ||
