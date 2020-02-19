@@ -128,6 +128,24 @@ function* itemUpdateWorker(data){
 	}
 }
 
+
+function* itemFetchSearchWorker() {
+	try {
+		console.log('chegou aqui');
+		const {item} = yield call(Item.getFullItens);
+		console.log('teste', item);
+
+		yield put(actions.itemFetchSearchSuccess(item));
+
+		//const { last, endInfiniteScroll } = yield select(store => store.item);
+		//const {item, lastVisible, end} = yield call(Item.getItens, last, endInfiniteScroll);
+		//yield put(actions.itemFullFilled(item, lastVisible, end));
+
+	} catch (error) {
+		alert(`Erro ${error}, tente novamente mais tarde`);
+	}
+}
+
 function* itemSendWatcher() {
 	yield takeLatest(actions.ITEM_SEND, itemSendWorker);
 }
@@ -148,13 +166,18 @@ function* itemUpdateWatcher(){
 	yield takeLatest(actions.ITEM_UPDATE, itemUpdateWorker);
 }
 
+function* itemFetchSearchWatcher() {
+	yield takeLatest(actions.ITEM_FETCH, itemFetchSearchWorker);
+}
+
 function* itemWatcher() {
 	yield all([
 		itemSendWatcher(),
 		itemFetchWatcher(),
 		itemDeleteWatcher(),
 		itemShowEditWatcher(),
-		itemUpdateWatcher()
+		itemUpdateWatcher(),
+		itemFetchSearchWatcher()
 	]);
 }
 

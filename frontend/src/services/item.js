@@ -79,4 +79,20 @@ export default class item{
 				})
 		});
 	};
+
+	static getFullItens = () => {
+		let item = [];
+		return new Promise((res, rej) => {
+			db.collection('item').orderBy('nome', 'asc').get().then(querySnapshot => {
+				querySnapshot.forEach(doc => {
+					item.push({
+						id: doc.id,
+						...doc.data()
+					})
+				});
+
+				res({item});
+			}).catch(rej)
+		});
+	};
 }

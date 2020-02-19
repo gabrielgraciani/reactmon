@@ -228,8 +228,8 @@ p{font-size:21px;}
 #wrap_login .indent .criar button{cursor:pointer; background:transparent; border:0; outline:0; font-weight:bold; color:var(--dark)}
 button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var(--dark); border:0;  padding:10px 63px; display:flex; align-items:center; border-radius:5px; outline:0;}
 
-#wrap_search{width:100%; position:relative;}
-#wrap_search .indent{padding:35px 0 0 0; display:flex; justify-content:flex-end;}
+#wrap_search{width:100%; position:relative; display:flex; justify-content:flex-end;}
+#wrap_search.crud{justify-content:flex-start;}
 .search{display:flex; align-items:center; background:#2f3640; border-radius:40px; padding:10px; }
 .search .search-btn{border-radius:50%; background:#2f3640; display:flex; justify-content:center; align-items:center;}
 .search .search-input{width:0; padding:0; transition:all .4s ease; border:none; background:none; outline:none; color: var(--white); font-size:16px;}
@@ -270,8 +270,6 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_tabela .conteudo .loading img{width:50px;}
 #wrap_tabela .conteudo .loading.fim{align-items:center;}
 #wrap_tabela .conteudo .loading.fim img{width:150px;}
-#wrap_tabela .search{background:var(--primary)}
-#wrap_tabela .search .search-btn{background:var(--primary)}
 
 
 #wrap_formulario{transition:opacity .1s ease .5s ; opacity:0; visibility: hidden; width:100%;}

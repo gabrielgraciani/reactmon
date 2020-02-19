@@ -15,7 +15,8 @@ export const initialState = {
 	imagem: {
 		name: '',
 		url: ''
-	}
+	},
+	listSearch: []
 };
 
 export default function itemReducer(
@@ -126,6 +127,25 @@ export default function itemReducer(
 						url: ''
 					}
 				}
+			};
+
+		case actions.ITEM_FETCH_SEARCH:
+			return{
+				...initialState,
+				...state,
+				...payload,
+				isLoading: true
+			};
+
+		case actions.ITEM_FETCH_SEARCH_SUCCESS:
+			return{
+				...initialState,
+				...state,
+				isLoading:false,
+				listSearch:[
+					...state.listSearch,
+					...payload.listSearch
+				]
 			};
 
 		default:
