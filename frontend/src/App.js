@@ -21,8 +21,8 @@ const Pokedex = lazy(() => import('pages/pokedex'));
 
 
 function App({location}) {
+	// eslint-disable-next-line
 	const [cookies, setCookie] = useCookies(['name']);
-	console.log(cookies.name);
 
 	const dispatch = useDispatch();
 	const {usuario, checkUserLoggedIn} = useSelector(store => store.auth);
