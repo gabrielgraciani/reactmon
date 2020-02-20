@@ -1,15 +1,29 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Banner from 'components/banner';
-import Search from 'components/search';
-import {itemFetch} from "../redux/actions/item";
+import {itemFetch, itemFetchSearch} from "../redux/actions/item";
 import {useDispatch, useSelector} from "react-redux";
 import Loading from 'components/loading';
 import GifMudkip from 'assets/images/gifs/gif-cubone.gif';
+import SearchIcon from '@material-ui/icons/Search';
 
 function Itens(){
 
+	const [searchTerm, setSearchTerm] = useState('');
+	const [searchResult, setSearchResult] = useState([]);
+	const [active, setActive] = useState('');
+
 	const dispatch = useDispatch();
-	const { endInfiniteScroll, isLoading, last, list = [] } = useSelector(store => store.item);
+	const { listSearch, endInfiniteScroll, isLoading, last, list = [] } = useSelector(store => store.item);
+
+	const handleChange = (e) => {
+		setSearchTerm(e.target.value.toLowerCase());
+	};
+
+	useEffect(() => {
+		if(listSearch.length === 0){
+			dispatch(itemFetchSearch());
+		}
+	}, [dispatch, listSearch.length]);
 
 	useEffect(() => {
 		if(list.length === 0){
@@ -18,17 +32,31 @@ function Itens(){
 	}, [dispatch, list.length]);
 
 	useEffect(() => {
-		function handleScroll() {
-			if (Math.round(window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight ||
-				Math.round(window.innerHeight + document.documentElement.scrollTop + 1) >= document.documentElement.offsetHeight){
-				if(last){ dispatch(itemFetch()); }
+		if(!searchTerm){
+			function handleScroll() {
+				if (Math.round(window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight ||
+					Math.round(window.innerHeight + document.documentElement.scrollTop + 1) >= document.documentElement.offsetHeight){
+					if(last){ dispatch(itemFetch()); }
+				}
 			}
+
+			window.addEventListener('scroll', handleScroll);
+			return () => window.removeEventListener('scroll', handleScroll);
+		}
+	}, [searchTerm, isLoading, dispatch, last]);
+
+	useEffect(() => {
+		const results = listSearch.filter(item =>
+			item.nome.toLowerCase().includes(searchTerm));
+		setSearchResult(results);
+
+		if(searchTerm){
+			setActive('active');
+		} else{
+			setActive('');
 		}
 
-		window.addEventListener('scroll', handleScroll);
-		return () => window.removeEventListener('scroll', handleScroll);
-	}, [isLoading, dispatch, last]);
-
+	}, [listSearch, searchTerm]);
 
 	return(
 		<>
@@ -43,11 +71,20 @@ function Itens(){
 				só possuem efeito em batalha  elas podem ser utilizadas fora dela também.</p>
 		</Banner>
 
-		<Search placeholder="Pesquise um item" />
+		<div id="wrap_search">
+			<div className="indent">
+				<div className="search">
+					<input className={`search-input ${active}`} type="text" name=""  value={searchTerm} onChange={handleChange} placeholder="Pesquise um item" />
+					<div className="search-btn">
+						<SearchIcon />
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div id="wrap_itens">
 			<div className="indent">
-				{list.map((item) => (
+				{searchTerm && searchResult.map((item) => (
 					<div className="item" key={item.id}>
 						<div className="imagem">
 							<img src={item.imagem.url} alt="pocao" />
@@ -66,7 +103,26 @@ function Itens(){
 					</div>
 				))}
 
-				{endInfiniteScroll && (
+				{!searchTerm && list.map((item) => (
+					<div className="item" key={item.id}>
+						<div className="imagem">
+							<img src={item.imagem.url} alt="pocao" />
+						</div>
+						<div className="conteudo">
+							<div className="nome">
+								<h4>{item.nome}</h4>
+							</div>
+							<div className="descricao">
+								<span>{item.descricao}</span>
+							</div>
+						</div>
+						<div className="footer">
+							<h4>{item.funcao}</h4>
+						</div>
+					</div>
+				))}
+
+				{!searchTerm && endInfiniteScroll && (
 					<div className="item fim">
 						<div className="imagem">
 							<img src={GifMudkip} alt="Mudkip chorando" />
@@ -78,10 +134,8 @@ function Itens(){
 						</div>
 					</div>
 				)}
-
-
 			</div>
-			{isLoading && (
+			{!searchTerm && isLoading && (
 				<div className="loading">
 					<Loading />
 				</div>

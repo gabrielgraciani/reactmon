@@ -45,7 +45,7 @@ function* itemFetchWorker() {
 		yield put(actions.itemFullFilled(item, lastVisible, end));
 
 	} catch (error) {
-		alert(`Erro ${error}, tente novamente mais tarde`);
+		console.log(`Erro ${error}, tente novamente mais tarde`);
 	}
 }
 

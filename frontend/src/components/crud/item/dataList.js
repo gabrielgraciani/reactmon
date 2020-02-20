@@ -28,7 +28,6 @@ function DataList({searchResult, searchTerm}){
 			window.addEventListener('scroll', handleScroll);
 			return () => window.removeEventListener('scroll', handleScroll);
 		}
-
 	}, [searchTerm, isLoading, dispatch, last]);
 
 	return(
