@@ -336,7 +336,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_itens .indent .item .footer h4{font-size:17px;}
 #wrap_itens .indent .item.fim .conteudo{background:#F6901A; flex-grow:1; border-bottom-left-radius:10px; border-bottom-right-radius:10px;}
 #wrap_itens .indent .item.fim .conteudo .nome h4{color:var(--white); font-size:22px;}
-#wrap_itens .indent .item.fim .imagem img{max-width:100px;}
+#wrap_itens .indent .item.fim .imagem img{max-width:130px;}
 #wrap_itens .loading{margin:20px 0 0 0; width:100%; display:flex; justify-content:center;}
 #wrap_itens .loading img{width:50px;}
 

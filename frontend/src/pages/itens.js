@@ -1,10 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import Banner from 'components/banner';
 import Search from 'components/search';
 import {itemFetch} from "../redux/actions/item";
 import {useDispatch, useSelector} from "react-redux";
 import Loading from 'components/loading';
-import GifMudkip from 'assets/images/gifs/gif-mudkip.gif';
+import GifMudkip from 'assets/images/gifs/gif-cubone.gif';
 
 function Itens(){
 
@@ -48,7 +48,7 @@ function Itens(){
 		<div id="wrap_itens">
 			<div className="indent">
 				{list.map((item) => (
-					<div className="item">
+					<div className="item" key={item.id}>
 						<div className="imagem">
 							<img src={item.imagem.url} alt="pocao" />
 						</div>
