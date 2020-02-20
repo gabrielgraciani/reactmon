@@ -1,13 +1,37 @@
-import React from 'react';
-import Potion from 'assets/images/potion.png';
-import SPotion from 'assets/images/spotion.png';
-import HPotion from 'assets/images/hpotion.png';
-import MPotion from 'assets/images/mpotion.png';
+import React, {useState, useEffect} from 'react';
 import Banner from 'components/banner';
 import Search from 'components/search';
+import {itemFetch} from "../redux/actions/item";
+import {useDispatch, useSelector} from "react-redux";
+import Loading from 'components/loading';
+import GifMudkip from 'assets/images/gifs/gif-mudkip.gif';
 
-const Itens = () => (
-	<>
+function Itens(){
+
+	const dispatch = useDispatch();
+	const { endInfiniteScroll, isLoading, last, list = [] } = useSelector(store => store.item);
+
+	useEffect(() => {
+		if(list.length === 0){
+			dispatch(itemFetch());
+		}
+	}, [dispatch, list.length]);
+
+	useEffect(() => {
+		function handleScroll() {
+			if (Math.round(window.innerHeight + document.documentElement.scrollTop) === document.documentElement.offsetHeight ||
+				Math.round(window.innerHeight + document.documentElement.scrollTop + 1) >= document.documentElement.offsetHeight){
+				if(last){ dispatch(itemFetch()); }
+			}
+		}
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, [isLoading, dispatch, last]);
+
+
+	return(
+		<>
 		<Banner className="itens" titulo="Itens">
 			<p>No universo de Pokémon existem diversos itens a nossa disposição e cada um possui a sua
 				funcionalidade e importância.</p>
@@ -23,76 +47,49 @@ const Itens = () => (
 
 		<div id="wrap_itens">
 			<div className="indent">
-				<div className="item">
-					<div className="imagem">
-						<img src={Potion} alt="pocao" />
-					</div>
-					<div className="conteudo">
-						<div className="nome">
-							<h4>Poção</h4>
+				{list.map((item) => (
+					<div className="item">
+						<div className="imagem">
+							<img src={item.imagem.url} alt="pocao" />
 						</div>
-						<div className="descricao">
-							<span>Poção utilizada tanto em batalhas pokémon ou em capturas</span>
+						<div className="conteudo">
+							<div className="nome">
+								<h4>{item.nome}</h4>
+							</div>
+							<div className="descricao">
+								<span>{item.descricao}</span>
+							</div>
+						</div>
+						<div className="footer">
+							<h4>{item.funcao}</h4>
 						</div>
 					</div>
-					<div className="footer">
-						<h4>Recupera 20 HP</h4>
-					</div>
-				</div>
+				))}
 
-				<div className="item">
-					<div className="imagem">
-						<img src={SPotion} alt="pocao" />
-					</div>
-					<div className="conteudo">
-						<div className="nome">
-							<h4>Super Poção</h4>
+				{endInfiniteScroll && (
+					<div className="item fim">
+						<div className="imagem">
+							<img src={GifMudkip} alt="Mudkip chorando" />
 						</div>
-						<div className="descricao">
-							<span>Poção utilizada tanto em batalhas pokémon ou em capturas</span>
+						<div className="conteudo">
+							<div className="nome">
+								<h4>Não há mais registros abaixo... =(</h4>
+							</div>
 						</div>
 					</div>
-					<div className="footer">
-						<h4>Recupera 50 HP</h4>
-					</div>
-				</div>
+				)}
 
-				<div className="item">
-					<div className="imagem">
-						<img src={HPotion} alt="pocao" />
-					</div>
-					<div className="conteudo">
-						<div className="nome">
-							<h4>Hyper Poção</h4>
-						</div>
-						<div className="descricao">
-							<span>Poção utilizada tanto em batalhas pokémon ou em capturas</span>
-						</div>
-					</div>
-					<div className="footer">
-						<h4>Recupera 200 HP</h4>
-					</div>
-				</div>
 
-				<div className="item">
-					<div className="imagem">
-						<img src={MPotion} alt="pocao" />
-					</div>
-					<div className="conteudo">
-						<div className="nome">
-							<h4>Max Potion</h4>
-						</div>
-						<div className="descricao">
-							<span>Poção utilizada tanto em batalhas pokémon ou em capturas</span>
-						</div>
-					</div>
-					<div className="footer">
-						<h4>Recupera todo o HP</h4>
-					</div>
-				</div>
 			</div>
+			{isLoading && (
+				<div className="loading">
+					<Loading />
+				</div>
+			)}
 		</div>
-	</>
-);
+		</>
+	)
+}
+
 
 export default Itens;
