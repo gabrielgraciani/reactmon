@@ -36,10 +36,16 @@ function Pokemon({children}){
 	});
 
 	const handleChangeBox = event => {
-		setCheckedItems([
-			...checkedItems,
-			event.target.name
-		]);
+		if(checkedItems.includes(event.target.name)){
+			setCheckedItems([
+				...checkedItems.filter(item => item !== event.target.name)
+			]);
+		}else{
+			setCheckedItems([
+				...checkedItems,
+				event.target.name
+			]);
+		}
 	};
 
 	const handleChangeBoxFraq = event => {
