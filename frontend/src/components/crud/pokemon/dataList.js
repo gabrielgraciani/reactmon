@@ -36,10 +36,10 @@ function DataList({searchResult, searchTerm}){
 			<div className="row" key={pokemon.id}>
 				<div className="item">{pokemon.id}</div>
 				<div className="item">{pokemon.nome}</div>
-				<div className="item">teste{/*{pokemon.tipo.join(', ')}*/}</div>
+				<div className="item">{pokemon.tipo.join(', ')}</div>
 				<div className="item">{pokemon.altura}</div>
 				<div className="item">{pokemon.peso}</div>
-				<div className="item">teste{/*{pokemon.fraquezas.join(', ')}*/}</div>
+				<div className="item">{pokemon.fraquezas.join(', ')}</div>
 				<div className="item">evoluções</div>
 				<div className="item">
 					{pokemon.imagem.url && (
@@ -57,10 +57,10 @@ function DataList({searchResult, searchTerm}){
 			<div className="row" key={pokemon.id}>
 				<div className="item">{pokemon.id}</div>
 				<div className="item">{pokemon.nome}</div>
-				<div className="item">teste{/*{pokemon.tipo.join(', ')}*/}</div>
+				<div className="item">{pokemon.tipo.join(', ')}</div>
 				<div className="item">{pokemon.altura}</div>
 				<div className="item">{pokemon.peso}</div>
-				<div className="item">teste{/*{pokemon.fraquezas.join(', ')}*/}</div>
+				<div className="item">{pokemon.fraquezas.join(', ')}</div>
 				<div className="item">evoluções</div>
 				<div className="item">
 					{pokemon.imagem.url && (

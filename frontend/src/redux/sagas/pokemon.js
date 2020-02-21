@@ -7,14 +7,16 @@ import Pokemon from '../../services/pokemon';
 
 function* pokemonSendWorker(data) {
 	try {
-		const {nome, altura, peso, imagem} = data.payload;
+		const {nome, tipo, altura, peso, fraquezas, imagem} = data.payload;
 
 		let newDoc = db.collection('pokemon').doc();
 		const id = newDoc.id;
 		newDoc.set({
 			nome,
+			tipo,
 			altura,
 			peso,
+			fraquezas,
 			createdAt: firebase.firestore.FieldValue.serverTimestamp()
 		});
 
@@ -22,8 +24,10 @@ function* pokemonSendWorker(data) {
 		yield put (actions.pokemonSavedSuccess({
 			id,
 			nome,
+			tipo,
 			altura,
 			peso,
+			fraquezas,
 			imagem: {
 				name,
 				url
@@ -77,7 +81,7 @@ function* pokemonShowEditWorker(data){
 function* pokemonUpdateWorker(data){
 	try {
 
-		const {id, nome, altura, peso, imagem} = data.payload;
+		const {id, nome, tipo, altura, peso, fraquezas, imagem} = data.payload;
 
 		const { list } = yield select(store => store.pokemon);
 		const i = findIndex(list, { id });
@@ -87,8 +91,10 @@ function* pokemonUpdateWorker(data){
 
 			yield db.collection('pokemon').doc(id).update({
 				nome,
+				tipo,
 				altura,
 				peso,
+				fraquezas,
 			});
 
 			if(imagem.lastModified){
@@ -97,8 +103,10 @@ function* pokemonUpdateWorker(data){
 				updatedList[i] = {
 					id,
 					nome,
+					tipo,
 					altura,
 					peso,
+					fraquezas,
 					imagem: {
 						name,
 						url
@@ -109,8 +117,10 @@ function* pokemonUpdateWorker(data){
 				updatedList[i] = {
 					id,
 					nome,
+					tipo,
 					altura,
 					peso,
+					fraquezas,
 					imagem: {
 						name: imagem.name,
 						url: imagem.url
