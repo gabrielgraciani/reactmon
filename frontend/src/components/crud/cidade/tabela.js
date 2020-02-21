@@ -1,16 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import DataList from './dataList';
-import {itemOpenForm} from "../../../redux/actions/item";
-import {itemFetchSearch} from "../../../redux/actions/item";
+import {cidadeOpenForm} from "../../../redux/actions/cidade";
+import {cidadeFetchSearch} from "../../../redux/actions/cidade";
 import {useDispatch, useSelector} from "react-redux";
 import Search from 'components/search';
 
 function Tabela() {
 	const dispatch = useDispatch();
-	const { listSearch} = useSelector(store => store.item);
+	const { listSearch} = useSelector(store => store.cidade);
 	useEffect(() => {
 		if(listSearch.length === 0){
-			dispatch(itemFetchSearch());
+			dispatch(cidadeFetchSearch());
 		}
 	}, [dispatch, listSearch.length]);
 
@@ -25,8 +25,8 @@ function Tabela() {
 	};
 
 	useEffect(() => {
-		const results = listSearch.filter(item =>
-			item.nome.toLowerCase().includes(searchTerm));
+		const results = listSearch.filter(cidade =>
+			cidade.nome.toLowerCase().includes(searchTerm));
 		setSearchResult(results);
 
 		if(searchTerm){
@@ -40,7 +40,7 @@ function Tabela() {
 	return(
 		<div id="wrap_tabela">
 
-			<Search className="crud" active={active} value={searchTerm} handleChange={handleChange} placeholder="Pesquise um item" />
+			<Search className="crud" active={active} value={searchTerm} handleChange={handleChange} placeholder="Pesquise um cidade" />
 
 			<div className="head">
 				<div className="titulo">
@@ -48,7 +48,7 @@ function Tabela() {
 				</div>
 
 				<div className="botoes">
-					<button onClick={() => dispatch(itemOpenForm())}>Criar Item</button>
+					<button onClick={() => dispatch(cidadeOpenForm())}>Criar Cidade</button>
 				</div>
 			</div>
 
@@ -57,7 +57,6 @@ function Tabela() {
 					<div className="item">ID</div>
 					<div className="item">Nome</div>
 					<div className="item">Descrição</div>
-					<div className="item">Função</div>
 					<div className="item">Imagem</div>
 					<div className="item">Ações</div>
 				</div>
