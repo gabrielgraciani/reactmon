@@ -1,6 +1,6 @@
 import React, {useState, useRef, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {CIDADES, CRUD_POKEMON, CRUD_ITEM, HOME, ITENS, LOGIN, POKEDEX} from 'routes';
+import {CIDADES, CRUD_POKEMON, CRUD_ITEM, CRUD_CIDADE, HOME, ITENS, LOGIN, POKEDEX} from 'routes';
 import {useDispatch, useSelector} from "react-redux";
 import {authLogout} from '../redux/actions/auth';
 
@@ -71,11 +71,15 @@ const Header = () =>{
 						{usuario ? (
 							<>
 								<Link to={CRUD_POKEMON} onClick={change}>
-									<li>Crud Pokemon</li>
+									<li>Gerenciar pokemons</li>
 								</Link>
 
 								<Link to={CRUD_ITEM} onClick={change}>
-									<li>Crud Item</li>
+									<li>Gerenciar itens</li>
+								</Link>
+
+								<Link to={CRUD_CIDADE} onClick={change}>
+									<li>Gerenciar cidades</li>
 								</Link>
 
 								<div onClick={logout}>
