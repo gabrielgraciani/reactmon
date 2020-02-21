@@ -2,9 +2,8 @@ import React, {useState, useEffect} from 'react';
 import DataList from './dataList';
 import {itemOpenForm} from "../../../redux/actions/item";
 import {itemFetchSearch} from "../../../redux/actions/item";
-
 import {useDispatch, useSelector} from "react-redux";
-import SearchIcon from '@material-ui/icons/Search';
+import Search from 'components/search';
 
 function Tabela() {
 	const dispatch = useDispatch();
@@ -41,14 +40,7 @@ function Tabela() {
 	return(
 		<div id="wrap_tabela">
 
-			<div id="wrap_search" className="crud">
-				<div className="search">
-					<input className={`search-input ${active}`} type="text" name=""  value={searchTerm} onChange={handleChange} placeholder="Pesquise um item" />
-					<div className="search-btn">
-						<SearchIcon />
-					</div>
-				</div>
-			</div>
+			<Search className="crud" active={active} value={searchTerm} handleChange={handleChange} placeholder="Pesquise um item" />
 
 			<div className="head">
 				<div className="titulo">

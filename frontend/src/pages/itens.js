@@ -4,7 +4,7 @@ import {itemFetch, itemFetchSearch} from "../redux/actions/item";
 import {useDispatch, useSelector} from "react-redux";
 import Loading from 'components/loading';
 import GifMudkip from 'assets/images/gifs/gif-cubone.gif';
-import SearchIcon from '@material-ui/icons/Search';
+import Search from 'components/search';
 
 function Itens(){
 
@@ -71,16 +71,7 @@ function Itens(){
 				só possuem efeito em batalha  elas podem ser utilizadas fora dela também.</p>
 		</Banner>
 
-		<div id="wrap_search">
-			<div className="indent">
-				<div className="search">
-					<input className={`search-input ${active}`} type="text" name=""  value={searchTerm} onChange={handleChange} placeholder="Pesquise um item" />
-					<div className="search-btn">
-						<SearchIcon />
-					</div>
-				</div>
-			</div>
-		</div>
+		<Search active={active} value={searchTerm} handleChange={handleChange} placeholder="Pesquise um item" />
 
 		<div id="wrap_itens">
 			<div className="indent">
