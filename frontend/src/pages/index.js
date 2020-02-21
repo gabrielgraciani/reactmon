@@ -1,11 +1,11 @@
-import React, {useEffect} from 'react'
+import React, {/*useEffect*/} from 'react'
 import Carousel from 'components/carousel';
-import {useDispatch, useSelector} from "react-redux";
-import {pokemonFetch} from "../redux/actions/pokemon";
-import Loading from 'components/loading';
+/*import {useDispatch, useSelector} from "react-redux";
+import {pokemonFetch} from "../redux/actions/pokemon";*/
+/*import Loading from 'components/loading';*/
 
 function Home(){
-	const dispatch = useDispatch();
+/*	const dispatch = useDispatch();
 
 
 	const { list, isLoading } = useSelector(store => store.pokemon);
@@ -14,7 +14,7 @@ function Home(){
 		if (list.length === 0) {
 			dispatch(pokemonFetch());
 		}
-	}, [dispatch, list.length]);
+	}, [dispatch, list.length]);*/
 
 	return(
 		<>
@@ -27,7 +27,7 @@ function Home(){
 		</ul>
 
 		<div id="wrap_pokemon">
-			{isLoading && (
+			{/*{isLoading && (
 				<Loading/>
 			)}
 			<div className="indent">
@@ -74,31 +74,9 @@ function Home(){
 						</div>
 					</div>
 				))}
-			</div>
+			</div>*/}
 		</div>
 
-{/*		<div id="wrap_pokemons">
-			<div className="indent">
-				{data.pokemon.map(item => (
-					<div className="item" key={item.id}>
-						<img src={`${Background}`} className="fundo" alt="pokebola" />
-						<div className="imagem">
-							<img src={item.img} className="pokemon" alt={item.name} />
-						</div>
-						<div className="nome">
-							<h2>{item.name}</h2>
-						</div>
-						<div className="tipo">
-							{item.type.map((tipo, index) => (
-								<div className={`tip ${tipo.toLowerCase()}`} key={index}>
-									<h4>{tipo}</h4>
-								</div>
-							))}
-						</div>
-					</div>
-				))}
-			</div>
-		</div>*/}
 		</>
 	)
 
