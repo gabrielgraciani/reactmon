@@ -72,7 +72,7 @@ function Formulario() {
 				</div>
 				<div className="item">
 					<label htmlFor="descricao">Descrição<span>{validate && '*'}</span></label>
-					<input type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
+					<textarea type="text" name="descricao" value={values.descricao} onChange={handleChange} autoComplete="off" />
 				</div>
 
 				<div className="item file">

@@ -291,6 +291,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario .indent .item label{margin:0 0 5px 0; font-size:14px; color:#566787;}
 #wrap_formulario .indent .item label span{color:var(--primary);}
 #wrap_formulario .indent .item input{transition:all .3s ease; width:100%; border:1px solid #ccc; background:transparent; outline:0; padding:7px 15px; border-radius:25px;}
+#wrap_formulario .indent .item textarea{height:100px; transition:all .3s ease; width:100%; border:1px solid #ccc; background:transparent; outline:0; padding:7px 15px; border-radius:25px;}
 #wrap_formulario.cadastro .indent .item input{font-size:15px; padding:12px;}
 #wrap_formulario .indent .item input::-webkit-input-placeholder {color: var(--dark); transition:all .3s ease;}
 #wrap_formulario .indent .item input:-moz-placeholder {color: var(--dark); transition:all .3s ease;}
@@ -301,6 +302,15 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_formulario .indent .item input:focus:-moz-placeholder {color: var(--green);}
 #wrap_formulario .indent .item input:focus::-moz-placeholder {color: var(--green);}
 #wrap_formulario .indent .item input:focus:-ms-input-placeholder {color: var(--green);}
+#wrap_formulario .indent .item textarea::-webkit-input-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item textarea:-moz-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item textarea::-moz-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item textarea:-ms-input-placeholder {color: var(--dark); transition:all .3s ease;}
+#wrap_formulario .indent .item textarea:focus{border:1px solid var(--green); color:var(--green);}
+#wrap_formulario .indent .item textarea:focus::-webkit-input-placeholder {color: var(--green);}
+#wrap_formulario .indent .item textarea:focus:-moz-placeholder {color: var(--green);}
+#wrap_formulario .indent .item textarea:focus::-moz-placeholder {color: var(--green);}
+#wrap_formulario .indent .item textarea:focus:-ms-input-placeholder {color: var(--green);}
 #wrap_formulario .indent .item .checkboxes{width:100%; display:flex; flex-wrap:wrap;}
 #wrap_formulario .indent .item .container { display: block; position: relative; padding:5px 0 0 35px; width:22%; margin:5px 3% 0 0; cursor: pointer; font-size: 17px; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 #wrap_formulario .indent .item .container input { position: absolute; opacity: 0; cursor: pointer; height: 0; width: 0;}
@@ -343,19 +353,21 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_itens .loading img{width:50px;}
 
 #wrap_cidades{width:100%; position:relative;}
-#wrap_cidades .indent{padding:35px 0 0 0; display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));	grid-gap: 40px 1.6%;}
+#wrap_cidades .indent{ display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));	grid-gap: 40px 1.6%;}
 #wrap_cidades .indent .cidade{transition:all .3s ease; border-radius:10px; overflow:hidden; width:100%; display:flex; flex-direction:column; position:relative;}
 #wrap_cidades .indent .cidade:hover{box-shadow:0px 5px 20px -5px #3A1C71; transform:translateY(-4%);}
 #wrap_cidades .indent .cidade .imagem{width:100%; position:relative;}
 #wrap_cidades .indent .cidade .imagem img{width:100%; height:180px;}
 #wrap_cidades .indent .cidade svg{position: absolute; bottom: -1px; left:0; fill: #333; -webkit-transform: rotate(180deg); transform: rotate(180deg); z-index: 0;}
-#wrap_cidades .indent .cidade .conteudo{width:100%; background:#333; display:flex; flex-direction:column; padding:0 30px 30px; justify-content:center;}
+#wrap_cidades .indent .cidade .conteudo{width:100%; background:#333; display:flex; flex-grow:1; flex-direction:column; padding:0 30px 30px; justify-content:center;}
 #wrap_cidades .indent .cidade .conteudo .nome{width:100%;}
 #wrap_cidades .indent .cidade .conteudo .nome h4{font-size:30px;}
 #wrap_cidades .indent .cidade .conteudo .descricao{width:100%; margin-top:15px;}
 #wrap_cidades .indent .cidade .conteudo .descricao span{font-size:15px; color:#aaa;}
-#wrap_cidades .indent .cidade.fim .conteudo{flex-grow:1; border-bottom-left-radius:10px; border-bottom-right-radius:10px; padding:0 30px;}
+#wrap_cidades .indent .cidade.fim .conteudo{ border-bottom-left-radius:10px; border-bottom-right-radius:10px; padding:0 30px;}
 #wrap_cidades .indent .cidade.fim .conteudo .nome h4{color:var(--white); font-size:22px;}
+#wrap_cidades .loading{margin:20px 0 0 0; width:100%; display:flex; justify-content:center;}
+#wrap_cidades .loading img{width:50px;}
 
 #wrap_banner_padrao{width:100%; position:relative; height:calc(100vh - 94px); display:flex; align-items:center;}
 #wrap_banner_padrao:after{content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:var(--black); opacity:0.65;}
