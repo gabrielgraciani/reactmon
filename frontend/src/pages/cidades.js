@@ -101,13 +101,13 @@ function Cidades(){
 
 				{!searchTerm && list.map((cidade) => (
 					<div className="cidade">
-						<div className="imagem">
+						<a href={cidade.imagem.url} target="_blank" className="imagem">
 							<img src={cidade.imagem.url} alt="cidade"/>
 
 							<svg class="wavy" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
 								<path d="M0,100 C150,200 350,0 500,100 L500,00 L0,0 Z" style={{stroke: 'none'}}></path>
 							</svg>
-						</div>
+						</a>
 						<div className="conteudo">
 							<div className="nome">
 								<h4>{cidade.nome}</h4>

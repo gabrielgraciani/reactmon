@@ -364,7 +364,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_cidades .indent .cidade .conteudo .nome h4{font-size:30px;}
 #wrap_cidades .indent .cidade .conteudo .descricao{width:100%; margin-top:15px;}
 #wrap_cidades .indent .cidade .conteudo .descricao span{font-size:15px; color:#aaa;}
-#wrap_cidades .indent .cidade.fim .conteudo{ border-bottom-left-radius:10px; border-bottom-right-radius:10px; padding:0 30px;}
+#wrap_cidades .indent .cidade.fim .conteudo{ border-bottom-left-radius:10px; border-bottom-right-radius:10px; padding:0 30px 30px;}
 #wrap_cidades .indent .cidade.fim .conteudo .nome h4{color:var(--white); font-size:22px;}
 #wrap_cidades .loading{margin:20px 0 0 0; width:100%; display:flex; justify-content:center;}
 #wrap_cidades .loading img{width:50px;}
