@@ -135,9 +135,11 @@ function Cidades(){
 					</div>
 				)}
 			</div>
+			{isLoading && (
 				<div className="loading">
 					<Loading />
 				</div>
+			)}
 		</div>
 		</>
 	)
