@@ -40,6 +40,10 @@ export default function itemReducer(
 					payload,
 					...state.list
 				],
+				listSearch: [
+					payload,
+					...state.listSearch
+				],
 				saving: false
 			};
 

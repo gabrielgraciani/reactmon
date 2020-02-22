@@ -39,6 +39,10 @@ export default function cidadeReducer(
 					payload,
 					...state.list
 				],
+				listSearch: [
+					payload,
+					...state.listSearch
+				],
 				saving: false
 			};
 

@@ -43,6 +43,10 @@ export default function pokemonReducer(
 					payload,
 					...state.list
 				],
+				listSearch: [
+					payload,
+					...state.listSearch
+				],
 				saving: false
 			};
 
