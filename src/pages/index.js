@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import Loading from 'components/loading';
 import Banner from 'components/banner';
 import {Link} from 'react-router-dom';
+import {POKEDEX} from 'routes';
 
 function Home(){
 
@@ -36,11 +37,13 @@ function Home(){
 					<Loading />
 				</div>
 			)}
-			<div className="vermais">
-				<Link to={'/'}>
-					<li>Home</li>
+			{!isLoading && (
+					<div id="vermais">
+				<Link to={POKEDEX}>
+						Ver mais
 				</Link>
-			</div>
+					</div>
+			)}
 			<div className="indent">
 				{list.map((item) => (
 					<div className={`card ${item.tipo[0].toLowerCase()}`} key={item.id}>
