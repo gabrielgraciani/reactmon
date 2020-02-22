@@ -13,7 +13,7 @@ import Loading from 'components/loading';
 
 const Home = lazy(() => import('pages/index'));
 const Cidades = lazy(() => import('pages/cidades'));
-const Crud_Pokemon = lazy(() => import('pages/crud-pokemon'));
+const Crud_Pokemon = lazy(() => import('pages/crud/pokemon'));
 const Crud_Item = lazy(() => import('pages/crud/item'));
 const Crud_Cidade = lazy(() => import('pages/crud/cidade'));
 const Itens = lazy(() => import('pages/itens'));

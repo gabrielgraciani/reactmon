@@ -123,7 +123,11 @@ export default function pokemonReducer(
 				isEditing: false,
 				payload: {
 					nome: '',
-					descricao: '',
+					tipo: [],
+					altura: '',
+					peso: '',
+					fraquezas: [],
+					evolucoes: '',
 					imagem: {
 						name: '',
 						url: ''

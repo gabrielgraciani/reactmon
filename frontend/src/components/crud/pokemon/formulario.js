@@ -32,6 +32,8 @@ function Formulario() {
 	useEffect(() => {
 		if(payload){
 			setValues(payload);
+			setCheckedItems(payload.tipo);
+			setCheckedItemsFraq(payload.fraquezas);
 		}
 	}, [payload]);
 
@@ -83,9 +85,6 @@ function Formulario() {
 		let fraquezas = values.fraquezas;
 		fraquezas = checkedItemsFraq;
 
-		console.log('tipo', tipo);
-		console.log('fraquezas', fraquezas);
-
 		if(!nome || !altura || !peso || !imagem){ setValidate(true); }
 		else{ dispatch(pokemonSend({nome, tipo, altura, peso, fraquezas, imagem})); setValidate(false);}
 
@@ -95,8 +94,13 @@ function Formulario() {
 		e.preventDefault();
 
 		const {id, nome, altura, peso, imagem} = values;
+		let tipo = values.tipo;
+		tipo = checkedItems;
+		let fraquezas = values.fraquezas;
+		fraquezas = checkedItemsFraq;
+
 		if(!nome || !altura || !peso || !imagem){ setValidate(true); }
-		else{ dispatch(pokemonUpdate({id, nome, altura, peso, imagem})); setValidate(false);}
+		else{ dispatch(pokemonUpdate({id, nome, tipo, altura, peso, fraquezas, imagem})); setValidate(false);}
 	};
 
 	const tipos = [{name: "grass",	key: "1", label: "Grass", value: 'Grass'},
