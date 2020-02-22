@@ -135,11 +135,9 @@ function Cidades(){
 					</div>
 				)}
 			</div>
-			{!searchTerm && isLoading && (
 				<div className="loading">
 					<Loading />
 				</div>
-			)}
 		</div>
 		</>
 	)

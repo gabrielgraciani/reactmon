@@ -125,7 +125,8 @@ p{font-size:21px;}
 
 
 #wrap_pokemon{width:100%; position:relative; display:flex; flex-direction:column; align-items:center;}
-#wrap_pokemon img.loading{width:100px;}
+#wrap_pokemon .loading{margin:20px 0 0 0;}
+#wrap_pokemon img.loading{width:50px;}
 #wrap_pokemon .indent{padding:50px 0 0 0; display:grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));	grid-gap: 40px 1.6%;}
 #wrap_pokemon .indent .card{transition:all .3s ease; overflow:hidden; width:100%; font-family:'Open Sans Condensed'; box-shadow: 0px 5px 20px -10px #3A1C71; position:relative; border-radius:10px; padding:16px; display:flex; flex-direction:column; align-items:center; justify-content:center;}
 #wrap_pokemon .indent .card:after{transition:all .7s ease; content: ""; position: absolute; top: -110%; left: -210%; width: 200%; height: 200%; transform: rotate(30deg); background: rgba(255, 255, 255, 0.13); background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 77%, rgba(255, 255, 255, 0.5) 92%, rgba(255, 255, 255, 0.0) 100%);}
@@ -390,7 +391,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 	#wrap_header .indent .pokeball.active{right:-15%}
 	#wrap_header .indent .premierball.active{right:5vw;}
 
-	#wrapper_components{margin-top:94px;}
+	#wrapper_components{margin-top:93px;}
 
 	#wrap_banner_padrao{height:auto;}
 	#wrap_banner_padrao .indent{padding:20px 0 40px 0;}
