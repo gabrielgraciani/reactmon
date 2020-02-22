@@ -112,18 +112,6 @@ p{font-size:21px;}
 #wrap_header .indent .premierball .m:before{content:''; position:absolute; top:-10px; right:0; width:15px; height:15px; border-radius:50%; background:#BF0498;}
 
 
-#wrap_banner{width:100%; position:relative;}
-#wrap_banner{width:100%; height:500px;}
-#wrap_banner .prev-icon{width:50px; height:50px; display:flex; align-items:center; justify-content:center;}
-#wrap_banner .next-icon{width:50px; height:50px; display:flex; align-items:center; justify-content:center;}
-#wrap_banner .container .icons{visibility:visible !important; opacity:1 !important;}
-#wrap_banner .container .icons.play-icon{display:none;}
-#wrap_banner .container .icons.left:after{box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important; transform:rotate(45deg) translateX(0px) translateY(1px) !important}
-#wrap_banner .container .icons.left:before{box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important;}
-#wrap_banner .container .icons.right:before {box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important; transform: rotate(-45deg) translateX(0px) translateY(1px) !important;}
-#wrap_banner .container .icons.right:after {box-shadow:0 0 10px var(--black); width:5px; height:20px; background:var(--white); border-width:0 !important;}
-
-
 #wrap_pokemon{width:100%; position:relative; display:flex; flex-direction:column; align-items:center;}
 #wrap_pokemon .loading{margin:20px 0 0 0;}
 #wrap_pokemon img.loading{width:50px;}
@@ -374,6 +362,7 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 #wrap_banner_padrao:after{content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:var(--black); opacity:0.65;}
 #wrap_banner_padrao.itens{background:url(../images/banners/banner-itens.png) center no-repeat; background-size:cover;}
 #wrap_banner_padrao.cidades{background:url(../images/banners/banner-cidades.png) center no-repeat; background-size:cover;}
+#wrap_banner_padrao.home{background:url(../images/banners/banner-home.jpg) center no-repeat; background-size:cover;}
 #wrap_banner_padrao .indent{position:relative; z-index:9; display:flex; align-items:flex-start; justify-content:flex-start; flex-direction:column;}
 #wrap_banner_padrao .indent .conteudo{max-width:800px;}
 #wrap_banner_padrao .indent .titulo{width:100%;}
