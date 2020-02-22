@@ -38,7 +38,7 @@ function Tabela() {
 	}, [listSearch, searchTerm]);
 
 	return(
-		<div id="wrap_tabela">
+		<div id="wrap_tabela" className="item">
 
 			<Search className="crud" active={active} value={searchTerm} handleChange={handleChange} placeholder="Pesquise um item" />
 
