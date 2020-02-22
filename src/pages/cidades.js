@@ -101,7 +101,7 @@ function Cidades(){
 
 				{!searchTerm && list.map((cidade) => (
 					<div className="cidade">
-						<a href={cidade.imagem.url} target="_blank" className="imagem">
+						<a href={cidade.imagem.url} target="_blank" rel="noopener noreferrer" className="imagem">
 							<img src={cidade.imagem.url} alt="cidade"/>
 
 							<svg class="wavy" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet">
