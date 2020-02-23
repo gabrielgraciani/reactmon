@@ -3,24 +3,28 @@ import {pokemonSlugFetch} from "../redux/actions/pokemon";
 import {useDispatch, useSelector} from "react-redux";
 import GeneroMasc from 'assets/images/genero-masc.png';
 import GeneroFem from 'assets/images/genero-fem.png';
+import Loading from 'components/loading';
 
 function PokemonSlug({match}){
 
 	const dispatch = useDispatch();
-	const { listSlug } = useSelector(store => store.pokemon);
+	const { isLoading, listSlug } = useSelector(store => store.pokemon);
 
 	const {id} = match.params;
 	useEffect(() => {
-		if(listSlug.length === 0){
-			dispatch(pokemonSlugFetch(id));
-		}
-	}, [dispatch, listSlug.length, id]);
+		dispatch(pokemonSlugFetch(id));
+	}, [dispatch, id]);
 
 	console.log('listslug', listSlug);
 
 
 	return(
 		<div id="wrap_pokemon" className="solo">
+			{isLoading && (
+				<div className="loading">
+					<Loading />
+				</div>
+			)}
 			<div className="indent">
 				{listSlug.map((item, index) => (
 					<div key={index} className="card">

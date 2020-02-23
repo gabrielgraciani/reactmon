@@ -442,6 +442,13 @@ button.git{width: 200px; transition:all .4s ease; cursor:pointer; background:var
 	#wrap_tabela.pokemon .conteudo .row .item:nth-of-type(8):before { content: "Imagem"; }
 	#wrap_tabela.pokemon .conteudo .row .item:nth-of-type(9):before { content: "Ações"; }
 
+	#wrap_pokemon.solo .indent .card{flex-direction:column;}
+	#wrap_pokemon.solo .indent .card .col{width:100%}
+	#wrap_pokemon.solo .indent .card .col .nome{margin:10px 0 20px 0;}
+	#wrap_pokemon.solo .indent .card .col .conteudo{margin:20px 0 0 0; padding:0;}
+	#wrap_pokemon.solo .indent .card .col .conteudo .nome{margin:0 0 20px 0;}
+	#wrap_pokemon.solo .indent .card .col .tipos .tipo{margin:0 10px 5px 0;}
+
 }
 
 @media screen and (max-width: 500px){

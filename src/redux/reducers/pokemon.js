@@ -162,7 +162,7 @@ export default function pokemonReducer(
 			return{
 				...initialState,
 				...state,
-				...payload,
+				listSlug: [],
 				isLoading: true
 			};
 

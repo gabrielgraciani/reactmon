@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import Loading from 'components/loading';
 import GifPikachu from 'assets/images/gifs/gif-pikachu.gif';
 import Search from 'components/search';
+import {Link} from 'react-router-dom';
 
 function Pokedex(){
 
@@ -76,7 +77,7 @@ function Pokedex(){
 		<div id="wrap_pokemon" className="pokedex">
 			<div className="indent">
 				{searchTerm && searchResult.map((item) => (
-					<div className={`card ${item.tipo[0].toLowerCase()}`} key={item.id}>
+					<Link className={`card ${item.tipo[0].toLowerCase()}`} key={item.id} to={`/pokemon/${item.id}`}>
 						<div className="imagem">
 							<img src={item.imagem.url} className="pokemon" alt={item.nome} />
 						</div>
@@ -116,11 +117,11 @@ function Pokedex(){
 								</div>
 							</div>
 						</div>
-					</div>
+					</Link>
 				))}
 
 				{!searchTerm && list.map((item) => (
-					<div className={`card ${item.tipo[0].toLowerCase()}`} key={item.id}>
+					<Link className={`card ${item.tipo[0].toLowerCase()}`} key={item.id} to={`/pokemon/${item.id}`}>
 						<div className="imagem">
 							<img src={item.imagem.url} className="pokemon" alt={item.nome} />
 						</div>
@@ -160,7 +161,7 @@ function Pokedex(){
 								</div>
 							</div>
 						</div>
-					</div>
+					</Link>
 				))}
 
 				{!searchTerm && endInfiniteScroll && (
