@@ -151,11 +151,8 @@ function* pokemonFetchSearchWorker() {
 
 function* pokemonSlugFetchWorker(data){
 	try{
-		console.log('passou aqui', data.payload);
 		const id = data.payload;
-
 		const listSlug = yield call(Pokemon.getPokemonSlug, id);
-		console.log('pokemon', listSlug);
 
 		yield put(actions.pokemonSlugFetchSuccess([listSlug]));
 	} catch(error){
