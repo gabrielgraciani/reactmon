@@ -40,6 +40,7 @@
 	--flying:linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
 	--ground:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
 	--dragon:linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+	--darkpokemon: #707070;
 
 	--normal-gradient:linear-gradient(110deg, #FDBB2D 0%, #3A1C71 100%);
 	--water-gradient:linear-gradient(120deg, #1CB5E0 0%, #000851 100%);
@@ -162,6 +163,7 @@ p{font-size:21px;}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.ground span{color:var(--black);}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.dragon{background:var(--dragon)}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.dragon span{color:var(--black);}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.dark{background:var(--darkpokemon)}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo span{text-transform:uppercase; color:var(--white); font-size:15px; font-family:'Open Sans'; font-weight:400; letter-spacing: 1px;}
 #wrap_pokemon .indent .card .conteudo .nome{width:100%; text-align:center;}
 #wrap_pokemon .indent .card .conteudo .nome h4{color:var(--black); font-size:24px; font-weight:700;}
