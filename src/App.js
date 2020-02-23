@@ -11,14 +11,14 @@ import Loading from 'components/loading';
 
 
 
-const Home =  import('pages/index');
-const Cidades =  import('pages/cidades');
-const Crud_Pokemon =  import('pages/crud/pokemon');
-const Crud_Item =  import('pages/crud/item');
-const Crud_Cidade = import('pages/crud/cidade');
-const Itens =  import('pages/itens');
-const Login =  import('pages/login');
-const Pokedex =  import('pages/pokedex');
+const Home = lazy(() => import('pages/index'));
+const Cidades = lazy(() => import('pages/cidades'));
+const Crud_Pokemon = lazy(() => import('pages/crud/pokemon'));
+const Crud_Item = lazy(() => import('pages/crud/item'));
+const Crud_Cidade = lazy(() => import('pages/crud/cidade'));
+const Itens = lazy(() => import('pages/itens'));
+const Login = lazy(() => import('pages/login'));
+const Pokedex = lazy(() => import('pages/pokedex'));
 const Pokemon_Slug =  import('pages/pokemonSlug');
 
 
