@@ -41,7 +41,7 @@ function LoginForm () {
 				<form action="">
 					<div className="item">
 						<EmailIcon />
-						<input className={mensagem === 1 || mensagem === 3 ? 'erro' : ''} type="text" placeholder="E-mail" name="email" value={values.email} onChange={handleChange} autoComplete="off" />
+						<input className={mensagem === 1 || mensagem === 3 ? 'erro' : ''} type="email" placeholder="E-mail" name="email" value={values.email} onChange={handleChange} autoComplete="off" />
 					</div>
 
 					<div className="item">
