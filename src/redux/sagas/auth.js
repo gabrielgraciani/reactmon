@@ -105,7 +105,6 @@ function* authCheckUserLoggedInWorker(){
 
 function* authLoginGithubWorker(){
 	try{
-		console.log('chegou aqui1');
 		const usuario = yield call(Auth.loginGithub);
 
 		yield put(actions.authSendLoginSuccess(null, usuario));

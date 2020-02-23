@@ -45,10 +45,8 @@ export default class auth{
 
 	static loginGithub = () => {
 		return new Promise((res, rej) => {
-			console.log('chegou aqui2');
 			const provider = new firebase.auth.GithubAuthProvider();
 			firebase.auth().signInWithRedirect(provider);
-			console.log('chegou aqui3');
 		})
 	}
 }
