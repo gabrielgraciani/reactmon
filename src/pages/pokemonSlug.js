@@ -4,6 +4,8 @@ import {useDispatch, useSelector} from "react-redux";
 import GeneroMasc from 'assets/images/genero-masc.png';
 import GeneroFem from 'assets/images/genero-fem.png';
 import Loading from 'components/loading';
+import {POKEDEX} from 'routes';
+import {Link} from 'react-router-dom';
 
 function PokemonSlug({match}){
 
@@ -23,6 +25,16 @@ function PokemonSlug({match}){
 			{isLoading && (
 				<div className="loading">
 					<Loading />
+				</div>
+			)}
+
+			{!isLoading && (
+				<div className="indent">
+					<div id="vermais">
+						<Link to={POKEDEX}>
+							Voltar
+						</Link>
+					</div>
 				</div>
 			)}
 			<div className="indent">

@@ -45,7 +45,6 @@ function Home(){
 						</Link>
 					</div>
 				</div>
-
 			)}
 			<div className="indent">
 				{list.map((item) => (
