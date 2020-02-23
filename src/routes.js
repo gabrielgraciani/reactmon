@@ -6,3 +6,4 @@ export const HOME = "/";
 export const LOGIN = "/login";
 export const ITENS = "/itens";
 export const POKEDEX = "/pokedex";
+export const POKEMON_SLUG = "/pokemon/:id";

@@ -46,7 +46,7 @@ function Home(){
 			)}
 			<div className="indent">
 				{list.map((item) => (
-					<div className={`card ${item.tipo[0].toLowerCase()}`} key={item.id}>
+					<Link className={`card ${item.tipo[0].toLowerCase()}`} key={item.id} to={"/pokemon/"+item.id}>
 						<div className="imagem">
 							<img src={item.imagem.url} className="pokemon" alt={item.nome} />
 						</div>
@@ -86,7 +86,7 @@ function Home(){
 								</div>
 							</div>
 						</div>
-					</div>
+					</Link>
 				))}
 			</div>
 		</div>

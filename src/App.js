@@ -1,6 +1,6 @@
 import React, {lazy, Suspense, useEffect} from 'react';
 import {Route, Switch, Redirect} from 'react-router-dom';
-import {CIDADES, CRUD_POKEMON, CRUD_ITEM, CRUD_CIDADE, ITENS, LOGIN, POKEDEX} from './routes';
+import {CIDADES, CRUD_POKEMON, CRUD_ITEM, CRUD_CIDADE, ITENS, LOGIN, POKEDEX, POKEMON_SLUG} from './routes';
 import {useDispatch, useSelector} from "react-redux";
 import {authCheckUserLoggedIn} from './redux/actions/auth';
 import { useCookies } from 'react-cookie';
@@ -19,6 +19,7 @@ const Crud_Cidade = lazy(() => import('pages/crud/cidade'));
 const Itens = lazy(() => import('pages/itens'));
 const Login = lazy(() => import('pages/login'));
 const Pokedex = lazy(() => import('pages/pokedex'));
+const Pokemon_Slug = lazy(() => import('pages/pokemonSlug'));
 
 
 function App({location}) {
@@ -75,6 +76,7 @@ function App({location}) {
 					  <Route path={ITENS} component={Itens} />
 					  <Route path={LOGIN} component={Login} />
 					  <Route path={POKEDEX} component={Pokedex} />
+					  <Route path={POKEMON_SLUG} component={Pokemon_Slug} />
 					  <Route component={Home} />
 				  </Switch>
 			  </Suspense>
