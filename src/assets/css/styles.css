@@ -41,6 +41,7 @@
 	--ground:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
 	--dragon:linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
 	--darkpokemon: #707070;
+	--steel: #9eb7b8;
 
 	--normal-gradient:linear-gradient(110deg, #FDBB2D 0%, #3A1C71 100%);
 	--water-gradient:linear-gradient(120deg, #1CB5E0 0%, #000851 100%);
@@ -164,6 +165,7 @@ p{font-size:21px;}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.dragon{background:var(--dragon)}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.dragon span{color:var(--black);}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo.dark{background:var(--darkpokemon)}
+#wrap_pokemon .indent .card .conteudo .tipos .tipo.steel{background:var(--steel)}
 #wrap_pokemon .indent .card .conteudo .tipos .tipo span{text-transform:uppercase; color:var(--white); font-size:15px; font-family:'Open Sans'; font-weight:400; letter-spacing: 1px;}
 #wrap_pokemon .indent .card .conteudo .nome{width:100%; text-align:center;}
 #wrap_pokemon .indent .card .conteudo .nome h4{color:var(--black); font-size:24px; font-weight:700;}
@@ -198,7 +200,7 @@ p{font-size:21px;}
 #wrap_pokemon.solo .indent .card .col .tipos{margin:0; justify-content:flex-start; flex-wrap:wrap;}
 #wrap_pokemon.solo .indent .card .col .tipos .tipo{margin:0 10px 5px 0; border-radius:5px; padding:5px 30px}
 
-#vermais{transition: all .3s ease; width:200px; margin:30px 0 0 5%; display:flex; align-items:center; justify-content:center; background:var(--dark); border:2px solid var(--dark); border-radius:10px; color:var(--white); font-size:15px; font-weight:bold;}
+#vermais{transition: all .3s ease; width:200px; margin:30px 0 0 0; display:flex; align-items:center; justify-content:center; background:var(--dark); border:2px solid var(--dark); border-radius:10px; color:var(--white); font-size:15px; font-weight:bold;}
 #vermais a{width:100%; height:100%; padding:10px; text-align:center;}
 #vermais:hover{background:transparent; color:var(--dark)}
 

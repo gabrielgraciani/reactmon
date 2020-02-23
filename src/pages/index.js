@@ -38,11 +38,14 @@ function Home(){
 				</div>
 			)}
 			{!isLoading && (
+				<div className="indent">
 					<div id="vermais">
-				<Link to={POKEDEX}>
-						Ver mais
-				</Link>
+						<Link to={POKEDEX}>
+							Ver mais
+						</Link>
 					</div>
+				</div>
+
 			)}
 			<div className="indent">
 				{list.map((item) => (
