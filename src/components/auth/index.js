@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import EmailIcon from '@material-ui/icons/Email';
 import LockIcon from '@material-ui/icons/Lock';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import {authOpenForm, authSendLogin, authLoginGithub} from '../../redux/actions/auth';
+/*import GitHubIcon from '@material-ui/icons/GitHub';*/
+import {authOpenForm, authSendLogin, /*authLoginGithub*/} from '../../redux/actions/auth';
 import {useDispatch, useSelector} from "react-redux";
 
 function LoginForm () {
@@ -35,10 +35,9 @@ function LoginForm () {
 				<div className="titulo">
 					<h1>Login</h1>
 				</div>
-				<div className="sociais">
+				{/*<div className="sociais">
 					<button className="github" onClick={() => dispatch(authLoginGithub())}><GitHubIcon /></button>
-
-				</div>
+				</div>*/}
 				<form action="">
 					<div className="item">
 						<EmailIcon />
