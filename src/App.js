@@ -19,7 +19,7 @@ const Crud_Cidade = lazy(() => import('pages/crud/cidade'));
 const Itens = lazy(() => import('pages/itens'));
 const Login = lazy(() => import('pages/login'));
 const Pokedex = lazy(() => import('pages/pokedex'));
-const Pokemon_Slug =  import('pages/pokemonSlug');
+const Pokemon_Slug =  lazy(() => import('pages/pokemonSlug'));
 
 
 function App({location}) {
