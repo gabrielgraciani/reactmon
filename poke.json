@@ -3,7 +3,7 @@
 			"id": 1,
 			"num": "001",
 			"nome": "Bulbasaur",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/001.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -40,7 +40,7 @@
 			"id": 2,
 			"num": "002",
 			"nome": "Ivysaur",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/002.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/002.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -80,7 +80,7 @@
 			"id": 3,
 			"num": "003",
 			"nome": "Venusaur",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/003.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -114,7 +114,7 @@
 			"id": 4,
 			"num": "004",
 			"nome": "Charmander",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/004.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
 			"tipo": [
 				"Fire"
 			],
@@ -149,7 +149,7 @@
 			"id": 5,
 			"num": "005",
 			"nome": "Charmeleon",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/005.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/005.png",
 			"tipo": [
 				"Fire"
 			],
@@ -186,7 +186,7 @@
 			"id": 6,
 			"num": "006",
 			"nome": "Charizard",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/006.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/006.png",
 			"tipo": [
 				"Fire",
 				"Flying"
@@ -219,7 +219,7 @@
 			"id": 7,
 			"num": "007",
 			"nome": "Squirtle",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/007.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
 			"tipo": [
 				"Water"
 			],
@@ -253,7 +253,7 @@
 			"id": 8,
 			"num": "008",
 			"nome": "Wartortle",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/008.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/008.png",
 			"tipo": [
 				"Water"
 			],
@@ -289,7 +289,7 @@
 			"id": 9,
 			"num": "009",
 			"nome": "Blastoise",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/009.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/009.png",
 			"tipo": [
 				"Water"
 			],
@@ -320,7 +320,7 @@
 			"id": 10,
 			"num": "010",
 			"nome": "Caterpie",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/010.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/010.png",
 			"tipo": [
 				"Bug"
 			],
@@ -355,7 +355,7 @@
 			"id": 11,
 			"num": "011",
 			"nome": "Metapod",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/011.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/011.png",
 			"tipo": [
 				"Bug"
 			],
@@ -393,7 +393,7 @@
 			"id": 12,
 			"num": "012",
 			"nome": "Butterfree",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/012.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/012.png",
 			"tipo": [
 				"Bug",
 				"Flying"
@@ -428,7 +428,7 @@
 			"id": 13,
 			"num": "013",
 			"nome": "Weedle",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/013.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/013.png",
 			"tipo": [
 				"Bug",
 				"Poison"
@@ -466,7 +466,7 @@
 			"id": 14,
 			"num": "014",
 			"nome": "Kakuna",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/014.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/014.png",
 			"tipo": [
 				"Bug",
 				"Poison"
@@ -506,7 +506,7 @@
 			"id": 15,
 			"num": "015",
 			"nome": "Beedrill",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/015.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/015.png",
 			"tipo": [
 				"Bug",
 				"Poison"
@@ -540,7 +540,7 @@
 			"id": 16,
 			"num": "016",
 			"nome": "Pidgey",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/016.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -576,7 +576,7 @@
 			"id": 17,
 			"num": "017",
 			"nome": "Pidgeotto",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/017.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/017.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -613,7 +613,7 @@
 			"id": 18,
 			"num": "018",
 			"nome": "Pidgeot",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/018.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/018.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -645,7 +645,7 @@
 			"id": 19,
 			"num": "019",
 			"nome": "Rattata",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/019.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/019.png",
 			"tipo": [
 				"Normal"
 			],
@@ -675,7 +675,7 @@
 			"id": 20,
 			"num": "020",
 			"nome": "Raticate",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/020.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/020.png",
 			"tipo": [
 				"Normal"
 			],
@@ -701,7 +701,7 @@
 			"id": 21,
 			"num": "021",
 			"nome": "Spearow",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/021.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/021.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -733,7 +733,7 @@
 			"id": 22,
 			"num": "022",
 			"nome": "Fearow",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/022.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/022.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -761,7 +761,7 @@
 			"id": 23,
 			"num": "023",
 			"nome": "Ekans",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/023.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/023.png",
 			"tipo": [
 				"Poison"
 			],
@@ -792,7 +792,7 @@
 			"id": 24,
 			"num": "024",
 			"nome": "Arbok",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/024.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/024.png",
 			"tipo": [
 				"Poison"
 			],
@@ -819,7 +819,7 @@
 			"id": 25,
 			"num": "025",
 			"nome": "Pikachu",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/025.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png",
 			"tipo": [
 				"Electric"
 			],
@@ -848,7 +848,7 @@
 			"id": 26,
 			"num": "026",
 			"nome": "Raichu",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/026.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/026.png",
 			"tipo": [
 				"Electric"
 			],
@@ -874,7 +874,7 @@
 			"id": 27,
 			"num": "027",
 			"nome": "Sandshrew",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/027.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/027.png",
 			"tipo": [
 				"Ground"
 			],
@@ -905,7 +905,7 @@
 			"id": 28,
 			"num": "028",
 			"nome": "Sandslash",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/028.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/028.png",
 			"tipo": [
 				"Ground"
 			],
@@ -933,7 +933,7 @@
 			"id": 29,
 			"num": "029",
 			"nome": "Nidoran ♀ (Female)",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/029.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/029.png",
 			"tipo": [
 				"Poison"
 			],
@@ -968,7 +968,7 @@
 			"id": 30,
 			"num": "030",
 			"nome": "Nidorina",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/030.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/030.png",
 			"tipo": [
 				"Poison"
 			],
@@ -1005,7 +1005,7 @@
 			"id": 31,
 			"num": "031",
 			"nome": "Nidoqueen",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/031.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/031.png",
 			"tipo": [
 				"Poison",
 				"Ground"
@@ -1039,7 +1039,7 @@
 			"id": 32,
 			"num": "032",
 			"nome": "Nidoran ♂ (Male)",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/032.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/032.png",
 			"tipo": [
 				"Poison"
 			],
@@ -1074,7 +1074,7 @@
 			"id": 33,
 			"num": "033",
 			"nome": "Nidorino",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/033.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/033.png",
 			"tipo": [
 				"Poison"
 			],
@@ -1110,7 +1110,7 @@
 			"id": 34,
 			"num": "034",
 			"nome": "Nidoking",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/034.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/034.png",
 			"tipo": [
 				"Poison",
 				"Ground"
@@ -1144,7 +1144,7 @@
 			"id": 35,
 			"num": "035",
 			"nome": "Clefairy",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/035.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/035.png",
 			"tipo": [
 				"Normal"
 			],
@@ -1174,7 +1174,7 @@
 			"id": 36,
 			"num": "036",
 			"nome": "Clefable",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/036.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/036.png",
 			"tipo": [
 				"Normal"
 			],
@@ -1200,7 +1200,7 @@
 			"id": 37,
 			"num": "037",
 			"nome": "Vulpix",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/037.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/037.png",
 			"tipo": [
 				"Fire"
 			],
@@ -1232,7 +1232,7 @@
 			"id": 38,
 			"num": "038",
 			"nome": "Ninetales",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/038.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/038.png",
 			"tipo": [
 				"Fire"
 			],
@@ -1260,7 +1260,7 @@
 			"id": 39,
 			"num": "039",
 			"nome": "Jigglypuff",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/039.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/039.png",
 			"tipo": [
 				"Normal"
 			],
@@ -1289,7 +1289,7 @@
 			"id": 40,
 			"num": "040",
 			"nome": "Wigglytuff",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/040.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/040.png",
 			"tipo": [
 				"Normal"
 			],
@@ -1315,7 +1315,7 @@
 			"id": 41,
 			"num": "041",
 			"nome": "Zubat",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/041.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/041.png",
 			"tipo": [
 				"Poison",
 				"Flying"
@@ -1349,7 +1349,7 @@
 			"id": 42,
 			"num": "042",
 			"nome": "Golbat",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/042.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/042.png",
 			"tipo": [
 				"Poison",
 				"Flying"
@@ -1379,7 +1379,7 @@
 			"id": 43,
 			"num": "043",
 			"nome": "Oddish",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/043.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/043.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -1416,7 +1416,7 @@
 			"id": 44,
 			"num": "044",
 			"nome": "Gloom",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/044.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/044.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -1455,7 +1455,7 @@
 			"id": 45,
 			"num": "045",
 			"nome": "Vileplume",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/045.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/045.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -1489,7 +1489,7 @@
 			"id": 46,
 			"num": "046",
 			"nome": "Paras",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/046.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/046.png",
 			"tipo": [
 				"Bug",
 				"Grass"
@@ -1524,7 +1524,7 @@
 			"id": 47,
 			"num": "047",
 			"nome": "Parasect",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/047.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/047.png",
 			"tipo": [
 				"Bug",
 				"Grass"
@@ -1556,7 +1556,7 @@
 			"id": 48,
 			"num": "048",
 			"nome": "Venonat",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/048.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/048.png",
 			"tipo": [
 				"Bug",
 				"Poison"
@@ -1590,7 +1590,7 @@
 			"id": 49,
 			"num": "049",
 			"nome": "Venomoth",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/049.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/049.png",
 			"tipo": [
 				"Bug",
 				"Poison"
@@ -1620,7 +1620,7 @@
 			"id": 50,
 			"num": "050",
 			"nome": "Diglett",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/050.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/050.png",
 			"tipo": [
 				"Ground"
 			],
@@ -1651,7 +1651,7 @@
 			"id": 51,
 			"num": "051",
 			"nome": "Dugtrio",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/051.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/051.png",
 			"tipo": [
 				"Ground"
 			],
@@ -1679,7 +1679,7 @@
 			"id": 52,
 			"num": "052",
 			"nome": "Meowth",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/052.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/052.png",
 			"tipo": [
 				"Normal"
 			],
@@ -1708,7 +1708,7 @@
 			"id": 53,
 			"num": "053",
 			"nome": "Persian",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/053.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/053.png",
 			"tipo": [
 				"Normal"
 			],
@@ -1734,7 +1734,7 @@
 			"id": 54,
 			"num": "054",
 			"nome": "Psyduck",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/054.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/054.png",
 			"tipo": [
 				"Water"
 			],
@@ -1764,7 +1764,7 @@
 			"id": 55,
 			"num": "055",
 			"nome": "Golduck",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/055.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/055.png",
 			"tipo": [
 				"Water"
 			],
@@ -1791,7 +1791,7 @@
 			"id": 56,
 			"num": "056",
 			"nome": "Mankey",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/056.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/056.png",
 			"tipo": [
 				"Fighting"
 			],
@@ -1823,7 +1823,7 @@
 			"id": 57,
 			"num": "057",
 			"nome": "Primeape",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/057.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/057.png",
 			"tipo": [
 				"Fighting"
 			],
@@ -1851,7 +1851,7 @@
 			"id": 58,
 			"num": "058",
 			"nome": "Growlithe",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/058.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/058.png",
 			"tipo": [
 				"Fire"
 			],
@@ -1883,7 +1883,7 @@
 			"id": 59,
 			"num": "059",
 			"nome": "Arcanine",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/059.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/059.png",
 			"tipo": [
 				"Fire"
 			],
@@ -1911,7 +1911,7 @@
 			"id": 60,
 			"num": "060",
 			"nome": "Poliwag",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/060.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/060.png",
 			"tipo": [
 				"Water"
 			],
@@ -1946,7 +1946,7 @@
 			"id": 61,
 			"num": "061",
 			"nome": "Poliwhirl",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/061.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/061.png",
 			"tipo": [
 				"Water"
 			],
@@ -1982,7 +1982,7 @@
 			"id": 62,
 			"num": "062",
 			"nome": "Poliwrath",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/062.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/062.png",
 			"tipo": [
 				"Water",
 				"Fighting"
@@ -2017,7 +2017,7 @@
 			"id": 63,
 			"num": "063",
 			"nome": "Abra",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/063.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/063.png",
 			"tipo": [
 				"Psychic"
 			],
@@ -2053,7 +2053,7 @@
 			"id": 64,
 			"num": "064",
 			"nome": "Kadabra",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/064.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/064.png",
 			"tipo": [
 				"Psychic"
 			],
@@ -2090,7 +2090,7 @@
 			"id": 65,
 			"num": "065",
 			"nome": "Alakazam",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/065.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/065.png",
 			"tipo": [
 				"Psychic"
 			],
@@ -2122,7 +2122,7 @@
 			"id": 66,
 			"num": "066",
 			"nome": "Machop",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/066.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/066.png",
 			"tipo": [
 				"Fighting"
 			],
@@ -2158,7 +2158,7 @@
 			"id": 67,
 			"num": "067",
 			"nome": "Machoke",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/067.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/067.png",
 			"tipo": [
 				"Fighting"
 			],
@@ -2195,7 +2195,7 @@
 			"id": 68,
 			"num": "068",
 			"nome": "Machamp",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/068.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/068.png",
 			"tipo": [
 				"Fighting"
 			],
@@ -2227,7 +2227,7 @@
 			"id": 69,
 			"num": "069",
 			"nome": "Bellsprout",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/069.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/069.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -2264,7 +2264,7 @@
 			"id": 70,
 			"num": "070",
 			"nome": "Weepinbell",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/070.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/070.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -2303,7 +2303,7 @@
 			"id": 71,
 			"num": "071",
 			"nome": "Victreebel",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/071.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/071.png",
 			"tipo": [
 				"Grass",
 				"Poison"
@@ -2337,7 +2337,7 @@
 			"id": 72,
 			"num": "072",
 			"nome": "Tentacool",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/072.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/072.png",
 			"tipo": [
 				"Water",
 				"Poison"
@@ -2369,7 +2369,7 @@
 			"id": 73,
 			"num": "073",
 			"nome": "Tentacruel",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/073.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/073.png",
 			"tipo": [
 				"Water",
 				"Poison"
@@ -2398,7 +2398,7 @@
 			"id": 74,
 			"num": "074",
 			"nome": "Geodude",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/074.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/074.png",
 			"tipo": [
 				"Rock",
 				"Ground"
@@ -2438,7 +2438,7 @@
 			"id": 75,
 			"num": "075",
 			"nome": "Graveler",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/075.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/075.png",
 			"tipo": [
 				"Rock",
 				"Ground"
@@ -2480,7 +2480,7 @@
 			"id": 76,
 			"num": "076",
 			"nome": "Golem",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/076.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/076.png",
 			"tipo": [
 				"Rock",
 				"Ground"
@@ -2516,7 +2516,7 @@
 			"id": 77,
 			"num": "077",
 			"nome": "Ponyta",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/077.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/077.png",
 			"tipo": [
 				"Fire"
 			],
@@ -2548,7 +2548,7 @@
 			"id": 78,
 			"num": "078",
 			"nome": "Rapidash",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/078.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/078.png",
 			"tipo": [
 				"Fire"
 			],
@@ -2576,7 +2576,7 @@
 			"id": 79,
 			"num": "079",
 			"nome": "Slowpoke",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/079.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/079.png",
 			"tipo": [
 				"Water",
 				"Psychic"
@@ -2610,7 +2610,7 @@
 			"id": 80,
 			"num": "080",
 			"nome": "Slowbro",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/080.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/080.png",
 			"tipo": [
 				"Water",
 				"Psychic"
@@ -2641,7 +2641,7 @@
 			"id": 81,
 			"num": "081",
 			"nome": "Magnemite",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/081.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/081.png",
 			"tipo": [
 				"Electric"
 			],
@@ -2673,7 +2673,7 @@
 			"id": 82,
 			"num": "082",
 			"nome": "Magneton",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/082.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/082.png",
 			"tipo": [
 				"Electric"
 			],
@@ -2701,7 +2701,7 @@
 			"id": 83,
 			"num": "083",
 			"nome": "Farfetch'd",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/083.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/083.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -2723,7 +2723,7 @@
 			"id": 84,
 			"num": "084",
 			"nome": "Doduo",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/084.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/084.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -2755,7 +2755,7 @@
 			"id": 85,
 			"num": "085",
 			"nome": "Dodrio",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/085.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/085.png",
 			"tipo": [
 				"Normal",
 				"Flying"
@@ -2783,7 +2783,7 @@
 			"id": 86,
 			"num": "086",
 			"nome": "Seel",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/086.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/086.png",
 			"tipo": [
 				"Water"
 			],
@@ -2814,7 +2814,7 @@
 			"id": 87,
 			"num": "087",
 			"nome": "Dewgong",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/087.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/087.png",
 			"tipo": [
 				"Water",
 				"Ice"
@@ -2844,7 +2844,7 @@
 			"id": 88,
 			"num": "088",
 			"nome": "Grimer",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/088.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/088.png",
 			"tipo": [
 				"Poison"
 			],
@@ -2874,7 +2874,7 @@
 			"id": 89,
 			"num": "089",
 			"nome": "Muk",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/089.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/089.png",
 			"tipo": [
 				"Poison"
 			],
@@ -2901,7 +2901,7 @@
 			"id": 90,
 			"num": "090",
 			"nome": "Shellder",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/090.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/090.png",
 			"tipo": [
 				"Water"
 			],
@@ -2931,7 +2931,7 @@
 			"id": 91,
 			"num": "091",
 			"nome": "Cloyster",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/091.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/091.png",
 			"tipo": [
 				"Water",
 				"Ice"
@@ -2961,7 +2961,7 @@
 			"id": 92,
 			"num": "092",
 			"nome": "Gastly",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/092.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/092.png",
 			"tipo": [
 				"Ghost",
 				"Poison"
@@ -2998,7 +2998,7 @@
 			"id": 93,
 			"num": "093",
 			"nome": "Haunter",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/093.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/093.png",
 			"tipo": [
 				"Ghost",
 				"Poison"
@@ -3038,7 +3038,7 @@
 			"id": 94,
 			"num": "094",
 			"nome": "Gengar",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/094.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/094.png",
 			"tipo": [
 				"Ghost",
 				"Poison"
@@ -3072,7 +3072,7 @@
 			"id": 95,
 			"num": "095",
 			"nome": "Onix",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/095.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/095.png",
 			"tipo": [
 				"Rock",
 				"Ground"
@@ -3098,7 +3098,7 @@
 			"id": 96,
 			"num": "096",
 			"nome": "Drowzee",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/096.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/096.png",
 			"tipo": [
 				"Psychic"
 			],
@@ -3130,7 +3130,7 @@
 			"id": 97,
 			"num": "097",
 			"nome": "Hypno",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/097.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/097.png",
 			"tipo": [
 				"Psychic"
 			],
@@ -3158,7 +3158,7 @@
 			"id": 98,
 			"num": "098",
 			"nome": "Krabby",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/098.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/098.png",
 			"tipo": [
 				"Water"
 			],
@@ -3189,7 +3189,7 @@
 			"id": 99,
 			"num": "099",
 			"nome": "Kingler",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/099.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/099.png",
 			"tipo": [
 				"Water"
 			],
@@ -3216,7 +3216,7 @@
 			"id": 100,
 			"num": "100",
 			"nome": "Voltorb",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/100.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/100.png",
 			"tipo": [
 				"Electric"
 			],
@@ -3246,7 +3246,7 @@
 			"id": 101,
 			"num": "101",
 			"nome": "Electrode",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/101.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/101.png",
 			"tipo": [
 				"Electric"
 			],
@@ -3272,7 +3272,7 @@
 			"id": 102,
 			"num": "102",
 			"nome": "Exeggcute",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/102.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/102.png",
 			"tipo": [
 				"Grass",
 				"Psychic"
@@ -3309,7 +3309,7 @@
 			"id": 103,
 			"num": "103",
 			"nome": "Exeggutor",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/103.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/103.png",
 			"tipo": [
 				"Grass",
 				"Psychic"
@@ -3342,7 +3342,7 @@
 			"id": 104,
 			"num": "104",
 			"nome": "Cubone",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/104.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/104.png",
 			"tipo": [
 				"Ground"
 			],
@@ -3373,7 +3373,7 @@
 			"id": 105,
 			"num": "105",
 			"nome": "Marowak",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/105.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/105.png",
 			"tipo": [
 				"Ground"
 			],
@@ -3401,7 +3401,7 @@
 			"id": 106,
 			"num": "106",
 			"nome": "Hitmonlee",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/106.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/106.png",
 			"tipo": [
 				"Fighting"
 			],
@@ -3423,7 +3423,7 @@
 			"id": 107,
 			"num": "107",
 			"nome": "Hitmonchan",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/107.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/107.png",
 			"tipo": [
 				"Fighting"
 			],
@@ -3445,7 +3445,7 @@
 			"id": 108,
 			"num": "108",
 			"nome": "Lickitung",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/108.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/108.png",
 			"tipo": [
 				"Normal"
 			],
@@ -3465,7 +3465,7 @@
 			"id": 109,
 			"num": "109",
 			"nome": "Koffing",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/109.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/109.png",
 			"tipo": [
 				"Poison"
 			],
@@ -3495,7 +3495,7 @@
 			"id": 110,
 			"num": "110",
 			"nome": "Weezing",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/110.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/110.png",
 			"tipo": [
 				"Poison"
 			],
@@ -3522,7 +3522,7 @@
 			"id": 111,
 			"num": "111",
 			"nome": "Rhyhorn",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/111.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/111.png",
 			"tipo": [
 				"Ground",
 				"Rock"
@@ -3557,7 +3557,7 @@
 			"id": 112,
 			"num": "112",
 			"nome": "Rhydon",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/112.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/112.png",
 			"tipo": [
 				"Ground",
 				"Rock"
@@ -3589,7 +3589,7 @@
 			"id": 113,
 			"num": "113",
 			"nome": "Chansey",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/113.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/113.png",
 			"tipo": [
 				"Normal"
 			],
@@ -3609,7 +3609,7 @@
 			"id": 114,
 			"num": "114",
 			"nome": "Tangela",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/114.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/114.png",
 			"tipo": [
 				"Grass"
 			],
@@ -3633,7 +3633,7 @@
 			"id": 115,
 			"num": "115",
 			"nome": "Kangaskhan",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/115.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/115.png",
 			"tipo": [
 				"Normal"
 			],
@@ -3653,7 +3653,7 @@
 			"id": 116,
 			"num": "116",
 			"nome": "Horsea",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/116.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/116.png",
 			"tipo": [
 				"Water"
 			],
@@ -3683,7 +3683,7 @@
 			"id": 117,
 			"num": "117",
 			"nome": "Seadra",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/117.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/117.png",
 			"tipo": [
 				"Water"
 			],
@@ -3710,7 +3710,7 @@
 			"id": 118,
 			"num": "118",
 			"nome": "Goldeen",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/118.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/118.png",
 			"tipo": [
 				"Water"
 			],
@@ -3741,7 +3741,7 @@
 			"id": 119,
 			"num": "119",
 			"nome": "Seaking",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/119.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/119.png",
 			"tipo": [
 				"Water"
 			],
@@ -3768,7 +3768,7 @@
 			"id": 120,
 			"num": "120",
 			"nome": "Staryu",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/120.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/120.png",
 			"tipo": [
 				"Water"
 			],
@@ -3799,7 +3799,7 @@
 			"id": 121,
 			"num": "121",
 			"nome": "Starmie",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/121.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/121.png",
 			"tipo": [
 				"Water",
 				"Psychic"
@@ -3830,7 +3830,7 @@
 			"id": 122,
 			"num": "122",
 			"nome": "Mr. Mime",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/122.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/122.png",
 			"tipo": [
 				"Psychic"
 			],
@@ -3852,7 +3852,7 @@
 			"id": 123,
 			"num": "123",
 			"nome": "Scyther",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/123.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/123.png",
 			"tipo": [
 				"Bug",
 				"Flying"
@@ -3877,7 +3877,7 @@
 			"id": 124,
 			"num": "124",
 			"nome": "Jynx",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/124.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/124.png",
 			"tipo": [
 				"Ice",
 				"Psychic"
@@ -3903,7 +3903,7 @@
 			"id": 125,
 			"num": "125",
 			"nome": "Electabuzz",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/125.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/125.png",
 			"tipo": [
 				"Electric"
 			],
@@ -3923,7 +3923,7 @@
 			"id": 126,
 			"num": "126",
 			"nome": "Magmar",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/126.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/126.png",
 			"tipo": [
 				"Fire"
 			],
@@ -3945,7 +3945,7 @@
 			"id": 127,
 			"num": "127",
 			"nome": "Pinsir",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/127.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/127.png",
 			"tipo": [
 				"Bug"
 			],
@@ -3967,7 +3967,7 @@
 			"id": 128,
 			"num": "128",
 			"nome": "Tauros",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/128.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/128.png",
 			"tipo": [
 				"Normal"
 			],
@@ -3987,7 +3987,7 @@
 			"id": 129,
 			"num": "129",
 			"nome": "Magikarp",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/129.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/129.png",
 			"tipo": [
 				"Water"
 			],
@@ -4018,7 +4018,7 @@
 			"id": 130,
 			"num": "130",
 			"nome": "Gyarados",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/130.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/130.png",
 			"tipo": [
 				"Water",
 				"Flying"
@@ -4046,7 +4046,7 @@
 			"id": 131,
 			"num": "131",
 			"nome": "Lapras",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/131.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/131.png",
 			"tipo": [
 				"Water",
 				"Ice"
@@ -4070,7 +4070,7 @@
 			"id": 132,
 			"num": "132",
 			"nome": "Ditto",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/132.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/132.png",
 			"tipo": [
 				"Normal"
 			],
@@ -4090,7 +4090,7 @@
 			"id": 133,
 			"num": "133",
 			"nome": "Eevee",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/133.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/133.png",
 			"tipo": [
 				"Normal"
 			],
@@ -4128,7 +4128,7 @@
 			"id": 134,
 			"num": "134",
 			"nome": "Vaporeon",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/134.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/134.png",
 			"tipo": [
 				"Water"
 			],
@@ -4155,7 +4155,7 @@
 			"id": 135,
 			"num": "135",
 			"nome": "Jolteon",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/135.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/135.png",
 			"tipo": [
 				"Electric"
 			],
@@ -4181,7 +4181,7 @@
 			"id": 136,
 			"num": "136",
 			"nome": "Flareon",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/136.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/136.png",
 			"tipo": [
 				"Fire"
 			],
@@ -4209,7 +4209,7 @@
 			"id": 137,
 			"num": "137",
 			"nome": "Porygon",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/137.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/137.png",
 			"tipo": [
 				"Normal"
 			],
@@ -4229,7 +4229,7 @@
 			"id": 138,
 			"num": "138",
 			"nome": "Omanyte",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/138.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/138.png",
 			"tipo": [
 				"Rock",
 				"Water"
@@ -4262,7 +4262,7 @@
 			"id": 139,
 			"num": "139",
 			"nome": "Omastar",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/139.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/139.png",
 			"tipo": [
 				"Rock",
 				"Water"
@@ -4292,7 +4292,7 @@
 			"id": 140,
 			"num": "140",
 			"nome": "Kabuto",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/140.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/140.png",
 			"tipo": [
 				"Rock",
 				"Water"
@@ -4326,7 +4326,7 @@
 			"id": 141,
 			"num": "141",
 			"nome": "Kabutops",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/141.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/141.png",
 			"tipo": [
 				"Rock",
 				"Water"
@@ -4356,7 +4356,7 @@
 			"id": 142,
 			"num": "142",
 			"nome": "Aerodactyl",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/142.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/142.png",
 			"tipo": [
 				"Rock",
 				"Flying"
@@ -4381,7 +4381,7 @@
 			"id": 143,
 			"num": "143",
 			"nome": "Snorlax",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/143.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/143.png",
 			"tipo": [
 				"Normal"
 			],
@@ -4401,7 +4401,7 @@
 			"id": 144,
 			"num": "144",
 			"nome": "Articuno",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/144.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/144.png",
 			"tipo": [
 				"Ice",
 				"Flying"
@@ -4425,7 +4425,7 @@
 			"id": 145,
 			"num": "145",
 			"nome": "Zapdos",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/145.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/145.png",
 			"tipo": [
 				"Electric",
 				"Flying"
@@ -4447,7 +4447,7 @@
 			"id": 146,
 			"num": "146",
 			"nome": "Moltres",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/146.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/146.png",
 			"tipo": [
 				"Fire",
 				"Flying"
@@ -4470,7 +4470,7 @@
 			"id": 147,
 			"num": "147",
 			"nome": "Dratini",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/147.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/147.png",
 			"tipo": [
 				"Dragon"
 			],
@@ -4506,7 +4506,7 @@
 			"id": 148,
 			"num": "148",
 			"nome": "Dragonair",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/148.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/148.png",
 			"tipo": [
 				"Dragon"
 			],
@@ -4543,7 +4543,7 @@
 			"id": 149,
 			"num": "149",
 			"nome": "Dragonite",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/149.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/149.png",
 			"tipo": [
 				"Dragon",
 				"Flying"
@@ -4577,7 +4577,7 @@
 			"id": 150,
 			"num": "150",
 			"nome": "Mewtwo",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/150.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/150.png",
 			"tipo": [
 				"Psychic"
 			],
@@ -4599,7 +4599,7 @@
 			"id": 151,
 			"num": "151",
 			"nome": "Mew",
-			"imagem": "http://www.serebii.net/pokemongo/pokemon/151.png",
+			"imagem": "https://assets.pokemon.com/assets/cms2/img/pokedex/full/151.png",
 			"tipo": [
 				"Psychic"
 			],

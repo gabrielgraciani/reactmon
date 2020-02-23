@@ -11,6 +11,8 @@ export const POKEMON_UPDATE = 'POKEMON_UPDATE';
 export const POKEMON_UPDATE_LIST = 'POKEMON_UPDATE_LIST';
 export const POKEMON_FETCH_SEARCH = 'POKEMON_FETCH_SEARCH';
 export const POKEMON_FETCH_SEARCH_SUCCESS = 'POKEMON_FETCH_SEARCH_SUCCESS';
+export const POKEMON_SLUG_FETCH = 'POKEMON_SLUG_FETCH';
+export const POKEMON_SLUG_FETCH_SUCCESS = 'POKEMON_SLUG_FETCH_SUCCESS';
 
 
 export const pokemonSend = (payload) => ({
@@ -82,5 +84,17 @@ export const pokemonFetchSearchSuccess = (listSearch) => ({
 	type: POKEMON_FETCH_SEARCH_SUCCESS,
 	payload: {
 		listSearch
+	}
+});
+
+export const pokemonSlugFetch = (payload) => ({
+	type: POKEMON_SLUG_FETCH,
+	payload
+});
+
+export const pokemonSlugFetchSuccess = (listSlug) => ({
+	type: POKEMON_SLUG_FETCH_SUCCESS,
+	payload: {
+		listSlug
 	}
 });

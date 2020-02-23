@@ -95,4 +95,22 @@ export default class pokemon{
 			}).catch(rej)
 		});
 	};
+
+	static getPokemonSlug = (id) => {
+		let docRef = db.collection('pokemon').doc(id);
+
+		return new Promise((res, rej) => {
+			docRef.get().then(function(doc) {
+				if(doc.exists){
+					//console.log('documento', doc.data());
+					res(doc.data());
+				}
+				else{
+					console.log('nao existe');
+				}
+			}).catch(rej);
+		})
+
+
+	}
 }

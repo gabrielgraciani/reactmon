@@ -19,7 +19,8 @@ export const initialState = {
 		name: '',
 		url: ''
 	},
-	listSearch: []
+	listSearch: [],
+	listSlug: []
 };
 
 export default function pokemonReducer(
@@ -155,6 +156,24 @@ export default function pokemonReducer(
 				listSearch:[
 					...payload.listSearch
 				]
+			};
+
+		case actions.POKEMON_SLUG_FETCH:
+			return{
+				...initialState,
+				...state,
+				...payload,
+				isLoading: true
+			};
+
+		case actions.POKEMON_SLUG_FETCH_SUCCESS:
+			return{
+				...initialState,
+				...state,
+				listSlug: [
+					...payload.listSlug
+				],
+				isLoading: false
 			};
 
 		default:
